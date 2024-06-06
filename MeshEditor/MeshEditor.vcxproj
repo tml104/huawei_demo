@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D70E528C-86E7-427F-A7BB-C367B2961344}</ProjectGuid>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <ProjectName>HexTopOpt</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\hqh_study\huawei_frame\huawei_demo\include\json;D:\ACIS\acisR23\include;D:\ACIS\HOOPS-1919\bin\nt_i386_vc10;D:\ACIS\acisR23\bin\NT_VC10_DLLD;D:\ACIS\acisR23\bin\NT_VC10_DLL;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\hqh_software\spdlog-1.x\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;UNICODE;WIN32;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_SCRIPT_LIB;NOMINMAX;INCLUDE_TEMPLATES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(A3DT)\include;$(OM_INSTALL_DIR)\include;$(OVM_INSTALL_DIR)\include;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source;D:\Program Files %28x86%29\Visual Leak Detector\include;$(GLPK_DIR)\src;$(DLIB_INSTALL_DIR);$(EIGEN_DIR);.\jsoncpp-src-0.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(A3DT)\lib\NT_VC10_DLLD;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\lib\nt_i386_vc10;$(OM_INSTALL_DIR)\lib;$(OVM_INSTALL_DIR)\lib;D:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(GLPK_DIR)\w32;$(DLIB_INSTALL_DIR)\dlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;QtCored4.lib;QtGuid4.lib;QtXmld4.lib;QtScriptd4.lib;hoopsd.lib;hoops_mvo_mgkd.lib;hoops_utilsstatd_md.lib;hoops_streamd.lib;OpenMeshCored.lib;OpenVolumeMeshd.lib;glpk_4_52.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LargeAddressAware>true</LargeAddressAware>
+      <HeapReserveSize>524288000</HeapReserveSize>
+      <StackReserveSize>524288000</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_USE_MATH_DEFINES;UNICODE;WIN32;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_SCRIPT_LIB;NOMINMAX;INCLUDE_TEMPLATES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(A3DT)\include;$(OM_INSTALL_DIR)\include;$(OVM_INSTALL_DIR)\include;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source;D:\Program Files %28x86%29\Visual Leak Detector\include;$(GLPK_DIR)\src;$(DLIB_INSTALL_DIR);$(EIGEN_DIR);.\jsoncpp-src-0.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(A3DT)\lib\NT_VC10_DLLD;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\lib\nt_i386_vc10;$(OM_INSTALL_DIR)\lib;$(OVM_INSTALL_DIR)\lib;D:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(GLPK_DIR)\w32;$(DLIB_INSTALL_DIR)\dlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;QtCored4.lib;QtGuid4.lib;QtXmld4.lib;QtScriptd4.lib;hoopsd.lib;hoops_mvo_mgkd.lib;hoops_utilsstatd_md.lib;hoops_streamd.lib;OpenMeshCored.lib;OpenVolumeMeshd.lib;glpk_4_52.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LargeAddressAware>true</LargeAddressAware>
+      <HeapReserveSize>524288000</HeapReserveSize>
+      <StackReserveSize>524288000</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_SCRIPT_LIB;NOMINMAX;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(BOOST_INCLUDE_DIR);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\4.8.6\include\QtCore;D:\Qt\4.8.6\include\QtGui;D:\Qt\4.8.6\include\QtXml;D:\Qt\4.8.6\include\QtScript;D:\ACIS\3rd\OpenVolumeMesh\include;$(A3DT)\include;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source;D:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source;D:\ACIS\HOOPS-1919\Dev_Tools\utility\source;D:\Qt\4.8.6\include\QtScriptTools;$(VLD_INSTALL_DIR)\include;$(GLPK_DIR)\src;$(DLIB_INSTALL_DIR);$(EIGEN_DIR);D:\ACIS\3rd\OpenMesh 4.1\include;.\jsoncpp-src-0.5.0\include;D:\pthreads-w32-2-9-1-release\Pre-built.2\include;D:\hqh_software\spdlog-1.x\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>D:\pthreads-w32-2-9-1-release\Pre-built.2\lib\x86;$(BOOST_INSTALL_DIR)\stage_lib;D:\Qt\4.8.6\lib;D:\ACIS\acisR23\lib\NT_VC10_DLL;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\lib\nt_i386_vc10;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\lib\nt_i386_vc10;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\lib\nt_i386_vc10;D:\ACIS\HOOPS-1919\Dev_Tools\utility\lib\nt_i386_vc10;D:\ACIS\3rd\OpenMesh 4.1\lib;D:\ACIS\3rd\OpenVolumeMesh\lib;D:\ACIS\3rd\VisualLeakDetector\lib\Win32;D:\ACIS\3rd\glpk-4.52\w32;D:\ACIS\3rd\dlib-18.18\dlib\build\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;QtCore4.lib;QtGui4.lib;QtXml4.lib;QtScript4.lib;hoops.lib;hoops_mvo_mgk.lib;hoops_utilsstat_md.lib;hoops_stream.lib;OpenMeshCore.lib;OpenVolumeMesh.lib;glpk_4_52.lib;dlib.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LargeAddressAware>true</LargeAddressAware>
+      <HeapReserveSize>52428800</HeapReserveSize>
+      <StackReserveSize>52428800</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>UNICODE;WIN32;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_SCRIPT_LIB;NOMINMAX;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(BOOST_INCLUDE_DIR);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(OVM_INSTALL_DIR)\include;$(A3DT)\include;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source;$(QTDIR)\include\QtScriptTools;$(VLD_INSTALL_DIR)\include;$(GLPK_DIR)\src;$(DLIB_INSTALL_DIR);$(EIGEN_DIR);$(OM_INSTALL_DIR)\include;.\jsoncpp-src-0.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>false</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>$(BOOST_INSTALL_DIR)\stage_lib;$(QTDIR)\lib;$(A3DT)\lib\NT_VC10_DLL;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\lib\nt_i386_vc10;$(OM_INSTALL_DIR)\lib;$(OVM_INSTALL_DIR)\lib;$(VLD_INSTALL_DIR)\lib\Win32;$(GLPK_DIR)\w32;$(DLIB_INSTALL_DIR)\dlib\build\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>qtmain.lib;QtCore4.lib;QtGui4.lib;QtXml4.lib;QtScript4.lib;hoops.lib;hoops_mvo_mgk.lib;hoops_utilsstat_md.lib;hoops_stream.lib;OpenMeshCore.lib;OpenVolumeMesh.lib;glpk_4_52.lib;dlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LargeAddressAware>true</LargeAddressAware>
+      <HeapReserveSize>52428800</HeapReserveSize>
+      <StackReserveSize>52428800</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="binarySearch.cpp" />
+    <ClCompile Include="ConnectedComponentSplitExperiment.cpp" />
+    <ClCompile Include="ConstructModel.cpp" />
+    <ClCompile Include="filecontrolwidget.cpp" />
+    <ClCompile Include="FileManagement.cpp" />
+    <ClCompile Include="GeneratedFiles\Debug\moc_topologyoptwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_topologyoptwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeometricFill.cpp" />
+    <ClCompile Include="GeometryExperiment.cpp" />
+    <ClCompile Include="getInfo.cpp" />
+    <ClCompile Include="GetPatchType.cpp" />
+    <ClCompile Include="getPoint.cpp" />
+    <ClCompile Include="intervalSort.cpp" />
+    <ClCompile Include="jsoncpp-src-0.5.0\src\lib_json\json_reader.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="jsoncpp-src-0.5.0\src\lib_json\json_value.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="jsoncpp-src-0.5.0\src\lib_json\json_writer.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_filecontrolwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_groupcontrolwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_hoopsview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_HQWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mousecontrolwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_mainwindow.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_filecontrolwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_groupcontrolwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_hoopsview.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_HQWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mousecontrolwidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="groupcontrolwidget.cpp" />
+    <ClCompile Include="hoopsview.cpp" />
+    <ClCompile Include="hoopsview_group.cpp" />
+    <ClCompile Include="HQWidget.cpp" />
+    <ClCompile Include="JsonHandle.cpp" />
+    <ClCompile Include="json_reader.cpp" />
+    <ClCompile Include="json_value.cpp" />
+    <ClCompile Include="json_writer.cpp" />
+    <ClCompile Include="lodepng.cpp" />
+    <ClCompile Include="logger44\CoreOld.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="makeMeshList.cpp" />
+    <ClCompile Include="MarkNum.cpp" />
+    <ClCompile Include="NonManifold.cpp" />
+    <ClCompile Include="Stitch.cpp" />
+    <ClCompile Include="mousecontrolwidget.cpp" />
+    <ClCompile Include="muilthreadHandle.cpp" />
+    <ClCompile Include="nonuniformMesh.cpp" />
+    <ClCompile Include="ohmConnection.cpp" />
+    <ClCompile Include="ohmtest.cpp" />
+    <ClCompile Include="setAttr.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="testModel.cpp" />
+    <ClCompile Include="topologyoptwidge.cpp" />
+    <ClCompile Include="topologyopt_process.cpp" />
+    <ClCompile Include="unionInterval.cpp" />
+    <ClCompile Include="UtilityFunctions.cpp" />
+    <ClCompile Include="ZSRACISNotify.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cell.h" />
+    <ClInclude Include="ConnectedComponentSplitExperiment.h" />
+    <ClInclude Include="ConstructModel.h" />
+    <ClInclude Include="Endpoint.h" />
+    <ClInclude Include="FileManagement.h" />
+    <ClInclude Include="GeneratedFiles\ui_topologyoptwidget.h" />
+    <ClInclude Include="GeometricFill.h" />
+    <ClInclude Include="GeometryExperiment.h" />
+    <ClInclude Include="GetPatchType.h" />
+    <ClInclude Include="Interval.h" />
+    <ClInclude Include="jsoncpp-src-0.5.0\include\json\json.h" />
+    <ClInclude Include="jsoncpp-src-0.5.0\src\lib_json\json_batchallocator.h" />
+    <ClInclude Include="JsonHandle.h" />
+    <ClInclude Include="json_batchallocator.h" />
+    <ClInclude Include="lodepng.h" />
+    <ClInclude Include="logger44\CoreOld.h" />
+    <ClInclude Include="MarkNum.h" />
+    <ClInclude Include="meshHeader.h" />
+    <ClInclude Include="muilthreadHandle.h" />
+    <ClInclude Include="MyConstant.h" />
+    <ClInclude Include="MyDebugInfoMarco.h" />
+    <ClInclude Include="NonManifold.h" />
+    <ClInclude Include="ohmConnection.h" />
+    <ClInclude Include="ohm_struct.h" />
+    <ClInclude Include="UtilityFunctions.h" />
+    <ClInclude Include="pixel.h" />
+    <ClInclude Include="setAttr.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Stitch.h" />
+    <ClInclude Include="test.h" />
+    <ClInclude Include="ZSRACISHeads.h" />
+    <ClInclude Include="ZSRACISNotify.h" />
+    <CustomBuild Include="topologyoptwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing topologyoptwidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing topologyoptwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp" "-fStdAfx.h" "-f../../topologyoptwidget.h"  -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-IC:\Program Files (x86)\Visual Leak Detector\include" "-ID:\glpk-4.52\src" "-ID:\dlib\dlib-18.18"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp" "-fStdAfx.h" "-f../../topologyoptwidget.h"  -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-IC:\Program Files (x86)\Visual Leak Detector\include" "-ID:\glpk-4.52\src" "-ID:\dlib\dlib-18.18"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing topologyoptwidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing topologyoptwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp" "-fStdAfx.h" "-f../../topologyoptwidget.h"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(OVM_INSTALL_DIR)\include" "-I$(A3DT)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-I$(QTDIR)\include\QtScriptTools" "-IC:\Program Files (x86)\Visual Leak Detector\include" "-ID:\glpk-4.52\src" "-ID:\dlib\dlib-18.18"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp" "-fStdAfx.h" "-f../../topologyoptwidget.h"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(OVM_INSTALL_DIR)\include" "-I$(A3DT)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-I$(QTDIR)\include\QtScriptTools" "-IC:\Program Files (x86)\Visual Leak Detector\include" "-ID:\glpk-4.52\src" "-ID:\dlib\dlib-18.18"</Command>
+    </CustomBuild>
+    <CustomBuild Include="filecontrolwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing filecontrolwidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing filecontrolwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../filecontrolwidget.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../filecontrolwidget.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing filecontrolwidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing filecontrolwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-ID:\Qt\4.8.6\include\QtCore" "-ID:\Qt\4.8.6\include\QtGui" "-ID:\Qt\4.8.6\include\QtXml" "-ID:\Qt\4.8.6\include\QtScript" "-ID:\ACIS\3rd\OpenVolumeMesh\include" "-I$(A3DT)\include" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\utility\source" "-ID:\Qt\4.8.6\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-ID:\ACIS\3rd\OpenMesh 4.1\include" "-I.\jsoncpp-src-0.5.0\include" "-ID:\pthreads-w32-2-9-1-release\Pre-built.2\include" "-fStdAfx.h" "-f../../filecontrolwidget.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(OVM_INSTALL_DIR)\include" "-I$(A3DT)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-I$(QTDIR)\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I$(OM_INSTALL_DIR)\include" "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../filecontrolwidget.h"</Command>
+    </CustomBuild>
+    <ClInclude Include="GeneratedFiles\ui_filecontrolwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_groupcontrolwidget.h" />
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h" />
+    <CustomBuild Include="mousecontrolwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing mousecontrolwidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing mousecontrolwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../mousecontrolwidget.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../mousecontrolwidget.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing mousecontrolwidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing mousecontrolwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-ID:\Qt\4.8.6\include\QtCore" "-ID:\Qt\4.8.6\include\QtGui" "-ID:\Qt\4.8.6\include\QtXml" "-ID:\Qt\4.8.6\include\QtScript" "-ID:\ACIS\3rd\OpenVolumeMesh\include" "-I$(A3DT)\include" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\utility\source" "-ID:\Qt\4.8.6\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-ID:\ACIS\3rd\OpenMesh 4.1\include" "-I.\jsoncpp-src-0.5.0\include" "-ID:\pthreads-w32-2-9-1-release\Pre-built.2\include" "-fStdAfx.h" "-f../../mousecontrolwidget.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(OVM_INSTALL_DIR)\include" "-I$(A3DT)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-I$(QTDIR)\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I$(OM_INSTALL_DIR)\include" "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../mousecontrolwidget.h"</Command>
+    </CustomBuild>
+    <ClInclude Include="GeneratedFiles\ui_mousecontrolwidget.h" />
+    <CustomBuild Include="groupcontrolwidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing groupcontrolwidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing groupcontrolwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../groupcontrolwidget.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../groupcontrolwidget.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing groupcontrolwidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing groupcontrolwidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-ID:\Qt\4.8.6\include\QtCore" "-ID:\Qt\4.8.6\include\QtGui" "-ID:\Qt\4.8.6\include\QtXml" "-ID:\Qt\4.8.6\include\QtScript" "-ID:\ACIS\3rd\OpenVolumeMesh\include" "-I$(A3DT)\include" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\utility\source" "-ID:\Qt\4.8.6\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-ID:\ACIS\3rd\OpenMesh 4.1\include" "-I.\jsoncpp-src-0.5.0\include" "-ID:\pthreads-w32-2-9-1-release\Pre-built.2\include" "-fStdAfx.h" "-f../../groupcontrolwidget.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(OVM_INSTALL_DIR)\include" "-I$(A3DT)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-I$(QTDIR)\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I$(OM_INSTALL_DIR)\include" "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../groupcontrolwidget.h"</Command>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing mainwindow.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing mainwindow.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../mainwindow.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../mainwindow.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing mainwindow.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing mainwindow.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-ID:\Qt\4.8.6\include\QtCore" "-ID:\Qt\4.8.6\include\QtGui" "-ID:\Qt\4.8.6\include\QtXml" "-ID:\Qt\4.8.6\include\QtScript" "-ID:\ACIS\3rd\OpenVolumeMesh\include" "-I$(A3DT)\include" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\utility\source" "-ID:\Qt\4.8.6\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-ID:\ACIS\3rd\OpenMesh 4.1\include" "-I.\jsoncpp-src-0.5.0\include" "-ID:\pthreads-w32-2-9-1-release\Pre-built.2\include" "-fStdAfx.h" "-f../../mainwindow.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(OVM_INSTALL_DIR)\include" "-I$(A3DT)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-I$(QTDIR)\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I$(OM_INSTALL_DIR)\include" "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../mainwindow.h"</Command>
+    </CustomBuild>
+    <CustomBuild Include="hoopsview.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing hoopsview.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing hoopsview.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../hoopsview.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../hoopsview.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing hoopsview.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing hoopsview.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-ID:\Qt\4.8.6\include\QtCore" "-ID:\Qt\4.8.6\include\QtGui" "-ID:\Qt\4.8.6\include\QtXml" "-ID:\Qt\4.8.6\include\QtScript" "-ID:\ACIS\3rd\OpenVolumeMesh\include" "-I$(A3DT)\include" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\utility\source" "-ID:\Qt\4.8.6\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-ID:\ACIS\3rd\OpenMesh 4.1\include" "-I.\jsoncpp-src-0.5.0\include" "-ID:\pthreads-w32-2-9-1-release\Pre-built.2\include" "-fStdAfx.h" "-f../../hoopsview.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(OVM_INSTALL_DIR)\include" "-I$(A3DT)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-I$(QTDIR)\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I$(OM_INSTALL_DIR)\include" "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../hoopsview.h"</Command>
+    </CustomBuild>
+    <CustomBuild Include="HQWidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing HQWidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing HQWidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../HQWidget.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -D_USE_MATH_DEFINES -DUNICODE -DWIN32 -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES  "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(A3DT)\include" "-I$(OM_INSTALL_DIR)\include" "-I$(OVM_INSTALL_DIR)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-ID:\Program Files (x86)\Visual Leak Detector\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../HQWidget.h"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing HQWidget.h...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing HQWidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-ID:\Qt\4.8.6\include\QtCore" "-ID:\Qt\4.8.6\include\QtGui" "-ID:\Qt\4.8.6\include\QtXml" "-ID:\Qt\4.8.6\include\QtScript" "-ID:\ACIS\3rd\OpenVolumeMesh\include" "-I$(A3DT)\include" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common" "-ID:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source" "-ID:\ACIS\HOOPS-1919\Dev_Tools\utility\source" "-ID:\Qt\4.8.6\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-ID:\ACIS\3rd\OpenMesh 4.1\include" "-I.\jsoncpp-src-0.5.0\include" "-ID:\pthreads-w32-2-9-1-release\Pre-built.2\include" "-fStdAfx.h" "-f../../HQWidget.h"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DUNICODE -DWIN32 -DQT_DLL -DQT_NO_DEBUG -DNDEBUG -DQT_CORE_LIB -DQT_GUI_LIB -DQT_XML_LIB -DQT_SCRIPT_LIB -DNOMINMAX -DINCLUDE_TEMPLATES -D_USE_MATH_DEFINES  "-I$(BOOST_INCLUDE_DIR)\." "-I.\GeneratedFiles" "-I." "-I$(QTDIR)\include" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(QTDIR)\include\QtCore" "-I$(QTDIR)\include\QtGui" "-I$(QTDIR)\include\QtXml" "-I$(QTDIR)\include\QtScript" "-I$(OVM_INSTALL_DIR)\include" "-I$(A3DT)\include" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source" "-I$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source" "-I$(QTDIR)\include\QtScriptTools" "-I$(VLD_INSTALL_DIR)\include" "-I$(GLPK_DIR)\src" "-I$(DLIB_INSTALL_DIR)\." "-I$(EIGEN_DIR)\." "-I$(OM_INSTALL_DIR)\include" "-I.\jsoncpp-src-0.5.0\include" "-fStdAfx.h" "-f../../HQWidget.h"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Rcc%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mousecontrolwidget.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="filecontrolwidget.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="groupcontrolwidget.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="topologyoptwidget.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jsoncpp-src-0.5.0\src\lib_json\json_internalarray.inl" />
+    <None Include="jsoncpp-src-0.5.0\src\lib_json\json_internalmap.inl" />
+    <None Include="jsoncpp-src-0.5.0\src\lib_json\json_valueiterator.inl" />
+    <None Include="jsoncpp-src-0.5.0\src\lib_json\sconscript" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" MocDir=".\GeneratedFiles\$(ConfigurationName)" MocOptions="" RccDir=".\GeneratedFiles" lupdateOnBuild="0" lupdateOptions="" lreleaseOptions="" QtVersion_x0020_Win32="4.8.6" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

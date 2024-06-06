@@ -1,0 +1,29 @@
+/* XPM */
+static const char *subtract_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        6            1",
+/* colors */
+". c #000000",
+"# c #004000",
+"a c #808000",
+"b c #c0c0c0",
+"c c #ffff00",
+"d c #ffffff",
+/* pixels */
+"bbbb........bbbb",
+"bbbabcbccccc.bbb",
+"bbbaabbdcbbb.bbb",
+"bbbabbbdcbbb.bbb",
+"bbbaabbdcbb.bbbb",
+"bbbabbbdcb.bbbbb",
+"bbbaabbdc.bbbbbb",
+"bbbabbbdc.bbbbbb",
+"bbbaabbdc#bbbbbb",
+"bbbabbbdcb.bbbbb",
+"bbbaabbdcbb.bbbb",
+"bbbabbbdcbbb.bbb",
+"bbbaabbdcbbb.bbb",
+"bbbabbbdcbbb.bbb",
+"bbbaaaaaaaaa.bbb",
+"bbbbbbbbbbbbbbbb"
+};

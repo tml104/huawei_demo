@@ -1,0 +1,29 @@
+/* XPM */
+static const char *union_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        6            1",
+/* colors */
+". c #000000",
+"# c #808000",
+"a c #808080",
+"b c #c0c0c0",
+"c c #ffff00",
+"d c #ffffff",
+/* pixels */
+"b........bbbbbbb",
+"#bcbcccc#.bbbbbb",
+"##bbdcbba.bbbbbb",
+"#bbbdcbb#......b",
+"##bbdcb###bbbb#.",
+"#bbbdcbb#bbbbb#.",
+"##bbdcb##ccccc#.",
+"#bbbdcbb#ddddd#.",
+"##bbdcb##bbbbb#.",
+"#bbbdcbb#bbbbb#.",
+"##bbdcb#abbbbb#.",
+"#bbbdcbb##b#b##.",
+"##bbdcbbb......b",
+"#bbbdcbbb.bbbbbb",
+"#########.bbbbbb",
+"bbbbbbbbbbbbbbbb"
+};

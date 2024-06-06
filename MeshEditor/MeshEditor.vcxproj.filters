@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{043da25d-d69c-439c-9622-54ecd6279d45}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{48dac372-f155-4e75-8564-29a544d60bf6}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="ControlWidgets">
+      <UniqueIdentifier>{a44da238-05ca-41a0-b343-2c746522f77b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="topologyopt">
+      <UniqueIdentifier>{6318df8e-c875-4108-973f-afb5d2e236dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;cxx;c;def</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="OhmConnection">
+      <UniqueIdentifier>{095eaedc-4008-4d4b-a4f2-e1fc58930351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GeometryFill">
+      <UniqueIdentifier>{75532e8f-64d9-4daf-a192-d32d26137555}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NonuniformMesh">
+      <UniqueIdentifier>{dd358829-4e0a-4163-a618-7ecdac29137a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="json">
+      <UniqueIdentifier>{6207f319-a04f-4f48-9c03-ddd53c64b72d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="topologyopt\FindProblem">
+      <UniqueIdentifier>{a9bbde7b-c9ef-4a01-8c77-6e5f447537f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="topologyopt\Constructs">
+      <UniqueIdentifier>{17fdd528-27e2-4ef0-b074-8b0e8d756dfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="topologyopt\Utils">
+      <UniqueIdentifier>{50807128-6d00-4dd1-b9fb-e806fcb2ec1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="topologyopt\FindProblem\Deprecated">
+      <UniqueIdentifier>{34fecfe5-2276-465d-abe3-cec0924b7391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="topologyopt\FindProblem\Test">
+      <UniqueIdentifier>{dd82ce88-4fd7-4de1-aea8-f88d29edea27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="logger44">
+      <UniqueIdentifier>{74d2323d-b472-4e62-8159-89b293d01421}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mainwindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mainwindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_mainwindow.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_hoopsview.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_hoopsview.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_HQWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_HQWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_mousecontrolwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_mousecontrolwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="mousecontrolwidget.cpp">
+      <Filter>ControlWidgets</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_filecontrolwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_filecontrolwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="filecontrolwidget.cpp">
+      <Filter>ControlWidgets</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_groupcontrolwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_groupcontrolwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="groupcontrolwidget.cpp">
+      <Filter>ControlWidgets</Filter>
+    </ClCompile>
+    <ClCompile Include="HQWidget.cpp">
+      <Filter>Form Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>Form Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Form Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hoopsview.cpp">
+      <Filter>Form Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hoopsview_group.cpp">
+      <Filter>Form Files</Filter>
+    </ClCompile>
+    <ClCompile Include="topologyoptwidge.cpp">
+      <Filter>topologyopt</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_topologyoptwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_topologyoptwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="topologyopt_process.cpp">
+      <Filter>topologyopt</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp-src-0.5.0\src\lib_json\json_reader.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp-src-0.5.0\src\lib_json\json_value.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp-src-0.5.0\src\lib_json\json_writer.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManagement.cpp">
+      <Filter>ControlWidgets</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Form Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ZSRACISNotify.cpp">
+      <Filter>ControlWidgets</Filter>
+    </ClCompile>
+    <ClCompile Include="GetPatchType.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="lodepng.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="ohmtest.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometricFill.cpp">
+      <Filter>GeometryFill</Filter>
+    </ClCompile>
+    <ClCompile Include="ohmConnection.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="testModel.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="binarySearch.cpp">
+      <Filter>NonuniformMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="intervalSort.cpp">
+      <Filter>NonuniformMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="getInfo.cpp">
+      <Filter>NonuniformMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="getPoint.cpp">
+      <Filter>NonuniformMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="nonuniformMesh.cpp">
+      <Filter>NonuniformMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="unionInterval.cpp">
+      <Filter>NonuniformMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="makeMeshList.cpp">
+      <Filter>NonuniformMesh</Filter>
+    </ClCompile>
+    <ClCompile Include="json_reader.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="json_value.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="json_writer.cpp">
+      <Filter>json</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonHandle.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="setAttr.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="muilthreadHandle.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>OhmConnection</Filter>
+    </ClCompile>
+    <ClCompile Include="Stitch.cpp">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="NonManifold.cpp">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructModel.cpp">
+      <Filter>topologyopt\Constructs</Filter>
+    </ClCompile>
+    <ClCompile Include="MarkNum.cpp">
+      <Filter>topologyopt\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryExperiment.cpp">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="UtilityFunctions.cpp">
+      <Filter>topologyopt\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ConnectedComponentSplitExperiment.cpp">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="logger44\CoreOld.cpp">
+      <Filter>logger44</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_mousecontrolwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_filecontrolwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_groupcontrolwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_topologyoptwidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp-src-0.5.0\src\lib_json\json_batchallocator.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="jsoncpp-src-0.5.0\include\json\json.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ZSRACISHeads.h">
+      <Filter>ControlWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="ZSRACISNotify.h">
+      <Filter>ControlWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManagement.h">
+      <Filter>ControlWidgets</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Form Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GetPatchType.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="lodepng.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="ohm_struct.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="pixel.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometricFill.h">
+      <Filter>GeometryFill</Filter>
+    </ClInclude>
+    <ClInclude Include="ohmConnection.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="meshHeader.h">
+      <Filter>NonuniformMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Endpoint.h">
+      <Filter>NonuniformMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Interval.h">
+      <Filter>NonuniformMesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Cell.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="json_batchallocator.h">
+      <Filter>json</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonHandle.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="setAttr.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="muilthreadHandle.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="test.h">
+      <Filter>OhmConnection</Filter>
+    </ClInclude>
+    <ClInclude Include="Stitch.h">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClInclude>
+    <ClInclude Include="NonManifold.h">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructModel.h">
+      <Filter>topologyopt\Constructs</Filter>
+    </ClInclude>
+    <ClInclude Include="MarkNum.h">
+      <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryExperiment.h">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="MyConstant.h">
+      <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="MyDebugInfoMarco.h">
+      <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="UtilityFunctions.h">
+      <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ConnectedComponentSplitExperiment.h">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="logger44\CoreOld.h">
+      <Filter>logger44</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mousecontrolwidget.ui">
+      <Filter>ControlWidgets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mousecontrolwidget.h">
+      <Filter>ControlWidgets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="filecontrolwidget.ui">
+      <Filter>ControlWidgets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="filecontrolwidget.h">
+      <Filter>ControlWidgets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="groupcontrolwidget.ui">
+      <Filter>ControlWidgets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="groupcontrolwidget.h">
+      <Filter>ControlWidgets</Filter>
+    </CustomBuild>
+    <CustomBuild Include="HQWidget.h">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="mainwindow.h">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="hoopsview.h">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="topologyoptwidget.h">
+      <Filter>topologyopt</Filter>
+    </CustomBuild>
+    <CustomBuild Include="topologyoptwidget.ui">
+      <Filter>topologyopt</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jsoncpp-src-0.5.0\src\lib_json\sconscript" />
+    <None Include="jsoncpp-src-0.5.0\src\lib_json\json_internalarray.inl" />
+    <None Include="jsoncpp-src-0.5.0\src\lib_json\json_internalmap.inl" />
+    <None Include="jsoncpp-src-0.5.0\src\lib_json\json_valueiterator.inl" />
+  </ItemGroup>
+</Project>

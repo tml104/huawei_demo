@@ -1,0 +1,28 @@
+/* XPM */
+static const char *intersect_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"    16    16        5            1",
+/* colors */
+". c #000000",
+"# c #808000",
+"a c #c0c0c0",
+"b c #ffff00",
+"c c #ffffff",
+/* pixels */
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaa.....aaaaaaa",
+"aaaa#aaa#.aaaaaa",
+"aaaa.aaaaa.aaaaa",
+"aaaa#bbba##aaaaa",
+"aaaa.caaaa.aaaaa",
+"aaaa#aaaa##aaaaa",
+"aaaa.aaaaa.aaaaa",
+"aaaa#aaaa#.aaaaa",
+"aaaa.aaa#.aaaaaa",
+"aaaa.....aaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaaa"
+};

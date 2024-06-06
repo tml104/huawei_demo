@@ -1,0 +1,25 @@
+/* XPM */
+static const char *letters_xpm[] = {
+/* width height num_colors chars_per_pixel */
+"    15    15        3            1",
+/* colors */
+". c #000000",
+"# c #606060",
+"a c #c0c0c0",
+/* pixels */
+"aaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa",
+"aaa..aaaaaaaaaa",
+"aaa..aaaaaaaaaa",
+"aa....aaaaaaaaa",
+"aa....aaa....aa",
+"a#.aa.#a####..a",
+"a..aa..aa..a..a",
+"a......a..aa..a",
+"..aaaa.#..aa..a",
+"..aaaa.#a.....a",
+"aaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa",
+"aaaaaaaaaaaaaaa"
+};
