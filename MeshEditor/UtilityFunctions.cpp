@@ -134,3 +134,31 @@ std::tuple<std::string, std::string, std::string> Utils::SplitPath(QString file_
 
 	return std::make_tuple(path, file_name_first, file_name_second);
 }
+
+
+void Utils::SaveModifiedBodies(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies)
+{
+	std::string path = std::get<0>(split_path_tuple);
+	std::string file_name_first = std::get<1>(split_path_tuple);
+	std::string file_name_second = std::get<2>(split_path_tuple);
+
+	std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_mod." + file_name_second;
+	Utils::SaveToSAT(QString((file_path_string_to_be_saved).c_str()), bodies);
+	LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
+}
+
+void Utils::SaveModifiedBodiesRespectly(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies)
+{
+	std::string path = std::get<0>(split_path_tuple);
+	std::string file_name_first = std::get<1>(split_path_tuple);
+	std::string file_name_second = std::get<2>(split_path_tuple);
+
+	for (int i = 0; i < bodies.count(); i++)
+	{
+		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_mod_body_" + std::to_string(static_cast<long long>(i)) + "." + file_name_second;
+
+		Utils::SaveToSATBody(QString(file_path_string_to_be_saved.c_str()), dynamic_cast<BODY*>(bodies[i]));
+
+		LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
+	}
+}

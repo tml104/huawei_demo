@@ -71,5 +71,10 @@ namespace Utils {
 	// 给定路径，将其分离为三元组：（基本路径，文件名，文件扩展名）
 	std::tuple<std::string, std::string, std::string> SplitPath(QString file_path);
 
+	// 保存整个bodies list（保存到单个文件中）
+	void SaveModifiedBodies(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
+
+	// 保存bodies list中的各个body（分开保存到各个文件中）
+	void SaveModifiedBodiesRespectly(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
 
 } // namespace Utils

@@ -160,19 +160,31 @@ void TopologyOptWidget::setup_actions ()
 */
 void TopologyOptWidget::on_open_file (QString file_path)
 {
+	/*
+		[选项开关]
+	*/
+	bool option_marknum_init = true;
+	bool option_marknum_showedgemark = false;
+
+	bool option_solve_nonmanifold = false;
+	bool option_solve_stitch = false;
+	bool option_solve_stitch_for_each_bodies = false;
+
+	bool option_exp1 = false;
+	bool option_exp2 = false;
+	bool option_exp3 = false;
+
+	bool option_construct = false;
+
+	bool option_save_bodies = false;
+	bool option_save_bodies_respectly = true;
+	/*
+		[选项开关] 结束
+	*/
+
 	api_start_modeller(0);
 	
 	FILE *f = fopen(file_path.toAscii().data(), "r");
-
-	// 文件路径预处理
-	//DEBUGINFO printf("file_path: %s\n", file_path.toAscii().data());
-	LOG_INFO("file_path: %s", file_path.toAscii().data());
-
-	auto split_path_tuple = Utils::SplitPath(file_path);
-
-	std::string path = std::get<0>(split_path_tuple);
-	std::string file_name_first = std::get<1>(split_path_tuple);
-	std::string file_name_second = std::get<2>(split_path_tuple);
 
 	ENTITY_LIST bodies;
 	if (!f) {
@@ -182,72 +194,70 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	api_restore_entity_list(f, TRUE, bodies);
 	fclose(f);
 
-	// 调用计数init 
-	MarkNum::Init(bodies);
+	// 文件路径预处理
+	LOG_INFO("file_path: %s", file_path.toAscii().data());
+	auto split_path_tuple = Utils::SplitPath(file_path);
 
-	//hoopsview->set_cam(1.0, 1.0, 0.0, 0.0, 0.0, 10.0); // 对于渲染标记之类的没用？？
+	// 调用计数init 
+	if (option_marknum_init) {
+		MarkNum::Init(bodies);
+	}
 
 	// （性能开销大）标记每个边的EDGE编号
 	// 注意：这个在load较大的模型的时候会非常慢，大模型慎用
-	//MarkNum::ShowEdgeMark(hoopsview);
+	if (option_marknum_showedgemark) {
+		MarkNum::ShowEdgeMark(hoopsview);
+	}
 
 	// 选择一个要解决的问题
-	//NonManifold::Init(bodies); // A_ent(2).sat, cyl3
-	//Stitch::Init(bodies); //B_single.sat -> B_single_mod.sat
+	if (option_solve_nonmanifold) {
+		NonManifold::Init(bodies); // A_ent(2).sat, cyl3
+	}
 
-	//GeometryExperiment2::Init(bodies);
-	//GeometryExperiment2::ShowBadLoopEdgeMark(hoopsview);
+	if (option_solve_stitch_for_each_bodies) {
+		Stitch::Init(bodies); //B_single.sat -> B_single_mod.sat
+	}
 
-	Exp3::Init(static_cast<BODY*>(bodies[0]));
+	if (option_solve_stitch_for_each_bodies)
+	{
+		GeometryExperiment::Init(bodies, hoopsview);
+		bool stitch_call_fix = false;
+		for (int i = 0; i < bodies.count(); i++) { // 对每个零件单独执行
+			// 备注：如果卡死的话试一下看是不是api_construct……之类的问题
+			ENTITY* ibody = bodies[i];
+			ENTITY_LIST ibody_list;
+			ibody_list.add(ibody);
+	
+			LOG_INFO("Stitching for body: [%d]", i);
+	
+			Stitch::Init(ibody_list, stitch_call_fix);
+	
+			Stitch::Clear();
+	
+			// 保存看看（TODO：这部分替换个形式，现在不在这里面直接存名字了）
+			//std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_directBody_" + std::to_string(static_cast<long long>(i)) + "." + file_name_second;
+			//Utils::SaveToSAT(QString(file_path_string_to_be_saved.c_str()), ibody_list);
+	
+			//LOG_INFO("SAT saved: %s", file_path_string_to_be_saved.c_str());
+		}
+	}
 
-	//GeometryExperiment::Init(bodies, hoopsview);
-//	bool stitch_call_fix = false;
-//	for (int i = 0; i < bodies.count(); i++) { // 对每个零件单独执行
-//		// 备注：如果卡死的话试一下看是不是api_construct……之类的问题
-//		ENTITY* ibody = bodies[i];
-//		ENTITY_LIST ibody_list;
-//		ibody_list.add(ibody);
-//
-//		LOG_INFO("Stitching for body: [%d]", i);
-//
-//		Stitch::Init(ibody_list, stitch_call_fix);
-//
-//		Stitch::Clear();
-//
-//		// 保存看看
-//		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_directBody_" + std::to_string(static_cast<long long>(i)) + "." + file_name_second;
-//		Utils::SaveToSAT(QString(file_path_string_to_be_saved.c_str()), ibody_list);
-//
-//		LOG_INFO("SAT saved: %s", file_path_string_to_be_saved.c_str());
-//
-//		
-//	}
+	/* 实验 */
+	if (option_exp1){
 
-	// 看上去没啥用
-	//api_initialize_euler_ops();
+	}
 
-	//int nbody;
-	//BODY** separate_bodylist;
-	//api_separate_body(dynamic_cast<BODY*>(bodies[0]), nbody, separate_bodylist);
+	if (option_exp2) {
+		GeometryExperiment2::Init(bodies);
+		GeometryExperiment2::ShowBadLoopEdgeMark(hoopsview);
+	}
 
-	//auto save_separate_bodylist = [&]()
-	//{
-	//	for (int i = 0; i < nbody; i++)
-	//	{
-	//		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_separate_body_" + std::to_string(static_cast<long long>(i)) + "." + file_name_second;
-
-	//		Utils::SaveToSATBody(QString((file_path_string_to_be_saved).c_str()), separate_bodylist[i]);
-	//		LOG_INFO("Separate Body Saved: %s", file_path_string_to_be_saved.c_str());
-	//	}
-	//};
-
-	//api_terminate_euler_ops();
-	//save_separate_bodylist();
-
+	if (option_exp3)
+	{
+		Exp3::Init(static_cast<BODY*>(bodies[0]));
+	}
 
 	// 控制渲染内容
-	
-
 	for (int i = 0; i < bodies.count(); i++) {
 		hoopsview->show_body_edges(bodies[i]);
 		hoopsview->show_body_faces(bodies[i]);
@@ -260,36 +270,23 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	hoopsview->render_point_position(SPAposition(0.0, 0.0, 1.0));
 
 	// Construct my model
-	//ConstructModel::Test4();
+	if (option_construct)
+	{
+		ConstructModel::Test4();
+	}
 
-	// 保存文件（经常需要修改的部分）	
-
-	auto save_mod_file = [&]() {
-
-		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_mod." + file_name_second;
-
-		Utils::SaveToSAT(QString((file_path_string_to_be_saved).c_str()), bodies);
-
-		LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
-	};
-
-	save_mod_file(); 
+	// 保存整个bodies
+	if (option_save_bodies)
+	{
+		Utils::SaveModifiedBodies(split_path_tuple, bodies);
+	}
 
 	// （240408）保存bodies list中的各个body
-	auto save_mod_bodies_to_file = [&]() {
-
-		for (int i = 0; i < bodies.count(); i++)
-		{
-			std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_mod_body_" + std::to_string(static_cast<long long>(i)) + "." + file_name_second;
-
-			Utils::SaveToSATBody(QString(file_path_string_to_be_saved.c_str()), dynamic_cast<BODY*>(bodies[i]));
-
-			LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
-		}
-	};
-
-	//save_mod_bodies_to_file();
-
+	//Utils::SaveModifiedBodies(split_path_tuple, bodies);
+	if (option_save_bodies_respectly)
+	{
+		Utils::SaveModifiedBodiesRespectly(split_path_tuple, bodies);
+	}
 
 	// 不能在文件保存之前调用此api_stop_modeller
 	api_stop_modeller();

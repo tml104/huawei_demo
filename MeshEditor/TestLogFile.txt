@@ -1,24 +1,284 @@
-[2024-6-28 17:17:59][PID: 23084][TID: 5208][INFO ][FILE: topologyoptwidge.cpp][TopologyOptWidget::on_open_file:  169] file_path: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-06/C_ent(1)_mod_body_0.sat
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  120] marknum_time_cost: 0.01400 sec
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  123] body count:	1
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: topologyoptwidge.cpp][TopologyOptWidget::on_open_file:  198] file_path: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23.sat
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  120] marknum_time_cost: 0.08500 sec
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  123] body count:	132
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  124] lump count:	1
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  124] lump count:	154
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  125] shell count:	1
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  125] shell count:	166
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  126] wire count:	0
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  126] wire count:	0
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  127] face count:	2488
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  127] face count:	10118
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  128] edge count:	7868
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  128] edge count:	34799
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  129] coedge count:	15647
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  129] coedge count:	62515
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  130] vertex count:	5055
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  130] vertex count:	24972
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  131] loop count:	2748
+[2024-7-1 19:42:10][PID: 28128][TID: 21628][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  131] loop count:	11104
 
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: Experiment240621.cpp][Exp3::GetEdgesLowHigh:   49] low point: (-30.07000, 46.76991, -0.92073)
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: Experiment240621.cpp][Exp3::GetEdgesLowHigh:   50] high point: (-26.06000, 50.04500, 1.08073)
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
-[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: topologyoptwidge.cpp][`anonymous-namespace'::<lambda0>::operator ():  273] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-06/C_ent(1)_mod_body_0_mod.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_0.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_1.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_2.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_3.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_4.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_5.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_6.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_7.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_8.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_9.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_10.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_11.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_12.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_13.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_14.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_15.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_16.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_17.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_18.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_19.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_20.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_21.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_22.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_23.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_24.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_25.sat
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:23][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_26.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_27.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_28.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_29.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_30.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_31.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_32.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_33.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_34.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_35.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_36.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_37.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_38.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_39.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_40.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_41.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_42.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_43.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_44.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_45.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_46.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_47.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_48.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_49.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_50.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_51.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_52.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_53.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_54.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_55.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_56.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_57.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_58.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_59.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_60.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_61.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_62.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_63.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_64.sat
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:24][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_65.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_66.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_67.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_68.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_69.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_70.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_71.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_72.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_73.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_74.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_75.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_76.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_77.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_78.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_79.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_80.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_81.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_82.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_83.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_84.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_85.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_86.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_87.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_88.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_89.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_90.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_91.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_92.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_93.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_94.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_95.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_96.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_97.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_98.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_99.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_100.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_101.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_102.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_103.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_104.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_105.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_106.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_107.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_108.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_109.sat
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:25][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_110.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_111.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_112.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_113.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_114.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_115.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_116.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_117.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_118.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_119.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_120.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_121.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_122.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_123.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_124.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_125.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_126.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_127.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_128.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_129.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_130.sat
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-7-1 19:42:26][PID: 28128][TID: 21628][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  162] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-07/a23_mod_body_131.sat
