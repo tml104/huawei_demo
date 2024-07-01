@@ -14,6 +14,9 @@
 #include <shell.hxx>
 #include <split_api.hxx>
 #include <kernapi.hxx>
+
+#include <eulerapi.hxx>
+
 #include <io.h>
 #include <time.h>
 #include <fstream>
@@ -45,6 +48,8 @@ using namespace Ohm_slice;
 
 #include "ConstructModel.h"
 #include "GeometryExperiment.h"
+#include "GeometryExperiment2.h"
+#include "Experiment240621.h"
 
 #include "logger44/CoreOld.h"
 
@@ -180,6 +185,8 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	// 调用计数init 
 	MarkNum::Init(bodies);
 
+	//hoopsview->set_cam(1.0, 1.0, 0.0, 0.0, 0.0, 10.0); // 对于渲染标记之类的没用？？
+
 	// （性能开销大）标记每个边的EDGE编号
 	// 注意：这个在load较大的模型的时候会非常慢，大模型慎用
 	//MarkNum::ShowEdgeMark(hoopsview);
@@ -187,6 +194,11 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	// 选择一个要解决的问题
 	//NonManifold::Init(bodies); // A_ent(2).sat, cyl3
 	//Stitch::Init(bodies); //B_single.sat -> B_single_mod.sat
+
+	//GeometryExperiment2::Init(bodies);
+	//GeometryExperiment2::ShowBadLoopEdgeMark(hoopsview);
+
+	Exp3::Init(static_cast<BODY*>(bodies[0]));
 
 	//GeometryExperiment::Init(bodies, hoopsview);
 //	bool stitch_call_fix = false;
@@ -211,8 +223,31 @@ void TopologyOptWidget::on_open_file (QString file_path)
 //		
 //	}
 
+	// 看上去没啥用
+	//api_initialize_euler_ops();
+
+	//int nbody;
+	//BODY** separate_bodylist;
+	//api_separate_body(dynamic_cast<BODY*>(bodies[0]), nbody, separate_bodylist);
+
+	//auto save_separate_bodylist = [&]()
+	//{
+	//	for (int i = 0; i < nbody; i++)
+	//	{
+	//		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_separate_body_" + std::to_string(static_cast<long long>(i)) + "." + file_name_second;
+
+	//		Utils::SaveToSATBody(QString((file_path_string_to_be_saved).c_str()), separate_bodylist[i]);
+	//		LOG_INFO("Separate Body Saved: %s", file_path_string_to_be_saved.c_str());
+	//	}
+	//};
+
+	//api_terminate_euler_ops();
+	//save_separate_bodylist();
+
 
 	// 控制渲染内容
+	
+
 	for (int i = 0; i < bodies.count(); i++) {
 		hoopsview->show_body_edges(bodies[i]);
 		hoopsview->show_body_faces(bodies[i]);
@@ -235,10 +270,10 @@ void TopologyOptWidget::on_open_file (QString file_path)
 
 		Utils::SaveToSAT(QString((file_path_string_to_be_saved).c_str()), bodies);
 
-		LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved);
+		LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
 	};
 
-	//save_mod_file(); 
+	save_mod_file(); 
 
 	// （240408）保存bodies list中的各个body
 	auto save_mod_bodies_to_file = [&]() {
@@ -249,7 +284,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 
 			Utils::SaveToSATBody(QString(file_path_string_to_be_saved.c_str()), dynamic_cast<BODY*>(bodies[i]));
 
-			LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved);
+			LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
 		}
 	};
 

@@ -245,6 +245,12 @@
     <ClCompile Include="logger44\CoreOld.cpp">
       <Filter>logger44</Filter>
     </ClCompile>
+    <ClCompile Include="GeometryExperiment2.cpp">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Experiment240621.cpp">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -354,6 +360,12 @@
     </ClInclude>
     <ClInclude Include="logger44\CoreOld.h">
       <Filter>logger44</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryExperiment2.h">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment240621.h">
+      <Filter>topologyopt\FindProblem\Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1036,8 +1036,8 @@ void HoopsView::show_body_faces(ENTITY * ent)
 		HC_Set_Line_Weight(0.6);
 		HC_Set_Rendering_Options("transparency = (style = blended, hsra = none)");
 		HC_Set_Rendering_Options("depth range = ( 0, 0.1)");
-		HC_Set_Color("faces = (transmission = (r=0.0 g=0.0 b=0.0), diffuse = cyan)");
-		HC_Set_Visibility("markers = off, lines = off");
+		HC_Set_Color("faces = (transmission = (r=0.7 g=0.7 b=0.7), diffuse = cyan)");
+		HC_Set_Visibility("markers = off, lines = on");
 
 		for (int i = 0; i < faces.count(); ++i)
 		{

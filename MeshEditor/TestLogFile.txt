@@ -1,20 +1,24 @@
-[2024-6-6 16:35:37][PID: 12740][TID: 9416][INFO ][FILE: topologyoptwidge.cpp][TopologyOptWidget::on_open_file:  164] file_path: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-04/C_ent(1).sat
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  120] marknum_time_cost: 0.01800 sec
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  123] body count:	6
+[2024-6-28 17:17:59][PID: 23084][TID: 5208][INFO ][FILE: topologyoptwidge.cpp][TopologyOptWidget::on_open_file:  169] file_path: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-06/C_ent(1)_mod_body_0.sat
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  120] marknum_time_cost: 0.01400 sec
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  123] body count:	1
 
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  124] lump count:	6
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  124] lump count:	1
 
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  125] shell count:	6
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  125] shell count:	1
 
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  126] wire count:	0
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  126] wire count:	0
 
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  127] face count:	3144
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  127] face count:	2488
 
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  128] edge count:	9904
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  128] edge count:	7868
 
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  129] coedge count:	19645
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  129] coedge count:	15647
 
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  130] vertex count:	6385
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  130] vertex count:	5055
 
-[2024-6-6 16:35:38][PID: 12740][TID: 9416][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  131] loop count:	3457
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  131] loop count:	2748
 
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: Experiment240621.cpp][Exp3::GetEdgesLowHigh:   49] low point: (-30.07000, 46.76991, -0.92073)
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: Experiment240621.cpp][Exp3::GetEdgesLowHigh:   50] high point: (-26.06000, 50.04500, 1.08073)
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  107] file saved.
+[2024-6-28 17:18:0][PID: 23084][TID: 5208][INFO ][FILE: topologyoptwidge.cpp][`anonymous-namespace'::<lambda0>::operator ():  273] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-06/C_ent(1)_mod_body_0_mod.sat

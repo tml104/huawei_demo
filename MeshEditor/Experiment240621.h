@@ -1,5 +1,11 @@
 #pragma once
 
+// QT include
+#include <QFileDialog>
+#include <QFile>
+#include <QFileInfo>
+#include <QDockWidget>
+
 // ACIS include
 #include <boolapi.hxx>
 #include <curextnd.hxx>
@@ -42,34 +48,58 @@
 #include <geom_utl.hxx>
 #include <body.hxx>
 #include <point.hxx>
-#include <ckoutcom.hxx>
 
-#include <kernapi.hxx>
-#include <io.h>
-#include <time.h>
-#include <fstream>
-#include <tuple>
-//#include "test.h" // ? 去掉这个就找不到 copyedge 里面应该会用到的 check_outcome 了
-#include <fileinfo.hxx>
-#include <stchapi.hxx>
+// Project include
+#include "test.h"
+#include "json/json.h"
+#include "FileManagement.h"
+#include "ohmConnection.h"
+#include "pixel.h"
+#include "GetPatchType.h"
+#include "JsonHandle.h"
+#include "GeometricFill.h"
+#include "setAttr.h"
 
 #include "logger44/CoreOld.h"
 #include "MarkNum.h"
+#include "MyConstant.h"
+#include "UtilityFunctions.h"
+#include "GeometryExperiment.h"
 
-namespace Utils {
-	int CoedgeCount(EDGE* iedge);
-	int PartnerCount(COEDGE* icoedge);
-	int LoopLength(LOOP* lp);
-	std::vector<COEDGE*> CoedgeOfEdge(EDGE* iedge);
-	EDGE* CopyEdge(EDGE* in_edge);
+// STL
+#include <io.h>
+#include <time.h>
+#include <fstream>
+#include <set>
+#include <map>
+#include <vector>
+#include <algorithm>
+#include <functional>
+#include <string>
+#include <ctime>
+#include <cmath>
 
-	// 保存entity_list到对应路径
-	void SaveToSAT(QString file_path, ENTITY_LIST &bodies);
-	// 保存单个body到对应路径
-	void SaveToSATBody(QString file_path, BODY* body);
+#ifdef USE_HOOPSVIEW
+#include "hoopsview.h"
+#endif
 
-	// 给定路径，将其分离为三元组：（基本路径，文件名，文件扩展名）
-	std::tuple<std::string, std::string, std::string> SplitPath(QString file_path);
+namespace Exp3 {
 
+	/*
+		1:
+	*/
+	std::pair<SPAposition, SPAposition> GetEdgesLowHigh(BODY* blank);
 
-} // namespace Utils
+	/*
+		2:
+	*/
+	BODY* MakeTool(std::pair<SPAposition, SPAposition> LH);
+
+	/*
+		3: 
+	*/
+	void DoCut(BODY* tool, BODY* blank);
+
+	void Init(BODY* blank);
+
+} // namespace Exp3

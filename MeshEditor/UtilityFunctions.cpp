@@ -36,6 +36,25 @@ int Utils::PartnerCount(COEDGE * icoedge_init)
 	return cnt;
 }
 
+int Utils::LoopLength(LOOP * lp)
+{
+	COEDGE* icoedge = lp->start();
+	int length = 0;
+	do {
+		if (icoedge == nullptr)
+		{
+			LOG_ERROR("icoedge == nullptr");
+			return -1;
+		}
+
+		++length;
+
+		icoedge = icoedge->next();
+	} while (icoedge && icoedge!=lp->start());
+
+	return length;
+}
+
 std::vector<COEDGE*> Utils::CoedgeOfEdge(EDGE * iedge)
 {
 	std::vector<COEDGE*> coedge_vec;

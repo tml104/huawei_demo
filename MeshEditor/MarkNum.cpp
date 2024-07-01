@@ -222,6 +222,61 @@ void MarkNum::ShowEdgeMark(HoopsView* hv)
 		}
 	}
 }
+
+void MarkNum::ShowEdgeMark(HoopsView* hv, std::set<int>& show_edge_marknum_set)
+{
+	if (hv == nullptr) {
+		throw std::invalid_argument("hv is nullptr.");
+	}
+
+	auto get_mid_point = [&](SPAposition const &a, SPAposition const &b) {
+		return SPAposition(
+			(a.x() + b.x()) / 2,
+			(a.y() + b.y()) / 2,
+			(a.z() + b.z()) / 2
+		);
+	};
+
+	std::vector<SPAposition> avoid_text_collision_position_vec;
+	const double avoid_text_collision_thereshold = 0.0001;
+
+	for (auto& it = MarkNum::Singleton::marknum_map.begin(); it != MarkNum::Singleton::marknum_map.end(); it++)
+	{
+		auto& key_pointer = it->first;
+
+		auto &mark_pair = it->second;
+		auto &type = mark_pair.first;
+		auto &mark_num = mark_pair.second;
+
+		auto mark_num_str = std::to_string(static_cast<long long>(mark_num));
+
+		if (type == "edge" && show_edge_marknum_set.count(mark_num)) {
+			EDGE* edge_key_pointer = dynamic_cast<EDGE*>(key_pointer);
+
+			SPAposition start_vertex_coords = edge_key_pointer->start()->geometry()->coords();
+			SPAposition end_vertex_coords = edge_key_pointer->end()->geometry()->coords();
+			SPAposition mid_vertex_coords = get_mid_point(start_vertex_coords, end_vertex_coords);
+
+			// 在中间点坐标处渲染
+			// 暂时用一个粗暴的，基于n^2遍历的防碰撞机制（反正我只是为了调试的时候不让编号挤到一坨用的）
+
+			for (int i = 0; i < avoid_text_collision_position_vec.size(); i++) {
+				if (
+					abs(avoid_text_collision_position_vec[i].x() - mid_vertex_coords.x()) < avoid_text_collision_thereshold
+					&& abs(avoid_text_collision_position_vec[i].y() - mid_vertex_coords.y()) < avoid_text_collision_thereshold
+					&& abs(avoid_text_collision_position_vec[i].z() - mid_vertex_coords.z()) < avoid_text_collision_thereshold
+					) {
+					mid_vertex_coords.z() += 0.01;
+				}
+			}
+
+			hv->render_text(mid_vertex_coords, &mark_num_str[0]);
+
+			avoid_text_collision_position_vec.emplace_back(mid_vertex_coords);
+		}
+	}
+}
+
 #endif
 
 void MarkNum::Clear()

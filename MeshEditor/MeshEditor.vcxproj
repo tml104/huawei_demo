@@ -175,6 +175,7 @@
     <ClCompile Include="binarySearch.cpp" />
     <ClCompile Include="ConnectedComponentSplitExperiment.cpp" />
     <ClCompile Include="ConstructModel.cpp" />
+    <ClCompile Include="Experiment240621.cpp" />
     <ClCompile Include="filecontrolwidget.cpp" />
     <ClCompile Include="FileManagement.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_topologyoptwidget.cpp">
@@ -187,6 +188,7 @@
     </ClCompile>
     <ClCompile Include="GeometricFill.cpp" />
     <ClCompile Include="GeometryExperiment.cpp" />
+    <ClCompile Include="GeometryExperiment2.cpp" />
     <ClCompile Include="getInfo.cpp" />
     <ClCompile Include="GetPatchType.cpp" />
     <ClCompile Include="getPoint.cpp" />
@@ -308,10 +310,12 @@
     <ClInclude Include="ConnectedComponentSplitExperiment.h" />
     <ClInclude Include="ConstructModel.h" />
     <ClInclude Include="Endpoint.h" />
+    <ClInclude Include="Experiment240621.h" />
     <ClInclude Include="FileManagement.h" />
     <ClInclude Include="GeneratedFiles\ui_topologyoptwidget.h" />
     <ClInclude Include="GeometricFill.h" />
     <ClInclude Include="GeometryExperiment.h" />
+    <ClInclude Include="GeometryExperiment2.h" />
     <ClInclude Include="GetPatchType.h" />
     <ClInclude Include="Interval.h" />
     <ClInclude Include="jsoncpp-src-0.5.0\include\json\json.h" />
@@ -486,6 +490,7 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <SubType>Designer</SubType>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -591,6 +596,7 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <SubType>Designer</SubType>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>

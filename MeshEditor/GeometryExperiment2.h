@@ -1,9 +1,10 @@
 #pragma once
 
-//#include <QFileDialog>
-//#include <QFile>
-//#include <QFileInfo>
-//#include <QDockWidget>
+// QT include
+#include <QFileDialog>
+#include <QFile>
+#include <QFileInfo>
+#include <QDockWidget>
 
 // ACIS include
 #include <boolapi.hxx>
@@ -47,68 +48,60 @@
 #include <geom_utl.hxx>
 #include <body.hxx>
 #include <point.hxx>
-#include <ckoutcom.hxx>
 
-//#include "json/json.h"
-//#include "FileManagement.h"
-//#include "ohmConnection.h"
-//#include "pixel.h"
-//#include "GetPatchType.h"
-//#include "JsonHandle.h"
-//#include "GeometricFill.h"
-//#include "setAttr.h"
+// Project include
+#include "test.h"
+#include "json/json.h"
+#include "FileManagement.h"
+#include "ohmConnection.h"
+#include "pixel.h"
+#include "GetPatchType.h"
+#include "JsonHandle.h"
+#include "GeometricFill.h"
+#include "setAttr.h"
 
-#include "UtilityFunctions.h"
 #include "logger44/CoreOld.h"
+#include "MarkNum.h"
+#include "MyConstant.h"
+#include "UtilityFunctions.h"
+#include "GeometryExperiment.h"
 
+// STL
+#include <io.h>
+#include <time.h>
+#include <fstream>
 #include <set>
 #include <map>
+#include <vector>
 #include <algorithm>
 #include <functional>
 #include <string>
 #include <ctime>
-#include <cstdio>
-#include <cstring>
-
-#ifndef USE_HOOPSVIEW
-#define USE_HOOPSVIEW
-#endif
+#include <cmath>
 
 #ifdef USE_HOOPSVIEW
 #include "hoopsview.h"
 #endif
 
-namespace MarkNum {
-	struct Singleton {
-		static std::map<ENTITY*, std::pair<std::string, int>> marknum_map;
+/*
+	对于C_ent(1)_body_0中的特殊例子的环的特判
+*/
 
-		static int marknum_body;
-		static int marknum_lump;
-		static int marknum_shell;
-		static int marknum_wire;
-		static int marknum_face;
-		static int marknum_loop;
-		static int marknum_coedge;
-		static int marknum_edge;
-		static int marknum_vertex;
+namespace GeometryExperiment2 {
+
+	struct Singleton {
+		static std::vector<LOOP*> GeometryExperiment2::Singleton::bad_loop_vec;
 	};
 
-	void Init(ENTITY_LIST & bodies);
+	void GeometryExperiment2(ENTITY_LIST & bodies);
 
-	int GetId( ENTITY*const & ptr);
-	std::string GetTypeName(ENTITY*const & ptr);
+	void PrintBadLoopVec();
 
 #ifdef USE_HOOPSVIEW
-	void ShowEdgeMark(HoopsView* hv);
-
-	void ShowEdgeMark(HoopsView* hv, std::set<int>& show_edge_marknum_set);
+	void ShowBadLoopEdgeMark(HoopsView* hv);
 #endif
 
 	void Clear();
 
-	namespace Debug {
-		// 打印整个map的所有指针信息
-		void PrintMap();
-	}
-
-} //namespace MarkNum
+	void Init(ENTITY_LIST &bodies);
+}
