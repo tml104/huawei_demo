@@ -185,6 +185,20 @@ void MarkNum::ShowEdgeMark(HoopsView* hv)
 
 	std::vector<SPAposition> avoid_text_collision_position_vec;
 	const double avoid_text_collision_thereshold = 0.0001;
+	const double avoid_text_collision_move_distance = 0.01;
+	auto check_text_collision = [&](const SPAposition& mid_pos) -> bool {
+		for (int i = 0; i < avoid_text_collision_position_vec.size(); i++) {
+			if (std::abs(mid_pos.x() - avoid_text_collision_position_vec[i].x()) < avoid_text_collision_thereshold &&
+				std::abs(mid_pos.y() - avoid_text_collision_position_vec[i].y()) < avoid_text_collision_thereshold &&
+				std::abs(mid_pos.z() - avoid_text_collision_position_vec[i].z()) < avoid_text_collision_thereshold
+				) {
+				return true;
+			}
+		}
+
+		return false;
+	};
+	
 
 	for (auto& it = MarkNum::Singleton::marknum_map.begin(); it != MarkNum::Singleton::marknum_map.end(); it++)
 	{
@@ -203,20 +217,27 @@ void MarkNum::ShowEdgeMark(HoopsView* hv)
 			SPAposition end_vertex_coords = edge_key_pointer->end()->geometry()->coords();
 			SPAposition mid_vertex_coords = get_mid_point(start_vertex_coords, end_vertex_coords);
 
+			LOG_DEBUG("edge: %d, st: (%.5lf, %.5lf, %.5lf), ed: (%.5lf, %.5lf, %.5lf), mid: (%.5lf, %.5lf, %.5lf)",
+				mark_num,
+				start_vertex_coords.x(),
+				start_vertex_coords.y(),
+				start_vertex_coords.z(),
+				end_vertex_coords.x(),
+				end_vertex_coords.y(),
+				end_vertex_coords.z(),
+				mid_vertex_coords.x(),
+				mid_vertex_coords.y(),
+				mid_vertex_coords.z()
+			);
+
 			// 在中间点坐标处渲染
 			// 暂时用一个粗暴的，基于n^2遍历的防碰撞机制（反正我只是为了调试的时候不让编号挤到一坨用的）
 
-			for (int i = 0; i < avoid_text_collision_position_vec.size(); i++) {
-				if (
-					abs(avoid_text_collision_position_vec[i].x() - mid_vertex_coords.x()) < avoid_text_collision_thereshold
-					&& abs(avoid_text_collision_position_vec[i].y() - mid_vertex_coords.y()) < avoid_text_collision_thereshold
-					&& abs(avoid_text_collision_position_vec[i].z() - mid_vertex_coords.z()) < avoid_text_collision_thereshold
-				) {
-					mid_vertex_coords.z() += 0.01;
-				}
+			if (check_text_collision(mid_vertex_coords)) {
+				mid_vertex_coords.z() += 0.01;
 			}
 
-			hv->render_text(mid_vertex_coords, &mark_num_str[0]);
+			hv->render_text(mid_vertex_coords, &mark_num_str[0], "blue");
 
 			avoid_text_collision_position_vec.emplace_back(mid_vertex_coords);
 		}
@@ -270,9 +291,82 @@ void MarkNum::ShowEdgeMark(HoopsView* hv, std::set<int>& show_edge_marknum_set)
 				}
 			}
 
-			hv->render_text(mid_vertex_coords, &mark_num_str[0]);
+			hv->render_text(mid_vertex_coords, &mark_num_str[0], "blue");
 
 			avoid_text_collision_position_vec.emplace_back(mid_vertex_coords);
+		}
+	}
+}
+
+void MarkNum::ShowFaceMark(HoopsView* hv) {
+	if (hv == nullptr) {
+		throw std::invalid_argument("hv is nullptr.");
+	}
+
+	std::vector<SPAposition> avoid_text_collision_position_vec;
+	const double avoid_text_collision_thereshold = 0.0001;
+	const double avoid_text_collision_move_distance = 0.01;
+	auto check_text_collision = [&](const SPAposition& mid_pos) -> bool {
+		for (int i = 0; i < avoid_text_collision_position_vec.size(); i++) {
+			if (std::abs(mid_pos.x() - avoid_text_collision_position_vec[i].x())< avoid_text_collision_thereshold &&
+				std::abs(mid_pos.y() - avoid_text_collision_position_vec[i].y())< avoid_text_collision_thereshold &&
+				std::abs(mid_pos.z() - avoid_text_collision_position_vec[i].z()) < avoid_text_collision_thereshold
+			) {
+				return true;
+			}
+		}
+
+		return false;
+	};
+
+	for (auto& it = MarkNum::Singleton::marknum_map.begin(); it != MarkNum::Singleton::marknum_map.end(); it++)
+	{
+		auto& key_pointer = it->first;
+
+		auto &mark_pair = it->second;
+		auto &type = mark_pair.first;
+		auto &mark_num = mark_pair.second;
+
+		auto mark_num_str = std::to_string(static_cast<long long>(mark_num));
+
+		if (type == "face") {
+			FACE* face_key_pointer = dynamic_cast<FACE*>(key_pointer);
+
+			SURFACE* face_surface = face_key_pointer->geometry();
+			const char* face_surface_type = face_surface->type_name();
+
+			// CONE
+			if (strcmp(face_surface_type, "cone") == 0 ) {
+				CONE* face_surface_cone = dynamic_cast<CONE*>(face_surface);
+
+				SPAposition mid_pos = face_surface_cone->root_point();
+				if (check_text_collision(mid_pos)) {
+					mid_pos.z() += avoid_text_collision_move_distance;
+					LOG_DEBUG("face text collision: %d", mark_num);
+				}
+
+				mark_num_str = "c" + mark_num_str;
+				hv->render_text(mid_pos, &mark_num_str[0], "red");
+				LOG_DEBUG("face: %d, mid_pos: (%.5lf, %.5lf, %.5lf)", mark_num, mid_pos.x(), mid_pos.y(), mid_pos.z());
+
+				avoid_text_collision_position_vec.emplace_back(mid_pos);
+
+			} // PLANE
+			else if (strcmp(face_surface_type, "plane") == 0) {
+				//PLANE* face_surface_cone = dynamic_cast<PLANE*>(face_surface);
+
+				//SPAposition mid_pos = face_surface_cone->root_point();
+				//if (check_text_collision(mid_pos)) {
+				//	mid_pos.z() += avoid_text_collision_move_distance;
+				//	LOG_DEBUG("face text collision: %d", mark_num);
+				//}
+
+				//mark_num_str = "p" + mark_num_str;
+				//hv->render_text(mid_pos, &mark_num_str[0], "red");
+				//LOG_DEBUG("face: %d, mid_pos: (%.5lf, %.5lf, %.5lf)", mark_num, mid_pos.x(), mid_pos.y(), mid_pos.z());
+
+				//avoid_text_collision_position_vec.emplace_back(mid_pos);
+			}
 		}
 	}
 }

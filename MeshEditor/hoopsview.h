@@ -93,7 +93,7 @@ public:
 	void render_point(OvmVec3d point);
 
 	void render_point_position(SPAposition point);
-	void render_text(SPAposition point, char* str);
+	void render_text(SPAposition point, char* str, const std::string& color);
 
 	void render_streamline(OvmVec3d s, OvmVec3d d);
 	void render_streamline(OvmVec3d s, OvmVec3d d, int color);

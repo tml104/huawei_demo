@@ -251,6 +251,9 @@
     <ClCompile Include="Experiment240621.cpp">
       <Filter>topologyopt\FindProblem\Test</Filter>
     </ClCompile>
+    <ClCompile Include="GeometryUtils.cpp">
+      <Filter>topologyopt\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -366,6 +369,9 @@
     </ClInclude>
     <ClInclude Include="Experiment240621.h">
       <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryUtils.h">
+      <Filter>topologyopt\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

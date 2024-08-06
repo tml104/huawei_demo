@@ -892,7 +892,7 @@ void Stitch::MatchTree::ConstructTree(std::vector<Stitch::PoorCoedge>& poor_coed
 		return update_now_node(left_node, right_node, now_dim);
 	};
 
-	this->root = recursive_construct(poor_coedge_vec, 0, 0, poor_coedge_vec.size()-1);
+	this->root = recursive_construct(poor_coedge_vec, 0, 0, static_cast<int>(poor_coedge_vec.size())-1);
 }
 
 void Stitch::MatchTree::DeleteTree()

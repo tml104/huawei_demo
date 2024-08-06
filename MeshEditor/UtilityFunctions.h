@@ -65,8 +65,10 @@ namespace Utils {
 
 	// 保存entity_list到对应路径
 	void SaveToSAT(QString file_path, ENTITY_LIST &bodies);
+	void SaveToSAT(const std::string& file_path, ENTITY_LIST &bodies);
 	// 保存单个body到对应路径
 	void SaveToSATBody(QString file_path, BODY* body);
+	void SaveToSATBody(const std::string& file_path, BODY* body);
 
 	// 给定路径，将其分离为三元组：（基本路径，文件名，文件扩展名）
 	std::tuple<std::string, std::string, std::string> SplitPath(QString file_path);

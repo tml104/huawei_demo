@@ -48,6 +48,8 @@
 #include <geom_utl.hxx>
 #include <body.hxx>
 #include <point.hxx>
+#include <debug.hxx>
+#include <eulerapi.hxx>
 
 // Project include
 #include "test.h"
@@ -64,7 +66,6 @@
 #include "MarkNum.h"
 #include "MyConstant.h"
 #include "UtilityFunctions.h"
-#include "GeometryUtils.h"
 
 // STL
 #include <io.h>
@@ -79,23 +80,9 @@
 #include <ctime>
 #include <cmath>
 
-/*
-	时间：2024年3月8日 16:42:44
-	这个文件的主要目的就是做一些检查几何上的实验，后续如果要做求交之类的算法实验的话再说吧
-*/
+namespace GeometryUtils {
 
-namespace GeometryExperiment {
+	void PrintEdgeGeometry(EDGE* e);
+	void PrintFaceGeometry(FACE* f);
 
-	// 饥饿汉单例模式：潜在问题在于初始化顺序未定义
-	struct Singleton {
-		static std::set<EDGE*> GeometryExperiment::Singleton::bad_edge_set;
-	};
-
-	void UpdateBadCoedgeSet(ENTITY_LIST& bodies);
-
-	void TraverseLoops(LOOP* iloop, bool traverse_incident_loops, COEDGE* begin_coedge = nullptr);
-
-	void GeometryExperiment1(ENTITY_LIST & bodies, HoopsView* hv = nullptr);
-
-	void Init(ENTITY_LIST &bodies, HoopsView* hv = nullptr);
-}
+} // namespace GeometryUtils

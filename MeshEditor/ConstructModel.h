@@ -1,7 +1,10 @@
 #pragma once
 
-#include <stdio.h>
-#include <iostream>
+// QT include
+#include <QFileDialog>
+#include <QFile>
+#include <QFileInfo>
+#include <QDockWidget>
 
 // ACIS include
 #include <boolapi.hxx>
@@ -45,9 +48,11 @@
 #include <geom_utl.hxx>
 #include <body.hxx>
 #include <point.hxx>
-#include <ckoutcom.hxx>
 #include <debug.hxx>
+#include <eulerapi.hxx>
 
+// Project include
+#include "test.h"
 #include "json/json.h"
 #include "FileManagement.h"
 #include "ohmConnection.h"
@@ -57,14 +62,27 @@
 #include "GeometricFill.h"
 #include "setAttr.h"
 
+#include "logger44/CoreOld.h"
+#include "MarkNum.h"
+#include "MyConstant.h"
 #include "UtilityFunctions.h"
+#include "GeometryUtils.h"
 
+// STL
+#include <io.h>
+#include <time.h>
+#include <fstream>
 #include <set>
+#include <map>
+#include <vector>
 #include <algorithm>
 #include <functional>
+#include <string>
+#include <ctime>
+#include <cmath>
 
 
-namespace ConstructModel{
+namespace OldConstructModel{
 	
 	void Test1();
 
@@ -73,5 +91,29 @@ namespace ConstructModel{
 	void Test3();
 
 	void Test4();
+
+} // namespace OldConstructModel
+
+namespace ConstructModel {
+
+	class MyModelConstructor {
+	public:
+		MyModelConstructor(const std::string& rt_save_path) : rt_save_path(rt_save_path) {
+			api_initialize_constructors();
+			api_initialize_booleans();
+		};
+
+		~MyModelConstructor() {
+			api_terminate_booleans();
+			api_terminate_constructors();
+		}
+
+		BODY* Construct240708(const std::string& file_name);
+		BODY* Construct240710TotallyCoincident(const std::string& file_name);
+
+	private:
+		std::string rt_save_path;
+		void save_constructed_body(const std::string& file_name, BODY* body);
+	};
 
 } // namespace ConstructModel

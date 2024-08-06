@@ -102,6 +102,8 @@ namespace MarkNum {
 	void ShowEdgeMark(HoopsView* hv);
 
 	void ShowEdgeMark(HoopsView* hv, std::set<int>& show_edge_marknum_set);
+
+	void ShowFaceMark(HoopsView* hv);
 #endif
 
 	void Clear();

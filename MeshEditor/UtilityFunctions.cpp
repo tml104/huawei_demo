@@ -104,12 +104,17 @@ void Utils::SaveToSAT(QString file_path, ENTITY_LIST &bodies) {
 	FILE *fp = fopen(file_path.toAscii().data(), "w");
 	if (fp != NULL) {
 		api_save_entity_list(fp, TRUE, bodies);
-		LOG_INFO("file saved.");
+		LOG_INFO("file saved: %s", file_path.toAscii().data());
 	}
 	else {
 		LOG_ERROR("file open failed.");
 	}
 	fclose(fp);
+}
+
+void Utils::SaveToSAT(const std::string& file_path, ENTITY_LIST & bodies)
+{
+	Utils::SaveToSAT(QString(file_path.c_str()), bodies);
 }
 
 void Utils::SaveToSATBody(QString file_path, BODY * body) {
@@ -120,6 +125,11 @@ void Utils::SaveToSATBody(QString file_path, BODY * body) {
 		file_path,
 		save_list
 	);
+}
+
+void Utils::SaveToSATBody(const std::string& file_path, BODY * body)
+{
+	Utils::SaveToSATBody(QString(file_path.c_str()), body);
 }
 
 std::tuple<std::string, std::string, std::string> Utils::SplitPath(QString file_path)

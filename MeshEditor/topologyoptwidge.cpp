@@ -163,8 +163,11 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	/*
 		[选项开关]
 	*/
+	bool option_change_body_trans = true;
+
 	bool option_marknum_init = true;
 	bool option_marknum_showedgemark = false;
+	bool option_marknum_showfacemark = true;
 
 	bool option_solve_nonmanifold = false;
 	bool option_solve_stitch = false;
@@ -173,11 +176,14 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_exp1 = false;
 	bool option_exp2 = false;
 	bool option_exp3 = false;
+	bool option_exp4 = true;
+	//bool option_exp4_2 = true;
 
 	bool option_construct = false;
+	bool option_construct240710 = false;
 
 	bool option_save_bodies = false;
-	bool option_save_bodies_respectly = true;
+	bool option_save_bodies_respectly = false;
 	/*
 		[选项开关] 结束
 	*/
@@ -198,6 +204,16 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	LOG_INFO("file_path: %s", file_path.toAscii().data());
 	auto split_path_tuple = Utils::SplitPath(file_path);
 
+	// 变换物体
+	if (option_change_body_trans) {
+
+		for (int j = 0; j < bodies.count();j++) {
+			BODY* ibody = dynamic_cast<BODY*>(bodies[j]);
+			api_change_body_trans(ibody, nullptr);
+			LOG_INFO("api_change_body_trans for: bodies[%d]", j);
+		}
+	}
+
 	// 调用计数init 
 	if (option_marknum_init) {
 		MarkNum::Init(bodies);
@@ -207,6 +223,10 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	// 注意：这个在load较大的模型的时候会非常慢，大模型慎用
 	if (option_marknum_showedgemark) {
 		MarkNum::ShowEdgeMark(hoopsview);
+	}
+
+	if (option_marknum_showfacemark){
+		MarkNum::ShowFaceMark(hoopsview);
 	}
 
 	// 选择一个要解决的问题
@@ -257,6 +277,11 @@ void TopologyOptWidget::on_open_file (QString file_path)
 		Exp3::Init(static_cast<BODY*>(bodies[0]));
 	}
 
+	if (option_exp4) {
+		Exp4::Exp4 exp4(bodies);
+		exp4.StartExperiment();
+	}
+
 	// 控制渲染内容
 	for (int i = 0; i < bodies.count(); i++) {
 		hoopsview->show_body_edges(bodies[i]);
@@ -272,7 +297,13 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	// Construct my model
 	if (option_construct)
 	{
-		ConstructModel::Test4();
+		ConstructModel::MyModelConstructor my_model_constructor("C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2024-07\\two_blocks\\");
+		my_model_constructor.Construct240708("two_blocks_240710.sat");
+	}
+
+	if (option_construct240710) {
+		ConstructModel::MyModelConstructor my_model_constructor("C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2024-07\\two_blocks\\");
+		my_model_constructor.Construct240710TotallyCoincident("two_blocks_240710_totally_coincident.sat");
 	}
 
 	// 保存整个bodies
@@ -282,7 +313,6 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	}
 
 	// （240408）保存bodies list中的各个body
-	//Utils::SaveModifiedBodies(split_path_tuple, bodies);
 	if (option_save_bodies_respectly)
 	{
 		Utils::SaveModifiedBodiesRespectly(split_path_tuple, bodies);

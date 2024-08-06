@@ -1,5 +1,4 @@
 #include "StdAfx.h"
-#include "GeometryExperiment.h"
 #include "GeometryExperiment2.h"
 
 std::vector<LOOP*> GeometryExperiment2::Singleton::bad_loop_vec;
@@ -101,7 +100,7 @@ void GeometryExperiment2::PrintBadLoopVec()
 			EDGE* iedge = icoedge->edge();
 
 			LOG_DEBUG("icoedge in bad loop: %d, edge in bad loop: %d", MarkNum::GetId(icoedge), MarkNum::GetId(iedge));
-			GeometryExperiment::PrintEdgeGeometry(iedge);
+			GeometryUtils::PrintEdgeGeometry(iedge);
 
 			icoedge = icoedge->next();
 		} while (icoedge && icoedge != lp->start());

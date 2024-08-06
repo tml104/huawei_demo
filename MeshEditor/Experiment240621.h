@@ -64,7 +64,7 @@
 #include "MarkNum.h"
 #include "MyConstant.h"
 #include "UtilityFunctions.h"
-#include "GeometryExperiment.h"
+#include "GeometryUtils.h"
 
 // STL
 #include <io.h>
@@ -103,3 +103,30 @@ namespace Exp3 {
 	void Init(BODY* blank);
 
 } // namespace Exp3
+
+/*
+	2024年7月9日 15:27:17
+	实验4： 读入一个包含两个正方体的，输出各个面几何
+*/
+namespace Exp4 {
+
+	class Exp4 {
+	public:
+		Exp4(ENTITY_LIST& bodies): bodies_to_be_checked(bodies){}
+		~Exp4() {}
+
+		/*
+			1:
+		*/
+		void PrintFacesGeometry();
+
+		void FaceFaceIntersectionExperiment();
+		void FaceFaceIntersectionExperiment2();
+		void FaceFaceIntersectionExperiment3();
+		void FaceFaceIntersectionExperiment4();
+		void StartExperiment();
+	private:
+		ENTITY_LIST& bodies_to_be_checked;
+	};
+
+}// namespace Exp3

@@ -1265,11 +1265,12 @@ void HoopsView::render_point_position(SPAposition point)
 		m_pHView->Update();
 }
 
-void HoopsView::render_text(SPAposition point, char* str) {
+void HoopsView::render_text(SPAposition point, char* str, const std::string& color) {
 	OPEN_MESHES_SEG
 		HC_Open_Segment("just show2"); {
 		//HC_Set_Text_Size(0.3);
-		HC_Set_Color("text=blue");
+		//HC_Set_Color("text=blue");
+		HC_Set_Color(("text=" + color).c_str());
 		HC_Insert_Text(point.x(), point.y(), point.z(), str);
 	}HC_Close_Segment();
 	CLOSE_MESHES_SEG

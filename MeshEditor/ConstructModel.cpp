@@ -1,9 +1,9 @@
 #include "StdAfx.h"
 #include "ConstructModel.h"
 
-void ConstructModel::Test1()
+void OldConstructModel::Test1()
 {
-	api_start_modeller(0);
+	//api_start_modeller(0);
 	api_initialize_constructors();
 
 	BODY *block;
@@ -22,20 +22,20 @@ void ConstructModel::Test1()
 	ENTITY_LIST save_list;
 	save_list.add(block);
 
-	Utils::SaveToSAT(
-		"C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2023-08\\cube.sat",
-		save_list
-	);
+	//Utils::SaveToSAT(
+	//	"C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2023-08\\cube.sat",
+	//	save_list
+	//);
 
 	api_terminate_constructors();
-	api_stop_modeller();
+	//api_stop_modeller();
 
 	printf("[ConstructModel::Test1] Done \n");
 }
 
-void ConstructModel::Test2() {
+void OldConstructModel::Test2() {
 
-	api_start_modeller(0);
+	//api_start_modeller(0);
 	api_initialize_constructors();
 
 	BODY* hat;
@@ -56,19 +56,19 @@ void ConstructModel::Test2() {
 	printf("[ConstructModel::Test2] area: %f\n", area);
 
 	// save
-	Utils::SaveToSATBody(
-		"C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2023-08\\hat.sat",
-		hat
-	);
+	//Utils::SaveToSATBody(
+	//	"C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2023-08\\hat.sat",
+	//	hat
+	//);
 
 	api_terminate_constructors();
-	api_stop_modeller();
+	//api_stop_modeller();
 	printf("[ConstructModel::Test2] Done \n");
 
 }
 
-void ConstructModel::Test3() {
-	api_start_modeller(0);
+void OldConstructModel::Test3() {
+	//api_start_modeller(0);
 	api_initialize_constructors();
 	api_initialize_booleans();
 
@@ -81,20 +81,20 @@ void ConstructModel::Test3() {
 	api_apply_transf(cyl1, rotX);
 
 	api_intersect(cyl1, cyl2);
-	Utils::SaveToSATBody(
-		"C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2023-08\\rot_cyl.sat",
-		cyl2
-	);
+	//Utils::SaveToSATBody(
+	//	"C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2023-08\\rot_cyl.sat",
+	//	cyl2
+	//);
 
 	printf("[ConstructModel::Test3] Done \n");
 
 	api_terminate_constructors();
 	api_terminate_booleans();
-	api_stop_modeller();
+	//api_stop_modeller();
 }
 
-void ConstructModel::Test4() {
-	api_start_modeller(0);
+void OldConstructModel::Test4() {
+	//api_start_modeller(0);
 	api_initialize_constructors();
 	api_initialize_booleans();
 
@@ -114,14 +114,53 @@ void ConstructModel::Test4() {
 
 	api_subtract(cyl2, cyl1);
 	api_subtract(cyl3, cyl1);
-	Utils::SaveToSATBody(
-		"C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2023-08\\rot_cyl3.sat",
-		cyl1
-	);
+	//Utils::SaveToSATBody(
+	//	"C:\\Users\\AAA\\Documents\\WeChat Files\\wxid_4y4wts4jkg9h21\\FileStorage\\File\\2023-08\\rot_cyl3.sat",
+	//	cyl1
+	//);
 
 	printf("[ConstructModel::Test4] Done \n");
 
 	api_terminate_constructors();
 	api_terminate_booleans();
-	api_stop_modeller();
+	//api_stop_modeller();
+}
+
+/*
+	重叠立方体
+*/
+BODY* ConstructModel::MyModelConstructor::Construct240708(const std::string& file_name)
+{
+	BODY *block1, *block2;
+	api_make_cuboid(10.0, 10.0, 10.0, block1);
+	api_make_cuboid(10.0, 10.0, 10.0, block2);
+
+	// 变换block2
+	SPAtransf t2 = translate_transf(SPAvector(5.0, 5.0, 0.0));
+	api_apply_transf(block2, t2);
+
+	// eulerapi.hxx: api_combine_body
+	api_combine_body(block1, block2);
+
+	api_change_body_trans(block2, nullptr);
+
+	this->save_constructed_body(file_name, block2);
+	return block2;
+}
+
+BODY * ConstructModel::MyModelConstructor::Construct240710TotallyCoincident(const std::string & file_name)
+{
+	BODY *block1, *block2;
+	api_make_cuboid(10.0, 10.0, 10.0, block1);
+	api_make_cuboid(10.0, 10.0, 10.0, block2);
+
+	api_combine_body(block1, block2);
+
+	this->save_constructed_body(file_name, block2);
+	return block2;
+}
+
+void ConstructModel::MyModelConstructor::save_constructed_body(const std::string & file_name, BODY* body)
+{
+	Utils::SaveToSATBody(this->rt_save_path + file_name, body);
 }
