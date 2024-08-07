@@ -42,13 +42,13 @@ using namespace std;
 #include "setAttr.h"
 using namespace Ohm_slice;
 
-#include "NonManifold.h"
-#include "Stitch.h"
+#include "NonManifold2.h"
+#include "StitchGap.h"
 #include "MarkNum.h"
 
 #include "ConstructModel.h"
-#include "GeometryExperiment.h"
-#include "GeometryExperiment2.h"
+#include "Exp1.h"
+#include "Exp2.h"
 #include "Experiment240621.h"
 
 #include "logger44/CoreOld.h"
@@ -156,7 +156,6 @@ void TopologyOptWidget::setup_actions ()
 
 /*
 	接下来要修改的主要部分 BEGIN
-	TODO：（终极版）利用opengl渲染的自定义渲染模块
 */
 void TopologyOptWidget::on_open_file (QString file_path)
 {
@@ -176,7 +175,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_exp1 = false;
 	bool option_exp2 = false;
 	bool option_exp3 = false;
-	bool option_exp4 = true;
+	bool option_exp4 = false;
 	//bool option_exp4_2 = true;
 
 	bool option_construct = false;
@@ -231,16 +230,21 @@ void TopologyOptWidget::on_open_file (QString file_path)
 
 	// 选择一个要解决的问题
 	if (option_solve_nonmanifold) {
-		NonManifold::Init(bodies); // A_ent(2).sat, cyl3
+		// A_ent(2).sat, cyl3
+		NonManifold::NonManifoldFixer nonManifoldFixer;
+		nonManifoldFixer.Init(bodies);
 	}
 
 	if (option_solve_stitch_for_each_bodies) {
-		Stitch::Init(bodies); //B_single.sat -> B_single_mod.sat
+		//B_single.sat -> B_single_mod.sat
+		Stitch::StitchGapFixer stitchGapFixer;
+		stitchGapFixer.Init(bodies);
 	}
 
 	if (option_solve_stitch_for_each_bodies)
 	{
-		GeometryExperiment::Init(bodies, hoopsview);
+		Exp1::Exp1 exp1;
+		exp1.Init(bodies);
 		bool stitch_call_fix = false;
 		for (int i = 0; i < bodies.count(); i++) { // 对每个零件单独执行
 			// 备注：如果卡死的话试一下看是不是api_construct……之类的问题
@@ -250,37 +254,35 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	
 			LOG_INFO("Stitching for body: [%d]", i);
 	
-			Stitch::Init(ibody_list, stitch_call_fix);
+			Stitch::StitchGapFixer stitchGapFixer;
+			stitchGapFixer.Init(ibody_list, stitch_call_fix);
 	
-			Stitch::Clear();
-	
-			// 保存看看（TODO：这部分替换个形式，现在不在这里面直接存名字了）
-			//std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_directBody_" + std::to_string(static_cast<long long>(i)) + "." + file_name_second;
-			//Utils::SaveToSAT(QString(file_path_string_to_be_saved.c_str()), ibody_list);
-	
-			//LOG_INFO("SAT saved: %s", file_path_string_to_be_saved.c_str());
+			// 保存请使用选项：option_save_bodies_respectly
 		}
 	}
 
-	/* 实验 */
+	/* [实验] */
 	if (option_exp1){
-
+		// EXp1...
 	}
 
 	if (option_exp2) {
-		GeometryExperiment2::Init(bodies);
-		GeometryExperiment2::ShowBadLoopEdgeMark(hoopsview);
+		Exp2::Exp2 exp2;
+		exp2.Init(bodies);
+		exp2.ShowBadLoopEdgeMark(hoopsview);
 	}
 
 	if (option_exp3)
 	{
-		Exp3::Init(static_cast<BODY*>(bodies[0]));
+		Exp3::Exp3 exp3;
+		exp3.Init(static_cast<BODY*>(bodies[0]));
 	}
 
 	if (option_exp4) {
 		Exp4::Exp4 exp4(bodies);
 		exp4.StartExperiment();
 	}
+	/* [实验结束] */
 
 	// 控制渲染内容
 	for (int i = 0; i < bodies.count(); i++) {

@@ -1,12 +1,10 @@
 #include "StdAfx.h"
-#include "GeometryExperiment.h"
-
-std::set<EDGE*> GeometryExperiment::Singleton::bad_edge_set;
+#include "Exp1.h"
 
 /*
 	更新缺边集合（这个的逻辑类似于NonManifold::FindNonManifold）
 */
-void GeometryExperiment::UpdateBadCoedgeSet(ENTITY_LIST & bodies)
+void Exp1::Exp1::UpdateBadCoedgeSet(ENTITY_LIST & bodies)
 {
 	LOG_INFO("start.");
 
@@ -30,7 +28,7 @@ void GeometryExperiment::UpdateBadCoedgeSet(ENTITY_LIST & bodies)
 					coedge_count
 				);
 
-				GeometryExperiment::Singleton::bad_edge_set.insert(iedge);
+				bad_edge_set.insert(iedge);
 
 			}
 			else if (coedge_count > 2) { // 非流形（跳过）
@@ -48,7 +46,7 @@ void GeometryExperiment::UpdateBadCoedgeSet(ENTITY_LIST & bodies)
 /*
 	遍历iloop上所有边并依次输出边的几何信息（从给定的begin_coedge开始，如果不存在则直接从iloop->start()取）。如果traverse_incident_loops为true则会在稍后递归调用此函数，遍历相邻loop的信息。
 */
-void GeometryExperiment::TraverseLoops(LOOP * iloop, bool traverse_incident_loops, COEDGE* begin_coedge)
+void Exp1::Exp1::TraverseLoops(LOOP * iloop, bool traverse_incident_loops, COEDGE* begin_coedge)
 {
 	LOG_INFO("start.");
 
@@ -114,7 +112,7 @@ void GeometryExperiment::TraverseLoops(LOOP * iloop, bool traverse_incident_loop
 	// （先把这个去掉，否则信息过于杂乱）
 	//if (traverse_incident_loops) {
 	//	for (auto& incident_loop_it = incident_loops_vec.begin(); incident_loop_it != incident_loops_vec.end(); incident_loop_it++){
-	//		GeometryExperiment::TraverseLoops(*incident_loop_it, false); // 递归（但是接下来就不递归了）
+	//		TraverseLoops(*incident_loop_it, false); // 递归（但是接下来就不递归了）
 	//	}
 	//}
 
@@ -124,13 +122,13 @@ void GeometryExperiment::TraverseLoops(LOOP * iloop, bool traverse_incident_loop
 /*
 	实验流程
 */
-void GeometryExperiment::GeometryExperiment1(ENTITY_LIST & bodies, HoopsView* hv)
+void Exp1::Exp1::StartExperiment(ENTITY_LIST & bodies)
 {
 	LOG_INFO("start.");
 
 	UpdateBadCoedgeSet(bodies);
 
-	for (auto& bad_edge_it = GeometryExperiment::Singleton::bad_edge_set.begin(); bad_edge_it != GeometryExperiment::Singleton::bad_edge_set.end(); bad_edge_it++) {
+	for (auto& bad_edge_it = bad_edge_set.begin(); bad_edge_it != bad_edge_set.end(); bad_edge_it++) {
 		EDGE* iedge = (*bad_edge_it);
 		COEDGE* icoedge = iedge->coedge();
 		LOOP* iloop = icoedge->loop(); // 对坏边来说这个反正也只有一个吧
@@ -141,13 +139,13 @@ void GeometryExperiment::GeometryExperiment1(ENTITY_LIST & bodies, HoopsView* hv
 	LOG_INFO("end.");
 }
 
-void GeometryExperiment::Init(ENTITY_LIST & bodies, HoopsView* hv)
+void Exp1::Exp1::Init(ENTITY_LIST & bodies)
 {
 	api_initialize_constructors();
 	api_initialize_booleans();
 
 	// 实验1
-	GeometryExperiment::GeometryExperiment1(bodies);
+	StartExperiment(bodies);
 
 	api_terminate_constructors();
 	api_terminate_booleans();

@@ -1,9 +1,7 @@
 #include "StdAfx.h"
-#include "GeometryExperiment2.h"
+#include "Exp2.h"
 
-std::vector<LOOP*> GeometryExperiment2::Singleton::bad_loop_vec;
-
-void GeometryExperiment2::GeometryExperiment2(ENTITY_LIST & bodies)
+void Exp2::Exp2::StartExperiment(ENTITY_LIST & bodies)
 {
 	LOG_INFO("start.");
 
@@ -67,7 +65,7 @@ void GeometryExperiment2::GeometryExperiment2(ENTITY_LIST & bodies)
 			LOOP* iloop = dynamic_cast<LOOP*>(loop_list[j]);
 			if (check_has_geometry_coincident(iloop))
 			{
-				GeometryExperiment2::Singleton::bad_loop_vec.emplace_back(iloop);
+				bad_loop_vec.emplace_back(iloop);
 			}
 		}
 	}
@@ -79,15 +77,15 @@ void GeometryExperiment2::GeometryExperiment2(ENTITY_LIST & bodies)
 /*
 	打印bad_loop_vec中的内容
 */
-void GeometryExperiment2::PrintBadLoopVec()
+void Exp2::Exp2::PrintBadLoopVec()
 {
 	LOG_INFO("start.");
 
-	int cnt = GeometryExperiment2::Singleton::bad_loop_vec.size();
+	int cnt = bad_loop_vec.size();
 	LOG_DEBUG("bad loop count: %d", cnt);
 	for (int i = 0; i < cnt; i++)
 	{
-		LOOP* lp = GeometryExperiment2::Singleton::bad_loop_vec[i];
+		LOOP* lp = bad_loop_vec[i];
 		LOG_DEBUG("bad loop: %d, length: %d", MarkNum::GetId(lp), Utils::LoopLength(lp));
 
 		COEDGE* icoedge = lp->start();
@@ -112,13 +110,13 @@ void GeometryExperiment2::PrintBadLoopVec()
 
 #ifdef USE_HOOPSVIEW
 
-void GeometryExperiment2::ShowBadLoopEdgeMark(HoopsView * hv)
+void Exp2::Exp2::ShowBadLoopEdgeMark(HoopsView * hv)
 {
 	std::set<int> show_edge_marknum_set;
-	for (int i = 0; i < GeometryExperiment2::Singleton::bad_loop_vec.size(); i++)
+	for (int i = 0; i < bad_loop_vec.size(); i++)
 	{
 		//show_edge_marknum_set.insert(MarkNum::GetId(GeometryExperiment2::Singleton::bad_loop_vec[i]));
-		LOOP* lp = GeometryExperiment2::Singleton::bad_loop_vec[i];
+		LOOP* lp = bad_loop_vec[i];
 		int lp_length = Utils::LoopLength(lp);
 		if (lp_length == 2)
 		{
@@ -154,11 +152,16 @@ void GeometryExperiment2::ShowBadLoopEdgeMark(HoopsView * hv)
 #endif
 
 
-void GeometryExperiment2::Init(ENTITY_LIST & bodies)
+void Exp2::Exp2::Clear() 
+{
+	bad_loop_vec.clear();
+}
+
+void Exp2::Exp2::Init(ENTITY_LIST & bodies)
 {
 	LOG_INFO("start.");
 
-	GeometryExperiment2(bodies);
+	StartExperiment(bodies);
 	PrintBadLoopVec();
 
 	LOG_INFO("end.");

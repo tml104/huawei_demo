@@ -83,24 +83,27 @@
 #include "hoopsview.h"
 #endif
 
+/*
+	实验3：针对Cent的特殊实验
+*/
 namespace Exp3 {
+	struct Exp3 {
+		/*
+			1: 获取从3610到3642的边的所有bounds然后合并
+		*/
+		std::pair<SPAposition, SPAposition> GetEdgesLowHigh(BODY* blank);
 
-	/*
-		1:
-	*/
-	std::pair<SPAposition, SPAposition> GetEdgesLowHigh(BODY* blank);
+		/*
+			2：构造实体
+		*/
+		BODY* MakeTool(std::pair<SPAposition, SPAposition> LH);
 
-	/*
-		2:
-	*/
-	BODY* MakeTool(std::pair<SPAposition, SPAposition> LH);
-
-	/*
-		3: 
-	*/
-	void DoCut(BODY* tool, BODY* blank);
-
-	void Init(BODY* blank);
+		/*
+			3: 布尔运算切除
+		*/
+		void DoCut(BODY* tool, BODY* blank);
+		void Init(BODY* blank);
+	};
 
 } // namespace Exp3
 
@@ -129,4 +132,4 @@ namespace Exp4 {
 		ENTITY_LIST& bodies_to_be_checked;
 	};
 
-}// namespace Exp3
+}// namespace Exp4

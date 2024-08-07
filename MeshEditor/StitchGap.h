@@ -61,6 +61,7 @@
 #include <string>
 #include <ctime>
 #include <cmath>
+#include <exception>
 
 
 namespace Stitch {
@@ -109,21 +110,10 @@ namespace Stitch {
 
 		void ConstructTree(std::vector<Stitch::PoorCoedge>& poor_coedge_vec);
 		void DeleteTree();
-		std::vector<std::pair<Stitch::PoorCoedge,double>> Match(Stitch::PoorCoedge poor_coedge1);
+		std::vector<std::pair<Stitch::PoorCoedge, double>> Match(Stitch::PoorCoedge poor_coedge1, const std::set<COEDGE*>& found_coedge_set);
 
 		MatchTreeNode* root;
 	};
-
-	struct Singleton {
-		static std::vector<Stitch::PoorCoedge> Stitch::Singleton::poor_coedge_vec; // 保存匹配的poor coedge pair 的 vector
-		static std::set<COEDGE*> Stitch::Singleton::found_coedge_set; // 维护已经匹配的coedge集合
-		static std::vector<std::pair<Stitch::PoorCoedge, Stitch::PoorCoedge>> Stitch::Singleton::poor_coedge_pair_vec;
-		static Stitch::MatchTree Stitch::Singleton::match_tree;
-	};
-
-	namespace Debug {
-		
-	} // namespace Debug
 
 	Stitch::MyVector GetMyVector(Stitch::MyPoint a, Stitch::MyPoint b);
 	double Distance(Stitch::MyPoint a, Stitch::MyPoint b);
@@ -131,23 +121,32 @@ namespace Stitch {
 	Stitch::MyVector Normalize(Stitch::MyVector v);
 	double Dot(Stitch::MyVector v1, Stitch::MyVector v2);
 
-	/* 
+	/*
 		计算两个给定PoorCoedge的匹配分数
 		（在MatchTree::Match中会用到）
 	*/
 	double CalculatePoorCoedgeScore(const PoorCoedge& poor_coedge1, const PoorCoedge& poor_coedge2);
 
+	struct StitchGapFixer {
 
-	// 调用顺序：1
-	void FindPoorCoedge(ENTITY_LIST &bodies);
+		std::vector<Stitch::PoorCoedge> poor_coedge_vec; // 保存匹配的poor coedge pair 的 vector
+		std::set<COEDGE*> found_coedge_set; // 维护已经匹配的coedge集合
+		std::vector<std::pair<Stitch::PoorCoedge, Stitch::PoorCoedge>> poor_coedge_pair_vec;
+		Stitch::MatchTree match_tree;
 
-	// 调用顺序：2
-	void MatchPoorCoedge();
+		// 调用顺序：1
+		void FindPoorCoedge(ENTITY_LIST &bodies);
 
-	// 调用顺序：3
-	void StitchPoorCoedge(ENTITY_LIST &bodies);
+		// 调用顺序：2
+		void MatchPoorCoedge();
 
-	void Init(ENTITY_LIST &bodies, bool call_fix = true);
+		// 调用顺序：3
+		void StitchPoorCoedge(ENTITY_LIST &bodies);
 
-	void Clear();
+		void Init(ENTITY_LIST &bodies, bool call_fix = true);
+
+		void Clear();
+	};
+
+
 } // namespace Stitch

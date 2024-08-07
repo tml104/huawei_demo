@@ -5,7 +5,7 @@
 /*
 	1: 获取从3610到3642的所有bounds然后合并
 */
-std::pair<SPAposition, SPAposition> Exp3::GetEdgesLowHigh(BODY * blank)
+std::pair<SPAposition, SPAposition> Exp3::Exp3::GetEdgesLowHigh(BODY * blank)
 {
 	//return std::pair<SPAposition, SPAposition>();
 
@@ -53,9 +53,9 @@ std::pair<SPAposition, SPAposition> Exp3::GetEdgesLowHigh(BODY * blank)
 }
 
 /*
-	构造实体
+	2：构造实体
 */
-BODY * Exp3::MakeTool(std::pair<SPAposition, SPAposition> LH)
+BODY * Exp3::Exp3::MakeTool(std::pair<SPAposition, SPAposition> LH)
 {
 	BODY* block;
 	api_solid_block(LH.first, LH.second, block);
@@ -66,13 +66,13 @@ BODY * Exp3::MakeTool(std::pair<SPAposition, SPAposition> LH)
 /*
 	3: 布尔运算切除
 */
-void Exp3::DoCut(BODY * tool, BODY * blank)
+void Exp3::Exp3::DoCut(BODY * tool, BODY * blank)
 {
 	//api_subtract(tool, blank);
 	api_intersect(tool, blank);
 }
 
-void Exp3::Init(BODY * blank)
+void Exp3::Exp3::Init(BODY * blank)
 {
 	api_initialize_booleans();
 	api_initialize_constructors();

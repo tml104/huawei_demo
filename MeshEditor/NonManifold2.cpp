@@ -1,18 +1,11 @@
 #include "StdAfx.h"
-#include "NonManifold.h"
+#include "NonManifold2.h"
 
-std::set<EDGE*> NonManifold::Singleton::nonmanifold_edge_set;
-std::map<EDGE*, LOOP*> NonManifold::Singleton::special_nonmanifold_edge_map;
-std::map<EDGE*, VERTEX*> NonManifold::Singleton::old_start_vertex_map;
-std::map<EDGE*, VERTEX*> NonManifold::Singleton::old_end_vertex_map;
-std::map<VERTEX*, std::set<EDGE*>> NonManifold::Singleton::vertex_to_edge_map;
-NonManifold::LoopFindUnionSet NonManifold::Singleton::loop_findunionset;
-
-
-/*                                                                                                                                                                                                                                                       
+/*
+	调用顺序：1
 	寻找NonManifold的边，同时维护并查集
 */
-void NonManifold::FindNonManifold(ENTITY_LIST & bodies)
+void NonManifold::NonManifoldFixer::FindNonManifold(ENTITY_LIST & bodies)
 {
 	LOG_INFO("start.");
 
@@ -31,30 +24,32 @@ void NonManifold::FindNonManifold(ENTITY_LIST & bodies)
 			// 找到非流形边，加入nonmanifold_edge_set中
 			if (coedge_count > 2) {
 				LOG_DEBUG("NonManifold edge found: iedge: %d, coedge_cnt: %d", MarkNum::GetId(iedge), coedge_count);
-				NonManifold::Singleton::nonmanifold_edge_set.insert(iedge);
+				nonmanifold_edge_set.insert(iedge);
 			}
 
 			// 维护(vertex->edge)map
 			if (iedge->start() != nullptr) {
-				NonManifold::Singleton::vertex_to_edge_map[iedge->start()].insert(iedge);
+				vertex_to_edge_map[iedge->start()].insert(iedge);
 			}
 
 			if (iedge->end() != nullptr) {
-				NonManifold::Singleton::vertex_to_edge_map[iedge->end()].insert(iedge);
+				vertex_to_edge_map[iedge->end()].insert(iedge);
 			}
 
-
 			// 维护old_start_vertex_map, old_end_vertex_map： 也即维护原来所有边的初始开始顶点、结束顶点集合
-			NonManifold::Singleton::old_start_vertex_map[iedge] = iedge->start();
-			NonManifold::Singleton::old_end_vertex_map[iedge] = iedge->end();
+			old_start_vertex_map[iedge] = iedge->start();
+			old_end_vertex_map[iedge] = iedge->end();
 		}
 	}
 
 	LOG_INFO("end.");
 }
 
-// 特判：如果有某个非流形满足环中有重复的非流形边的那个特征（xloop），加入special_nonmanifold_edge_set中
-void NonManifold::SpecialCheckNonManifold()
+/* 
+	调用顺序：2
+	特判：如果有某个非流形满足环中有重复的非流形边的那个特征（xloop），加入special_nonmanifold_edge_set中 
+*/
+void NonManifold::NonManifoldFixer::SpecialCheckNonManifold()
 {
 	LOG_INFO("start.");
 
@@ -93,10 +88,10 @@ void NonManifold::SpecialCheckNonManifold()
 
 			// 检查成功：添加此xloop边进入special_nonmanifold_edge_set集合中（之后根据朝向自然就可区分了）
 			if (identical_edge_nonmanifold_count == 2) {
-				NonManifold::Singleton::special_nonmanifold_edge_map[iedge_nonmanifold] = iloop;
+				special_nonmanifold_edge_map[iedge_nonmanifold] = iloop;
 				return true;
 			}
-			else if (identical_edge_nonmanifold_count >2)// 其他异常情况：这玩意大于2的话我不会处理
+			else if (identical_edge_nonmanifold_count > 2)// 其他异常情况：这玩意大于2的话我不会处理
 			{
 				LOG_ERROR("identical_edge_nonmanifold_count > 2.");
 				throw std::runtime_error("identical_edge_nonmanifold_count >2");
@@ -109,7 +104,7 @@ void NonManifold::SpecialCheckNonManifold()
 	};
 
 	// 遍历上一步找到的所有非流形边，逐个检查是否满足xloop的条件
-	for (auto iedge_it = NonManifold::Singleton::nonmanifold_edge_set.begin(); iedge_it != NonManifold::Singleton::nonmanifold_edge_set.end(); iedge_it++) {
+	for (auto iedge_it = nonmanifold_edge_set.begin(); iedge_it != nonmanifold_edge_set.end(); iedge_it++) {
 		EDGE* iedge_nonmanifold = (*iedge_it);
 		bool check_nonmanifold_edge_in_xloop_res = check_nonmanifold_edge_in_xloop(iedge_nonmanifold);
 		LOG_DEBUG("iedge_nonmanifold: %d, check_nonmanifold_edge_in_xloop_res: %d", MarkNum::GetId(iedge_nonmanifold), check_nonmanifold_edge_in_xloop_res);
@@ -118,8 +113,11 @@ void NonManifold::SpecialCheckNonManifold()
 	LOG_INFO("end.");
 }
 
-// 专门搞special_nonmanifold_edge_set中的情况
-void NonManifold::SolveSpecialNonManifold()
+/*
+	调用顺序：3
+	专门搞special_nonmanifold_edge_set中的情况
+*/
+void NonManifold::NonManifoldFixer::SolveSpecialNonManifold()
 {
 	LOG_INFO("start.");
 
@@ -207,8 +205,8 @@ void NonManifold::SolveSpecialNonManifold()
 			coedge2->set_partner(coedge1);
 
 			// 在旧的边->顶点集合中维护新边的顶点
-			NonManifold::Singleton::old_start_vertex_map[new_edge] = iedge_nonmanifold->start();
-			NonManifold::Singleton::old_end_vertex_map[new_edge] = iedge_nonmanifold->end();
+			old_start_vertex_map[new_edge] = iedge_nonmanifold->start();
+			old_end_vertex_map[new_edge] = iedge_nonmanifold->end();
 
 			// 修改顶点的情况搞到这里我才发现那个先拆点的做法才是比较正规的
 			// 但这里先硬着头皮改一部分吧，修改xloop以及不在xloop的另一个coedge所在loop上的两个黄色边（具体见“新非流形”中的图），其他的loop都暂时不动
@@ -233,20 +231,20 @@ void NonManifold::SolveSpecialNonManifold()
 				int _set_start_vertex_flag = 0;
 				int _set_end_vertex_flag = 0;
 
-				if (NonManifold::Singleton::old_start_vertex_map[jedge] == iedge_nonmanifold->start()) {
+				if (old_start_vertex_map[jedge] == iedge_nonmanifold->start()) {
 					jedge->set_start(new_edge->start());
 					_set_start_vertex_flag = 1;
 				}
-				else if (NonManifold::Singleton::old_start_vertex_map[jedge] == iedge_nonmanifold->end()) {
+				else if (old_start_vertex_map[jedge] == iedge_nonmanifold->end()) {
 					jedge->set_start(new_edge->end());
 					_set_start_vertex_flag = 2;
 				}
 
-				if (NonManifold::Singleton::old_end_vertex_map[jedge] == iedge_nonmanifold->start()) {
+				if (old_end_vertex_map[jedge] == iedge_nonmanifold->start()) {
 					jedge->set_end(new_edge->start());
 					_set_end_vertex_flag = 3;
 				}
-				else if (NonManifold::Singleton::old_end_vertex_map[jedge] == iedge_nonmanifold->end()) {
+				else if (old_end_vertex_map[jedge] == iedge_nonmanifold->end()) {
 					jedge->set_end(new_edge->end());
 					_set_end_vertex_flag = 4;
 				}
@@ -272,44 +270,44 @@ void NonManifold::SolveSpecialNonManifold()
 			int _jcoedge_prev_set_end_vertex_flag = 0;
 
 			// 修改next的start
-			if (jcoedge->next()->sense() == FORWARD){
-				if (NonManifold::Singleton::old_start_vertex_map[jcoedge->next()->edge()] == iedge_nonmanifold->start()) {
+			if (jcoedge->next()->sense() == FORWARD) {
+				if (old_start_vertex_map[jcoedge->next()->edge()] == iedge_nonmanifold->start()) {
 					jcoedge->next()->edge()->set_start(new_edge->start());
 					_jcoedge_next_set_start_vertex_flag = 1;
 				}
-				else if (NonManifold::Singleton::old_start_vertex_map[jcoedge->next()->edge()] == iedge_nonmanifold->end()) {
+				else if (old_start_vertex_map[jcoedge->next()->edge()] == iedge_nonmanifold->end()) {
 					jcoedge->next()->edge()->set_start(new_edge->end());
 					_jcoedge_next_set_start_vertex_flag = 2;
 				}
 			}
 			else { // 反转修改next的end
-				if (NonManifold::Singleton::old_end_vertex_map[jcoedge->next()->edge()] == iedge_nonmanifold->start()) {
+				if (old_end_vertex_map[jcoedge->next()->edge()] == iedge_nonmanifold->start()) {
 					jcoedge->next()->edge()->set_end(new_edge->start());
 					_jcoedge_next_set_start_vertex_flag = 3;
 				}
-				else if (NonManifold::Singleton::old_end_vertex_map[jcoedge->next()->edge()] == iedge_nonmanifold->end()) {
+				else if (old_end_vertex_map[jcoedge->next()->edge()] == iedge_nonmanifold->end()) {
 					jcoedge->next()->edge()->set_end(new_edge->end());
 					_jcoedge_next_set_start_vertex_flag = 4;
 				}
 			}
-			
+
 			// 修改prev的end
 			if (jcoedge->previous()->sense() == FORWARD) {
-				if (NonManifold::Singleton::old_end_vertex_map[jcoedge->previous()->edge()] == iedge_nonmanifold->start()) {
+				if (old_end_vertex_map[jcoedge->previous()->edge()] == iedge_nonmanifold->start()) {
 					jcoedge->previous()->edge()->set_end(new_edge->start());
 					_jcoedge_prev_set_end_vertex_flag = 1;
 				}
-				else if (NonManifold::Singleton::old_end_vertex_map[jcoedge->previous()->edge()] == iedge_nonmanifold->end()) {
+				else if (old_end_vertex_map[jcoedge->previous()->edge()] == iedge_nonmanifold->end()) {
 					jcoedge->previous()->edge()->set_end(new_edge->end());
 					_jcoedge_prev_set_end_vertex_flag = 2;
 				}
-			} 
+			}
 			else { // 反转修改prev的start
-				if (NonManifold::Singleton::old_start_vertex_map[jcoedge->previous()->edge()] == iedge_nonmanifold->start()) {
+				if (old_start_vertex_map[jcoedge->previous()->edge()] == iedge_nonmanifold->start()) {
 					jcoedge->previous()->edge()->set_start(new_edge->start());
 					_jcoedge_prev_set_end_vertex_flag = 3;
 				}
-				else if (NonManifold::Singleton::old_start_vertex_map[jcoedge->previous()->edge()] == iedge_nonmanifold->end()) {
+				else if (old_start_vertex_map[jcoedge->previous()->edge()] == iedge_nonmanifold->end()) {
 					jcoedge->previous()->edge()->set_start(new_edge->end());
 					_jcoedge_prev_set_end_vertex_flag = 4;
 				}
@@ -326,7 +324,7 @@ void NonManifold::SolveSpecialNonManifold()
 		LOG_DEBUG("solve_special end.");
 	};
 
-	for (auto it = NonManifold::Singleton::special_nonmanifold_edge_map.begin(); it != NonManifold::Singleton::special_nonmanifold_edge_map.end(); it++) {
+	for (auto it = special_nonmanifold_edge_map.begin(); it != special_nonmanifold_edge_map.end(); it++) {
 		EDGE* iedge_nomanifold = it->first;
 		LOOP* xloop = it->second;
 
@@ -338,7 +336,7 @@ void NonManifold::SolveSpecialNonManifold()
 
 
 // [Deprecated] 此函数已经集成在第二版SolveNonManifold2函数中
-void NonManifold::MaintainFindUnionSet()
+void NonManifold::NonManifoldFixer::MaintainFindUnionSet()
 {
 	LOG_INFO("start.");
 
@@ -351,7 +349,7 @@ void NonManifold::MaintainFindUnionSet()
 			int coedge_cnt = Utils::CoedgeCount(*it2);
 
 			// 排除掉(*it2)本身就是nonmanifold_edge的情况
-			if (NonManifold::Singleton::nonmanifold_edge_set.count(*it2)) {
+			if (nonmanifold_edge_set.count(*it2)) {
 				LOG_DEBUG(
 					"Maintain LoopFindUnionSet, nonmanifold_edge_set.count(*it2)>0: *it2:%d, coedge_cnt:%d",
 					MarkNum::GetId(*it2),
@@ -393,9 +391,9 @@ void NonManifold::MaintainFindUnionSet()
 				auto &loop1 = icoedge_loop_vec[k - 1];
 				auto &loop2 = icoedge_loop_vec[k];
 
-				NonManifold::Singleton::loop_findunionset.unite(loop1, loop2);
+				loop_findunionset.unite(loop1, loop2);
 
-				LOG_DEBUG("Maintain LoopFindUnionSet, unite: %d, %d", 
+				LOG_DEBUG("Maintain LoopFindUnionSet, unite: %d, %d",
 					MarkNum::GetId(loop1),
 					MarkNum::GetId(loop2)
 				);
@@ -407,11 +405,11 @@ void NonManifold::MaintainFindUnionSet()
 	};
 
 	// 遍历非流形边集合nonmanifold_edge_set，然后将这些边的begin、end的vertex对应的相邻边集合输入traverse_vertex_incident_edge_set中，得到loop并查集
-	for (auto it = NonManifold::Singleton::nonmanifold_edge_set.begin(); it != NonManifold::Singleton::nonmanifold_edge_set.end(); it++) {
-		auto& start_vertex_incident_edge_set = NonManifold::Singleton::vertex_to_edge_map[(*it)->start()];
+	for (auto it = nonmanifold_edge_set.begin(); it != nonmanifold_edge_set.end(); it++) {
+		auto& start_vertex_incident_edge_set = vertex_to_edge_map[(*it)->start()];
 		traverse_vertex_incident_edge_set(start_vertex_incident_edge_set);
 
-		auto& end_vertex_incident_edge_set = NonManifold::Singleton::vertex_to_edge_map[(*it)->end()];
+		auto& end_vertex_incident_edge_set = vertex_to_edge_map[(*it)->end()];
 		traverse_vertex_incident_edge_set(end_vertex_incident_edge_set);
 	}
 
@@ -422,7 +420,7 @@ void NonManifold::MaintainFindUnionSet()
 // 目前这个算法只能解决所有待分解的面全挤在一条非流形边的情况，如果要是还有别的点吸附在非流形边的顶点上的情况（这算奇异情况吧），为每个非流形点加点之后再去创建边的方式是需要再考虑的。
 // 但是由于目前没有例子所以暂时先不管了吧 —— 2024年3月5日 14:42:28
 // [Deprecated] 由于有第二版实现因此这个函数暂时废弃
-void NonManifold::SolveNonManifold()
+void NonManifold::NonManifoldFixer::SolveNonManifold()
 {
 	LOG_INFO("start.");
 
@@ -430,7 +428,7 @@ void NonManifold::SolveNonManifold()
 	// TODO：（这里写的有点问题，coedge分类应该还是要带有非流形边是谁的信息，否则这里直接判断nonmanifold_coedge_map中的vector中coedge数量等于2不能得知是不是同一个非流形边引起的，以目前的代码的判断会导致本来能合并的情况不能合并）
 	//（因为目前这个代码假设每个group里面只有两个分类coedge，但是由于这个代码是先整体做并查集合并后再分别（也即不是根据一条边一组并查集来）做coedge分类的因此有可能会出现一个并查集里面有4个以上coedge的情况？这代码逻辑要改啊）
 	//（也就是说这里要改成 输入某特定非流形边->生成关于此非流形边的并查集->根据此并查集做分类 这个模式？）
-	auto group_map = NonManifold::Singleton::loop_findunionset.get_group_map(); // 这个get_group_map返回(group father->group set)的映射
+	auto group_map = loop_findunionset.get_group_map(); // 这个get_group_map返回(group father->group set)的映射
 	std::map<LOOP*, std::vector<COEDGE*>> nonmanifold_coedge_map; //(group loop father->非流形边coedge集合)的map，理论上每个group应该只有两个
 
 	//[debug] 检查group_map：遍历一下group map
@@ -442,7 +440,7 @@ void NonManifold::SolveNonManifold()
 
 
 	// 遍历每个非流形边，将其coedge分类
-	for (auto it = NonManifold::Singleton::nonmanifold_edge_set.begin(); it != NonManifold::Singleton::nonmanifold_edge_set.end(); it++) {
+	for (auto it = nonmanifold_edge_set.begin(); it != nonmanifold_edge_set.end(); it++) {
 		auto &iedge_nonmanifold = (*it);
 
 		LOG_DEBUG("Solving iedge_nonmanifold: %d", MarkNum::GetId(iedge_nonmanifold));
@@ -461,7 +459,7 @@ void NonManifold::SolveNonManifold()
 			}
 
 			auto iloop = icoedge->loop();
-			auto iloop_group_father = NonManifold::Singleton::loop_findunionset.get_father(iloop); //取得coedge的loop是在哪个group里
+			auto iloop_group_father = loop_findunionset.get_father(iloop); //取得coedge的loop是在哪个group里
 			nonmanifold_coedge_map[iloop_group_father].emplace_back(icoedge); //根据group放入coedge
 
 			icoedge = icoedge->partner();
@@ -475,7 +473,7 @@ void NonManifold::SolveNonManifold()
 		// 5.1 遍历上一步中涉及到的相邻的group，然后为每个group创建新的边并保存在new_edge_vec中
 		// nonmanifold_coedge_map: (group loop father->非流形边coedge集合)的map，理论上每个group应该只有两个
 		// 此处，nonmanifold_coedge_map的大小应该与group数量一致（也即该循环的执行次数）
-		for (auto it2 = nonmanifold_coedge_map.begin();it2!= nonmanifold_coedge_map.end();it2++) { 
+		for (auto it2 = nonmanifold_coedge_map.begin(); it2 != nonmanifold_coedge_map.end(); it2++) {
 			auto & this_group_father = it2->first;
 			auto &nonmanifold_coedge_vec = it2->second;
 
@@ -534,8 +532,8 @@ void NonManifold::SolveNonManifold()
 			);
 
 			// 在旧的边->顶点集合中维护新边的顶点
-			NonManifold::Singleton::old_start_vertex_map[new_edge] = iedge_nonmanifold->start();
-			NonManifold::Singleton::old_end_vertex_map[new_edge] = iedge_nonmanifold->end();
+			old_start_vertex_map[new_edge] = iedge_nonmanifold->start();
+			old_end_vertex_map[new_edge] = iedge_nonmanifold->end();
 
 			// 修改顶点：遍历group底下所有loop，修改边的顶点
 			auto &this_part_group_loops = group_map[this_group_father];
@@ -560,7 +558,7 @@ void NonManifold::SolveNonManifold()
 					);
 
 					// 跳过非流形边（非流形边上的coedge的edge会被直接设置，因此不用修改顶点）
-					if (NonManifold::Singleton::nonmanifold_edge_set.count(jedge)) {
+					if (nonmanifold_edge_set.count(jedge)) {
 						LOG_DEBUG("Modify vertex SKIP nonmanifold_edge: jedge: %d", MarkNum::GetId(jedge));
 
 						jcoedge = jcoedge->next();
@@ -578,20 +576,20 @@ void NonManifold::SolveNonManifold()
 					int _set_start_vertex_flag = 0;
 					int _set_end_vertex_flag = 0;
 
-					if (NonManifold::Singleton::old_start_vertex_map[jedge] == iedge_nonmanifold->start()) {
+					if (old_start_vertex_map[jedge] == iedge_nonmanifold->start()) {
 						jedge->set_start(new_edge->start());
 						_set_start_vertex_flag = 1;
 					}
-					else if (NonManifold::Singleton::old_start_vertex_map[jedge] == iedge_nonmanifold->end()) {
+					else if (old_start_vertex_map[jedge] == iedge_nonmanifold->end()) {
 						jedge->set_start(new_edge->end());
 						_set_start_vertex_flag = 2;
 					}
 
-					if (NonManifold::Singleton::old_end_vertex_map[jedge] == iedge_nonmanifold->start()) {
+					if (old_end_vertex_map[jedge] == iedge_nonmanifold->start()) {
 						jedge->set_end(new_edge->start());
 						_set_end_vertex_flag = 3;
 					}
-					else if (NonManifold::Singleton::old_end_vertex_map[jedge] == iedge_nonmanifold->end()) {
+					else if (old_end_vertex_map[jedge] == iedge_nonmanifold->end()) {
 						jedge->set_end(new_edge->end());
 						_set_end_vertex_flag = 4;
 					}
@@ -620,7 +618,7 @@ void NonManifold::SolveNonManifold()
 /*
 	第二版SolveNonManifold实现，将原MaintainFindUnionSet、SolveNonManifold合并，其将以每个非流形边为点位来处理问题
 */
-void NonManifold::SolveNonManifold2()
+void NonManifold::NonManifoldFixer::SolveNonManifold2()
 {
 	LOG_INFO("start.");
 
@@ -635,7 +633,7 @@ void NonManifold::SolveNonManifold2()
 			int coedge_cnt = Utils::CoedgeCount(*it2);
 
 			// 排除掉(*it2)本身就是nonmanifold_edge的情况
-			if (NonManifold::Singleton::nonmanifold_edge_set.count(*it2)) {
+			if (nonmanifold_edge_set.count(*it2)) {
 				LOG_DEBUG(
 					"Maintain LoopFindUnionSet, nonmanifold_edge_set.count(*it2)>0: *it2: %d, coedge_cnt:%d",
 					MarkNum::GetId(*it2),
@@ -685,7 +683,7 @@ void NonManifold::SolveNonManifold2()
 				auto &loop1 = icoedge_loop_vec[k - 1];
 				auto &loop2 = icoedge_loop_vec[k];
 
-				NonManifold::Singleton::loop_findunionset.unite(loop1, loop2);
+				loop_findunionset.unite(loop1, loop2);
 
 				LOG_DEBUG(
 					"Maintain LoopFindUnionSet, unite: %d, %d",
@@ -703,7 +701,7 @@ void NonManifold::SolveNonManifold2()
 
 		// 4. 遍历每个非流形边，将其coedge分类
 		// TODO:（不知道还需不需要在coedge分类步骤中维护非流形边是谁这个信息，有待事后调查）（不过目前可以确定的是对于那种有奇异点连着的情况这个代码是不能消除的）
-		auto group_map = NonManifold::Singleton::loop_findunionset.get_group_map(); // 这个get_group_map返回(group father->group set)的映射
+		auto group_map = loop_findunionset.get_group_map(); // 这个get_group_map返回(group father->group set)的映射
 		std::map<LOOP*, std::vector<COEDGE*>> nonmanifold_coedge_map; //(group loop father->非流形边coedge集合)的map，理论上每个group应该只有两个
 
 		//[debug] 检查group_map：遍历一下group map
@@ -718,7 +716,7 @@ void NonManifold::SolveNonManifold2()
 				group.size()
 			);
 
-			for (auto group_it = group.begin(); group_it != group.end(); group_it++){
+			for (auto group_it = group.begin(); group_it != group.end(); group_it++) {
 				LOG_DEBUG(" -> loop: %d", MarkNum::GetId(*group_it));
 			}
 		}
@@ -733,7 +731,7 @@ void NonManifold::SolveNonManifold2()
 			}
 
 			LOOP* iloop = icoedge->loop();
-			LOOP* iloop_group_father = NonManifold::Singleton::loop_findunionset.get_father(iloop); //取得coedge的loop是在哪个group里
+			LOOP* iloop_group_father = loop_findunionset.get_father(iloop); //取得coedge的loop是在哪个group里
 			nonmanifold_coedge_map[iloop_group_father].emplace_back(icoedge); //根据group放入coedge
 
 			icoedge = icoedge->partner();
@@ -762,7 +760,7 @@ void NonManifold::SolveNonManifold2()
 			EDGE* new_edge = Utils::CopyEdge(iedge_nonmanifold);
 			new_edge_vec.emplace_back(new_edge);
 		}
-		
+
 		//5.2 再次遍历上一步中涉及到的相邻的group，然后为这个group中的loop进行设置新边，边进行替换顶点等操作
 		// 注意bug！：此处如果以后需要重构的话请务必小心，这个循环和上个循环一定是分开的而非嵌套关系！
 		int new_edge_pick_index = 0;
@@ -799,8 +797,8 @@ void NonManifold::SolveNonManifold2()
 			);
 
 			// 在旧的边->顶点集合中维护新边的顶点
-			NonManifold::Singleton::old_start_vertex_map[new_edge] = iedge_nonmanifold->start();
-			NonManifold::Singleton::old_end_vertex_map[new_edge] = iedge_nonmanifold->end();
+			old_start_vertex_map[new_edge] = iedge_nonmanifold->start();
+			old_end_vertex_map[new_edge] = iedge_nonmanifold->end();
 
 			// 修改顶点：遍历group底下所有loop，修改边的顶点
 			auto &this_part_group_loops = group_map[this_group_father];
@@ -824,7 +822,7 @@ void NonManifold::SolveNonManifold2()
 					);
 
 					// 跳过非流形边（非流形边上的coedge的edge会被直接设置，因此不用修改顶点）
-					if (NonManifold::Singleton::nonmanifold_edge_set.count(jedge)) {
+					if (nonmanifold_edge_set.count(jedge)) {
 						LOG_DEBUG("Modify vertex SKIP nonmanifold_edge: jedge: %d", MarkNum::GetId(jedge));
 
 						jcoedge = jcoedge->next();
@@ -842,27 +840,27 @@ void NonManifold::SolveNonManifold2()
 					int _set_start_vertex_flag = 0;
 					int _set_end_vertex_flag = 0;
 
-					if (NonManifold::Singleton::old_start_vertex_map[jedge] == iedge_nonmanifold->start()) {
+					if (old_start_vertex_map[jedge] == iedge_nonmanifold->start()) {
 						jedge->set_start(new_edge->start());
 						_set_start_vertex_flag = 1;
 					}
-					else if (NonManifold::Singleton::old_start_vertex_map[jedge] == iedge_nonmanifold->end()) {
+					else if (old_start_vertex_map[jedge] == iedge_nonmanifold->end()) {
 						jedge->set_start(new_edge->end());
 						_set_start_vertex_flag = 2;
 					}
 
-					if (NonManifold::Singleton::old_end_vertex_map[jedge] == iedge_nonmanifold->start()) {
+					if (old_end_vertex_map[jedge] == iedge_nonmanifold->start()) {
 						jedge->set_end(new_edge->start());
 						_set_end_vertex_flag = 3;
 					}
-					else if (NonManifold::Singleton::old_end_vertex_map[jedge] == iedge_nonmanifold->end()) {
+					else if (old_end_vertex_map[jedge] == iedge_nonmanifold->end()) {
 						jedge->set_end(new_edge->end());
 						_set_end_vertex_flag = 4;
 					}
 
 					// [debug] 查看哪几个分支被调用了
 					LOG_DEBUG(
-						"Modify vertex FLAG: jcoedge: %d, jedge: %d, flag: (_set_start_vertex_flag: %d, _set_end_vertex_flag: %d)", 
+						"Modify vertex FLAG: jcoedge: %d, jedge: %d, flag: (_set_start_vertex_flag: %d, _set_end_vertex_flag: %d)",
 						MarkNum::GetId(jcoedge),
 						MarkNum::GetId(jedge),
 						_set_start_vertex_flag,
@@ -873,36 +871,36 @@ void NonManifold::SolveNonManifold2()
 			}
 
 		}
-		
+
 		LOG_DEBUG("solve_single_nonmanifold_edge end.");
-	};                                 
+	};
 
 	// 遍历非流形边集合nonmanifold_edge_set，然后将这些边的begin、end的vertex对应的相邻边集合输入traverse_vertex_incident_edge_set中，得到loop并查集
-	for (auto it = NonManifold::Singleton::nonmanifold_edge_set.begin(); it != NonManifold::Singleton::nonmanifold_edge_set.end(); it++) {
+	for (auto it = nonmanifold_edge_set.begin(); it != nonmanifold_edge_set.end(); it++) {
 
 		// 跳过：如果it（当前迭代的非流形edge）在special_nonmanifold_edge_map中则跳过
-		if (NonManifold::Singleton::special_nonmanifold_edge_map.count(*it)) {
+		if (special_nonmanifold_edge_map.count(*it)) {
 			LOG_DEBUG("Skip special_nonmanifold_edge: edge: %d", MarkNum::GetId(*it));
 			continue;
 		}
 
-		auto& start_vertex_incident_edge_set = NonManifold::Singleton::vertex_to_edge_map[(*it)->start()];
+		auto& start_vertex_incident_edge_set = vertex_to_edge_map[(*it)->start()];
 		traverse_vertex_incident_edge_set(start_vertex_incident_edge_set);
 
-		auto& end_vertex_incident_edge_set = NonManifold::Singleton::vertex_to_edge_map[(*it)->end()];
+		auto& end_vertex_incident_edge_set = vertex_to_edge_map[(*it)->end()];
 		traverse_vertex_incident_edge_set(end_vertex_incident_edge_set);
 
 		// TODO:下方是缝合原SolveNonManifold的部分
 		solve_single_nonmanifold_edge((*it));
 
 		// 新：清除并查集
-		NonManifold::Singleton::loop_findunionset.clear();
+		loop_findunionset.clear();
 	}
 
 	LOG_INFO("end.");
 }
 
-void NonManifold::Init(ENTITY_LIST & bodies)
+void NonManifold::NonManifoldFixer::Init(ENTITY_LIST & bodies)
 {
 	// 计时开始
 	clock_t NonManifold_start_clock = std::clock();
@@ -913,13 +911,13 @@ void NonManifold::Init(ENTITY_LIST & bodies)
 	NonManifold::Debug::PrintLoopsInfo(bodies);
 
 	// （这两个函数影响较小，先调用）
-	NonManifold::FindNonManifold(bodies);
-	NonManifold::SpecialCheckNonManifold();
+	FindNonManifold(bodies);
+	SpecialCheckNonManifold();
 
 	clock_t NonManifold_end_clock_find = std::clock(); // 计时结束 find
 
-	NonManifold::SolveSpecialNonManifold(); // 单独求解特殊情况
-	NonManifold::SolveNonManifold2(); // 接下来调用第二版统一实现
+	SolveSpecialNonManifold(); // 单独求解特殊情况
+	SolveNonManifold2(); // 接下来调用第二版统一实现
 
 	clock_t NonManifold_end_clock_solve = std::clock(); // 计时结束 solve
 
@@ -933,14 +931,14 @@ void NonManifold::Init(ENTITY_LIST & bodies)
 	api_terminate_booleans();
 }
 
-void NonManifold::Clear()
+void NonManifold::NonManifoldFixer::Clear()
 {
-	NonManifold::Singleton::nonmanifold_edge_set.clear();
-	NonManifold::Singleton::special_nonmanifold_edge_map.clear();
-	NonManifold::Singleton::old_start_vertex_map.clear();
-	NonManifold::Singleton::old_end_vertex_map.clear();
-	NonManifold::Singleton::vertex_to_edge_map.clear();
-	NonManifold::Singleton::loop_findunionset.clear();
+	nonmanifold_edge_set.clear();
+	special_nonmanifold_edge_map.clear();
+	old_start_vertex_map.clear();
+	old_end_vertex_map.clear();
+	vertex_to_edge_map.clear();
+	loop_findunionset.clear();
 }
 
 /*

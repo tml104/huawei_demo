@@ -221,38 +221,35 @@
     <ClCompile Include="test.cpp">
       <Filter>OhmConnection</Filter>
     </ClCompile>
-    <ClCompile Include="Stitch.cpp">
-      <Filter>topologyopt\FindProblem</Filter>
-    </ClCompile>
-    <ClCompile Include="NonManifold.cpp">
-      <Filter>topologyopt\FindProblem</Filter>
-    </ClCompile>
     <ClCompile Include="ConstructModel.cpp">
       <Filter>topologyopt\Constructs</Filter>
     </ClCompile>
     <ClCompile Include="MarkNum.cpp">
       <Filter>topologyopt\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="GeometryExperiment.cpp">
-      <Filter>topologyopt\FindProblem\Test</Filter>
-    </ClCompile>
     <ClCompile Include="UtilityFunctions.cpp">
       <Filter>topologyopt\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="ConnectedComponentSplitExperiment.cpp">
-      <Filter>topologyopt\FindProblem\Test</Filter>
-    </ClCompile>
     <ClCompile Include="logger44\CoreOld.cpp">
       <Filter>logger44</Filter>
-    </ClCompile>
-    <ClCompile Include="GeometryExperiment2.cpp">
-      <Filter>topologyopt\FindProblem\Test</Filter>
     </ClCompile>
     <ClCompile Include="Experiment240621.cpp">
       <Filter>topologyopt\FindProblem\Test</Filter>
     </ClCompile>
     <ClCompile Include="GeometryUtils.cpp">
       <Filter>topologyopt\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="StitchGap.cpp">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="NonManifold2.cpp">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="Exp1.cpp">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClCompile>
+    <ClCompile Include="Exp2.cpp">
+      <Filter>topologyopt\FindProblem\Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -334,20 +331,11 @@
     <ClInclude Include="test.h">
       <Filter>OhmConnection</Filter>
     </ClInclude>
-    <ClInclude Include="Stitch.h">
-      <Filter>topologyopt\FindProblem</Filter>
-    </ClInclude>
-    <ClInclude Include="NonManifold.h">
-      <Filter>topologyopt\FindProblem</Filter>
-    </ClInclude>
     <ClInclude Include="ConstructModel.h">
       <Filter>topologyopt\Constructs</Filter>
     </ClInclude>
     <ClInclude Include="MarkNum.h">
       <Filter>topologyopt\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometryExperiment.h">
-      <Filter>topologyopt\FindProblem\Test</Filter>
     </ClInclude>
     <ClInclude Include="MyConstant.h">
       <Filter>topologyopt\Utils</Filter>
@@ -358,20 +346,26 @@
     <ClInclude Include="UtilityFunctions.h">
       <Filter>topologyopt\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="ConnectedComponentSplitExperiment.h">
-      <Filter>topologyopt\FindProblem\Test</Filter>
-    </ClInclude>
     <ClInclude Include="logger44\CoreOld.h">
       <Filter>logger44</Filter>
-    </ClInclude>
-    <ClInclude Include="GeometryExperiment2.h">
-      <Filter>topologyopt\FindProblem\Test</Filter>
     </ClInclude>
     <ClInclude Include="Experiment240621.h">
       <Filter>topologyopt\FindProblem\Test</Filter>
     </ClInclude>
     <ClInclude Include="GeometryUtils.h">
       <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="StitchGap.h">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClInclude>
+    <ClInclude Include="NonManifold2.h">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClInclude>
+    <ClInclude Include="Exp1.h">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Exp2.h">
+      <Filter>topologyopt\FindProblem\Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

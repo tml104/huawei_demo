@@ -87,21 +87,21 @@
 	对于C_ent(1)_body_0中的特殊例子的环的特判
 */
 
-namespace GeometryExperiment2 {
+namespace Exp2 {
 
-	struct Singleton {
-		static std::vector<LOOP*> GeometryExperiment2::Singleton::bad_loop_vec;
-	};
+	struct Exp2 {
+		std::vector<LOOP*> bad_loop_vec;
 
-	void GeometryExperiment2(ENTITY_LIST & bodies);
+		void StartExperiment(ENTITY_LIST & bodies);
 
-	void PrintBadLoopVec();
+		void PrintBadLoopVec();
 
 #ifdef USE_HOOPSVIEW
-	void ShowBadLoopEdgeMark(HoopsView* hv);
+		void ShowBadLoopEdgeMark(HoopsView* hv);
 #endif
 
-	void Clear();
+		void Clear();
 
-	void Init(ENTITY_LIST &bodies);
+		void Init(ENTITY_LIST &bodies);
+	};
 }

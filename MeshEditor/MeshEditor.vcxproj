@@ -173,7 +173,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="binarySearch.cpp" />
-    <ClCompile Include="ConnectedComponentSplitExperiment.cpp" />
     <ClCompile Include="ConstructModel.cpp" />
     <ClCompile Include="Experiment240621.cpp" />
     <ClCompile Include="filecontrolwidget.cpp" />
@@ -187,8 +186,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="GeometricFill.cpp" />
-    <ClCompile Include="GeometryExperiment.cpp" />
-    <ClCompile Include="GeometryExperiment2.cpp" />
+    <ClCompile Include="Exp1.cpp" />
+    <ClCompile Include="Exp2.cpp" />
     <ClCompile Include="GeometryUtils.cpp" />
     <ClCompile Include="getInfo.cpp" />
     <ClCompile Include="GetPatchType.cpp" />
@@ -284,8 +283,7 @@
     <ClCompile Include="mainwindow.cpp" />
     <ClCompile Include="makeMeshList.cpp" />
     <ClCompile Include="MarkNum.cpp" />
-    <ClCompile Include="NonManifold.cpp" />
-    <ClCompile Include="Stitch.cpp" />
+    <ClCompile Include="NonManifold2.cpp" />
     <ClCompile Include="mousecontrolwidget.cpp" />
     <ClCompile Include="muilthreadHandle.cpp" />
     <ClCompile Include="nonuniformMesh.cpp" />
@@ -298,6 +296,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StitchGap.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="testModel.cpp" />
     <ClCompile Include="topologyoptwidge.cpp" />
@@ -308,15 +307,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h" />
-    <ClInclude Include="ConnectedComponentSplitExperiment.h" />
     <ClInclude Include="ConstructModel.h" />
     <ClInclude Include="Endpoint.h" />
     <ClInclude Include="Experiment240621.h" />
     <ClInclude Include="FileManagement.h" />
     <ClInclude Include="GeneratedFiles\ui_topologyoptwidget.h" />
     <ClInclude Include="GeometricFill.h" />
-    <ClInclude Include="GeometryExperiment.h" />
-    <ClInclude Include="GeometryExperiment2.h" />
+    <ClInclude Include="Exp1.h" />
+    <ClInclude Include="Exp2.h" />
     <ClInclude Include="GeometryUtils.h" />
     <ClInclude Include="GetPatchType.h" />
     <ClInclude Include="Interval.h" />
@@ -331,14 +329,14 @@
     <ClInclude Include="muilthreadHandle.h" />
     <ClInclude Include="MyConstant.h" />
     <ClInclude Include="MyDebugInfoMarco.h" />
-    <ClInclude Include="NonManifold.h" />
+    <ClInclude Include="NonManifold2.h" />
     <ClInclude Include="ohmConnection.h" />
     <ClInclude Include="ohm_struct.h" />
+    <ClInclude Include="StitchGap.h" />
     <ClInclude Include="UtilityFunctions.h" />
     <ClInclude Include="pixel.h" />
     <ClInclude Include="setAttr.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Stitch.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="ZSRACISHeads.h" />
     <ClInclude Include="ZSRACISNotify.h" />

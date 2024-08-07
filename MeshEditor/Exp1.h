@@ -84,18 +84,16 @@
 	这个文件的主要目的就是做一些检查几何上的实验，后续如果要做求交之类的算法实验的话再说吧
 */
 
-namespace GeometryExperiment {
+namespace Exp1 {
+	struct Exp1 {
+		std::set<EDGE*> bad_edge_set;
 
-	// 饥饿汉单例模式：潜在问题在于初始化顺序未定义
-	struct Singleton {
-		static std::set<EDGE*> GeometryExperiment::Singleton::bad_edge_set;
+		void UpdateBadCoedgeSet(ENTITY_LIST& bodies);
+
+		void TraverseLoops(LOOP* iloop, bool traverse_incident_loops, COEDGE* begin_coedge = nullptr);
+
+		void StartExperiment(ENTITY_LIST & bodies);
+
+		void Init(ENTITY_LIST &bodies);
 	};
-
-	void UpdateBadCoedgeSet(ENTITY_LIST& bodies);
-
-	void TraverseLoops(LOOP* iloop, bool traverse_incident_loops, COEDGE* begin_coedge = nullptr);
-
-	void GeometryExperiment1(ENTITY_LIST & bodies, HoopsView* hv = nullptr);
-
-	void Init(ENTITY_LIST &bodies, HoopsView* hv = nullptr);
 }
