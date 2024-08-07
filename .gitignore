@@ -264,7 +264,7 @@ testdata/
 Win32/
 ipch/
 MeshEditor/Release/
-MeshEditor/GeneratedFiles/
-MeshEditor/Resources/
+# MeshEditor/GeneratedFiles/
+# MeshEditor/Resources/
 MeshEditor/x64/
 MeshEditor/Debug/
