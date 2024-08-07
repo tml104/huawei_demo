@@ -42,6 +42,7 @@ using namespace std;
 #include "setAttr.h"
 using namespace Ohm_slice;
 
+#include "DegeneratedFace.h"
 #include "NonManifold2.h"
 #include "StitchGap.h"
 #include "MarkNum.h"
@@ -168,6 +169,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_marknum_showedgemark = false;
 	bool option_marknum_showfacemark = true;
 
+	bool option_solve_remove_degenerated_faces = true;
 	bool option_solve_nonmanifold = false;
 	bool option_solve_stitch = false;
 	bool option_solve_stitch_for_each_bodies = false;
@@ -181,7 +183,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_construct = false;
 	bool option_construct240710 = false;
 
-	bool option_save_bodies = false;
+	bool option_save_bodies = true;
 	bool option_save_bodies_respectly = false;
 	/*
 		[选项开关] 结束
@@ -229,6 +231,12 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	}
 
 	// 选择一个要解决的问题
+
+	if (option_solve_remove_degenerated_faces) {
+		DegeneratedFace::DegeneratedFaceFixer degeneratedFaceFixer(bodies);
+		degeneratedFaceFixer.Start();
+	}
+
 	if (option_solve_nonmanifold) {
 		// A_ent(2).sat, cyl3
 		NonManifold::NonManifoldFixer nonManifoldFixer;

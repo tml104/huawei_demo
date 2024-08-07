@@ -251,6 +251,9 @@
     <ClCompile Include="Exp2.cpp">
       <Filter>topologyopt\FindProblem\Test</Filter>
     </ClCompile>
+    <ClCompile Include="DegeneratedFace.cpp">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -366,6 +369,9 @@
     </ClInclude>
     <ClInclude Include="Exp2.h">
       <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="DegeneratedFace.h">
+      <Filter>topologyopt\FindProblem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
