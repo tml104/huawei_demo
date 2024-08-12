@@ -132,7 +132,13 @@ namespace Stitch {
 		std::vector<Stitch::PoorCoedge> poor_coedge_vec; // 保存匹配的poor coedge pair 的 vector
 		std::set<COEDGE*> found_coedge_set; // 维护已经匹配的coedge集合
 		std::vector<std::pair<Stitch::PoorCoedge, Stitch::PoorCoedge>> poor_coedge_pair_vec;
+
+		// 中间过程需要用到的数据结构维护
+		std::map<std::pair<VERTEX*, VERTEX*>, EDGE*> vertex_pair_to_edge_map; // 准备<vertex,vertex> to edge的map: 这个map只是用来判断两点之间是否存在边连接用的，具体是什么边连接不重要，因此如果模型中有相同顶点的边的情况也没关系
+		std::vector<EDGE*> all_edge_vector; // 顺带维护一下整个实体的全部边的vector
+
 		Stitch::MatchTree match_tree;
+		ENTITY_LIST &bodies;
 
 		// 调用顺序：1
 		void FindPoorCoedge(ENTITY_LIST &bodies);
@@ -141,9 +147,16 @@ namespace Stitch {
 		void MatchPoorCoedge();
 
 		// 调用顺序：3
+		void RearrangePoorCoedge();
+
+		// 调用顺序：4
 		void StitchPoorCoedge(ENTITY_LIST &bodies);
 
-		void Init(ENTITY_LIST &bodies, bool call_fix = true);
+		void PreProcess();
+
+		StitchGapFixer(ENTITY_LIST &bodies) : bodies(bodies) {};
+
+		void Start(bool call_fix = true);
 
 		void Clear();
 	};

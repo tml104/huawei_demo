@@ -248,8 +248,8 @@ void TopologyOptWidget::on_open_file (QString file_path)
 
 	if (option_solve_stitch) {
 		//B_single.sat -> B_single_mod.sat
-		Stitch::StitchGapFixer stitchGapFixer;
-		stitchGapFixer.Init(bodies);
+		Stitch::StitchGapFixer stitchGapFixer(bodies);
+		stitchGapFixer.Start();
 	}
 
 	if (option_solve_stitch_for_each_bodies)
@@ -265,8 +265,8 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	
 			LOG_INFO("Stitching for body: [%d]", i);
 	
-			Stitch::StitchGapFixer stitchGapFixer;
-			stitchGapFixer.Init(ibody_list, stitch_call_fix);
+			Stitch::StitchGapFixer stitchGapFixer(ibody_list);
+			stitchGapFixer.Start(stitch_call_fix);
 	
 			// 保存请使用选项：option_save_bodies_respectly
 		}

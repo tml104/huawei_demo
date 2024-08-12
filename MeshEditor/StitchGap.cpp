@@ -299,31 +299,16 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 	LOG_INFO("end.");
 }
 
+
 /*
 	调用顺序：3
-	对匹配的poor coedge对修改拓扑
-	输入：目前poor_coedge_pair_vec已经维护完成
+	重排序
 */
-void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
+void Stitch::StitchGapFixer::RearrangePoorCoedge()
 {
 	LOG_INFO("start.");
 
-	// 1. 准备<vertex,vertex> to edge的map
-	std::map<std::pair<VERTEX*, VERTEX*>, EDGE*> vertex_pair_to_edge_map;
-	std::vector<EDGE*> all_edge_vector; // 顺带维护一下整个实体的全部边的vector给第三步用
-
-	// 预处理刚刚定义的两个东西
-	for (int i = 0; i < bodies.count(); i++) {
-		ENTITY *ibody = bodies[i];
-		ENTITY_LIST edge_list;
-		api_get_edges(ibody, edge_list);
-
-		for (int j = 0; j < edge_list.count(); j++) {
-			EDGE* iedge = static_cast<EDGE*>(edge_list[j]);
-			all_edge_vector.emplace_back(iedge);
-			vertex_pair_to_edge_map[std::make_pair(iedge->start(), iedge->end())] = iedge;
-		}
-	}
+	PreProcess(); // 预处理
 
 	// 2. 对poor_coedge_pair_vec重排序使得其符合修复顺序
 	/*
@@ -332,7 +317,6 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 		(2) 再缝合会删非已经匹配边（正常边，非匹配的独立缺边）的
 		(3) 最后全部缝合
 	*/
-
 	std::vector<std::pair<Stitch::PoorCoedge, Stitch::PoorCoedge>> poor_coedge_pair_vec2; // 保存重排序配对边集合
 
 	// 对poor_coedge_pair_vec2部分重排序：poor_coedge_pair_vec2中保存的是（第一阶段重新排序后的）若干对(pair)已经配对的破边，现在根据破边的长度和对第一阶段重新排序中各个部分的配对破边做第二阶段排序
@@ -379,7 +363,7 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 			if (v0_v01_edge_it != vertex_pair_to_edge_map.end()) { //如果能找到
 				auto iedge = v0_v01_edge_it->second; // 取得找到的这个交叉边
 				if (iedge != poor_coedge_pair.first.coedge->edge() && iedge != poor_coedge_pair.second.coedge->edge()) { // 排除这个交叉边和已配对边相同的情况（这个有啥必要吗？）
-					LOG_DEBUG("Connect between v0 v01: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)", 
+					LOG_DEBUG("Connect between v0 v01: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
 						MarkNum::GetId(poor_coedge_pair.first.coedge),
 						MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
 						MarkNum::GetId(poor_coedge_pair.second.coedge),
@@ -607,13 +591,25 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 
 	rearrange_poor_coedge_pairs(poor_coedge_pair_vec2);
 
+	poor_coedge_pair_vec = std::move(poor_coedge_pair_vec2);
+
+	LOG_INFO("end.");
+}
+
+/*
+	调用顺序：4
+	对匹配的poor coedge对修改拓扑
+	输入：目前poor_coedge_pair_vec已经维护完成
+*/
+void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
+{
 	// 3. 开始修复：遍历poor_coedge_pair_vec2（重排序后的候选破边对集合），然后依次尝试修改对应破边的各种指针以及顶点指针
 	// 规定v0 v1所在边是被与另一个合并的
 	// （240401:啊原来这里也是随意规定的……嗯……也就是说这里就存在一个优化空间上的问题了）
 	LOG_INFO("Stitch Fix start.");
 
-	for (int i = 0; i < poor_coedge_pair_vec2.size(); i++) {
-		auto &poor_coedge_pair = poor_coedge_pair_vec2[i];
+	for (int i = 0; i < poor_coedge_pair_vec.size(); i++) {
+		auto &poor_coedge_pair = poor_coedge_pair_vec[i];
 
 		// [debug] 打印当前修复的poorcoedge pair的信息
 		LOG_DEBUG("Stitch Fix for poor_coedge_pair[%d]: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
@@ -650,7 +646,7 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 		poor_coedge_pair.second.coedge->set_edge(poor_coedge_pair.first.coedge->edge());
 		poor_coedge_pair.second.coedge->set_sense(!(poor_coedge_pair.first.coedge->sense()));
 
-		// 3.2 修改所有边的v11, v01为v0,v1（如果原本v0==v11等那就跳过）
+		// 3.2 修改所有边的v11, v01为v0, v1（如果原本v0==v11等那就跳过）
 		for (int j = 0; j < all_edge_vector.size(); j++) {
 			auto &iedge = all_edge_vector[j];
 			if (v0 != v11) {
@@ -787,11 +783,26 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 	}
 
 	LOG_INFO("Stitch Fix end.");
-
-	LOG_INFO("end.");
 }
 
+void Stitch::StitchGapFixer::PreProcess()
+{
+	vertex_pair_to_edge_map.clear();
+	all_edge_vector.clear();
 
+	// 预处理: 1. <vertex,vertex> to edge的map; 2. 整个实体的全部边的vector
+	for (int i = 0; i < bodies.count(); i++) {
+		ENTITY *ibody = bodies[i];
+		ENTITY_LIST edge_list;
+		api_get_edges(ibody, edge_list);
+
+		for (int j = 0; j < edge_list.count(); j++) {
+			EDGE* iedge = static_cast<EDGE*>(edge_list[j]);
+			all_edge_vector.emplace_back(iedge);
+			vertex_pair_to_edge_map[std::make_pair(iedge->start(), iedge->end())] = iedge;
+		}
+	}
+}
 
 Stitch::MatchTree::MatchTree() : root(nullptr)
 {
@@ -1060,10 +1071,9 @@ Stitch::PoorCoedge::PoorCoedge() : coedge(nullptr)
 	入口
 	找破边并修复 （注意目前这个只接受bodies下只有一个body的情况，否则可能会出问题）
 */
-void Stitch::StitchGapFixer::Init(ENTITY_LIST &bodies, bool call_fix)
+void Stitch::StitchGapFixer::Start(bool call_fix)
 {
 	LOG_INFO("EPSLION1: %.5lf;\t EPSLION2: %.5lf;\t EPSLION2_SIN: %.5lf;\t call_fix: %s\t", EPSLION1, EPSLION2, EPSLION2_SIN, call_fix ? "True" : "False");
-
 
 	// 计时开始
 	clock_t Stitch_start_clock = std::clock();
@@ -1077,7 +1087,9 @@ void Stitch::StitchGapFixer::Init(ENTITY_LIST &bodies, bool call_fix)
 	MatchPoorCoedge(); // 2
 	clock_t Stitch_end_clock_match = std::clock(); // 计时结束 match
 
-	if (call_fix) { StitchPoorCoedge(bodies); } // 3
+	RearrangePoorCoedge(); // 3
+
+	if (call_fix) { StitchPoorCoedge(bodies); } // 4
 	clock_t Stitch_end_clock_stitch = std::clock(); // 计时结束 stitch
 
 	match_tree.DeleteTree(); // 删除KDTree
@@ -1104,6 +1116,10 @@ void Stitch::StitchGapFixer::Clear()
 	poor_coedge_vec.clear();
 	found_coedge_set.clear();
 	poor_coedge_pair_vec.clear();
+
+	vertex_pair_to_edge_map.clear();
+	all_edge_vector.clear();
+
 	match_tree.DeleteTree();
 
 	LOG_INFO("end.");
