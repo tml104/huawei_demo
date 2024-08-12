@@ -297,3 +297,112 @@ void GeometryUtils::PrintFaceGeometry(FACE * f)
 
 	LOG_INFO("end.");
 }
+
+/*
+	判断两条边是否符合“几何上相同”的条件
+*/
+bool GeometryUtils::GeometryCoincidentVertex(VERTEX * v1, VERTEX * v2, const double epslion)
+{
+	if (v1 == nullptr || v2 == nullptr) {
+		return false;
+	}
+
+	if (v1 == v2) {
+		return true;
+	}
+
+	// 判断几何相同
+	if (v1->geometry() == nullptr || v2->geometry() == nullptr) {
+		return false;
+	}
+
+	for (int i = 0; i < 3; i++) {
+		if (abs(v1->geometry()->coords().coordinate(i) - v2->geometry()->coords().coordinate(i)) > epslion) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool GeometryUtils::GeometryCoincidentPoint(SPAposition p1, SPAposition p2, const double epslion = POINT_EPSLION)
+{
+	for (int i = 0; i < 3; i++) {
+		if (abs(p1.coordinate(i) - p2.coordinate(i)) > epslion) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+bool GeometryUtils::GeometryCoincidentEdge(EDGE * e1, EDGE * e2)
+{
+	if (e1 == nullptr || e2 == nullptr) {
+		return false;
+	}
+
+	bool same_dir = false;
+
+	if (GeometryUtils::GeometryCoincidentVertex(e1->start(), e2->start()) && GeometryUtils::GeometryCoincidentVertex(e1->end(), e2->end())) {
+		same_dir = true;
+	}
+	else if(GeometryUtils::GeometryCoincidentVertex(e1->start(), e2->end()) && GeometryUtils::GeometryCoincidentVertex(e2->start(), e1->end())){
+		same_dir = false;
+	}
+	else {
+		return false;
+	}
+
+	// 几何类型（这就懒得判断是不是空了）
+	CURVE* e1_curve = e1->geometry();
+	const char* e1_curve_type = e1_curve->type_name();
+	CURVE* e2_curve = e2->geometry();
+	const char* e2_curve_type = e2_curve->type_name();
+
+	if (strcmp(e1_curve_type, e2_curve_type) != 0) { // 类型不相同直接pass
+		return false;
+	}
+
+	if (strcmp(e1_curve_type, "straight")) { // 针对直线类型做优化: 显然如果顶点相同，几何类型都是直线，那么几何肯定完全一样
+		return true;
+	}
+
+	// 对任意几何类型的几何点采样
+	auto sample_points = [&](EDGE* e) -> std::vector<SPAposition> {
+
+		std::vector<SPAposition> points_vec;
+
+		auto edge_range = e->param_range();
+
+		for (int k = 0; k < SAMPLE_POINTS_NUMBER; k++) {
+			double interpolate_param = k * 1.0 / SAMPLE_POINTS_NUMBER;
+
+			double edge_param = edge_range.interpolate(interpolate_param);
+			points_vec.emplace_back(edge_param_pos(e, edge_param));
+		}
+
+		return points_vec;
+	};
+
+	auto e1_points_vec = sample_points(e1);
+	auto e2_points_vec = sample_points(e2);
+
+	if (same_dir == false) {
+		std::reverse(e2_points_vec.begin(), e2_points_vec.end());
+	}
+	
+	bool flag = true;
+	for (int i = 0; i < e1_points_vec.size() && e2_points_vec.size(); i++){
+		SPAposition e1_point = e1_points_vec[i];
+		SPAposition e2_point = e2_points_vec[i];
+		if (GeometryCoincidentPoint(e1_point, e2_point) == false)
+		{
+			flag = false;
+			break;
+		}
+	}
+
+	return flag;
+}
+

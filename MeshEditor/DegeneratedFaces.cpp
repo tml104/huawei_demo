@@ -1,8 +1,8 @@
 #include "StdAfx.h"
-#include "DegeneratedFace.h"
+#include "DegeneratedFaces.h"
 
 
-void DegeneratedFace::DegeneratedFaceFixer::FindDegeneratedFaces() 
+void DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces() 
 {
 	for (int i = 0; i < bodies.count(); i++) {
 
@@ -31,16 +31,18 @@ void DegeneratedFace::DegeneratedFaceFixer::FindDegeneratedFaces()
 }
 
 /* 调用 api_remove_face 来移除退化面 */
-void DegeneratedFace::DegeneratedFaceFixer::RemoveDegeneratedFaces() 
+void DegeneratedFaces::DegeneratedFacesFixer::RemoveDegeneratedFaces() 
 {
 	for (auto it = this->degenerated_faces.begin(); it != this->degenerated_faces.end(); it++) {
-		LOG_DEBUG("Removing face %d", MarkNum::GetId(*it));
 		api_remove_face(*it);
+		LOG_DEBUG("Removing face %d", MarkNum::GetId(*it));
 	}
 }
 
-void DegeneratedFace::DegeneratedFaceFixer::Start()
+void DegeneratedFaces::DegeneratedFacesFixer::Start()
 {
+	LOG_INFO("Start.");
+
 	api_initialize_constructors();
 	api_initialize_booleans();
 
@@ -49,9 +51,11 @@ void DegeneratedFace::DegeneratedFaceFixer::Start()
 
 	api_terminate_constructors();
 	api_terminate_booleans();
+
+	LOG_INFO("End.");
 }
 
-void DegeneratedFace::DegeneratedFaceFixer::Clear() 
+void DegeneratedFaces::DegeneratedFacesFixer::Clear() 
 {
 	this->degenerated_faces.clear();
 }

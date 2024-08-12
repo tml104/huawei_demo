@@ -174,7 +174,7 @@
   <ItemGroup>
     <ClCompile Include="binarySearch.cpp" />
     <ClCompile Include="ConstructModel.cpp" />
-    <ClCompile Include="DegeneratedFace.cpp" />
+    <ClCompile Include="DegeneratedFaces.cpp" />
     <ClCompile Include="Experiment240621.cpp" />
     <ClCompile Include="filecontrolwidget.cpp" />
     <ClCompile Include="FileManagement.cpp" />
@@ -291,6 +291,7 @@
     <ClCompile Include="ohmConnection.cpp" />
     <ClCompile Include="ohmtest.cpp" />
     <ClCompile Include="setAttr.cpp" />
+    <ClCompile Include="SingleSideFaces.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -309,7 +310,7 @@
   <ItemGroup>
     <ClInclude Include="Cell.h" />
     <ClInclude Include="ConstructModel.h" />
-    <ClInclude Include="DegeneratedFace.h" />
+    <ClInclude Include="DegeneratedFaces.h" />
     <ClInclude Include="Endpoint.h" />
     <ClInclude Include="Experiment240621.h" />
     <ClInclude Include="FileManagement.h" />
@@ -334,6 +335,7 @@
     <ClInclude Include="NonManifold2.h" />
     <ClInclude Include="ohmConnection.h" />
     <ClInclude Include="ohm_struct.h" />
+    <ClInclude Include="SingleSideFaces.h" />
     <ClInclude Include="StitchGap.h" />
     <ClInclude Include="UtilityFunctions.h" />
     <ClInclude Include="pixel.h" />

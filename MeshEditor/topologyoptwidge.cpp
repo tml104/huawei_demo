@@ -42,9 +42,11 @@ using namespace std;
 #include "setAttr.h"
 using namespace Ohm_slice;
 
-#include "DegeneratedFace.h"
+#include "DegeneratedFaces.h"
 #include "NonManifold2.h"
 #include "StitchGap.h"
+#include "SingleSideFaces.h"
+
 #include "MarkNum.h"
 
 #include "ConstructModel.h"
@@ -173,6 +175,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_solve_nonmanifold = false;
 	bool option_solve_stitch = false;
 	bool option_solve_stitch_for_each_bodies = false;
+	bool option_solve_single_side_faces = true;
 
 	bool option_exp1 = false;
 	bool option_exp2 = false;
@@ -233,7 +236,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	// 选择一个要解决的问题
 
 	if (option_solve_remove_degenerated_faces) {
-		DegeneratedFace::DegeneratedFaceFixer degeneratedFaceFixer(bodies);
+		DegeneratedFaces::DegeneratedFacesFixer degeneratedFaceFixer(bodies);
 		degeneratedFaceFixer.Start();
 	}
 
@@ -243,7 +246,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 		nonManifoldFixer.Init(bodies);
 	}
 
-	if (option_solve_stitch_for_each_bodies) {
+	if (option_solve_stitch) {
 		//B_single.sat -> B_single_mod.sat
 		Stitch::StitchGapFixer stitchGapFixer;
 		stitchGapFixer.Init(bodies);
@@ -267,6 +270,12 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	
 			// 保存请使用选项：option_save_bodies_respectly
 		}
+	}
+
+	if (option_solve_single_side_faces) {
+		// 设定边的双边
+		SingleSideFaces::SingleSideFacesFixer singleSideFacesFixer(bodies);
+		singleSideFacesFixer.Start();
 	}
 
 	/* [实验] */

@@ -251,7 +251,10 @@
     <ClCompile Include="Exp2.cpp">
       <Filter>topologyopt\FindProblem\Test</Filter>
     </ClCompile>
-    <ClCompile Include="DegeneratedFace.cpp">
+    <ClCompile Include="SingleSideFaces.cpp">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClCompile>
+    <ClCompile Include="DegeneratedFaces.cpp">
       <Filter>topologyopt\FindProblem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -370,7 +373,10 @@
     <ClInclude Include="Exp2.h">
       <Filter>topologyopt\FindProblem\Test</Filter>
     </ClInclude>
-    <ClInclude Include="DegeneratedFace.h">
+    <ClInclude Include="SingleSideFaces.h">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClInclude>
+    <ClInclude Include="DegeneratedFaces.h">
       <Filter>topologyopt\FindProblem</Filter>
     </ClInclude>
   </ItemGroup>

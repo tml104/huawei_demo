@@ -63,12 +63,12 @@
 #include <cmath>
 #include <exception>
 
-namespace DegeneratedFace {
+namespace DegeneratedFaces {
 
 	const double REQ_REL_ACCY = 1e-5;
 	const double THRESHOLD_AREA = 1e-4;
 
-	struct DegeneratedFaceFixer {
+	struct DegeneratedFacesFixer {
 
 		std::set<FACE*> degenerated_faces;
 		ENTITY_LIST& bodies;
@@ -78,11 +78,11 @@ namespace DegeneratedFace {
 
 		void RemoveDegeneratedFaces();
 
-		DegeneratedFaceFixer(ENTITY_LIST & bodies) : bodies(bodies) {};
+		DegeneratedFacesFixer(ENTITY_LIST & bodies) : bodies(bodies) {};
 
 		void Start();
 
 		void Clear();
 	};
 
-} // namespace DegeneratedFace
+} // namespace DegeneratedFaces

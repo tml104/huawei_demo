@@ -1,11 +1,5 @@
 #pragma once
 
-// QT include
-#include <QFileDialog>
-#include <QFile>
-#include <QFileInfo>
-#include <QDockWidget>
-
 // ACIS include
 #include <boolapi.hxx>
 #include <curextnd.hxx>
@@ -48,58 +42,46 @@
 #include <geom_utl.hxx>
 #include <body.hxx>
 #include <point.hxx>
-#include <debug.hxx>
-#include <eulerapi.hxx>
-#include <geometry.hxx>
+#include <ckoutcom.hxx>
 
-// Project include
-#include "test.h"
-#include "json/json.h"
-#include "FileManagement.h"
-#include "ohmConnection.h"
-#include "pixel.h"
-#include "GetPatchType.h"
-#include "JsonHandle.h"
-#include "GeometricFill.h"
-#include "setAttr.h"
-
+// my include
 #include "logger44/CoreOld.h"
-#include "MarkNum.h"
 #include "MyConstant.h"
+#include "MarkNum.h"
 #include "UtilityFunctions.h"
 
-// STL
-#include <io.h>
-#include <time.h>
-#include <fstream>
+// std include
 #include <set>
 #include <map>
 #include <vector>
+#include <array>
+#include <bitset>
 #include <algorithm>
 #include <functional>
 #include <string>
 #include <ctime>
 #include <cmath>
+#include <exception>
 
-namespace GeometryUtils {
+/*
+	备注：对于这些单面模型根本不存在需要改single为double的情况啊？
+*/
+namespace SingleSideFaces {
 
-	const double POINT_EPSLION = 1e-6;
-	const double SAMPLE_POINTS_NUMBER = 11; // 最好是奇数
+	struct SingleSideFacesFixer {
 
-	void PrintEdgeGeometry(EDGE* e);
-	void PrintFaceGeometry(FACE* f);
+		std::set<FACE*> single_side_faces;
+		ENTITY_LIST& bodies;
 
-	/*
-		判断两个点是否几何一致
-		几何一致：要么是同一个VERTEX，要么几何上差距小
-	*/
-	bool GeometryCoincidentVertex(VERTEX* v1, VERTEX* v2, const double epslion = POINT_EPSLION);
+		void FindSingleSideFaces();
 
-	bool GeometryCoincidentPoint(SPAposition p1, SPAposition p2, const double epslion = POINT_EPSLION);
+		void SetFacesToDoubleSide();
 
-	/*
-		判断两条边是否符合“几何上相同”的条件
-	*/
-	bool GeometryCoincidentEdge(EDGE* e1, EDGE* e2);
+		SingleSideFacesFixer(ENTITY_LIST & bodies) : bodies(bodies) {};
 
-} // namespace GeometryUtils
+		void Start();
+
+		void Clear();
+	};
+
+} // namespace SingleSideFaces

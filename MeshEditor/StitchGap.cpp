@@ -126,12 +126,25 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 			// 如果coedge的partnet数量是1，意味着找到poor coedge，保存到vec中
 			if (partner_count == 1) {
 
-				LOG_DEBUG("poor coedge found: %d (edge: %d), vertex:%d %d",
-					MarkNum::GetId(coedge_ptr),
-					MarkNum::GetId(coedge_ptr->edge()),
-					MarkNum::GetId(coedge_ptr->start()),
-					MarkNum::GetId(coedge_ptr->end())
-				);
+				// [有效性检查] START
+
+				if (coedge_ptr->start() == nullptr)
+				{
+					LOG_ERROR("poor coedge found, but NO START.");
+					continue;
+				}
+
+				if (coedge_ptr->end() == nullptr)
+				{
+					LOG_ERROR("poor coedge found, but NO END.");
+					continue;
+				}
+
+				if (coedge_ptr->edge() == nullptr)
+				{
+					LOG_ERROR("poor coedge found, but NO EDGE.");
+					continue;
+				}
 
 				// ~~排除~~ 输出无几何的情况				
 				if (coedge_ptr->geometry() == nullptr)
@@ -141,6 +154,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
 						MarkNum::GetId(coedge_ptr->end()));
+					continue;
 				}
 
 				if (coedge_ptr->start()->geometry() == nullptr)
@@ -150,6 +164,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
 						MarkNum::GetId(coedge_ptr->end()));
+					continue;
 				}
 
 				if (coedge_ptr->end()->geometry() == nullptr)
@@ -159,7 +174,17 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
 						MarkNum::GetId(coedge_ptr->end()));
+					continue;
 				}
+
+				// [有效性检查] END
+
+				LOG_DEBUG("poor coedge found: %d (edge: %d), vertex:%d %d",
+					MarkNum::GetId(coedge_ptr),
+					MarkNum::GetId(coedge_ptr->edge()),
+					MarkNum::GetId(coedge_ptr->start()),
+					MarkNum::GetId(coedge_ptr->end())
+				);
 
 
 				// 计算（默认5个）中间采样点，其中0、4是端点，2是真中点
