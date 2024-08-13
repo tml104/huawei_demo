@@ -146,15 +146,14 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 					continue;
 				}
 
-				// ~~排除~~ 输出无几何的情况				
-				if (coedge_ptr->geometry() == nullptr)
+				// 输出无几何的情况				
+				if (coedge_ptr->geometry() == nullptr) // 注意这个不要排除，因为好像确实有coedge_ptr几何不存在但是对应的edge却有的情况的
 				{
 					LOG_ERROR("coedge_ptr NO GEOMETRY: coedge_ptr: %d (edge: %d), vertex: %d %d",
 						MarkNum::GetId(coedge_ptr),
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
 						MarkNum::GetId(coedge_ptr->end()));
-					continue;
 				}
 
 				if (coedge_ptr->start()->geometry() == nullptr)
@@ -164,7 +163,6 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
 						MarkNum::GetId(coedge_ptr->end()));
-					continue;
 				}
 
 				if (coedge_ptr->end()->geometry() == nullptr)
@@ -174,7 +172,6 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
 						MarkNum::GetId(coedge_ptr->end()));
-					continue;
 				}
 
 				// [有效性检查] END
@@ -261,7 +258,7 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 			continue;
 		}
 
-		auto match_poor_coedge_vec = match_tree.Match(e, found_coedge_set);
+		auto match_poor_coedge_vec = match_tree.Match(e, found_coedge_set, dont_stitch_coincident);
 
 		if (match_poor_coedge_vec.size()) {
 			// 取分数最小的<PoorCoedge, score>对
@@ -288,7 +285,7 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 	for (int i = 0; i < poor_coedge_pair_vec.size(); i++) {
 		auto &coedge_pair = poor_coedge_pair_vec[i];
 
-		LOG_DEBUG("Match pair (coedge id) (edge id): (%d, %d) (%d, %d)",
+		LOG_DEBUG("Match pair (coedge id pair) (edge id pair): (%d, %d) (%d, %d)",
 			MarkNum::GetId(coedge_pair.first.coedge),
 			MarkNum::GetId(coedge_pair.second.coedge),
 			MarkNum::GetId(coedge_pair.first.coedge->edge()),
@@ -341,7 +338,7 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 		std::vector<bool> poor_coedge_pair_vec_flag(poor_coedge_pair_vec.size()); // 标记向量：如果对应配对边组合被标记为true，则跳过它们，并且将它们从found_coedge_set集合中移除
 		// 下文代码请参考stitch中画蓝圈的那个图，v0, v1代表不带撇那个边上的顶点，v01,v11则是带撇的那个
 
-		// (2.0) 排除掉交叉连接的情况
+		// (2.0) ~~排除~~ 警告交叉连接的情况
 		for (int i = 0; i < poor_coedge_pair_vec.size(); i++) {
 
 			if (poor_coedge_pair_vec_flag[i]) {
@@ -592,6 +589,19 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 	rearrange_poor_coedge_pairs(poor_coedge_pair_vec2);
 
 	poor_coedge_pair_vec = std::move(poor_coedge_pair_vec2);
+
+	//[debug] 重排序后的配对边信息
+	for (int i = 0; i < poor_coedge_pair_vec.size(); i++) {
+		auto &coedge_pair = poor_coedge_pair_vec[i];
+
+		LOG_DEBUG("Match pair AFTER REARRANGE: (coedge id pair) (edge id pair): (%d, %d) (%d, %d)",
+			MarkNum::GetId(coedge_pair.first.coedge),
+			MarkNum::GetId(coedge_pair.second.coedge),
+			MarkNum::GetId(coedge_pair.first.coedge->edge()),
+			MarkNum::GetId(coedge_pair.second.coedge->edge())
+		);
+	}
+
 
 	LOG_INFO("end.");
 }
@@ -926,9 +936,8 @@ void Stitch::MatchTree::DeleteTree()
 	返回值：一个含有<poor coedge对象,分数>的列表
 	注意这里的子树剪枝条件会根据EPSLION1放松一些
 */
-std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stitch::PoorCoedge poor_coedge1, const std::set<COEDGE*>& found_coedge_set)
+std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stitch::PoorCoedge poor_coedge1, const std::set<COEDGE*>& found_coedge_set, bool dont_stitch_coincident)
 {
-
 	LOG_INFO("start.");
 
 	LOG_DEBUG("Now Matching: %d", MarkNum::GetId(poor_coedge1.coedge));
@@ -984,17 +993,27 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 				return;
 			}
 
+			// 排除掉完全相同的边的几何匹配的情况（如果选项启用）
+			if (dont_stitch_coincident && GeometryUtils::GeometryCoincidentEdge(poor_coedge1.coedge->edge(), now_root->leaf_poor_coedge.coedge->edge())) {
+				LOG_DEBUG("Skip coincident coedge.");
+				return;
+			}
+
 			// 确实检查匹配条件并获得匹配分数
-			LOG_DEBUG("Score calculating: %d %d",
+			LOG_DEBUG("Score calculating: %d (edge: %d) %d (edge: %d)",
 				MarkNum::GetId(poor_coedge1.coedge),
-				MarkNum::GetId(now_root->leaf_poor_coedge.coedge)
+				MarkNum::GetId(poor_coedge1.coedge->edge()),
+				MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
+				MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge())
 			);
 
 			double score = get_match_score(now_root);
 
-			LOG_DEBUG("Score get: %d %d, score:%.5lf\n",
+			LOG_DEBUG("Score get: %d (edge: %d) %d (edge: %d), score:%.5lf\n",
 				MarkNum::GetId(poor_coedge1.coedge),
+				MarkNum::GetId(poor_coedge1.coedge->edge()),
 				MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
+				MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge()),
 				score
 			);
 
@@ -1006,7 +1025,7 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 		}
 
 		if (!check_subtree_valid(now_root)) {
-			LOG_DEBUG("check_subtree_valid==false: %d\n", now_root);
+			//LOG_DEBUG("check_subtree_valid==false: %d\n", now_root);
 			return;
 		}
 
@@ -1071,9 +1090,11 @@ Stitch::PoorCoedge::PoorCoedge() : coedge(nullptr)
 	入口
 	找破边并修复 （注意目前这个只接受bodies下只有一个body的情况，否则可能会出问题）
 */
-void Stitch::StitchGapFixer::Start(bool call_fix)
+void Stitch::StitchGapFixer::Start(bool call_fix, bool dont_stitch_coincident)
 {
-	LOG_INFO("EPSLION1: %.5lf;\t EPSLION2: %.5lf;\t EPSLION2_SIN: %.5lf;\t call_fix: %s\t", EPSLION1, EPSLION2, EPSLION2_SIN, call_fix ? "True" : "False");
+	this->dont_stitch_coincident = dont_stitch_coincident;
+
+	LOG_INFO("EPSLION1: %.5lf;\t EPSLION2: %.5lf;\t EPSLION2_SIN: %.5lf;\t call_fix: %s\t, dont_stitch_coincident: %s\t", EPSLION1, EPSLION2, EPSLION2_SIN, call_fix ? "True" : "False", this->dont_stitch_coincident?"True":"False");
 
 	// 计时开始
 	clock_t Stitch_start_clock = std::clock();

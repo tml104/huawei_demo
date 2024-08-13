@@ -49,6 +49,7 @@
 #include "MyConstant.h"
 #include "MarkNum.h"
 #include "UtilityFunctions.h"
+#include "GeometryUtils.h"
 
 // std include
 #include <set>
@@ -65,7 +66,7 @@
 
 
 namespace Stitch {
-	const double EPSLION1 = 0.1; // EPSLION1: æ‡¿ÎŒÛ≤Ó£∫0.1
+	const double EPSLION1 = 0.05; // EPSLION1: æ‡¿ÎŒÛ≤Ó£∫0.02
 	const double EPSLION2 = cos(MYPI / 6); // EPSLION2: Ω«∂»ŒÛ≤Ó£∫30 degree
 	const double EPSLION2_SIN = sqrt(1.0 - EPSLION2 * EPSLION2);
 	const int MIDPOINT_CNT = 5;  //◊Ó∫√ «∆Ê ˝
@@ -110,7 +111,7 @@ namespace Stitch {
 
 		void ConstructTree(std::vector<Stitch::PoorCoedge>& poor_coedge_vec);
 		void DeleteTree();
-		std::vector<std::pair<Stitch::PoorCoedge, double>> Match(Stitch::PoorCoedge poor_coedge1, const std::set<COEDGE*>& found_coedge_set);
+		std::vector<std::pair<Stitch::PoorCoedge, double>> Match(Stitch::PoorCoedge poor_coedge1, const std::set<COEDGE*>& found_coedge_set, bool dont_stitch_coincident);
 
 		MatchTreeNode* root;
 	};
@@ -140,6 +141,8 @@ namespace Stitch {
 		Stitch::MatchTree match_tree;
 		ENTITY_LIST &bodies;
 
+		bool dont_stitch_coincident;
+
 		// µ˜”√À≥–Ú£∫1
 		void FindPoorCoedge(ENTITY_LIST &bodies);
 
@@ -156,7 +159,7 @@ namespace Stitch {
 
 		StitchGapFixer(ENTITY_LIST &bodies) : bodies(bodies) {};
 
-		void Start(bool call_fix = true);
+		void Start(bool call_fix, bool dont_stitch_coincident);
 
 		void Clear();
 	};

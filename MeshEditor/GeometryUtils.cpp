@@ -325,7 +325,7 @@ bool GeometryUtils::GeometryCoincidentVertex(VERTEX * v1, VERTEX * v2, const dou
 	return true;
 }
 
-bool GeometryUtils::GeometryCoincidentPoint(SPAposition p1, SPAposition p2, const double epslion = POINT_EPSLION)
+bool GeometryUtils::GeometryCoincidentPoint(SPAposition p1, SPAposition p2, const double epslion)
 {
 	for (int i = 0; i < 3; i++) {
 		if (abs(p1.coordinate(i) - p2.coordinate(i)) > epslion) {

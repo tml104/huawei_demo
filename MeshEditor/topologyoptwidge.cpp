@@ -169,13 +169,14 @@ void TopologyOptWidget::on_open_file (QString file_path)
 
 	bool option_marknum_init = true;
 	bool option_marknum_showedgemark = false;
-	bool option_marknum_showfacemark = true;
+	bool option_marknum_showedgemark_with_set = false;
+	bool option_marknum_showfacemark = false;
 
 	bool option_solve_remove_degenerated_faces = true;
 	bool option_solve_nonmanifold = false;
-	bool option_solve_stitch = false;
+	bool option_solve_stitch = true;
 	bool option_solve_stitch_for_each_bodies = false;
-	bool option_solve_single_side_faces = true;
+	bool option_solve_single_side_faces = false;
 
 	bool option_exp1 = false;
 	bool option_exp2 = false;
@@ -240,6 +241,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 		degeneratedFaceFixer.Start();
 	}
 
+
 	if (option_solve_nonmanifold) {
 		// A_ent(2).sat, cyl3
 		NonManifold::NonManifoldFixer nonManifoldFixer;
@@ -249,10 +251,26 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	if (option_solve_stitch) {
 		//B_single.sat -> B_single_mod.sat
 		Stitch::StitchGapFixer stitchGapFixer(bodies);
-		stitchGapFixer.Start();
+		stitchGapFixer.Start(true, true);
+
+		stitchGapFixer.Clear();
+		stitchGapFixer.Start(true, false);
+
+
+		if (option_marknum_showedgemark_with_set) {
+			std::set<int> show_edge_marknum_set;
+			for (int i = 0; i < stitchGapFixer.poor_coedge_pair_vec.size(); i++)
+			{
+				auto pair = stitchGapFixer.poor_coedge_pair_vec[i];
+				show_edge_marknum_set.insert(MarkNum::GetId(pair.first.coedge->edge()));
+				show_edge_marknum_set.insert(MarkNum::GetId(pair.second.coedge->edge()));
+			}
+
+			MarkNum::ShowEdgeMark(hoopsview, show_edge_marknum_set);
+		}
 	}
 
-	if (option_solve_stitch_for_each_bodies)
+	if (option_solve_stitch_for_each_bodies) // TODO: 修改逻辑
 	{
 		Exp1::Exp1 exp1;
 		exp1.Init(bodies);
@@ -266,7 +284,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 			LOG_INFO("Stitching for body: [%d]", i);
 	
 			Stitch::StitchGapFixer stitchGapFixer(ibody_list);
-			stitchGapFixer.Start(stitch_call_fix);
+			stitchGapFixer.Start(stitch_call_fix, false);
 	
 			// 保存请使用选项：option_save_bodies_respectly
 		}
