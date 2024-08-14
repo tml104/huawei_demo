@@ -255,6 +255,7 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 		auto &e = poor_coedge_vec[i];
 
 		if (found_coedge_set.count(e.coedge)) {
+			LOG_DEBUG("Skip matching: %d (edge: %d)", MarkNum::GetId(e.coedge), MarkNum::GetId(e.coedge->edge()));
 			continue;
 		}
 
@@ -265,9 +266,11 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 			auto first_match = match_poor_coedge_vec.front();
 
 			// [debug]打印分数
-			LOG_DEBUG("Best match id: %d %d, score: %.5lf",
+			LOG_DEBUG("Best match id: %d (edge: %d) %d (edge: %d), score: %.5lf",
 				MarkNum::GetId(e.coedge),
+				MarkNum::GetId(e.coedge->edge()),
 				MarkNum::GetId(first_match.first.coedge),
+				MarkNum::GetId(first_match.first.coedge->edge()),
 				first_match.second
 			);
 
@@ -339,6 +342,30 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 		// 下文代码请参考stitch中画蓝圈的那个图，v0, v1代表不带撇那个边上的顶点，v01,v11则是带撇的那个
 
 		// (2.0) ~~排除~~ 警告交叉连接的情况
+
+		auto f2_0 = [&](std::pair<Stitch::PoorCoedge, Stitch::PoorCoedge>& poor_coedge_pair, VERTEX* v1, VERTEX* v2) {
+			std::vector<EDGE*> edges = edges_data.FindEdgesBetweenVertices(v1, v2);
+
+			for (int j = 0; j < edges.size(); j++) {
+				EDGE* e = edges[j];
+				if (e != poor_coedge_pair.first.coedge->edge() && e != poor_coedge_pair.second.coedge->edge()) {// 此判断排除这个交叉边和已配对边相同的情况（这个有啥必要吗？）
+					LOG_WARN("(2.0) Warn: Connect between v0 v01 or v1 v11: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d) (v1: %d, v2: %d, e: %d)",
+						MarkNum::GetId(poor_coedge_pair.first.coedge),
+						MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
+						MarkNum::GetId(poor_coedge_pair.second.coedge),
+						MarkNum::GetId(poor_coedge_pair.second.coedge->edge()),
+						MarkNum::GetId(v1),
+						MarkNum::GetId(v2),
+						MarkNum::GetId(e)
+					);
+
+					/*found_coedge_set.erase(poor_coedge_pair.first.coedge);
+					found_coedge_set.erase(poor_coedge_pair.second.coedge);
+					poor_coedge_pair_vec_flag[i] = true;*/ // 现在不再排除这种情况
+				}
+			}
+		};
+
 		for (int i = 0; i < poor_coedge_pair_vec.size(); i++) {
 
 			if (poor_coedge_pair_vec_flag[i]) {
@@ -352,49 +379,8 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 			auto v01 = poor_coedge_pair.second.coedge->start();
 			auto v11 = poor_coedge_pair.second.coedge->end();
 
-			auto v0_v01_edge_it = vertex_pair_to_edge_map.find(std::make_pair(v0, v01)); // 寻找v0, v01是否有连接，也即交叉连接
-			if (v0_v01_edge_it == vertex_pair_to_edge_map.end()) { // 找不到就反着找一遍确保没有
-				v0_v01_edge_it = vertex_pair_to_edge_map.find(std::make_pair(v01, v0));
-			}
-
-			if (v0_v01_edge_it != vertex_pair_to_edge_map.end()) { //如果能找到
-				auto iedge = v0_v01_edge_it->second; // 取得找到的这个交叉边
-				if (iedge != poor_coedge_pair.first.coedge->edge() && iedge != poor_coedge_pair.second.coedge->edge()) { // 排除这个交叉边和已配对边相同的情况（这个有啥必要吗？）
-					LOG_DEBUG("Connect between v0 v01: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
-						MarkNum::GetId(poor_coedge_pair.first.coedge),
-						MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-						MarkNum::GetId(poor_coedge_pair.second.coedge),
-						MarkNum::GetId(poor_coedge_pair.second.coedge->edge())
-					);
-
-					found_coedge_set.erase(poor_coedge_pair.first.coedge);
-					found_coedge_set.erase(poor_coedge_pair.second.coedge);
-					poor_coedge_pair_vec_flag[i] = true;
-					continue;
-				}
-			}
-
-			auto v1_v11_edge_it = vertex_pair_to_edge_map.find(std::make_pair(v1, v11)); // 寻找v1, v11是否有连接，也即交叉连接
-			if (v1_v11_edge_it == vertex_pair_to_edge_map.end()) {
-				v1_v11_edge_it = vertex_pair_to_edge_map.find(std::make_pair(v11, v1));
-			}
-
-			if (v1_v11_edge_it != vertex_pair_to_edge_map.end()) { // 如果能找到
-				auto iedge = v1_v11_edge_it->second; // 取得找到的交叉边
-				if (iedge != poor_coedge_pair.first.coedge->edge() && iedge != poor_coedge_pair.second.coedge->edge()) { // 排除这个交叉边和已配对边相同的情况（这个有啥必要吗？）
-					LOG_DEBUG("Connect between v1 v11: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
-						MarkNum::GetId(poor_coedge_pair.first.coedge),
-						MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-						MarkNum::GetId(poor_coedge_pair.second.coedge),
-						MarkNum::GetId(poor_coedge_pair.second.coedge->edge())
-					);
-
-					found_coedge_set.erase(poor_coedge_pair.first.coedge);
-					found_coedge_set.erase(poor_coedge_pair.second.coedge);
-					poor_coedge_pair_vec_flag[i] = true;
-				}
-			}
-
+			f2_0(poor_coedge_pair, v0, v01);
+			f2_0(poor_coedge_pair, v1, v11);
 		}
 
 		// (2.1) 顺序1：无连接
@@ -411,13 +397,13 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 			auto v01 = poor_coedge_pair.second.coedge->start();
 			auto v11 = poor_coedge_pair.second.coedge->end();
 
-			if (vertex_pair_to_edge_map.count(std::make_pair(v0, v11)) == 0
-				&& vertex_pair_to_edge_map.count(std::make_pair(v11, v0)) == 0
-				&& vertex_pair_to_edge_map.count(std::make_pair(v1, v01)) == 0
-				&& vertex_pair_to_edge_map.count(std::make_pair(v01, v1)) == 0
-				) {
-
-				LOG_DEBUG("Not connect: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
+			if( edges_data.FindEdgesBetweenVertices(v0, v11).size() == 0
+				&& edges_data.FindEdgesBetweenVertices(v1, v01).size() == 0
+				&& edges_data.FindEdgesBetweenVertices(v1, v11).size() == 0
+				&& edges_data.FindEdgesBetweenVertices(v0, v01).size() == 0
+				)
+			{
+				LOG_DEBUG("(2.1) Not connect: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
 					MarkNum::GetId(poor_coedge_pair.first.coedge),
 					MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
 					MarkNum::GetId(poor_coedge_pair.second.coedge),
@@ -433,6 +419,43 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 		partial_sort_for_poor_coedge_pair_vec2(poor_coedge_pair_vec2, 0, poor_coedge_pair_vec2_size_2_1);
 
 		// (2.2) 顺序2：连接非已经匹配边
+
+		auto f2_2 = [&](std::pair<Stitch::PoorCoedge, Stitch::PoorCoedge>& poor_coedge_pair, VERTEX* v1, VERTEX* v2, bool& flag) {
+			std::vector<EDGE*> edges = edges_data.FindEdgesBetweenVertices(v1, v2);
+
+			// v0, v11（v1, v2） 之间有边相连 
+			for (int j = 0; j < edges.size(); j++) {
+				EDGE* e = edges[j];
+
+				// 遍历这个边的所有coedge，如果存在coedge在Stitch::Singleton::found_coedge_set中则说明这不是一个非已匹边
+				// 事实上，这里如果能判断出v0_v11_edge这个edge的coedge存在found_coedge_set中，就意味着这个边其实同样也是破边。如果这个破边（v0_v11_edge）也和另外的边有匹配，则将当前这个配对后置。这里就是在做这一步
+				COEDGE* icoedge = e->coedge();
+				do {
+					if (icoedge == nullptr) {
+						break;
+					}
+
+					if (found_coedge_set.count(icoedge)) {
+						LOG_DEBUG("(2.2) Matched coedge (不是非已经匹配边连接，也即是有已匹配边连接) connect v0 v11 or v1 v01: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d), (v1, v2: %d, %d), (this matched edge, this matched coedge: %d, %d)",
+							MarkNum::GetId(poor_coedge_pair.first.coedge),
+							MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
+							MarkNum::GetId(poor_coedge_pair.second.coedge),
+							MarkNum::GetId(poor_coedge_pair.second.coedge->edge()),
+							MarkNum::GetId(v1),
+							MarkNum::GetId(v2),
+							MarkNum::GetId(e),
+							MarkNum::GetId(icoedge)
+						);
+
+						flag = false;
+						break;
+					}
+
+					icoedge = icoedge->partner();
+				} while (icoedge != nullptr && icoedge != e->coedge());
+			}
+		};
+
 		for (int i = 0; i < poor_coedge_pair_vec.size(); i++) {
 			if (poor_coedge_pair_vec_flag[i]) {
 				continue;
@@ -447,102 +470,13 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 			bool flag = true; // 优先排序flag，如果在判断v0, v11 （等）之间没有边相连则将其优先放入poor_coedge_pair_vec2中（同时修改poor_coedge_pair_vec_flag这个vector）
 
 			// v0 v11
-			auto v0_v11_map_it = vertex_pair_to_edge_map.find(std::make_pair(v0, v11));
-			if (v0_v11_map_it == vertex_pair_to_edge_map.end()) {
-				v0_v11_map_it = vertex_pair_to_edge_map.find(std::make_pair(v11, v0));
-			}
-			// v0, v11 之间有边相连 
-			if (v0_v11_map_it != vertex_pair_to_edge_map.end()) {
-				EDGE* v0_v11_edge = v0_v11_map_it->second;
-				// 遍历这个边的所有coedge，如果存在coedge在Stitch::Singleton::found_coedge_set中则说明这不是一个非已匹边
-				// 事实上，这里如果能判断出v0_v11_edge这个edge的coedge存在found_coedge_set中，就意味着这个边其实同样也是破边。如果这个破边（v0_v11_edge）也和另外的边有匹配，则将当前这个配对后置
-				COEDGE* icoedge = v0_v11_edge->coedge();
-				do {
-					if (icoedge == nullptr) {
-						break;
-					}
-
-					LOG_DEBUG("Pre Not unmatched coedge connect v0 v11: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d), (v0, v11: %d, %d), (edge, coedge: %d, %d)",
-						MarkNum::GetId(poor_coedge_pair.first.coedge),
-						MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-						MarkNum::GetId(poor_coedge_pair.second.coedge),
-						MarkNum::GetId(poor_coedge_pair.second.coedge->edge()),
-						MarkNum::GetId(v0),
-						MarkNum::GetId(v11),
-						MarkNum::GetId(v0_v11_edge),
-						MarkNum::GetId(icoedge)
-					);
-
-					if (found_coedge_set.count(icoedge)) {
-						LOG_DEBUG("Not unmatched coedge connect v0 v11: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d), (v0, v11: %d, %d), (edge, coedge: %d, %d)",
-							MarkNum::GetId(poor_coedge_pair.first.coedge),
-							MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-							MarkNum::GetId(poor_coedge_pair.second.coedge),
-							MarkNum::GetId(poor_coedge_pair.second.coedge->edge()),
-							MarkNum::GetId(v0),
-							MarkNum::GetId(v11),
-							MarkNum::GetId(v0_v11_edge),
-							MarkNum::GetId(icoedge)
-						);
-
-						flag = false;
-						break;
-					}
-
-					icoedge = icoedge->partner();
-				} while (icoedge != nullptr && icoedge != v0_v11_edge->coedge());
-
-			}
+			f2_2(poor_coedge_pair, v0, v11, flag);
 
 			// v1 v01
-			auto v1_v01_map_it = vertex_pair_to_edge_map.find(std::make_pair(v1, v01));
-			if (v1_v01_map_it == vertex_pair_to_edge_map.end()) {
-				v1_v01_map_it = vertex_pair_to_edge_map.find(std::make_pair(v01, v1));
-			}
-			// v1,v01 之间有边相连
-			if (v1_v01_map_it != vertex_pair_to_edge_map.end()) {
-				EDGE* v1_v01_edge = v1_v01_map_it->second;
-				// 遍历所有coedge，如果存在coedge在Stitch::Singleton::found_coedge_set中则说明这不是一个非已匹边
-				COEDGE* icoedge = v1_v01_edge->coedge();
-				do {
-					if (icoedge == nullptr) {
-						break;
-					}
-
-					LOG_DEBUG("Pre Not unmatched coedge connect v1 v01: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d), (v1, v01: %d, %d), (edge, coedge: %d, %d)",
-						MarkNum::GetId(poor_coedge_pair.first.coedge),
-						MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-						MarkNum::GetId(poor_coedge_pair.second.coedge),
-						MarkNum::GetId(poor_coedge_pair.second.coedge->edge()),
-						MarkNum::GetId(v1),
-						MarkNum::GetId(v01),
-						MarkNum::GetId(v1_v01_edge),
-						MarkNum::GetId(icoedge)
-					);
-
-					if (found_coedge_set.count(icoedge)) {
-						LOG_DEBUG("Not unmatched coedge connect v1 v01: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d), (v1, v01: %d, %d), (edge, coedge: %d, %d)",
-							MarkNum::GetId(poor_coedge_pair.first.coedge),
-							MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-							MarkNum::GetId(poor_coedge_pair.second.coedge),
-							MarkNum::GetId(poor_coedge_pair.second.coedge->edge()),
-							MarkNum::GetId(v1),
-							MarkNum::GetId(v01),
-							MarkNum::GetId(v1_v01_edge),
-							MarkNum::GetId(icoedge)
-						);
-
-						flag = false;
-						break;
-					}
-
-					icoedge = icoedge->partner();
-				} while (icoedge != nullptr && icoedge != v1_v01_edge->coedge());
-
-			}
+			f2_2(poor_coedge_pair, v1, v01, flag);
 
 			if (flag) {
-				LOG_DEBUG("Rearrange Flag: True. Not unmatched coedge connect: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
+				LOG_DEBUG("(2.2) Rearrange Flag: True. Not unmatched coedge connect: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
 					MarkNum::GetId(poor_coedge_pair.first.coedge),
 					MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
 					MarkNum::GetId(poor_coedge_pair.second.coedge),
@@ -553,7 +487,6 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 				poor_coedge_pair_vec_flag[i] = true;
 
 			}
-
 
 		}
 		// -> 局部重排序
@@ -571,7 +504,7 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 			poor_coedge_pair_vec2.emplace_back(poor_coedge_pair);
 			//poor_coedge_pair_vec_flag[i] = true;
 
-			LOG_DEBUG("Remaining case: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
+			LOG_DEBUG("(2.3) Remaining case: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
 				MarkNum::GetId(poor_coedge_pair.first.coedge),
 				MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
 				MarkNum::GetId(poor_coedge_pair.second.coedge),
@@ -657,12 +590,12 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 		poor_coedge_pair.second.coedge->set_sense(!(poor_coedge_pair.first.coedge->sense()));
 
 		// 3.2 修改所有边的v11, v01为v0, v1（如果原本v0==v11等那就跳过）
-		for (int j = 0; j < all_edge_vector.size(); j++) {
-			auto &iedge = all_edge_vector[j];
+		for (int j = 0; j < edges_data.all_edge_vector.size(); j++) {
+			auto &iedge = edges_data.all_edge_vector[j];
 			if (v0 != v11) {
 				if (iedge->start() == v11) {
 
-					LOG_DEBUG("set iedge->start() from v11 to v0: %d, %d, %d",
+					LOG_DEBUG("(3.2) set iedge->start() from v11 to v0: %d, %d, %d",
 						MarkNum::GetId(iedge),
 						MarkNum::GetId(v11),
 						MarkNum::GetId(v0)
@@ -672,7 +605,7 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 				}
 				if (iedge->end() == v11) {
 
-					LOG_DEBUG("set iedge->end() from v11 to v0: %d, %d, %d",
+					LOG_DEBUG("(3.2) set iedge->end() from v11 to v0: %d, %d, %d",
 						MarkNum::GetId(iedge),
 						MarkNum::GetId(v11),
 						MarkNum::GetId(v0)
@@ -683,7 +616,7 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 			}
 			if (v1 != v01) {
 				if (iedge->start() == v01) {
-					LOG_DEBUG("set iedge->start() from v01 to v1: %d, %d, %d",
+					LOG_DEBUG("(3.2) set iedge->start() from v01 to v1: %d, %d, %d",
 						MarkNum::GetId(iedge),
 						MarkNum::GetId(v01),
 						MarkNum::GetId(v1)
@@ -692,7 +625,7 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 					iedge->set_start(v1);
 				}
 				if (iedge->end() == v01) {
-					LOG_DEBUG("set iedge->end() from v01 to v1: %d, %d, %d",
+					LOG_DEBUG("(3.2) set iedge->end() from v01 to v1: %d, %d, %d",
 						MarkNum::GetId(iedge),
 						MarkNum::GetId(v01),
 						MarkNum::GetId(v1)
@@ -703,93 +636,60 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 			}
 		}
 
-		// 3.3 检查v0 v11的相连情况，如果有相连就删除对应边（修改链表，相当于从loop中删除对应边）
+		// 3.3.1 检查v0 v11的相连情况，如果有相连就删除对应边（修改链表，相当于从loop中删除对应边）
 		// （这个删边看上去并没有考虑到被删除边的引用计数情况啊（也就是说没有判断是否是破边））
-		auto v0_v11_map_it = vertex_pair_to_edge_map.find(std::make_pair(v0, v11));
-		if (v0_v11_map_it == vertex_pair_to_edge_map.end()) {
-			v0_v11_map_it = vertex_pair_to_edge_map.find(std::make_pair(v11, v0));
-		}
-		// v0, v11 之间有边相连
-		if (v0_v11_map_it != vertex_pair_to_edge_map.end()) {
-			EDGE* v0_v11_edge = v0_v11_map_it->second;
-			// 遍历此边下所有coedge，找到前后coedge,修改prev, next关系
-			COEDGE* icoedge = v0_v11_edge->coedge();
-			do {
-				if (icoedge == nullptr) {
-					break;
-				}
+		// 240813: ~~现在改成四种情况（也即多考虑两种交叉边连接的情况，这种情况也要删除）：(v0, v11) (v1, v01) (v0, v01) (v1, v11)~~ 不对，这个还是不能改！
+		auto f3_3 = [&](VERTEX* v1, VERTEX* v2) {
+			std::vector<EDGE*> edges = edges_data.FindEdgesBetweenVertices(v1, v2);
 
-				COEDGE* icoedge_prev = icoedge->previous();
-				COEDGE* icoedge_next = icoedge->next();
+			for (int j = 0; j < edges.size(); j++) {
+				EDGE* e = edges[j];
 
-				if (icoedge_prev != nullptr && icoedge_next != nullptr) {
-					//别忘了：在删coedge的时候，记得check并修改对应loop的start（）
-					if (icoedge->loop()->start() == icoedge) {
-						icoedge->loop()->set_start(icoedge_next); // 随便设置一个loop的start吧（反正都不为空），这里就设置成icoedge_next
+				// 遍历此边下所有coedge，找到前后coedge,修改prev, next关系
+				COEDGE* icoedge = e->coedge();
+
+				do {
+					if (icoedge == nullptr) {
+						break;
 					}
 
-					icoedge_next->set_previous(icoedge_prev);
-					icoedge_prev->set_next(icoedge_next);
+					COEDGE* icoedge_prev = icoedge->previous();
+					COEDGE* icoedge_next = icoedge->next();
 
-					LOG_DEBUG("change coedge prev and next: coedge:%d, prev:%d, next:%d",
-						MarkNum::GetId(icoedge),
-						MarkNum::GetId(icoedge_prev),
-						MarkNum::GetId(icoedge_next)
-					);
-				}
-				else {
-					LOG_ERROR("change coedge prev and next: FAILED");
-				}
-				// fix时删边了，维护found_coedge_set
-				found_coedge_set.erase(icoedge);
-				icoedge = icoedge->partner();
-			} while (icoedge != nullptr && icoedge != v0_v11_edge->coedge());
-		}
+					if (icoedge_prev != nullptr && icoedge_next != nullptr) {
+						//别忘了：在删coedge的时候，记得check并修改对应loop的start（）
+						if (icoedge->loop()->start() == icoedge) {
+							icoedge->loop()->set_start(icoedge_next); // 随便设置一个loop的start吧（反正都不为空），这里就设置成icoedge_next
+						}
 
-		// 3.3 检查v1 v01的相连情况，如果有相连就删除对应边（修改链表，相当于从loop中删除对应边）
-		auto v1_v01_map_it = vertex_pair_to_edge_map.find(std::make_pair(v1, v01));
-		if (v1_v01_map_it == vertex_pair_to_edge_map.end()) {
-			v1_v01_map_it = vertex_pair_to_edge_map.find(std::make_pair(v01, v1));
-		}
-		// v1, v01 之间有边相连
-		if (v1_v01_map_it != vertex_pair_to_edge_map.end()) {
-			EDGE* v1_v01_edge = v1_v01_map_it->second;
-			// 遍历此边下所有coedge，找到前后coedge,修改prev, next关系
-			COEDGE* icoedge = v1_v01_edge->coedge();
-			do {
-				if (icoedge == nullptr) {
-					break;
-				}
+						icoedge_next->set_previous(icoedge_prev);
+						icoedge_prev->set_next(icoedge_next);
 
-				COEDGE* icoedge_prev = icoedge->previous();
-				COEDGE* icoedge_next = icoedge->next();
-
-				if (icoedge_prev != nullptr && icoedge_next != nullptr) {
-					//别忘了：在删coedge的时候，记得check并修改对应loop的start（）
-					if (icoedge->loop()->start() == icoedge) {
-						icoedge->loop()->set_start(icoedge_next); // 随便设置一个loop的start吧（反正都不为空），这里就设置成icoedge_next
+						LOG_DEBUG("(3.3) change coedge prev and next: coedge:%d, prev:%d, next:%d",
+							MarkNum::GetId(icoedge),
+							MarkNum::GetId(icoedge_prev),
+							MarkNum::GetId(icoedge_next)
+						);
 					}
+					else {
+						LOG_ERROR("(3.3) change coedge prev and next: FAILED");
+					}
+					// fix时删边了，维护found_coedge_set
+					found_coedge_set.erase(icoedge);
+					icoedge = icoedge->partner();
+				} while (icoedge != nullptr && icoedge != e->coedge());
+			}
+		};
 
-					icoedge_prev->set_next(icoedge_next);
-					icoedge_next->set_previous(icoedge_prev);
+		// 3.3.2 检查v1 v01的相连情况，如果有相连就删除对应边（修改链表，相当于从loop中删除对应边）
+		f3_3(v0, v11);
+		f3_3(v1, v01);
+		//f3_3(v0, v01);
+		//f3_3(v1, v11);
 
-					LOG_DEBUG(
-						"change coedge prev and next: edge:%d, coedge:%d, prev:%d, next:%d",
-						MarkNum::GetId(v1_v01_edge),
-						MarkNum::GetId(icoedge),
-						MarkNum::GetId(icoedge_prev),
-						MarkNum::GetId(icoedge_next)
-					);
+		// TODO: 3.4 修改边几何
 
-				}
-				else {
-					LOG_ERROR("change coedge prev and next: FAILED");
-				}
-				// fix时删边了，维护found_coedge_set
-				found_coedge_set.erase(icoedge);
-				icoedge = icoedge->partner();
-			} while (icoedge != nullptr && icoedge != v1_v01_edge->coedge());
-		}
+		// TODO: 3.5 修改面几何
 	}
 
 	LOG_INFO("Stitch Fix end.");
@@ -797,21 +697,7 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 
 void Stitch::StitchGapFixer::PreProcess()
 {
-	vertex_pair_to_edge_map.clear();
-	all_edge_vector.clear();
-
-	// 预处理: 1. <vertex,vertex> to edge的map; 2. 整个实体的全部边的vector
-	for (int i = 0; i < bodies.count(); i++) {
-		ENTITY *ibody = bodies[i];
-		ENTITY_LIST edge_list;
-		api_get_edges(ibody, edge_list);
-
-		for (int j = 0; j < edge_list.count(); j++) {
-			EDGE* iedge = static_cast<EDGE*>(edge_list[j]);
-			all_edge_vector.emplace_back(iedge);
-			vertex_pair_to_edge_map[std::make_pair(iedge->start(), iedge->end())] = iedge;
-		}
-	}
+	edges_data.Init(bodies);
 }
 
 Stitch::MatchTree::MatchTree() : root(nullptr)
@@ -940,7 +826,7 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 {
 	LOG_INFO("start.");
 
-	LOG_DEBUG("Now Matching: %d", MarkNum::GetId(poor_coedge1.coedge));
+	LOG_DEBUG("Now Matching: %d (edge: %d)", MarkNum::GetId(poor_coedge1.coedge), MarkNum::GetId(poor_coedge1.coedge->edge()));
 
 	std::vector<std::pair<Stitch::PoorCoedge, double>> match_res_vec;
 
@@ -1138,10 +1024,49 @@ void Stitch::StitchGapFixer::Clear()
 	found_coedge_set.clear();
 	poor_coedge_pair_vec.clear();
 
-	vertex_pair_to_edge_map.clear();
-	all_edge_vector.clear();
+	edges_data.Clear();
 
 	match_tree.DeleteTree();
 
 	LOG_INFO("end.");
+}
+
+void Stitch::EdgesData::Init(ENTITY_LIST & bodies)
+{
+	// 预处理: a. <vertex,vertex> to edge的map; b. 整个实体的全部边的vector
+	for (int i = 0; i < bodies.count(); i++) {
+		ENTITY *ibody = bodies[i];
+		ENTITY_LIST edge_list;
+		api_get_edges(ibody, edge_list);
+
+		for (int j = 0; j < edge_list.count(); j++) {
+			EDGE* iedge = static_cast<EDGE*>(edge_list[j]);
+			all_edge_vector.emplace_back(iedge);
+			vertex_pair_to_edge_map[std::make_pair(iedge->start(), iedge->end())].emplace_back(iedge);
+		}
+	}
+}
+
+void Stitch::EdgesData::Clear()
+{
+	vertex_pair_to_edge_map.clear();
+	all_edge_vector.clear();
+}
+
+std::vector<EDGE*> Stitch::EdgesData::FindEdgesBetweenVertices(VERTEX * v1, VERTEX * v2)
+{
+	std::vector<EDGE*> res;
+
+	auto v1_v2_edges_it = vertex_pair_to_edge_map.find(std::make_pair(v1, v2));
+	auto v2_v1_edges_it = vertex_pair_to_edge_map.find(std::make_pair(v2, v1));
+
+	if (v1_v2_edges_it != vertex_pair_to_edge_map.end()) {
+		res.insert(res.end(), v1_v2_edges_it->second.begin(), v1_v2_edges_it->second.end());
+	}
+
+	if (v2_v1_edges_it != vertex_pair_to_edge_map.end()) {
+		res.insert(res.end(), v2_v1_edges_it->second.begin(), v2_v1_edges_it->second.end());
+	}
+
+	return res;
 }

@@ -66,7 +66,7 @@
 
 
 namespace Stitch {
-	const double EPSLION1 = 0.05; // EPSLION1: 距离误差：0.02
+	const double EPSLION1 = 0.1; // EPSLION1: 距离误差：0.02
 	const double EPSLION2 = cos(MYPI / 6); // EPSLION2: 角度误差：30 degree
 	const double EPSLION2_SIN = sqrt(1.0 - EPSLION2 * EPSLION2);
 	const int MIDPOINT_CNT = 5;  //最好是奇数
@@ -128,15 +128,25 @@ namespace Stitch {
 	*/
 	double CalculatePoorCoedgeScore(const PoorCoedge& poor_coedge1, const PoorCoedge& poor_coedge2);
 
+	struct EdgesData {
+		// 中间过程需要用到的数据结构维护
+		std::map<std::pair<VERTEX*, VERTEX*>, std::vector<EDGE*>> vertex_pair_to_edge_map; // 准备<vertex,vertex> to edge的map: 这个map只是用来判断两点之间是否存在边连接用的，具体是什么边连接不重要，因此如果模型中有相同顶点的边的情况也没关系
+		std::vector<EDGE*> all_edge_vector; // 顺带维护一下整个实体的全部边的vector
+
+		void Init(ENTITY_LIST& bodies);
+
+		void Clear();
+
+		std::vector<EDGE*> FindEdgesBetweenVertices(VERTEX* v1, VERTEX* v2);
+	};
+
 	struct StitchGapFixer {
 
 		std::vector<Stitch::PoorCoedge> poor_coedge_vec; // 保存匹配的poor coedge pair 的 vector
 		std::set<COEDGE*> found_coedge_set; // 维护已经匹配的coedge集合
 		std::vector<std::pair<Stitch::PoorCoedge, Stitch::PoorCoedge>> poor_coedge_pair_vec;
 
-		// 中间过程需要用到的数据结构维护
-		std::map<std::pair<VERTEX*, VERTEX*>, EDGE*> vertex_pair_to_edge_map; // 准备<vertex,vertex> to edge的map: 这个map只是用来判断两点之间是否存在边连接用的，具体是什么边连接不重要，因此如果模型中有相同顶点的边的情况也没关系
-		std::vector<EDGE*> all_edge_vector; // 顺带维护一下整个实体的全部边的vector
+		EdgesData edges_data;
 
 		Stitch::MatchTree match_tree;
 		ENTITY_LIST &bodies;
@@ -154,6 +164,8 @@ namespace Stitch {
 
 		// 调用顺序：4
 		void StitchPoorCoedge(ENTITY_LIST &bodies);
+
+		// 其他↓
 
 		void PreProcess();
 

@@ -168,7 +168,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_change_body_trans = true;
 
 	bool option_marknum_init = true;
-	bool option_marknum_showedgemark = false;
+	bool option_marknum_showedgemark = true;
 	bool option_marknum_showedgemark_with_set = false;
 	bool option_marknum_showfacemark = false;
 
@@ -265,7 +265,7 @@ void TopologyOptWidget::on_open_file (QString file_path)
 				show_edge_marknum_set.insert(MarkNum::GetId(pair.first.coedge->edge()));
 				show_edge_marknum_set.insert(MarkNum::GetId(pair.second.coedge->edge()));
 			}
-
+			show_edge_marknum_set.insert(491); // 这个491究竟是什么玩意居然能导致warn?? (好像是那个绿色的边，没事了)
 			MarkNum::ShowEdgeMark(hoopsview, show_edge_marknum_set);
 		}
 	}
