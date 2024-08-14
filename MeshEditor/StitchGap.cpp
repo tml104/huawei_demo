@@ -864,6 +864,27 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 		return Stitch::CalculatePoorCoedgeScore(poor_coedge1, poor_coedge2);
 	};
 
+	/*
+		相同面检查
+	*/
+	auto check_same_face_from_coedges = [&](COEDGE* coedge1, COEDGE* coedge2) -> bool {
+
+		FACE *f1 = nullptr, *f2 = nullptr;
+		if (coedge1->loop() != nullptr && coedge1->loop()->face() != nullptr) {
+			f1 = coedge1->loop()->face();
+		}
+
+		if (coedge2->loop() != nullptr && coedge2->loop()->face() != nullptr) {
+			f2 = coedge2->loop()->face();
+		}
+
+		if (f1 != nullptr && f2 != nullptr && f1 == f2) {
+			return true;
+		}
+
+		return false;
+	};
+
 	std::function<void(Stitch::MatchTree::MatchTreeNode *)> recursive_match = [&](Stitch::MatchTree::MatchTreeNode *now_root) {
 
 		if (now_root->is_leaf) {
@@ -876,6 +897,12 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 
 			if (found_coedge_set.count(poor_coedge1.coedge)) {
 				LOG_DEBUG("Skip matched coedge.");
+				return;
+			}
+
+			// new: 排除相同面
+			if (check_same_face_from_coedges(now_root->leaf_poor_coedge.coedge, poor_coedge1.coedge)) {
+				LOG_DEBUG("Skip same face coedges");
 				return;
 			}
 
