@@ -5,7 +5,7 @@
 	调用顺序：1
 	寻找NonManifold的边，同时维护并查集
 */
-void NonManifold::NonManifoldFixer::FindNonManifold(ENTITY_LIST & bodies)
+void NonManifold::NonManifoldFixer::FindNonManifold()
 {
 	LOG_INFO("start.");
 
@@ -900,7 +900,7 @@ void NonManifold::NonManifoldFixer::SolveNonManifold2()
 	LOG_INFO("end.");
 }
 
-void NonManifold::NonManifoldFixer::Init(ENTITY_LIST & bodies)
+void NonManifold::NonManifoldFixer::Start()
 {
 	// 计时开始
 	clock_t NonManifold_start_clock = std::clock();
@@ -911,7 +911,7 @@ void NonManifold::NonManifoldFixer::Init(ENTITY_LIST & bodies)
 	NonManifold::Debug::PrintLoopsInfo(bodies);
 
 	// （这两个函数影响较小，先调用）
-	FindNonManifold(bodies);
+	FindNonManifold();
 	SpecialCheckNonManifold();
 
 	clock_t NonManifold_end_clock_find = std::clock(); // 计时结束 find

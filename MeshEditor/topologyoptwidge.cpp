@@ -244,8 +244,8 @@ void TopologyOptWidget::on_open_file (QString file_path)
 
 	if (option_solve_nonmanifold) {
 		// A_ent(2).sat, cyl3
-		NonManifold::NonManifoldFixer nonManifoldFixer;
-		nonManifoldFixer.Init(bodies);
+		NonManifold::NonManifoldFixer nonManifoldFixer(bodies);
+		nonManifoldFixer.Start();
 	}
 
 	if (option_solve_stitch) {
