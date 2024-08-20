@@ -79,12 +79,12 @@ void NonManifold::NonManifoldFixer::SpecialCheckNonManifold()
 			} while (jcoedge != nullptr && jcoedge != iloop->start());
 
 			// [debug] 打印一下identical_edge_nonmanifold_count
-			LOG_DEBUG("iedge_nonmanifold:%d, icoedge:%d, iloop:%d, identical_edge_nonmanifold_count: %d.",
-				MarkNum::GetId(iedge_nonmanifold),
-				MarkNum::GetId(icoedge),
-				MarkNum::GetId(iloop),
-				identical_edge_nonmanifold_count
-			);
+			//LOG_DEBUG("iedge_nonmanifold:%d, icoedge:%d, iloop:%d, identical_edge_nonmanifold_count: %d.",
+			//	MarkNum::GetId(iedge_nonmanifold),
+			//	MarkNum::GetId(icoedge),
+			//	MarkNum::GetId(iloop),
+			//	identical_edge_nonmanifold_count
+			//);
 
 			// 检查成功：添加此xloop边进入special_nonmanifold_edge_set集合中（之后根据朝向自然就可区分了）
 			if (identical_edge_nonmanifold_count == 2) {
