@@ -126,20 +126,42 @@ namespace Log44 {
 		std::vector<ILogOutputTarget*> targetVec;
 	};
 
-#ifndef LOG_INFO
-#	define LOG_INFO(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_INFO, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, __VA_ARGS__)
-#endif
+#ifdef _MSC_VER
 
-#ifndef LOG_DEBUG
-#	define LOG_DEBUG(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_DEBUG, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, __VA_ARGS__)
-#endif
+	#ifndef LOG_INFO
+	#	define LOG_INFO(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_INFO, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, __VA_ARGS__)
+	#endif
 
-#ifndef LOG_WARN
-#	define LOG_WARN(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_WARN, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, __VA_ARGS__)
-#endif
+	#ifndef LOG_DEBUG
+	#	define LOG_DEBUG(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_DEBUG, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, __VA_ARGS__)
+	#endif
 
-#ifndef LOG_ERROR
-#	define LOG_ERROR(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_ERROR, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, __VA_ARGS__)
-#endif
+	#ifndef LOG_WARN
+	#	define LOG_WARN(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_WARN, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, __VA_ARGS__)
+	#endif
+
+	#ifndef LOG_ERROR
+	#	define LOG_ERROR(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_ERROR, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, __VA_ARGS__)
+	#endif
+
+#else
+
+	#ifndef LOG_INFO
+#	define LOG_INFO(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_INFO, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, ##__VA_ARGS__)
+	#endif
+
+	#ifndef LOG_DEBUG
+#	define LOG_DEBUG(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_DEBUG, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, ##__VA_ARGS__)
+	#endif
+
+	#ifndef LOG_WARN
+#	define LOG_WARN(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_WARN, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, ##__VA_ARGS__)
+	#endif
+
+	#ifndef LOG_ERROR
+#	define LOG_ERROR(fmt, ...) Log44::Logger::getInstance().log(Log44::LogLevel::LOG_LEVEL_ERROR, std::string(__FILE__), std::string(__FUNCTION__), __LINE__, fmt, ##__VA_ARGS__)
+	#endif
+
+#endif // _MSC_VER
 
 } // namespace Log44
