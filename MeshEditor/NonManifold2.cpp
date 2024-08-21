@@ -890,7 +890,7 @@ void NonManifold::NonManifoldFixer::SolveNonManifold2()
 		auto& end_vertex_incident_edge_set = vertex_to_edge_map[(*it)->end()];
 		traverse_vertex_incident_edge_set(end_vertex_incident_edge_set);
 
-		// TODO:下方是缝合原SolveNonManifold的部分
+		// 下方是缝合原SolveNonManifold的部分
 		solve_single_nonmanifold_edge((*it));
 
 		// 新：清除并查集

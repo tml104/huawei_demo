@@ -207,7 +207,8 @@ void TopologyOptWidget::on_open_file (QString file_path)
 
 	// 文件路径预处理
 	LOG_INFO("file_path: %s", file_path.toAscii().data());
-	auto split_path_tuple = Utils::SplitPath(file_path);
+	std::string file_path_string(file_path.toAscii().data());
+	auto split_path_tuple = Utils::SplitPath(file_path_string);
 
 	// 变换物体
 	if (option_change_body_trans) {

@@ -125,4 +125,13 @@ namespace NonManifold {
 		NonManifoldFixer(ENTITY_LIST &bodies): bodies(bodies) {}
 	};
 
+	//struct NonManifoldFixer2 {
+	//	// 找到的常规非流形边的集合（edge中coedge数目大于2）
+	//	std::set<EDGE*> normal_nonmanifold_edges;
+	//	// 特殊非流形边（满足xloop条件的）集合
+	//	std::set<EDGE*> special_nonmanifold_edges;
+
+
+	//};
+
 } // namespace NonManifold

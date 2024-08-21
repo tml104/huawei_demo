@@ -94,6 +94,7 @@ EDGE* Utils::CopyEdge(EDGE * in_edge)
 	return new_edge;
 }
 
+#ifdef USE_QSTRING
 void Utils::SaveToSAT(QString file_path, ENTITY_LIST &bodies) {
 	FileInfo info;
 	info.set_units(1.0);
@@ -111,12 +112,30 @@ void Utils::SaveToSAT(QString file_path, ENTITY_LIST &bodies) {
 	}
 	fclose(fp);
 }
+#endif
 
 void Utils::SaveToSAT(const std::string& file_path, ENTITY_LIST & bodies)
 {
-	Utils::SaveToSAT(QString(file_path.c_str()), bodies);
+	//Utils::SaveToSAT(QString(file_path.c_str()), bodies);
+
+	FileInfo info;
+	info.set_units(1.0);
+	info.set_product_id("HQH1");
+	outcome result = api_set_file_info((FileId_ | FileUnits), info);
+	check_outcome(result);
+
+	FILE *fp = fopen(file_path.c_str(), "w");
+	if (fp != NULL) {
+		api_save_entity_list(fp, TRUE, bodies);
+		LOG_INFO("file saved: %s", file_path.c_str());
+	}
+	else {
+		LOG_ERROR("file open failed.");
+	}
+	fclose(fp);
 }
 
+#ifdef USE_QSTRING
 void Utils::SaveToSATBody(QString file_path, BODY * body) {
 	ENTITY_LIST save_list;
 	save_list.add(body);
@@ -126,12 +145,22 @@ void Utils::SaveToSATBody(QString file_path, BODY * body) {
 		save_list
 	);
 }
+#endif
 
 void Utils::SaveToSATBody(const std::string& file_path, BODY * body)
 {
-	Utils::SaveToSATBody(QString(file_path.c_str()), body);
+	//Utils::SaveToSATBody(QString(file_path.c_str()), body);
+
+	ENTITY_LIST save_list;
+	save_list.add(body);
+
+	Utils::SaveToSAT(
+		file_path,
+		save_list
+	);
 }
 
+#ifdef USE_QSTRING
 std::tuple<std::string, std::string, std::string> Utils::SplitPath(QString file_path)
 {
 	std::string file_path_string(file_path.toAscii().data());
@@ -144,7 +173,19 @@ std::tuple<std::string, std::string, std::string> Utils::SplitPath(QString file_
 
 	return std::make_tuple(path, file_name_first, file_name_second);
 }
+#endif
 
+std::tuple<std::string, std::string, std::string> Utils::SplitPath(std::string file_path)
+{
+	std::size_t bot_dir_pos = file_path.find_last_of("/\\");
+	std::string path = file_path.substr(0, bot_dir_pos);
+	std::string file_name = file_path.substr(bot_dir_pos + 1);
+	std::size_t dot_pos = file_name.find_last_of(".");
+	std::string file_name_first = file_name.substr(0, dot_pos);
+	std::string file_name_second = file_name.substr(dot_pos + 1);
+
+	return std::make_tuple(path, file_name_first, file_name_second);
+}
 
 void Utils::SaveModifiedBodies(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies)
 {
@@ -153,7 +194,7 @@ void Utils::SaveModifiedBodies(const std::tuple<std::string, std::string, std::s
 	std::string file_name_second = std::get<2>(split_path_tuple);
 
 	std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_mod." + file_name_second;
-	Utils::SaveToSAT(QString((file_path_string_to_be_saved).c_str()), bodies);
+	Utils::SaveToSAT((file_path_string_to_be_saved), bodies);
 	LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
 }
 
@@ -167,7 +208,7 @@ void Utils::SaveModifiedBodiesRespectly(const std::tuple<std::string, std::strin
 	{
 		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_mod_body_" + std::to_string(static_cast<long long>(i)) + "." + file_name_second;
 
-		Utils::SaveToSATBody(QString(file_path_string_to_be_saved.c_str()), dynamic_cast<BODY*>(bodies[i]));
+		Utils::SaveToSATBody(file_path_string_to_be_saved, dynamic_cast<BODY*>(bodies[i]));
 
 		LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
 	}

@@ -60,6 +60,7 @@
 
 #include "UtilityFunctions.h"
 #include "logger44/CoreOld.h"
+#include "MyConstant.h"
 
 #include <set>
 #include <map>
@@ -69,10 +70,6 @@
 #include <ctime>
 #include <cstdio>
 #include <cstring>
-
-#ifndef USE_HOOPSVIEW
-#define USE_HOOPSVIEW
-#endif
 
 #ifdef USE_HOOPSVIEW
 #include "hoopsview.h"

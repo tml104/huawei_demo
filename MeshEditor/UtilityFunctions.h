@@ -45,7 +45,6 @@
 #include <ckoutcom.hxx>
 
 #include <kernapi.hxx>
-#include <io.h>
 #include <time.h>
 #include <fstream>
 #include <tuple>
@@ -64,14 +63,22 @@ namespace Utils {
 	EDGE* CopyEdge(EDGE* in_edge);
 
 	// 保存entity_list到对应路径
+#ifdef USE_QSTRING
 	void SaveToSAT(QString file_path, ENTITY_LIST &bodies);
+#endif
 	void SaveToSAT(const std::string& file_path, ENTITY_LIST &bodies);
 	// 保存单个body到对应路径
+#ifdef USE_QSTRING
 	void SaveToSATBody(QString file_path, BODY* body);
+#endif
 	void SaveToSATBody(const std::string& file_path, BODY* body);
 
 	// 给定路径，将其分离为三元组：（基本路径，文件名，文件扩展名）
+#ifdef USE_QSTRING
 	std::tuple<std::string, std::string, std::string> SplitPath(QString file_path);
+#endif
+
+	std::tuple<std::string, std::string, std::string> SplitPath(std::string file_path);
 
 	// 保存整个bodies list（保存到单个文件中）
 	void SaveModifiedBodies(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
