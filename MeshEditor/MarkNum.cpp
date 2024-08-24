@@ -115,9 +115,9 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 	}
 
 	// ¼ÆÊ±½áÊø
-	clock_t marknum_end_clock = std::clock();
-	double marknum_time_cost = static_cast<double>(marknum_end_clock - marknum_start_clock) / CLOCKS_PER_SEC;
-	LOG_INFO("marknum_time_cost: %.5lf sec", marknum_time_cost);
+	//clock_t marknum_end_clock = std::clock();
+	//double marknum_time_cost = static_cast<double>(marknum_end_clock - marknum_start_clock) / CLOCKS_PER_SEC;
+	//LOG_INFO("marknum_time_cost: %.5lf sec", marknum_time_cost);
 
 
 	LOG_INFO("body count:	%d\n", MarkNum::Singleton::marknum_body);

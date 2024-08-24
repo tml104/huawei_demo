@@ -173,8 +173,8 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_marknum_showfacemark = false;
 
 	bool option_solve_remove_degenerated_faces = true;
-	bool option_solve_nonmanifold = false;
-	bool option_solve_stitch = true;
+	bool option_solve_nonmanifold = true;
+	bool option_solve_stitch = false; 
 	bool option_solve_stitch_for_each_bodies = false;
 	bool option_solve_single_side_faces = false;
 
@@ -223,6 +223,9 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	// 调用计数init 
 	if (option_marknum_init) {
 		MarkNum::Init(bodies);
+
+		GeometryUtils::TopoChecker topochecker(bodies);
+		topochecker.PrintTopo();
 	}
 
 	// （性能开销大）标记每个边的EDGE编号
@@ -245,8 +248,11 @@ void TopologyOptWidget::on_open_file (QString file_path)
 
 	if (option_solve_nonmanifold) {
 		// A_ent(2).sat, cyl3
-		NonManifold::NonManifoldFixer nonManifoldFixer(bodies);
-		nonManifoldFixer.Start();
+		//NonManifold::NonManifoldFixer nonManifoldFixer(bodies);
+		//nonManifoldFixer.Start();
+
+		NonManifold::NonManifoldFixer2 nonManifoldFixer2(bodies);
+		nonManifoldFixer2.Start();
 	}
 
 	if (option_solve_stitch) {
@@ -318,7 +324,16 @@ void TopologyOptWidget::on_open_file (QString file_path)
 		Exp4::Exp4 exp4(bodies);
 		exp4.StartExperiment();
 	}
+
+	if (option_marknum_init) {
+		MarkNum::Clear();
+		MarkNum::Init(bodies);
+
+		GeometryUtils::TopoChecker topochecker(bodies);
+		topochecker.PrintTopo();
+	}
 	/* [实验结束] */
+
 
 	// 控制渲染内容
 	for (int i = 0; i < bodies.count(); i++) {

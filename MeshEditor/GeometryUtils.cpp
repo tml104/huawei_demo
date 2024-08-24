@@ -406,3 +406,78 @@ bool GeometryUtils::GeometryCoincidentEdge(EDGE * e1, EDGE * e2)
 	return flag;
 }
 
+void GeometryUtils::TopoChecker::PrintTopo()
+{
+	LOG_INFO("start.");
+
+	for (int i = 0; i < bodies.count(); i++) {
+
+		ENTITY* ibody_ptr = (bodies[i]);
+
+		ENTITY_LIST lump_list;
+		ENTITY_LIST shell_list;
+		ENTITY_LIST wire_list;
+		ENTITY_LIST face_list;
+		ENTITY_LIST edge_list;
+		ENTITY_LIST coedge_list;
+		ENTITY_LIST vertex_list;
+		ENTITY_LIST loop_list;
+
+		api_get_lumps(ibody_ptr, lump_list);
+		api_get_shells(ibody_ptr, shell_list);
+		api_get_wires(ibody_ptr, wire_list);
+		api_get_faces(ibody_ptr, face_list);
+		api_get_edges(ibody_ptr, edge_list);
+		api_get_coedges(ibody_ptr, coedge_list);
+		api_get_vertices(ibody_ptr, vertex_list);
+		api_get_loops(ibody_ptr, loop_list);
+
+		// face
+		for (int j = 0; j < face_list.count(); j++) {
+			FACE* fp = dynamic_cast<FACE*>(face_list[j]);
+
+			LOG_INFO("face: %d", MarkNum::GetId(fp));
+
+			LOOP* iloop = fp->loop();
+			do {
+				if (iloop == nullptr) {
+					LOG_ERROR("iloop is nullptr");
+					break;
+				}
+
+				LOG_INFO("    loop: %d", MarkNum::GetId(iloop));
+
+				COEDGE* icoedge = iloop->start();
+				
+				do {
+					if (icoedge == nullptr) {
+						LOG_ERROR("icoedge is nullptr");
+						break;
+					}
+
+					LOG_INFO("        coedge: %d", MarkNum::GetId(icoedge));
+					if (icoedge->edge() != nullptr) {
+						LOG_INFO("                edge: %d", MarkNum::GetId(icoedge->edge()));
+					}
+					else {
+						LOG_INFO("edge is nullptr");
+					}
+
+					VERTEX* st = icoedge->start();
+					VERTEX* ed = icoedge->end();
+
+					LOG_INFO("                st: %d", MarkNum::GetId(st));
+					LOG_INFO("                ed: %d", MarkNum::GetId(ed));
+
+					icoedge = icoedge->next();
+				} while (icoedge != nullptr && icoedge != iloop->start());
+
+
+				iloop = iloop->next();
+			} while (iloop != nullptr && iloop != fp->loop());
+
+		}
+	}
+
+	LOG_INFO("end.");
+}

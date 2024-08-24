@@ -125,13 +125,46 @@ namespace NonManifold {
 		NonManifoldFixer(ENTITY_LIST &bodies): bodies(bodies) {}
 	};
 
-	//struct NonManifoldFixer2 {
-	//	// 找到的常规非流形边的集合（edge中coedge数目大于2）
-	//	std::set<EDGE*> normal_nonmanifold_edges;
-	//	// 特殊非流形边（满足xloop条件的）集合
-	//	std::set<EDGE*> special_nonmanifold_edges;
+	struct NonManifoldFixer2 {
+		// 找到的常规非流形边的集合（edge中coedge数目大于2）
+		std::set<EDGE*> nonmanifold_edge_set;
 
+		// 维护原来所有边的初始开始顶点、结束顶点集合，(edge* -> vertex*)
+		std::map<EDGE*, VERTEX*> old_start_vertex_map;
+		std::map<EDGE*, VERTEX*> old_end_vertex_map;
+		// 模型中每个点到对应若干条相邻边的映射集合
+		std::map<VERTEX*, std::set<EDGE*>> vertex_to_edge_map;
 
-	//};
+		std::set<EDGE*> marked_edges;
+
+		NonManifold::LoopFindUnionSet loop_findunionset;
+
+		ENTITY_LIST & bodies;
+
+		void RemovePartnerFromEdge(EDGE* origin_edge, COEDGE* coedge);
+
+		std::vector<std::pair<COEDGE*, COEDGE*>> FindXloopCoedgePairs(EDGE* edge);
+
+		std::vector<std::pair<std::vector<COEDGE*>, std::set<LOOP*>>>  FindNormalCoedgePairs(EDGE* edge, std::set<COEDGE*> excluded_coedges);
+
+		void SolveXloopCoedgePairs(std::vector<std::pair<COEDGE*, COEDGE*>> coedge_pairs, EDGE* origin_edge);
+
+		void SolveNormalCoedgePairs(std::vector<std::pair<std::vector<COEDGE*>, std::set<LOOP*>>> coedge_pairs, EDGE* origin_edge);
+
+		// 1
+		void FindNonManifold();
+
+		// 2
+		void SolveForEachNonManifoldEdge();
+
+		// 3
+		void SplitInnerLoop();
+
+		void Start();
+
+		void Clear();
+
+		NonManifoldFixer2(ENTITY_LIST &bodies) : bodies(bodies) {}
+	};
 
 } // namespace NonManifold

@@ -102,4 +102,12 @@ namespace GeometryUtils {
 	*/
 	bool GeometryCoincidentEdge(EDGE* e1, EDGE* e2);
 
+	struct TopoChecker {
+		ENTITY_LIST & bodies;
+
+		void PrintTopo();
+
+		TopoChecker(ENTITY_LIST &bodies): bodies(bodies) {}
+	};
+
 } // namespace GeometryUtils
