@@ -1591,7 +1591,7 @@ void NonManifold::NonManifoldFixer2::SolveForEachNonManifoldEdge()
 }
 
 /*
-	TODO: 改内环这段还是有bug，先不要使用
+	改内环这段还是有bug，先不要使用
 */
 void NonManifold::NonManifoldFixer2::SplitInnerLoop()
 {
@@ -1688,7 +1688,6 @@ void NonManifold::NonManifoldFixer2::SplitInnerLoop()
 				//coedges_vec[h]->set_previous(q2);
 				//coedges_vec[h]->set_next(q1);
 				//LOG_DEBUG("DDD");
-
 
 				 //反转sense
 				//if (coedges_vec[h]->sense() == FORWARD) {

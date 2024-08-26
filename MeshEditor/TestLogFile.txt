@@ -1,307 +1,273 @@
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: topologyoptwidge.cpp][TopologyOptWidget::on_open_file:  209] file_path: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-08/rot_cyl3.sat
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: topologyoptwidge.cpp][TopologyOptWidget::on_open_file:  219] api_change_body_trans for: bodies[0]
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  123] body count:	1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: topologyoptwidge.cpp][TopologyOptWidget::on_open_file:  213] file_path: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-08/rot_cyl3.sat
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: topologyoptwidge.cpp][TopologyOptWidget::on_open_file:  223] api_change_body_trans for: bodies[0]
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  123] body count:	1
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  124] lump count:	1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  124] lump count:	1
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  125] shell count:	1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  125] shell count:	1
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  126] wire count:	0
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  126] wire count:	0
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  127] face count:	6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  127] face count:	6
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  128] edge count:	11
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  128] edge count:	11
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  129] coedge count:	24
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  129] coedge count:	24
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  130] vertex count:	6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  130] vertex count:	6
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  131] loop count:	6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  131] loop count:	6
 
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  411] start.
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 8
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 10
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 12
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 14
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 16
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 7
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 15
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 7
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 17
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 8
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 9
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 19
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 9
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 18
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 8
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 22
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 10
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 11
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 20
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 9
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 7
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 24
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 11
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 13
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 23
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 11
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 5
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 21
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 10
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  482] end.
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 1, st: (0.00000, 10.00000, -50.00000), ed: (0.00000, 10.00000, 50.00000), mid: (0.00000, 10.00000, 0.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 5, st: (9.68246, 17.50000, -50.00000), ed: (9.68246, 17.50000, 50.00000), mid: (9.68246, 17.50000, 0.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 2, st: (-9.68246, 17.50000, -50.00000), ed: (0.00000, 10.00000, -50.00000), mid: (-4.84123, 13.75000, -50.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 4, st: (0.00000, 10.00000, 50.00000), ed: (-9.68246, 17.50000, 50.00000), mid: (-4.84123, 13.75000, 50.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 7, st: (9.68246, 17.50000, 50.00000), ed: (0.00000, 10.00000, 50.00000), mid: (4.84123, 13.75000, 50.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 6, st: (0.00000, 10.00000, -50.00000), ed: (9.68246, 17.50000, -50.00000), mid: (4.84123, 13.75000, -50.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 3, st: (-9.68246, 17.50000, 50.00000), ed: (-9.68246, 17.50000, -50.00000), mid: (-9.68246, 17.50000, 0.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 8, st: (0.00000, 10.00000, 50.00000), ed: (0.00000, 10.00000, 50.00000), mid: (0.00000, 10.00000, 50.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 10, st: (0.00000, 10.00000, -50.00000), ed: (0.00000, 10.00000, -50.00000), mid: (0.00000, 10.00000, -50.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 9, st: (-9.68246, 17.50000, 50.00000), ed: (9.68246, 17.50000, 50.00000), mid: (0.00000, 17.50000, 50.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 11, st: (9.68246, 17.50000, -50.00000), ed: (-9.68246, 17.50000, -50.00000), mid: (0.00000, 17.50000, -50.00000)
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: DegeneratedFaces.cpp][DegeneratedFaces::DegeneratedFacesFixer::Start:   44] Start.
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: DegeneratedFaces.cpp][DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces:   23] area of face 1: 1318.11607
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: DegeneratedFaces.cpp][DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces:   23] area of face 2: 1318.11607
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: DegeneratedFaces.cpp][DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces:   23] area of face 3: 802.17115
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: DegeneratedFaces.cpp][DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces:   23] area of face 4: 6283.18531
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: DegeneratedFaces.cpp][DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces:   23] area of face 5: 10544.92857
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: DegeneratedFaces.cpp][DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces:   23] area of face 6: 802.17115
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: DegeneratedFaces.cpp][DegeneratedFaces::DegeneratedFacesFixer::Start:   55] End.
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::FindNonManifold: 1512] start.
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::FindNonManifold: 1528] NonManifold edge found: iedge: 1, coedge_cnt: 4
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::FindNonManifold: 1547] end.
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::SolveForEachNonManifoldEdge: 1556] start.
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1152] traverse_vertex_incident_edge_set start.
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1158] Exclude it2 Case: nonmanifold_edge_set.count(*it2) > 0
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1167] Check Passed: *it2: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1183] icoedge_loop_vec size: 2
-[2024-8-23 21:42:54][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1195] LoopFindUnionSet unite: 6, 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1167] Check Passed: *it2: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1183] icoedge_loop_vec size: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1195] LoopFindUnionSet unite: 6, 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1167] Check Passed: *it2: 10
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1183] icoedge_loop_vec size: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1195] LoopFindUnionSet unite: 6, 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda5>::operator (): 1199] traverse_vertex_incident_edge_set end.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::FindNormalCoedgePairs: 1221] Skip excluded coedge: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::FindNormalCoedgePairs: 1221] Skip excluded coedge: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::SolveXloopCoedgePairs: 1259] Start.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda6>::operator (): 1322] solve_special: jcoedge: 1, _jcoedge_next_set_start_vertex_flag: 4, _jcoedge_prev_set_end_vertex_flag: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::`anonymous-namespace'::<lambda6>::operator (): 1322] solve_special: jcoedge: 2, _jcoedge_next_set_start_vertex_flag: 3, _jcoedge_prev_set_end_vertex_flag: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::SolveXloopCoedgePairs: 1364] End.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs: 1372] Start.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][DEBUG][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs: 1447] Skip coedge pair as edge is not longer nonmanifold: (edge:1, coedge1: 3, coedge2: 4)
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs: 1503] End.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: NonManifold2.cpp][NonManifold::NonManifoldFixer2::SolveForEachNonManifoldEdge: 1590] end.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Clear:  378] MarkNum Clear start.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Clear:  391] MarkNum Clear end.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  123] body count:	1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  411] start.
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 8
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 10
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 12
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 14
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 16
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 7
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 15
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 7
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 17
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 8
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 9
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 19
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 9
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 18
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 8
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 22
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 10
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 11
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 20
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 9
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 7
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 24
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 11
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 13
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 23
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 11
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 21
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 10
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  482] end.
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 1, st: (0.00000, 10.00000, -50.00000), ed: (0.00000, 10.00000, 50.00000), mid: (0.00000, 10.00000, 0.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 5, st: (9.68246, 17.50000, -50.00000), ed: (9.68246, 17.50000, 50.00000), mid: (9.68246, 17.50000, 0.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 2, st: (-9.68246, 17.50000, -50.00000), ed: (0.00000, 10.00000, -50.00000), mid: (-4.84123, 13.75000, -50.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 4, st: (0.00000, 10.00000, 50.00000), ed: (-9.68246, 17.50000, 50.00000), mid: (-4.84123, 13.75000, 50.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 7, st: (9.68246, 17.50000, 50.00000), ed: (0.00000, 10.00000, 50.00000), mid: (4.84123, 13.75000, 50.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 6, st: (0.00000, 10.00000, -50.00000), ed: (9.68246, 17.50000, -50.00000), mid: (4.84123, 13.75000, -50.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 3, st: (-9.68246, 17.50000, 50.00000), ed: (-9.68246, 17.50000, -50.00000), mid: (-9.68246, 17.50000, 0.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 8, st: (0.00000, 10.00000, 50.00000), ed: (0.00000, 10.00000, 50.00000), mid: (0.00000, 10.00000, 50.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 10, st: (0.00000, 10.00000, -50.00000), ed: (0.00000, 10.00000, -50.00000), mid: (0.00000, 10.00000, -50.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 9, st: (-9.68246, 17.50000, 50.00000), ed: (9.68246, 17.50000, 50.00000), mid: (0.00000, 17.50000, 50.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  231] edge: 11, st: (9.68246, 17.50000, -50.00000), ed: (-9.68246, 17.50000, -50.00000), mid: (0.00000, 17.50000, -50.00000)
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: SingleSideFaces.cpp][SingleSideFaces::SingleSideFacesFixer::Start:   70] Start.
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: SingleSideFaces.cpp][SingleSideFaces::SingleSideFacesFixer::Start:   81] End.
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Clear:  378] MarkNum Clear start.
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Clear:  391] MarkNum Clear end.
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  123] body count:	1
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  124] lump count:	1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  124] lump count:	1
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  125] shell count:	1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  125] shell count:	1
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  126] wire count:	0
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  126] wire count:	0
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  127] face count:	6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  127] face count:	6
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  128] edge count:	12
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  128] edge count:	11
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  129] coedge count:	24
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  129] coedge count:	24
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  130] vertex count:	8
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  130] vertex count:	6
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  131] loop count:	6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  131] loop count:	6
 
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  411] start.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 10
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 12
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 14
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 13
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 15
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 17
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 9
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 16
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 20
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 10
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 22
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 11
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 19
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 10
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 7
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 9
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 18
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 9
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 5
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 24
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 12
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 11
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 23
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 12
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 21
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 11
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 8
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  482] end.
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  130] file saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-08/rot_cyl3_mod.sat
-[2024-8-23 21:42:55][PID: 6716][TID: 24192][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodies:  198] file_path_string_to_be_saved: C:/Users/AAA/Documents/WeChat Files/wxid_4y4wts4jkg9h21/FileStorage/File/2024-08/rot_cyl3_mod.sat
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  411] start.
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 8
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 10
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 12
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 14
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 16
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 7
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 15
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 7
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 17
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 8
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 9
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 19
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 9
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 18
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 8
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 22
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 10
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 1
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 11
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 20
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 9
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 7
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 4
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 24
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 11
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  439] face: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  448]     loop: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 13
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 23
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 11
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 6
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 5
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 3
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  458]         coedge: 21
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  460]                 edge: 10
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  469]                 st: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  470]                 ed: 2
+[2024-8-26 23:35:27][PID: 11040][TID: 25460][INFO ][FILE: GeometryUtils.cpp][GeometryUtils::TopoChecker::PrintTopo:  482] end.

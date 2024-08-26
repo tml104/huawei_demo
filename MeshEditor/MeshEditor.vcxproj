@@ -189,6 +189,7 @@
     <ClCompile Include="GeometricFill.cpp" />
     <ClCompile Include="Exp1.cpp" />
     <ClCompile Include="Exp2.cpp" />
+    <ClCompile Include="GeometryExporter.cpp" />
     <ClCompile Include="GeometryUtils.cpp" />
     <ClCompile Include="getInfo.cpp" />
     <ClCompile Include="GetPatchType.cpp" />
@@ -284,6 +285,7 @@
     <ClCompile Include="mainwindow.cpp" />
     <ClCompile Include="makeMeshList.cpp" />
     <ClCompile Include="MarkNum.cpp" />
+    <ClCompile Include="MyMeshManager.cpp" />
     <ClCompile Include="NonManifold2.cpp" />
     <ClCompile Include="mousecontrolwidget.cpp" />
     <ClCompile Include="muilthreadHandle.cpp" />
@@ -318,6 +320,7 @@
     <ClInclude Include="GeometricFill.h" />
     <ClInclude Include="Exp1.h" />
     <ClInclude Include="Exp2.h" />
+    <ClInclude Include="GeometryExporter.h" />
     <ClInclude Include="GeometryUtils.h" />
     <ClInclude Include="GetPatchType.h" />
     <ClInclude Include="Interval.h" />
@@ -332,6 +335,7 @@
     <ClInclude Include="muilthreadHandle.h" />
     <ClInclude Include="MyConstant.h" />
     <ClInclude Include="MyDebugInfoMarco.h" />
+    <ClInclude Include="MyMeshManager.h" />
     <ClInclude Include="NonManifold2.h" />
     <ClInclude Include="ohmConnection.h" />
     <ClInclude Include="ohm_struct.h" />

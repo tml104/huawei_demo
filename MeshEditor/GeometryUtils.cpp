@@ -141,7 +141,6 @@ void GeometryUtils::PrintEdgeGeometry(EDGE * e)
 		ELLIPSE* edge_curve_ellipse = dynamic_cast<ELLIPSE*> (edge_curve);
 		ellipse edge_curve_ellipse_def = edge_curve_ellipse->def;
 
-		// TODO:
 		LOG_INFO("edge: %d, type: %s, centre: (%.6lf, %.6lf, %.6lf), normal: (%.6lf, %.6lf, %.6lf), major axis: (%.6lf, %.6lf, %.6lf), major length: %.6lf, minor length: %.6lf",
 			MarkNum::GetId(e),
 			edge_curve_type,
@@ -298,6 +297,24 @@ void GeometryUtils::PrintFaceGeometry(FACE * f)
 	LOG_INFO("end.");
 }
 
+// 对任意几何类型的几何点采样
+std::vector<SPAposition> GeometryUtils::SampleEdge(EDGE * edge, int sample_num)
+{
+	std::vector<SPAposition> points_vec;
+
+	auto edge_range = edge->param_range();
+
+	for (int k = 0; k < sample_num; k++) {
+		double interpolate_param = k * 1.0 / sample_num;
+
+		double edge_param = edge_range.interpolate(interpolate_param);
+		points_vec.emplace_back(edge_param_pos(edge, edge_param));
+	}
+
+	return points_vec;
+
+}
+
 /*
 	判断两条边是否符合“几何上相同”的条件
 */
@@ -368,25 +385,8 @@ bool GeometryUtils::GeometryCoincidentEdge(EDGE * e1, EDGE * e2)
 		return true;
 	}
 
-	// 对任意几何类型的几何点采样
-	auto sample_points = [&](EDGE* e) -> std::vector<SPAposition> {
-
-		std::vector<SPAposition> points_vec;
-
-		auto edge_range = e->param_range();
-
-		for (int k = 0; k < SAMPLE_POINTS_NUMBER; k++) {
-			double interpolate_param = k * 1.0 / SAMPLE_POINTS_NUMBER;
-
-			double edge_param = edge_range.interpolate(interpolate_param);
-			points_vec.emplace_back(edge_param_pos(e, edge_param));
-		}
-
-		return points_vec;
-	};
-
-	auto e1_points_vec = sample_points(e1);
-	auto e2_points_vec = sample_points(e2);
+	auto e1_points_vec = SampleEdge(e1);
+	auto e2_points_vec = SampleEdge(e2);
 
 	if (same_dir == false) {
 		std::reverse(e2_points_vec.begin(), e2_points_vec.end());

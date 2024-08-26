@@ -48,6 +48,7 @@ using namespace Ohm_slice;
 #include "SingleSideFaces.h"
 
 #include "MarkNum.h"
+#include "GeometryExporter.h"
 
 #include "ConstructModel.h"
 #include "Exp1.h"
@@ -172,11 +173,11 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_marknum_showedgemark_with_set = false;
 	bool option_marknum_showfacemark = false;
 
-	bool option_solve_remove_degenerated_faces = true;
-	bool option_solve_nonmanifold = true;
+	bool option_solve_remove_degenerated_faces = false;
+	bool option_solve_nonmanifold = false;
 	bool option_solve_stitch = false; 
 	bool option_solve_stitch_for_each_bodies = false;
-	bool option_solve_single_side_faces = false;
+	bool option_solve_single_side_faces = true;
 
 	bool option_exp1 = false;
 	bool option_exp2 = false;
@@ -187,8 +188,11 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	bool option_construct = false;
 	bool option_construct240710 = false;
 
-	bool option_save_bodies = true;
+	bool option_save_bodies = false;
 	bool option_save_bodies_respectly = false;
+	bool option_save_stl_bodies_respectly = false;
+	bool option_export_geometry_json = true;
+
 	/*
 		[选项开关] 结束
 	*/
@@ -369,6 +373,15 @@ void TopologyOptWidget::on_open_file (QString file_path)
 	if (option_save_bodies_respectly)
 	{
 		Utils::SaveModifiedBodiesRespectly(split_path_tuple, bodies);
+	}
+
+	if (option_save_stl_bodies_respectly) {
+		Utils::SAT2STL(split_path_tuple, bodies);
+	}
+
+	if (option_export_geometry_json) {
+		GeometryExporter::Exporter exporter(bodies);
+		exporter.Start(split_path_tuple);
 	}
 
 	// 不能在文件保存之前调用此api_stop_modeller

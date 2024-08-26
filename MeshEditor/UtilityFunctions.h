@@ -55,6 +55,8 @@
 #include "logger44/CoreOld.h"
 #include "MarkNum.h"
 
+#include "MyMeshManager.h"
+
 namespace Utils {
 	int CoedgeCount(EDGE* iedge);
 	int PartnerCount(COEDGE* icoedge);
@@ -86,4 +88,11 @@ namespace Utils {
 	// 保存bodies list中的各个body（分开保存到各个文件中）
 	void SaveModifiedBodiesRespectly(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
 
+
+
+	SPAvector GetNormalFromPoints(SPAposition x, SPAposition y, SPAposition z);
+
+	void SaveSTL(const std::string& stl_file_path, std::vector<SPAposition> &out_mesh_points, std::vector<SPAunit_vector> &out_mesh_normals, std::vector<ENTITY*> & out_faces);
+
+	void SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
 } // namespace Utils

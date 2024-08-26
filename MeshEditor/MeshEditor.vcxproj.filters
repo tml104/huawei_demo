@@ -31,11 +31,6 @@
     <Filter Include="topologyopt">
       <UniqueIdentifier>{6318df8e-c875-4108-973f-afb5d2e236dc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;cxx;c;def</Extensions>
-      <ParseFiles>true</ParseFiles>
-    </Filter>
     <Filter Include="OhmConnection">
       <UniqueIdentifier>{095eaedc-4008-4d4b-a4f2-e1fc58930351}</UniqueIdentifier>
     </Filter>
@@ -65,6 +60,9 @@
     </Filter>
     <Filter Include="logger44">
       <UniqueIdentifier>{74d2323d-b472-4e62-8159-89b293d01421}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="topologyopt\Export">
+      <UniqueIdentifier>{007570bd-f50c-4316-a04e-d06343cde48f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -257,6 +255,12 @@
     <ClCompile Include="DegeneratedFaces.cpp">
       <Filter>topologyopt\FindProblem</Filter>
     </ClCompile>
+    <ClCompile Include="MyMeshManager.cpp">
+      <Filter>topologyopt\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryExporter.cpp">
+      <Filter>topologyopt\Export</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -378,6 +382,12 @@
     </ClInclude>
     <ClInclude Include="DegeneratedFaces.h">
       <Filter>topologyopt\FindProblem</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMeshManager.h">
+      <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryExporter.h">
+      <Filter>topologyopt\Export</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

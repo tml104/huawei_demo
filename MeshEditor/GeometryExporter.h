@@ -50,7 +50,9 @@
 #include "logger44/CoreOld.h"
 #include "MarkNum.h"
 #include "MyConstant.h"
-#include "UtilityFunctions.h"
+#include "json/json.h"
+//#include "UtilityFunctions.h"
+#include "GeometryUtils.h"
 
 // STL
 #include <time.h>
@@ -64,35 +66,33 @@
 #include <ctime>
 #include <cmath>
 
-namespace GeometryUtils {
+namespace GeometryExporter {
 
-	const double POINT_EPSLION = 1e-6;
-	const double SAMPLE_POINTS_NUMBER = 11; // 最好是奇数
+	void SaveJson(const std::string& file_name, const Json::Value& root);
 
-	void PrintEdgeGeometry(EDGE* e);
-	void PrintFaceGeometry(FACE* f);
+	struct Exporter {
 
-	std::vector<SPAposition> SampleEdge(EDGE* edge, int sample_num = SAMPLE_POINTS_NUMBER);
+		ENTITY_LIST& bodies;
 
-	/*
-		判断两个点是否几何一致
-		几何一致：要么是同一个VERTEX，要么几何上差距小
-	*/
-	bool GeometryCoincidentVertex(VERTEX* v1, VERTEX* v2, const double epslion = POINT_EPSLION);
+		Json::Value SPApositionToJson(const SPAposition& pos);
 
-	bool GeometryCoincidentPoint(SPAposition p1, SPAposition p2, const double epslion = POINT_EPSLION);
+		Json::Value VertexToJson(VERTEX* vertex, int marknum);
+		Json::Value EdgeToJson(EDGE* edge, int marknum);
+		Json::Value CoedgeToJson(COEDGE* coedge);
+		Json::Value LoopToJson(LOOP* loop);
+		Json::Value ShellToJson(SHELL* shell);
+		Json::Value LumpToJson(LUMP* lump);
+		Json::Value BodyToJson(BODY* body);
 
-	/*
-		判断两条边是否符合“几何上相同”的条件
-	*/
-	bool GeometryCoincidentEdge(EDGE* e1, EDGE* e2);
+		// TODO
+		void ExportTriangles();
 
-	struct TopoChecker {
-		ENTITY_LIST & bodies;
+		// 
+		Json::Value ExportGeometryInfo();
 
-		void PrintTopo();
+		void Start(const std::tuple<std::string, std::string, std::string>& split_path_tuple);
 
-		TopoChecker(ENTITY_LIST &bodies): bodies(bodies) {}
+		Exporter(ENTITY_LIST& bodies) : bodies(bodies) {}
 	};
 
-} // namespace GeometryUtils
+} // namespace GeometryExporter

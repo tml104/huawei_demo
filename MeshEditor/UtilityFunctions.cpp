@@ -213,3 +213,81 @@ void Utils::SaveModifiedBodiesRespectly(const std::tuple<std::string, std::strin
 		LOG_INFO("file_path_string_to_be_saved: %s", file_path_string_to_be_saved.c_str());
 	}
 }
+
+SPAvector Utils::GetNormalFromPoints(SPAposition p1, SPAposition p2, SPAposition p3)
+{
+	SPAvector u( p2.x() - p1.x() , p2.y() - p1.y(), p2.z() - p1.z() );
+	SPAvector v( p3.x() - p1.x() , p3.y() - p1.y(), p3.z() - p1.z() );
+
+	SPAvector ans(
+		u.y() * v.z() - u.z() * v.y(),
+		u.z() * v.x() - u.x() * v.z(),
+		u.x() * v.y() - u.y() * v.x()
+	);
+	
+	return ans;
+}
+
+void Utils::SaveSTL(const std::string & stl_file_path, std::vector<SPAposition>& out_mesh_points, std::vector<SPAunit_vector>& out_mesh_normals, std::vector<ENTITY*>& out_faces)
+{
+	std::fstream f;
+	f.open(stl_file_path, std::ios::out | std::ios::trunc);
+
+	f << "solid default:import_1\n";
+
+	for (int i = 2; i < out_mesh_points.size(); i+=3) {
+		SPAposition p1 = out_mesh_points[i];
+		SPAposition p2 = out_mesh_points[i - 1];
+		SPAposition p3 = out_mesh_points[i - 2];
+
+		SPAvector normal = GetNormalFromPoints(p1, p2, p3);
+
+		ENTITY* owner = nullptr;
+		if (out_faces[i] == out_faces[i - 1] && out_faces[i] == out_faces[i - 2]) {
+			owner = out_faces[i];
+		}
+		else {
+			LOG_ERROR("vertex owner not consistent!");
+		}
+
+		f << "\tfacet normal " << normal.x() << " " << normal.y() << " " << normal.z() << "\n";
+		f << "\t\touter loop\n";
+		f << "\t\t\tvertex " << p1.x() << " " << p1.y() << " " << p1.z() << "\n";
+		f << "\t\t\tvertex " << p2.x() << " " << p2.y() << " " << p2.z() << "\n";
+		f << "\t\t\tvertex " << p3.x() << " " << p3.y() << " " << p3.z() << "\n";
+		f << "\t\tendloop\n";
+		f << "\tendfacet\n";
+	}
+
+	f << "endsolid default:import_1\n";
+	f.close();
+}
+
+void Utils::SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies) 
+{
+	LOG_INFO("Start.");
+
+	for (int i = 0; i < bodies.count(); i++) {
+		BODY* ibody = dynamic_cast<BODY*> (bodies[i]);
+
+		std::vector<SPAposition> out_mesh_points; 
+		std::vector<SPAunit_vector> out_mesh_normals;
+		std::vector<ENTITY*> out_faces;
+
+		MyMeshManager::MyFacet(ibody, out_mesh_points, out_mesh_normals, out_faces);
+
+		std::string path = std::get<0>(split_path_tuple);
+		std::string file_name_first = std::get<1>(split_path_tuple);
+		std::string file_name_second = std::get<2>(split_path_tuple);
+		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_stl_" + std::to_string(static_cast<long long>(i)) + ".stl";
+
+		SaveSTL(file_path_string_to_be_saved, out_mesh_points, out_mesh_normals, out_faces);
+
+		LOG_INFO("Points count: %d", out_mesh_points.size());
+		LOG_INFO("Faces count: %d", out_faces.size());
+
+		LOG_INFO("Saved STL file for body[%d]: %s", i, file_path_string_to_be_saved.c_str());
+	}
+
+	LOG_INFO("End.");
+}
