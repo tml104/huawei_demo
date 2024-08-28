@@ -113,6 +113,7 @@ namespace Log44 {
 		static Logger& getInstance();
 		void setLogLevel(enum Log44::LogLevel log_level, bool val);
 
+		void setId(int id);
 		void log(enum Log44::LogLevel log_level, std::string&& file_name, std::string&& func_name, int line_no, const char* template_string, ...);
 
 	private:

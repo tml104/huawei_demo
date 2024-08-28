@@ -305,7 +305,7 @@ std::vector<SPAposition> GeometryUtils::SampleEdge(EDGE * edge, int sample_num)
 	auto edge_range = edge->param_range();
 
 	for (int k = 0; k < sample_num; k++) {
-		double interpolate_param = k * 1.0 / sample_num;
+		double interpolate_param = k * 1.0 / (sample_num-1);
 
 		double edge_param = edge_range.interpolate(interpolate_param);
 		points_vec.emplace_back(edge_param_pos(edge, edge_param));

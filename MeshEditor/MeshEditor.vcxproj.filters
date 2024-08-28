@@ -64,6 +64,9 @@
     <Filter Include="topologyopt\Export">
       <UniqueIdentifier>{007570bd-f50c-4316-a04e-d06343cde48f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="topologyopt\HQHEntrance">
+      <UniqueIdentifier>{ca28217f-0a75-47ce-9c1a-8155237c5e59}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\Debug\moc_mainwindow.cpp">
@@ -261,6 +264,9 @@
     <ClCompile Include="GeometryExporter.cpp">
       <Filter>topologyopt\Export</Filter>
     </ClCompile>
+    <ClCompile Include="HQHEntrance.cpp">
+      <Filter>topologyopt\HQHEntrance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -350,9 +356,6 @@
     <ClInclude Include="MyConstant.h">
       <Filter>topologyopt\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="MyDebugInfoMarco.h">
-      <Filter>topologyopt\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="UtilityFunctions.h">
       <Filter>topologyopt\Utils</Filter>
     </ClInclude>
@@ -388,6 +391,9 @@
     </ClInclude>
     <ClInclude Include="GeometryExporter.h">
       <Filter>topologyopt\Export</Filter>
+    </ClInclude>
+    <ClInclude Include="HQHEntrance.h">
+      <Filter>topologyopt\HQHEntrance</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

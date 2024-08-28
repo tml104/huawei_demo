@@ -64,7 +64,7 @@ double Stitch::CalculatePoorCoedgeScore(const PoorCoedge & poor_coedge1, const P
 	for (int i = 0, j = Stitch::MIDPOINT_CNT - 1; i < Stitch::MIDPOINT_CNT; i++, j--) {
 		double distance = Stitch::Distance(poor_coedge1.midpoint_coords[i], poor_coedge2.midpoint_coords[j]);
 
-		LOG_DEBUG("distance of (i,j = %d, %d) : %.5lf", i, j, distance);
+		//LOG_DEBUG("distance of (i,j = %d, %d) : %.5lf", i, j, distance);
 
 		score1 += distance;
 		if (distance > Stitch::EPSLION1) {
@@ -80,7 +80,7 @@ double Stitch::CalculatePoorCoedgeScore(const PoorCoedge & poor_coedge1, const P
 	Stitch::MyVector vec2 = Stitch::Normalize(Stitch::GetMyVector(poor_coedge2.midpoint_coords[0], poor_coedge2.midpoint_coords[Stitch::MIDPOINT_CNT - 1]));
 	double dot_result = Stitch::Dot(vec1, vec2);
 
-	LOG_DEBUG("dot result: %.5lf", dot_result);
+	//LOG_DEBUG("dot result: %.5lf", dot_result);
 
 	if (dot_result > 0) {
 		vaild_flag = false;
@@ -94,11 +94,11 @@ double Stitch::CalculatePoorCoedgeScore(const PoorCoedge & poor_coedge1, const P
 	}
 
 	if (vaild_flag) {
-		LOG_DEBUG("vaild score. score1: %.5lf ", score1);
+		//LOG_DEBUG("vaild score. score1: %.5lf ", score1);
 		return score1;
 	}
 
-	LOG_DEBUG("invaild score. score: -1.0");
+	//LOG_DEBUG("invaild score. score: -1.0");
 	return -1.0;
 }
 
@@ -108,7 +108,7 @@ double Stitch::CalculatePoorCoedgeScore(const PoorCoedge & poor_coedge1, const P
 */
 void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 {
-	LOG_INFO("start.");
+	//LOG_INFO("start.");
 
 	for (int i = 0; i < bodies.count(); i++) {
 		ENTITY* ibody = (bodies[i]);
@@ -119,9 +119,11 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 
 		// for coedge
 		for (int j = 0; j < coedge_list.count(); j++) {
-			COEDGE* coedge_ptr = static_cast<COEDGE*>(coedge_list[j]);
+			COEDGE* coedge_ptr = dynamic_cast<COEDGE*>(coedge_list[j]);
 
 			int partner_count = Utils::PartnerCount(coedge_ptr);
+
+			//LOG_DEBUG("AAA");
 
 			// 如果coedge的partnet数量是1，意味着找到poor coedge，保存到vec中
 			if (partner_count == 1) {
@@ -130,26 +132,32 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 
 				if (coedge_ptr->start() == nullptr)
 				{
-					LOG_ERROR("poor coedge found, but NO START.");
+					LOG_ERROR("poor coedge found, but NO START: %d", MarkNum::GetId(coedge_ptr));
 					continue;
 				}
 
 				if (coedge_ptr->end() == nullptr)
 				{
-					LOG_ERROR("poor coedge found, but NO END.");
+					LOG_ERROR("poor coedge found, but NO END: %d", MarkNum::GetId(coedge_ptr));
 					continue;
 				}
 
 				if (coedge_ptr->edge() == nullptr)
 				{
-					LOG_ERROR("poor coedge found, but NO EDGE.");
+					LOG_ERROR("poor coedge found, but NO EDGE: %d", MarkNum::GetId(coedge_ptr));
+					continue;
+				}
+
+				if (coedge_ptr->edge()->geometry() == nullptr)
+				{
+					LOG_ERROR("poor coedge found, but EDGE NO GEOMETRY: %d (edge: %d)", MarkNum::GetId(coedge_ptr), MarkNum::GetId(coedge_ptr->edge()));
 					continue;
 				}
 
 				// 输出无几何的情况				
 				if (coedge_ptr->geometry() == nullptr) // 注意这个不要排除，因为好像确实有coedge_ptr几何不存在但是对应的edge却有的情况的
 				{
-					LOG_ERROR("coedge_ptr NO GEOMETRY: coedge_ptr: %d (edge: %d), vertex: %d %d",
+					LOG_WARN("coedge_ptr NO GEOMETRY: coedge_ptr: %d (edge: %d), vertex: %d %d",
 						MarkNum::GetId(coedge_ptr),
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
@@ -158,7 +166,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 
 				if (coedge_ptr->start()->geometry() == nullptr)
 				{
-					LOG_ERROR("coedge_ptr->start() NO GEOMETRY: coedge_ptr: %d (edge: %d), vertex: %d %d",
+					LOG_WARN("coedge_ptr->start() NO GEOMETRY: coedge_ptr: %d (edge: %d), vertex: %d %d",
 						MarkNum::GetId(coedge_ptr),
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
@@ -167,7 +175,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 
 				if (coedge_ptr->end()->geometry() == nullptr)
 				{
-					LOG_ERROR("coedge_ptr->end() NO GEOMETRY: coedge_ptr: %d (edge: %d), vertex: %d %d",
+					LOG_WARN("coedge_ptr->end() NO GEOMETRY: coedge_ptr: %d (edge: %d), vertex: %d %d",
 						MarkNum::GetId(coedge_ptr),
 						MarkNum::GetId(coedge_ptr->edge()),
 						MarkNum::GetId(coedge_ptr->start()),
@@ -207,7 +215,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 						continue;
 					}
 
-					double interpolate_param = k * 1.0 / MIDPOINT_CNT;
+					double interpolate_param = k * 1.0 / (MIDPOINT_CNT-1);
 					auto coedge_param = coedge_range.interpolate(interpolate_param);
 					auto curve_param = (coedge_ptr->sense() == coedge_ptr->edge()->sense()) ? coedge_param : -coedge_param;
 					auto interpolate_point = coedge_ptr->edge()->geometry()->equation().eval_position(curve_param);
@@ -219,14 +227,14 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 
 				// [DEBUG] 打印中间插值采样点的坐标值
 
-				for (int k = 0; k < MIDPOINT_CNT; k++) {
-					LOG_DEBUG("sample_point[%d]: %.5lf, %.5lf, %.5lf",
-						k,
-						temp_poor_coedge.midpoint_coords[k][0],
-						temp_poor_coedge.midpoint_coords[k][1],
-						temp_poor_coedge.midpoint_coords[k][2]
-					);
-				}
+				//for (int k = 0; k < MIDPOINT_CNT; k++) {
+				//	LOG_DEBUG("sample_point[%d]: %.5lf, %.5lf, %.5lf",
+				//		k,
+				//		temp_poor_coedge.midpoint_coords[k][0],
+				//		temp_poor_coedge.midpoint_coords[k][1],
+				//		temp_poor_coedge.midpoint_coords[k][2]
+				//	);
+				//}
 
 
 				poor_coedge_vec.emplace_back(temp_poor_coedge);
@@ -236,7 +244,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 	}
 	LOG_DEBUG("poor coedge total num: %d", static_cast<int>(poor_coedge_vec.size()));
 
-	LOG_INFO("end.");
+	//LOG_INFO("end.");
 }
 
 /*
@@ -246,7 +254,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 */
 void Stitch::StitchGapFixer::MatchPoorCoedge()
 {
-	LOG_INFO("start.");
+	//LOG_INFO("start.");
 
 	// 建树（基于中点）
 	match_tree.ConstructTree(poor_coedge_vec);
@@ -255,7 +263,7 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 		auto &e = poor_coedge_vec[i];
 
 		if (found_coedge_set.count(e.coedge)) {
-			LOG_DEBUG("Skip matching: %d (edge: %d)", MarkNum::GetId(e.coedge), MarkNum::GetId(e.coedge->edge()));
+			//LOG_DEBUG("Skip matching: %d (edge: %d)", MarkNum::GetId(e.coedge), MarkNum::GetId(e.coedge->edge()));
 			continue;
 		}
 
@@ -266,13 +274,13 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 			auto first_match = match_poor_coedge_vec.front();
 
 			// [debug]打印分数
-			LOG_DEBUG("Best match id: %d (edge: %d) %d (edge: %d), score: %.5lf",
-				MarkNum::GetId(e.coedge),
-				MarkNum::GetId(e.coedge->edge()),
-				MarkNum::GetId(first_match.first.coedge),
-				MarkNum::GetId(first_match.first.coedge->edge()),
-				first_match.second
-			);
+			//LOG_DEBUG("Best match id: %d (edge: %d) %d (edge: %d), score: %.5lf",
+			//	MarkNum::GetId(e.coedge),
+			//	MarkNum::GetId(e.coedge->edge()),
+			//	MarkNum::GetId(first_match.first.coedge),
+			//	MarkNum::GetId(first_match.first.coedge->edge()),
+			//	first_match.second
+			//);
 
 			poor_coedge_pair_vec.emplace_back(std::make_pair(e, first_match.first));
 
@@ -296,7 +304,7 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 		);
 	}
 
-	LOG_INFO("end.");
+	//LOG_INFO("end.");
 }
 
 
@@ -306,7 +314,7 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 */
 void Stitch::StitchGapFixer::RearrangePoorCoedge()
 {
-	LOG_INFO("start.");
+	//LOG_INFO("start.");
 
 	PreProcess(); // 预处理
 
@@ -336,7 +344,7 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 
 	auto rearrange_poor_coedge_pairs = [&](std::vector<std::pair<Stitch::PoorCoedge, Stitch::PoorCoedge>>& poor_coedge_pair_vec2)
 	{
-		LOG_DEBUG("Rearrange start.");
+		//LOG_DEBUG("Rearrange start.");
 
 		std::vector<bool> poor_coedge_pair_vec_flag(poor_coedge_pair_vec.size()); // 标记向量：如果对应配对边组合被标记为true，则跳过它们，并且将它们从found_coedge_set集合中移除
 		// 下文代码请参考stitch中画蓝圈的那个图，v0, v1代表不带撇那个边上的顶点，v01,v11则是带撇的那个
@@ -403,12 +411,12 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 				&& edges_data.FindEdgesBetweenVertices(v0, v01).size() == 0
 				)
 			{
-				LOG_DEBUG("(2.1) Not connect: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
-					MarkNum::GetId(poor_coedge_pair.first.coedge),
-					MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-					MarkNum::GetId(poor_coedge_pair.second.coedge),
-					MarkNum::GetId(poor_coedge_pair.second.coedge->edge())
-				);
+				//LOG_DEBUG("(2.1) Not connect: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
+				//	MarkNum::GetId(poor_coedge_pair.first.coedge),
+				//	MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
+				//	MarkNum::GetId(poor_coedge_pair.second.coedge),
+				//	MarkNum::GetId(poor_coedge_pair.second.coedge->edge())
+				//);
 
 				poor_coedge_pair_vec2.emplace_back(poor_coedge_pair);
 				poor_coedge_pair_vec_flag[i] = true;
@@ -436,16 +444,16 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 					}
 
 					if (found_coedge_set.count(icoedge)) {
-						LOG_DEBUG("(2.2) Matched coedge (不是非已经匹配边连接，也即是有已匹配边连接) connect v0 v11 or v1 v01: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d), (v1, v2: %d, %d), (this matched edge, this matched coedge: %d, %d)",
-							MarkNum::GetId(poor_coedge_pair.first.coedge),
-							MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-							MarkNum::GetId(poor_coedge_pair.second.coedge),
-							MarkNum::GetId(poor_coedge_pair.second.coedge->edge()),
-							MarkNum::GetId(v1),
-							MarkNum::GetId(v2),
-							MarkNum::GetId(e),
-							MarkNum::GetId(icoedge)
-						);
+						//LOG_DEBUG("(2.2) Matched coedge (不是非已经匹配边连接，也即是有已匹配边连接) connect v0 v11 or v1 v01: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d), (v1, v2: %d, %d), (this matched edge, this matched coedge: %d, %d)",
+						//	MarkNum::GetId(poor_coedge_pair.first.coedge),
+						//	MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
+						//	MarkNum::GetId(poor_coedge_pair.second.coedge),
+						//	MarkNum::GetId(poor_coedge_pair.second.coedge->edge()),
+						//	MarkNum::GetId(v1),
+						//	MarkNum::GetId(v2),
+						//	MarkNum::GetId(e),
+						//	MarkNum::GetId(icoedge)
+						//);
 
 						flag = false;
 						break;
@@ -476,12 +484,12 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 			f2_2(poor_coedge_pair, v1, v01, flag);
 
 			if (flag) {
-				LOG_DEBUG("(2.2) Rearrange Flag: True. Not unmatched coedge connect: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
-					MarkNum::GetId(poor_coedge_pair.first.coedge),
-					MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-					MarkNum::GetId(poor_coedge_pair.second.coedge),
-					MarkNum::GetId(poor_coedge_pair.second.coedge->edge())
-				);
+				//LOG_DEBUG("(2.2) Rearrange Flag: True. Not unmatched coedge connect: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
+				//	MarkNum::GetId(poor_coedge_pair.first.coedge),
+				//	MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
+				//	MarkNum::GetId(poor_coedge_pair.second.coedge),
+				//	MarkNum::GetId(poor_coedge_pair.second.coedge->edge())
+				//);
 
 				poor_coedge_pair_vec2.emplace_back(poor_coedge_pair);
 				poor_coedge_pair_vec_flag[i] = true;
@@ -504,19 +512,19 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 			poor_coedge_pair_vec2.emplace_back(poor_coedge_pair);
 			//poor_coedge_pair_vec_flag[i] = true;
 
-			LOG_DEBUG("(2.3) Remaining case: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
-				MarkNum::GetId(poor_coedge_pair.first.coedge),
-				MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
-				MarkNum::GetId(poor_coedge_pair.second.coedge),
-				MarkNum::GetId(poor_coedge_pair.second.coedge->edge())
-			);
+			//LOG_DEBUG("(2.3) Remaining case: (poor_coedge_pair.first.coedge: %d, edge: %d), (poor_coedge_pair.second.coedge: %d, edge: %d)",
+			//	MarkNum::GetId(poor_coedge_pair.first.coedge),
+			//	MarkNum::GetId(poor_coedge_pair.first.coedge->edge()),
+			//	MarkNum::GetId(poor_coedge_pair.second.coedge),
+			//	MarkNum::GetId(poor_coedge_pair.second.coedge->edge())
+			//);
 
 		}
 		// -> 局部重排序
 		int poor_coedge_pair_vec2_size_2_3 = poor_coedge_pair_vec2.size();
 		partial_sort_for_poor_coedge_pair_vec2(poor_coedge_pair_vec2, poor_coedge_pair_vec2_size_2_2, poor_coedge_pair_vec2_size_2_3);
 
-		LOG_DEBUG("Rearrange end.");
+		//LOG_DEBUG("Rearrange end.");
 	};
 
 	rearrange_poor_coedge_pairs(poor_coedge_pair_vec2);
@@ -536,7 +544,7 @@ void Stitch::StitchGapFixer::RearrangePoorCoedge()
 	}
 
 
-	LOG_INFO("end.");
+	//LOG_INFO("end.");
 }
 
 /*
@@ -549,7 +557,7 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 	// 3. 开始修复：遍历poor_coedge_pair_vec2（重排序后的候选破边对集合），然后依次尝试修改对应破边的各种指针以及顶点指针
 	// 规定v0 v1所在边是被与另一个合并的
 	// （240401:啊原来这里也是随意规定的……嗯……也就是说这里就存在一个优化空间上的问题了）
-	LOG_INFO("Stitch Fix start.");
+	//LOG_INFO("Stitch Fix start.");
 
 	for (int i = 0; i < poor_coedge_pair_vec.size(); i++) {
 		auto &poor_coedge_pair = poor_coedge_pair_vec[i];
@@ -665,11 +673,11 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 						icoedge_next->set_previous(icoedge_prev);
 						icoedge_prev->set_next(icoedge_next);
 
-						LOG_DEBUG("(3.3) change coedge prev and next: coedge:%d, prev:%d, next:%d",
-							MarkNum::GetId(icoedge),
-							MarkNum::GetId(icoedge_prev),
-							MarkNum::GetId(icoedge_next)
-						);
+						//LOG_DEBUG("(3.3) change coedge prev and next: coedge:%d, prev:%d, next:%d",
+						//	MarkNum::GetId(icoedge),
+						//	MarkNum::GetId(icoedge_prev),
+						//	MarkNum::GetId(icoedge_next)
+						//);
 					}
 					else {
 						LOG_ERROR("(3.3) change coedge prev and next: FAILED");
@@ -695,6 +703,18 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 	LOG_INFO("Stitch Fix end.");
 }
 
+void Stitch::StitchGapFixer::Status()
+{
+	if (poor_coedge_vec.size())
+	{
+		LOG_INFO("=== Status for Stitch ===");
+		LOG_INFO("poor_coedge_vec: %d", poor_coedge_vec.size());
+		LOG_INFO("poor_coedge_pair_vec: %d", poor_coedge_pair_vec.size());
+		LOG_INFO("=== End ===");
+	}
+
+}
+
 void Stitch::StitchGapFixer::PreProcess()
 {
 	edges_data.Init(bodies);
@@ -715,7 +735,7 @@ Stitch::MatchTree::~MatchTree()
 
 	root = nullptr;
 
-	LOG_INFO("~MatchTree Done.");
+	//LOG_INFO("~MatchTree Done.");
 }
 
 
@@ -824,9 +844,9 @@ void Stitch::MatchTree::DeleteTree()
 */
 std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stitch::PoorCoedge poor_coedge1, const std::set<COEDGE*>& found_coedge_set, bool dont_stitch_coincident)
 {
-	LOG_INFO("start.");
+	//LOG_INFO("start.");
 
-	LOG_DEBUG("Now Matching: %d (edge: %d)", MarkNum::GetId(poor_coedge1.coedge), MarkNum::GetId(poor_coedge1.coedge->edge()));
+	//LOG_DEBUG("Now Matching: %d (edge: %d)", MarkNum::GetId(poor_coedge1.coedge), MarkNum::GetId(poor_coedge1.coedge->edge()));
 
 	std::vector<std::pair<Stitch::PoorCoedge, double>> match_res_vec;
 
@@ -913,22 +933,22 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 			}
 
 			// 确实检查匹配条件并获得匹配分数
-			LOG_DEBUG("Score calculating: %d (edge: %d) %d (edge: %d)",
-				MarkNum::GetId(poor_coedge1.coedge),
-				MarkNum::GetId(poor_coedge1.coedge->edge()),
-				MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
-				MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge())
-			);
+			//LOG_DEBUG("Score calculating: %d (edge: %d) %d (edge: %d)",
+			//	MarkNum::GetId(poor_coedge1.coedge),
+			//	MarkNum::GetId(poor_coedge1.coedge->edge()),
+			//	MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
+			//	MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge())
+			//);
 
 			double score = get_match_score(now_root);
 
-			LOG_DEBUG("Score get: %d (edge: %d) %d (edge: %d), score:%.5lf\n",
-				MarkNum::GetId(poor_coedge1.coedge),
-				MarkNum::GetId(poor_coedge1.coedge->edge()),
-				MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
-				MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge()),
-				score
-			);
+			//LOG_DEBUG("Score get: %d (edge: %d) %d (edge: %d), score:%.5lf\n",
+			//	MarkNum::GetId(poor_coedge1.coedge),
+			//	MarkNum::GetId(poor_coedge1.coedge->edge()),
+			//	MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
+			//	MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge()),
+			//	score
+			//);
 
 			if (score > 0) { // 注意排除分数为负数（计算分数时点距离过大或者夹角过大导致不合法）的情况
 				match_res_vec.emplace_back(std::make_pair(now_root->leaf_poor_coedge, score));
@@ -958,9 +978,9 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 		});
 	return match_res_vec;
 
-	LOG_DEBUG("Matching end: %d\n", MarkNum::GetId(poor_coedge1.coedge));
+	//LOG_DEBUG("Matching end: %d\n", MarkNum::GetId(poor_coedge1.coedge));
 
-	LOG_INFO("end.");
+	//LOG_INFO("end.");
 }
 
 Stitch::MatchTree::MatchTreeNode::MatchTreeNode() :
@@ -991,7 +1011,7 @@ Stitch::MatchTree::MatchTreeNode::~MatchTreeNode()
 		delete right_node;
 	}
 
-	LOG_INFO("~MatchTreeNode Done.");
+	//LOG_INFO("~MatchTreeNode Done.");
 }
 
 Stitch::PoorCoedge::PoorCoedge() : coedge(nullptr)
@@ -1007,45 +1027,47 @@ void Stitch::StitchGapFixer::Start(bool call_fix, bool dont_stitch_coincident)
 {
 	this->dont_stitch_coincident = dont_stitch_coincident;
 
-	LOG_INFO("EPSLION1: %.5lf;\t EPSLION2: %.5lf;\t EPSLION2_SIN: %.5lf;\t call_fix: %s\t, dont_stitch_coincident: %s\t", EPSLION1, EPSLION2, EPSLION2_SIN, call_fix ? "True" : "False", this->dont_stitch_coincident?"True":"False");
+	//LOG_INFO("EPSLION1: %.5lf;\t EPSLION2: %.5lf;\t EPSLION2_SIN: %.5lf;\t call_fix: %s\t, dont_stitch_coincident: %s\t", EPSLION1, EPSLION2, EPSLION2_SIN, call_fix ? "True" : "False", this->dont_stitch_coincident?"True":"False");
 
 	// 计时开始
-	clock_t Stitch_start_clock = std::clock();
+	//clock_t Stitch_start_clock = std::clock();
 
-	api_initialize_constructors();
-	api_initialize_booleans();
+	//api_initialize_constructors();
+	//api_initialize_booleans();
 
 	FindPoorCoedge(bodies); // 1
-	clock_t Stitch_end_clock_find = std::clock(); // 计时结束 find
+	//clock_t Stitch_end_clock_find = std::clock(); // 计时结束 find
 
 	MatchPoorCoedge(); // 2
-	clock_t Stitch_end_clock_match = std::clock(); // 计时结束 match
+	//clock_t Stitch_end_clock_match = std::clock(); // 计时结束 match
 
 	RearrangePoorCoedge(); // 3
 
 	if (call_fix) { StitchPoorCoedge(bodies); } // 4
-	clock_t Stitch_end_clock_stitch = std::clock(); // 计时结束 stitch
+	//clock_t Stitch_end_clock_stitch = std::clock(); // 计时结束 stitch
+
+	Status();
 
 	match_tree.DeleteTree(); // 删除KDTree
 
-	api_terminate_constructors();
-	api_terminate_booleans();
+	//api_terminate_constructors();
+	//api_terminate_booleans();
 
 	// 打印时间
-	double stitch_end_clock_find_cost = static_cast<double>(Stitch_end_clock_find - Stitch_start_clock) / CLOCKS_PER_SEC;
-	double stitch_end_clock_match_cost = static_cast<double>(Stitch_end_clock_match - Stitch_start_clock) / CLOCKS_PER_SEC;
-	double stitch_end_clock_stitch_cost = static_cast<double>(Stitch_end_clock_stitch - Stitch_start_clock) / CLOCKS_PER_SEC;
+	//double stitch_end_clock_find_cost = static_cast<double>(Stitch_end_clock_find - Stitch_start_clock) / CLOCKS_PER_SEC;
+	//double stitch_end_clock_match_cost = static_cast<double>(Stitch_end_clock_match - Stitch_start_clock) / CLOCKS_PER_SEC;
+	//double stitch_end_clock_stitch_cost = static_cast<double>(Stitch_end_clock_stitch - Stitch_start_clock) / CLOCKS_PER_SEC;
 
-	LOG_INFO("Stitch_end_clock_find: %.5lf sec", Stitch_end_clock_find);
-	LOG_INFO("Stitch_end_clock_match: %.5lf sec", Stitch_end_clock_match);
-	if (call_fix) {
-		LOG_INFO("Stitch_end_clock_stitch: %.5lf sec", Stitch_end_clock_stitch);
-	}
+	//LOG_INFO("Stitch_end_clock_find: %.5lf sec", Stitch_end_clock_find);
+	//LOG_INFO("Stitch_end_clock_match: %.5lf sec", Stitch_end_clock_match);
+	//if (call_fix) {
+		//LOG_INFO("Stitch_end_clock_stitch: %.5lf sec", Stitch_end_clock_stitch);
+	//}
 }
 
 void Stitch::StitchGapFixer::Clear()
 {
-	LOG_INFO("start.");
+	//LOG_INFO("start.");
 
 	poor_coedge_vec.clear();
 	found_coedge_set.clear();
@@ -1055,7 +1077,7 @@ void Stitch::StitchGapFixer::Clear()
 
 	match_tree.DeleteTree();
 
-	LOG_INFO("end.");
+	//LOG_INFO("end.");
 }
 
 void Stitch::EdgesData::Init(ENTITY_LIST & bodies)

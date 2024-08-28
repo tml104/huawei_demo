@@ -141,6 +141,10 @@ namespace NonManifold {
 
 		ENTITY_LIST & bodies;
 
+		// Status
+		int xloop_count;
+		int normal_count;
+
 		void RemovePartnerFromEdge(EDGE* origin_edge, COEDGE* coedge);
 
 		std::vector<std::pair<COEDGE*, COEDGE*>> FindXloopCoedgePairs(EDGE* edge);
@@ -160,11 +164,13 @@ namespace NonManifold {
 		// 3
 		void SplitInnerLoop();
 
+		void Status();
+
 		void Start();
 
 		void Clear();
 
-		NonManifoldFixer2(ENTITY_LIST &bodies) : bodies(bodies) {}
+		NonManifoldFixer2(ENTITY_LIST &bodies) : bodies(bodies), xloop_count(0), normal_count(0){}
 	};
 
 } // namespace NonManifold

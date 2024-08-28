@@ -20,10 +20,9 @@ void DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces()
 			double est_rel_accy_achieved;
 			api_ent_area(ptr, REQ_REL_ACCY, area, est_rel_accy_achieved);
 
-			LOG_DEBUG("area of face %d: %.5lf", MarkNum::GetId(ptr), area);
-
-			if (area <= THRESHOLD_AREA) {
+			if (area <= THRESHOLD_AREA && area >= -THRESHOLD_AREA) {
 				this->degenerated_faces.insert(dynamic_cast<FACE*>(ptr));
+				LOG_DEBUG("area of face %d: %.5lf", MarkNum::GetId(ptr), area);
 				LOG_DEBUG("face %d: degenerated.", MarkNum::GetId(ptr));
 			}
 		}
@@ -35,7 +34,7 @@ void DegeneratedFaces::DegeneratedFacesFixer::RemoveDegeneratedFaces()
 {
 	for (auto it = this->degenerated_faces.begin(); it != this->degenerated_faces.end(); it++) {
 		api_remove_face(*it);
-		LOG_DEBUG("Removing face %d", MarkNum::GetId(*it));
+		LOG_DEBUG("Removing face: %d, body: %d", MarkNum::GetId(*it), MarkNum::GetBody(*it));
 	}
 }
 

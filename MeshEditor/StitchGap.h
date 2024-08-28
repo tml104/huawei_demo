@@ -66,7 +66,7 @@
 
 
 namespace Stitch {
-	const double EPSLION1 = 0.1; // EPSLION1: 距离误差：0.02
+	const double EPSLION1 = 0.05; // EPSLION1: 距离误差：0.02
 	const double EPSLION2 = cos(MYPI / 6); // EPSLION2: 角度误差：30 degree
 	const double EPSLION2_SIN = sqrt(1.0 - EPSLION2 * EPSLION2);
 	const int MIDPOINT_CNT = 5;  //最好是奇数
@@ -166,6 +166,8 @@ namespace Stitch {
 		void StitchPoorCoedge(ENTITY_LIST &bodies);
 
 		// 其他↓
+
+		void Status();
 
 		void PreProcess();
 

@@ -1,11 +1,5 @@
 #pragma once
 
-// QT include
-#include <QFileDialog>
-#include <QFile>
-#include <QFileInfo>
-#include <QDockWidget>
-
 // ACIS include
 #include <boolapi.hxx>
 #include <curextnd.hxx>
@@ -52,15 +46,6 @@
 #include <eulerapi.hxx>
 
 // Project include
-#include "test.h"
-#include "json/json.h"
-#include "FileManagement.h"
-#include "ohmConnection.h"
-#include "pixel.h"
-#include "GetPatchType.h"
-#include "JsonHandle.h"
-#include "GeometricFill.h"
-#include "setAttr.h"
 
 #include "logger44/CoreOld.h"
 #include "MarkNum.h"
@@ -69,7 +54,6 @@
 #include "GeometryUtils.h"
 
 // STL
-#include <io.h>
 #include <time.h>
 #include <fstream>
 #include <set>

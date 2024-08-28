@@ -2,6 +2,7 @@
 #include "MarkNum.h"
 
 std::map<ENTITY*, std::pair<std::string, int>> MarkNum::Singleton::marknum_map;
+std::map<ENTITY*, int> MarkNum::Singleton::body_map;
 int MarkNum::Singleton::marknum_body = 0;
 int MarkNum::Singleton::marknum_lump = 0;
 int MarkNum::Singleton::marknum_shell = 0;
@@ -19,7 +20,7 @@ int MarkNum::Singleton::marknum_vertex = 0;
 void MarkNum::Init(ENTITY_LIST & bodies){
 
 	// 计时开始
-	clock_t marknum_start_clock = std::clock();
+	//clock_t marknum_start_clock = std::clock();
 
 	// for every body
 	for (int i = 0; i < bodies.count(); i++) {
@@ -53,6 +54,7 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 			ENTITY* ptr = lump_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
 				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "lump", ++MarkNum::Singleton::marknum_lump );
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 			}
 		}
 
@@ -61,6 +63,8 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 			ENTITY* ptr = shell_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
 				MarkNum::Singleton::marknum_map[ptr] = std::make_pair ("shell", ++MarkNum::Singleton::marknum_shell );
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
+
 			}
 		}
 
@@ -69,6 +73,8 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 			ENTITY* ptr = wire_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
 				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "wire", ++MarkNum::Singleton::marknum_wire );
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
+
 			}
 		}
 
@@ -77,6 +83,8 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 			ENTITY* ptr = face_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
 				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "face", ++MarkNum::Singleton::marknum_face );
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
+
 			}
 		}
 
@@ -85,6 +93,8 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 			ENTITY* ptr = edge_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
 				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "edge", ++MarkNum::Singleton::marknum_edge );
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
+
 			}
 		}
 
@@ -93,6 +103,8 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 			ENTITY* ptr = coedge_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
 				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "coedge", ++MarkNum::Singleton::marknum_coedge );
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
+
 			}
 		}
 
@@ -101,6 +113,8 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 			ENTITY* ptr = vertex_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
 				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "vertex", ++MarkNum::Singleton::marknum_vertex );
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
+
 			}
 		}
 
@@ -109,6 +123,8 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 			ENTITY* ptr = loop_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
 				MarkNum::Singleton::marknum_map[ptr] = std::make_pair("loop", ++MarkNum::Singleton::marknum_loop);
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
+
 			}
 		}
 
@@ -118,7 +134,6 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 	//clock_t marknum_end_clock = std::clock();
 	//double marknum_time_cost = static_cast<double>(marknum_end_clock - marknum_start_clock) / CLOCKS_PER_SEC;
 	//LOG_INFO("marknum_time_cost: %.5lf sec", marknum_time_cost);
-
 
 	LOG_INFO("body count:	%d\n", MarkNum::Singleton::marknum_body);
 	LOG_INFO("lump count:	%d\n", MarkNum::Singleton::marknum_lump);
@@ -149,7 +164,7 @@ int MarkNum::GetId( ENTITY *const & ptr)
 	}
 	else {
 		// 不存在？？你居然能不存在？？
-		LOG_INFO("GetId Failed, Not exist: Pointer: %d", ptr);
+		LOG_ERROR("GetId Failed, Not exist: Pointer: %d", ptr);
 	}
 
 	return 0;
@@ -162,10 +177,23 @@ std::string MarkNum::GetTypeName( ENTITY *const & ptr)
 	}
 	else {
 		// 不存在？？你居然能不存在？？
-		LOG_INFO("GetTypeName Failed, Not exist: Pointer: %d", ptr);
+		LOG_ERROR("GetTypeName Failed, Not exist: Pointer: %d", ptr);
 	}
 
 	return std::string();
+}
+
+int MarkNum::GetBody(ENTITY * const & ptr)
+{
+	if (MarkNum::Singleton::body_map.count(ptr) != 0) {
+		return MarkNum::Singleton::body_map[ptr];
+	}
+	else {
+		// 不存在？？你居然能不存在？？
+		LOG_ERROR("GetBody Failed, Not exist: Pointer: %d", ptr);
+	}
+
+	return 0;
 }
 
 #ifdef USE_HOOPSVIEW
@@ -375,9 +403,10 @@ void MarkNum::ShowFaceMark(HoopsView* hv) {
 
 void MarkNum::Clear()
 {
-	LOG_INFO("MarkNum Clear start.");
+	LOG_INFO("Start.");
 
 	MarkNum::Singleton::marknum_map.clear();
+	MarkNum::Singleton::body_map.clear();
 	MarkNum::Singleton::marknum_body = 0;
 	MarkNum::Singleton::marknum_lump = 0;
 	MarkNum::Singleton::marknum_shell = 0;
@@ -388,12 +417,12 @@ void MarkNum::Clear()
 	MarkNum::Singleton::marknum_edge = 0;
 	MarkNum::Singleton::marknum_vertex = 0;
 
-	LOG_INFO("MarkNum Clear end.");
+	LOG_INFO("End.");
 }
 
 void MarkNum::Debug::PrintMap()
 {
-	LOG_INFO("PrintMap start.");
+	LOG_INFO("Start.");
 
 	int cnt = 0;
 	static const unsigned int BUF_SIZE = 5000;
@@ -438,5 +467,5 @@ void MarkNum::Debug::PrintMap()
 		LOG_DEBUG(final_line_contents.c_str());
 	}
 
-	LOG_INFO("PrintMap end.");
+	LOG_INFO("End.");
 }

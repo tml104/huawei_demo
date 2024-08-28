@@ -51,7 +51,6 @@
 #include "MarkNum.h"
 #include "MyConstant.h"
 #include "json/json.h"
-//#include "UtilityFunctions.h"
 #include "GeometryUtils.h"
 
 // STL
@@ -88,7 +87,7 @@ namespace GeometryExporter {
 		void ExportTriangles();
 
 		// 
-		Json::Value ExportGeometryInfo();
+		Json::Value ExportGeometryInfo(int ibody_marknum);
 
 		void Start(const std::tuple<std::string, std::string, std::string>& split_path_tuple);
 

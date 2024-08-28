@@ -941,7 +941,7 @@ void NonManifold::NonManifoldFixer::Clear()
 	loop_findunionset.clear();
 }
 
-/* LoopFindUnionSet START*/
+/* ==========================LoopFindUnionSet START==========================*/
 
 /*
 	并查集的get father
@@ -1000,7 +1000,7 @@ void NonManifold::LoopFindUnionSet::clear()
 	father_map.clear();
 }
 
-/* LoopFindUnionSet END */
+/* ==========================LoopFindUnionSet END========================== */
 
 void NonManifold::Debug::PrintLoopsInfo(ENTITY_LIST & bodies)
 {
@@ -1042,7 +1042,7 @@ void NonManifold::Debug::PrintLoopsInfo(ENTITY_LIST & bodies)
 	//LOG_INFO("end.");
 }
 
-/* NonManifoldFixer2 START */
+/* ========================== NonManifoldFixer2 START ========================== */
 
 void NonManifold::NonManifoldFixer2::RemovePartnerFromEdge(EDGE * origin_edge, COEDGE * coedge)
 {
@@ -1051,7 +1051,7 @@ void NonManifold::NonManifoldFixer2::RemovePartnerFromEdge(EDGE * origin_edge, C
 	COEDGE* icoedge = origin_edge->coedge();
 	do {
 		if (icoedge == nullptr) {
-			LOG_DEBUG("icoedge == nullptr");
+			LOG_ERROR("icoedge == nullptr");
 			return;
 		}
 
@@ -1149,22 +1149,22 @@ std::vector<std::pair<COEDGE*, COEDGE*>> NonManifold::NonManifoldFixer2::FindXlo
 std::vector<std::pair<std::vector<COEDGE*>, std::set<LOOP*>>> NonManifold::NonManifoldFixer2::FindNormalCoedgePairs(EDGE * edge, std::set<COEDGE*> excluded_coedges)
 {
 	auto traverse_vertex_incident_edge_set = [&](std::set<EDGE*>& vertex_incident_edge_set, NonManifold::LoopFindUnionSet& loop_findunionset) {
-		LOG_INFO("traverse_vertex_incident_edge_set start.");
+		//LOG_INFO("traverse_vertex_incident_edge_set start.");
 
 		for (auto&& it2 = vertex_incident_edge_set.begin(); it2 != vertex_incident_edge_set.end(); it2++) {
 			int coedge_cnt = Utils::CoedgeCount(*it2);
 
 			if(nonmanifold_edge_set.count(*it2)){ 
-				LOG_DEBUG("Exclude it2 Case: nonmanifold_edge_set.count(*it2) > 0"); 
+				//LOG_DEBUG("Exclude it2 Case: nonmanifold_edge_set.count(*it2) > 0"); 
 				continue;
 			}
 			
 			if (coedge_cnt != 2) {
-				LOG_DEBUG("Exclude it2 Case: coedge_cnt !=2");
+				//LOG_DEBUG("Exclude it2 Case: coedge_cnt !=2");
 				continue;
 			}
 
-			LOG_DEBUG("Check Passed: *it2: %d", MarkNum::GetId(*it2));
+			//LOG_DEBUG("Check Passed: *it2: %d", MarkNum::GetId(*it2));
 
 			std::vector<LOOP*> icoedge_loop_vec;
 			COEDGE* icoedge = (*it2)->coedge();
@@ -1180,7 +1180,7 @@ std::vector<std::pair<std::vector<COEDGE*>, std::set<LOOP*>>> NonManifold::NonMa
 			} while (icoedge != nullptr && icoedge != (*it2)->coedge());
 
 			// TODO: 悬挂边的情况
-			LOG_DEBUG("icoedge_loop_vec size: %d", icoedge_loop_vec.size());
+			//LOG_DEBUG("icoedge_loop_vec size: %d", icoedge_loop_vec.size());
 
 			for (int k = 1; k < icoedge_loop_vec.size(); k++) {
 				auto &loop1 = icoedge_loop_vec[k - 1];
@@ -1188,15 +1188,15 @@ std::vector<std::pair<std::vector<COEDGE*>, std::set<LOOP*>>> NonManifold::NonMa
 
 				loop_findunionset.unite(loop1, loop2);
 
-				LOG_DEBUG(
-					"LoopFindUnionSet unite: %d, %d",
-					MarkNum::GetId(loop1),
-					MarkNum::GetId(loop2)
-				);
+				//LOG_DEBUG(
+				//	"LoopFindUnionSet unite: %d, %d",
+				//	MarkNum::GetId(loop1),
+				//	MarkNum::GetId(loop2)
+				//);
 			}
 		}
 
-		LOG_DEBUG("traverse_vertex_incident_edge_set end.");
+		//LOG_INFO("traverse_vertex_incident_edge_set end.");
 	};
 
 	auto& start_vertex_incident_edge_set = vertex_to_edge_map[(edge)->start()];
@@ -1218,7 +1218,7 @@ std::vector<std::pair<std::vector<COEDGE*>, std::set<LOOP*>>> NonManifold::NonMa
 
 		// 排除掉被xloop已经配对过的边
 		if (excluded_coedges.count(icoedge)) {
-			LOG_DEBUG("Skip excluded coedge: %d", MarkNum::GetId(icoedge));
+			//LOG_DEBUG("Skip excluded coedge: %d", MarkNum::GetId(icoedge));
 
 			icoedge = icoedge->partner();
 			if (icoedge != nullptr && icoedge != edge->coedge()) {
@@ -1256,7 +1256,7 @@ std::vector<std::pair<std::vector<COEDGE*>, std::set<LOOP*>>> NonManifold::NonMa
 */
 void NonManifold::NonManifoldFixer2::SolveXloopCoedgePairs(std::vector<std::pair<COEDGE*, COEDGE*>> coedge_pairs, EDGE* origin_edge)
 {
-	LOG_INFO("Start.");
+	//LOG_INFO("Start.");
 
 	auto modify_prev_next_vertices = [&](COEDGE* jcoedge, EDGE* origin_edge, EDGE* new_edge) {
 		// [debug] 查看哪个分支被调用了
@@ -1315,11 +1315,11 @@ void NonManifold::NonManifoldFixer2::SolveXloopCoedgePairs(std::vector<std::pair
 			}
 		}
 
-		LOG_DEBUG("solve_special: jcoedge: %d, _jcoedge_next_set_start_vertex_flag: %d, _jcoedge_prev_set_end_vertex_flag: %d",
-			MarkNum::GetId(jcoedge),
-			_jcoedge_next_set_start_vertex_flag,
-			_jcoedge_prev_set_end_vertex_flag
-		);
+		//LOG_DEBUG("solve_special: jcoedge: %d, _jcoedge_next_set_start_vertex_flag: %d, _jcoedge_prev_set_end_vertex_flag: %d",
+		//	MarkNum::GetId(jcoedge),
+		//	_jcoedge_next_set_start_vertex_flag,
+		//	_jcoedge_prev_set_end_vertex_flag
+		//);
 	};
 
 	// 创建新边并修改指针
@@ -1359,9 +1359,10 @@ void NonManifold::NonManifoldFixer2::SolveXloopCoedgePairs(std::vector<std::pair
 		modify_prev_next_vertices(coedge1, origin_edge, new_edge);
 		modify_prev_next_vertices(coedge2, origin_edge, new_edge);
 
+		xloop_count++;
 	}
 
-	LOG_INFO("End.");
+	//LOG_INFO("End.");
 }
 
 /*
@@ -1369,16 +1370,16 @@ void NonManifold::NonManifoldFixer2::SolveXloopCoedgePairs(std::vector<std::pair
 */
 void NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs(std::vector<std::pair<std::vector<COEDGE*>, std::set<LOOP*>>> coedge_pairs, EDGE* origin_edge)
 {
-	LOG_INFO("Start.");
+	//LOG_INFO("Start.");
 
 	auto modify_vertices = [&](std::set<EDGE*> const & es, EDGE* origin_edge, EDGE* new_edge) {
-		LOG_INFO("start.");
+		//LOG_INFO("start.");
 		for (auto&& it = es.begin(); it != es.end(); it++) {
 			EDGE* e = *it;
 
 			// 跳过非流形边（非流形边上的coedge的edge会被直接设置，因此不用修改顶点）
 			if (nonmanifold_edge_set.count(e)) {
-				LOG_DEBUG("Skip modify: e: %d", MarkNum::GetId(e));
+				//LOG_DEBUG("Skip modify: e: %d", MarkNum::GetId(e));
 				continue;
 			}
 			// 现在应该存在4种组合吧
@@ -1407,13 +1408,13 @@ void NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs(std::vector<std::pai
 			}
 
 			// [debug] 查看哪几个分支被调用了
-			LOG_DEBUG(
-				"Modify vertex FLAG: e: %d, flag: (_set_start_vertex_flag: %d, _set_end_vertex_flag: %d)",
-				MarkNum::GetId(e),
-				_set_start_vertex_flag,
-				_set_end_vertex_flag);
+			//LOG_DEBUG(
+			//	"Modify vertex FLAG: e: %d, flag: (_set_start_vertex_flag: %d, _set_end_vertex_flag: %d)",
+			//	MarkNum::GetId(e),
+			//	_set_start_vertex_flag,
+			//	_set_end_vertex_flag);
 		}
-		LOG_INFO("end.");
+		//LOG_INFO("end.");
 	};
 
 	// 创建新边并修改指针(注意这里必须提前复制，否则后续改了以后再复制这个边就会有变化了)
@@ -1432,8 +1433,6 @@ void NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs(std::vector<std::pai
 			continue;
 		}
 
-		
-
 		auto coedge1 = coedge_pairs[i].first[0];
 		auto coedge2 = coedge_pairs[i].first[1];
 
@@ -1441,10 +1440,10 @@ void NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs(std::vector<std::pai
 		EDGE* new_edge = new_edge_vec[new_edge_pick_index++];
 
 		// 检查究竟是否还是非流形（针对SolveXloopCoedgePairs透明修改了模型的情况）
-		// 呃，不能用Utils::CoedgeCount做检查因为这里edge的coedge是乱的……
+		// ~~不能用Utils::CoedgeCount做检查因为这里edge的coedge是乱的……~~ 现在不乱了
 		// 注意此处必须要把new_edge_pick_index递增
 		if (Utils::CoedgeCount(coedge1->edge()) == 2) {
-			LOG_DEBUG("Skip coedge pair as edge is not longer nonmanifold: (edge:%d, coedge1: %d, coedge2: %d)", MarkNum::GetId(coedge1->edge()), MarkNum::GetId(coedge1), MarkNum::GetId(coedge2));
+			//LOG_DEBUG("Skip coedge pair as edge is not longer nonmanifold: (edge:%d, coedge1: %d, coedge2: %d)", MarkNum::GetId(coedge1->edge()), MarkNum::GetId(coedge1), MarkNum::GetId(coedge2));
 			continue;
 		}
 
@@ -1465,11 +1464,11 @@ void NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs(std::vector<std::pai
 		coedge1->set_partner(coedge2);
 		coedge2->set_partner(coedge1);
 
-		LOG_DEBUG(
-			"Coedge partner set: %d %d",
-			MarkNum::GetId(coedge1->partner()),
-			MarkNum::GetId(coedge2->partner())
-		);
+		//LOG_DEBUG(
+		//	"Coedge partner set: %d %d",
+		//	MarkNum::GetId(coedge1->partner()),
+		//	MarkNum::GetId(coedge2->partner())
+		//);
 
 		// 修改顶点 （仅影响同一group中的loops的边）
 		//auto es1 = vertex_to_edge_map[origin_edge->start()];
@@ -1497,10 +1496,10 @@ void NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs(std::vector<std::pai
 
 		modify_vertices(es, origin_edge, new_edge);
 
-
+		normal_count++;
 	}
 
-	LOG_INFO("End.");
+	//LOG_INFO("End.");
 }
 
 /*
@@ -1509,7 +1508,7 @@ void NonManifold::NonManifoldFixer2::SolveNormalCoedgePairs(std::vector<std::pai
 */
 void NonManifold::NonManifoldFixer2::FindNonManifold()
 {
-	LOG_INFO("start.");
+	//LOG_INFO("start.");
 
 	// 1. 找出所有非流形边，维护(vertex->edge)map
 	for (int i = 0; i < bodies.count(); i++) {
@@ -1544,7 +1543,7 @@ void NonManifold::NonManifoldFixer2::FindNonManifold()
 		}
 	}
 
-	LOG_INFO("end.");
+	//LOG_INFO("end.");
 }
 
 
@@ -1553,7 +1552,7 @@ void NonManifold::NonManifoldFixer2::FindNonManifold()
 */
 void NonManifold::NonManifoldFixer2::SolveForEachNonManifoldEdge()
 {
-	LOG_INFO("start.");
+	//LOG_INFO("start.");
 
 	for (auto&& it = nonmanifold_edge_set.begin(); it != nonmanifold_edge_set.end(); it++) {
 		loop_findunionset.clear();
@@ -1587,7 +1586,7 @@ void NonManifold::NonManifoldFixer2::SolveForEachNonManifoldEdge()
 
 	// TODO: 如果要针对所有边都是非流形的那种面做特判的话，应该在上面的步骤做完后还余下不能解决的部分时再做
 
-	LOG_INFO("end.");
+	//LOG_INFO("end.");
 }
 
 /*
@@ -1734,14 +1733,29 @@ void NonManifold::NonManifoldFixer2::SplitInnerLoop()
 	LOG_INFO("end.");
 }
 
+void NonManifold::NonManifoldFixer2::Status()
+{
+	if (nonmanifold_edge_set.size())
+	{
+		LOG_INFO("=== Status for Nonmanifold ===");
+	
+		LOG_INFO("nonmanifold_edge_set size: %d", nonmanifold_edge_set.size());
+		LOG_INFO("xloop_count: %d", xloop_count);
+		LOG_INFO("normal_count: %d", normal_count);
+
+		LOG_INFO("=== End ===");
+	}
+}
+
 void NonManifold::NonManifoldFixer2::Start()
 {
 	api_initialize_constructors();
 	api_initialize_booleans();
 
-	// TODO: Call fix
 	FindNonManifold();
 	SolveForEachNonManifoldEdge();
+
+	Status();
 
 	api_terminate_constructors();
 	api_terminate_booleans();
@@ -1755,6 +1769,9 @@ void NonManifold::NonManifoldFixer2::Clear()
 	vertex_to_edge_map.clear();
 	loop_findunionset.clear();
 	marked_edges.clear();
+
+	xloop_count = 0;
+	normal_count = 0;
 }
 
-/* NonManifoldFixer2 END */
+/* ========================== NonManifoldFixer2 END ========================== */

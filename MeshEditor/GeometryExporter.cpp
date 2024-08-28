@@ -11,9 +11,11 @@ void GeometryExporter::SaveJson(const std::string & file_name, const Json::Value
 
 	std::string res = root.toStyledString();
 	f << res << std::endl;
+
+	LOG_INFO("Save Json: %s", file_name.c_str());
 }
 
-Json::Value GeometryExporter::Exporter::ExportGeometryInfo()
+Json::Value GeometryExporter::Exporter::ExportGeometryInfo(int ibody_marknum)
 {
 	Json::Value root;
 
@@ -33,11 +35,22 @@ Json::Value GeometryExporter::Exporter::ExportGeometryInfo()
 		// TODO: ...
 		if (type == "vertex") {
 			VERTEX* ptr = dynamic_cast<VERTEX*>(it->first);
-			root_vertices.append(VertexToJson(ptr, mark_num));
+			int body_marknum = MarkNum::GetBody(ptr);
+
+			if (body_marknum == ibody_marknum)
+			{
+				root_vertices.append(VertexToJson(ptr, mark_num));
+			}
+
 		}
 		else if (type == "edge") {
 			EDGE* ptr = dynamic_cast<EDGE*>(it->first);
-			root_edges.append(EdgeToJson(ptr, mark_num));
+			int body_marknum = MarkNum::GetBody(ptr);
+
+			if (body_marknum == ibody_marknum)
+			{
+				root_edges.append(EdgeToJson(ptr, mark_num));
+			}
 		}
 
 	}
@@ -59,9 +72,18 @@ void GeometryExporter::Exporter::Start(const std::tuple<std::string, std::string
 	std::string file_name_first = std::get<1>(split_path_tuple);
 	std::string file_name_second = std::get<2>(split_path_tuple);
 
-	std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_geometry_json_" + ".json";
-	Json::Value geometry_json = ExportGeometryInfo();
-	SaveJson(file_path_string_to_be_saved, geometry_json);
+	Utils::SAT2STL(split_path_tuple, bodies);
+
+	for (int i = 0; i < bodies.count(); i++)
+	{
+		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_geometry_json_" + std::to_string(static_cast<long long>(i)) + ".json";
+
+		BODY* ibody = dynamic_cast<BODY*>(bodies[i]);
+		int ibody_marknum = MarkNum::GetId(ibody);
+
+		Json::Value geometry_json = ExportGeometryInfo(ibody_marknum);
+		SaveJson(file_path_string_to_be_saved, geometry_json);
+	}
 }
 
 Json::Value GeometryExporter::Exporter::SPApositionToJson(const SPAposition & pos)
@@ -79,6 +101,7 @@ Json::Value GeometryExporter::Exporter::VertexToJson(VERTEX * vertex, int marknu
 {
 	Json::Value root;
 	root["marknum"] = marknum;
+	root["body"] = MarkNum::GetBody(vertex);
 
 	APOINT* p = vertex->geometry();
 
@@ -93,10 +116,13 @@ Json::Value GeometryExporter::Exporter::VertexToJson(VERTEX * vertex, int marknu
 
 Json::Value GeometryExporter::Exporter::EdgeToJson(EDGE * edge, int marknum)
 {
-	// TODO: 加非流形信息
 
 	Json::Value root;
 	root["marknum"] = marknum;
+	root["body"] = MarkNum::GetBody(edge);
+
+	int nonmanifold_count = Utils::CoedgeCount(edge);
+	root["nonmanifold_count"] = nonmanifold_count;
 
 	VERTEX* st = edge->start();
 	VERTEX* ed = edge->end();

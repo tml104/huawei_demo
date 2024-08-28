@@ -57,6 +57,12 @@ void Log44::Logger::setLogLevel(enum Log44::LogLevel log_level, bool val)
 	logLevelControlMap[log_level] = val;
 }
 
+void Log44::Logger::setId(int id)
+{
+	targetVec.pop_back();
+	targetVec.emplace_back(new LogOutputToFile(std::string("./TestLogFile") + std::to_string(static_cast<long long>(id)) + std::string(".txt")));
+}
+
 void Log44::Logger::log(Log44::LogLevel log_level, std::string&& file_name, std::string&& func_name, int line_no, const char * template_string, ...)
 {
 	// log_level Check
@@ -202,8 +208,7 @@ void Log44::LogOutputToConsole::writeLog(std::string & final_log_content)
 {
 	// Writes the C string pointed by str to the standard output (stdout) and appends a newline character ('\n').
 	puts(final_log_content.c_str());
-
-	//fflush(stdout);
+	fflush(stdout);
 }
 
 Log44::LogOutputToFile::LogOutputToFile(std::string file_path)
@@ -223,6 +228,7 @@ Log44::LogOutputToFile::~LogOutputToFile()
 void Log44::LogOutputToFile::writeLog(std::string & final_log_content)
 {
 	fputs((final_log_content + "\n").c_str(), fp);
+	fflush(fp);
 }
 
 Log44::ILogFormatter::~ILogFormatter() {}

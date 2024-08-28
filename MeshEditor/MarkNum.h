@@ -1,10 +1,5 @@
 #pragma once
 
-//#include <QFileDialog>
-//#include <QFile>
-//#include <QFileInfo>
-//#include <QDockWidget>
-
 // ACIS include
 #include <boolapi.hxx>
 #include <curextnd.hxx>
@@ -49,15 +44,6 @@
 #include <point.hxx>
 #include <ckoutcom.hxx>
 
-//#include "json/json.h"
-//#include "FileManagement.h"
-//#include "ohmConnection.h"
-//#include "pixel.h"
-//#include "GetPatchType.h"
-//#include "JsonHandle.h"
-//#include "GeometricFill.h"
-//#include "setAttr.h"
-
 #include "UtilityFunctions.h"
 #include "logger44/CoreOld.h"
 #include "MyConstant.h"
@@ -78,6 +64,7 @@
 namespace MarkNum {
 	struct Singleton {
 		static std::map<ENTITY*, std::pair<std::string, int>> marknum_map;
+		static std::map<ENTITY*, int> body_map;
 
 		static int marknum_body;
 		static int marknum_lump;
@@ -94,6 +81,7 @@ namespace MarkNum {
 
 	int GetId( ENTITY*const & ptr);
 	std::string GetTypeName(ENTITY*const & ptr);
+	int GetBody(ENTITY*const & ptr);
 
 #ifdef USE_HOOPSVIEW
 	void ShowEdgeMark(HoopsView* hv);

@@ -66,7 +66,7 @@
 namespace DegeneratedFaces {
 
 	const double REQ_REL_ACCY = 1e-6;
-	const double THRESHOLD_AREA = 1e-6;
+	const double THRESHOLD_AREA = 1e-5;
 
 	struct DegeneratedFacesFixer {
 

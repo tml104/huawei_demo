@@ -27,7 +27,7 @@
 #include "pixel.h"
 #include "Cell.h"
 
-#include "UtilityFunctions.h"
+#include "HQHEntrance.h"
 
 class Frame;
 
