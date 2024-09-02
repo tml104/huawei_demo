@@ -27,7 +27,7 @@ Json::Value GeometryExporter::Exporter::ExportGeometryInfo(int ibody_marknum)
 	Json::Value root_lumps;
 	Json::Value root_bodies;
 
-	for (auto& it = MarkNum::Singleton::marknum_map.begin(); it != MarkNum::Singleton::marknum_map.end(); it++) {
+	for (auto it = MarkNum::Singleton::marknum_map.begin(); it != MarkNum::Singleton::marknum_map.end(); it++) {
 		auto &mark_pair = it->second;
 		auto &type = mark_pair.first;
 		auto &mark_num = mark_pair.second;

@@ -52,15 +52,18 @@
 #include "MyConstant.h"
 #include "GeometryExporter.h"
 
+#ifndef IN_HUAWEI
 #include "ConstructModel.h"
 #include "Exp1.h"
 #include "Exp2.h"
 #include "Experiment240621.h"
+#include "SingleSideFaces.h"
+#endif
+
 
 #include "DegeneratedFaces.h"
 #include "NonManifold2.h"
 #include "StitchGap.h"
-#include "SingleSideFaces.h"
 
 // STL
 #include <time.h>

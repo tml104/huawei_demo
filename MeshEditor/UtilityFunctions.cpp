@@ -121,7 +121,12 @@ void Utils::SaveToSAT(const std::string& file_path, ENTITY_LIST & bodies)
 	FileInfo info;
 	info.set_units(1.0);
 	info.set_product_id("HQH1");
+
+#ifdef IN_HUAWEI
+	outcome result = api_set_file_info((FileIdent | FileUnits), info);
+#else
 	outcome result = api_set_file_info((FileId_ | FileUnits), info);
+#endif
 	check_outcome(result);
 
 	FILE *fp = fopen(file_path.c_str(), "w");
