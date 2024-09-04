@@ -70,6 +70,8 @@ namespace DegeneratedFaces {
 
 	struct DegeneratedFacesFixer {
 
+		int degenerated_face_count;
+
 		std::set<FACE*> degenerated_faces;
 		ENTITY_LIST& bodies;
 
@@ -78,9 +80,11 @@ namespace DegeneratedFaces {
 
 		void RemoveDegeneratedFaces();
 
-		DegeneratedFacesFixer(ENTITY_LIST & bodies) : bodies(bodies) {};
+		void Status();
 
-		void Start();
+		DegeneratedFacesFixer(ENTITY_LIST & bodies) : bodies(bodies), degenerated_face_count(0) {};
+
+		bool Start();
 
 		void Clear();
 	};

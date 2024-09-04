@@ -1747,7 +1747,7 @@ void NonManifold::NonManifoldFixer2::Status()
 	}
 }
 
-void NonManifold::NonManifoldFixer2::Start()
+bool NonManifold::NonManifoldFixer2::Start()
 {
 	api_initialize_constructors();
 	api_initialize_booleans();
@@ -1759,6 +1759,8 @@ void NonManifold::NonManifoldFixer2::Start()
 
 	api_terminate_constructors();
 	api_terminate_booleans();
+
+	return (xloop_count > 0 || normal_count > 0);
 }
 
 void NonManifold::NonManifoldFixer2::Clear()

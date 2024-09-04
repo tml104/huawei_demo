@@ -51,6 +51,7 @@
 //#include "test.h" // ? 去掉这个就找不到 copyedge 里面应该会用到的 check_outcome 了
 #include <fileinfo.hxx>
 #include <stchapi.hxx>
+#include <set>
 
 #include "logger44/CoreOld.h"
 #include "MarkNum.h"
@@ -95,4 +96,6 @@ namespace Utils {
 	void SaveSTL(const std::string& stl_file_path, std::vector<SPAposition> &out_mesh_points, std::vector<SPAunit_vector> &out_mesh_normals, std::vector<ENTITY*> & out_faces);
 
 	void SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
+
+	void SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies, const std::set<int>& selected_bodies);
 } // namespace Utils

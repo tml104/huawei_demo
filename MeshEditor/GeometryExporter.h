@@ -89,6 +89,8 @@ namespace GeometryExporter {
 		// 
 		Json::Value ExportGeometryInfo(int ibody_marknum);
 
+		void Start(const std::tuple<std::string, std::string, std::string>& split_path_tuple, const std::set<int>& selected_bodies);
+
 		void Start(const std::tuple<std::string, std::string, std::string>& split_path_tuple);
 
 		Exporter(ENTITY_LIST& bodies) : bodies(bodies) {}

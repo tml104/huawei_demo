@@ -296,3 +296,36 @@ void Utils::SAT2STL(const std::tuple<std::string, std::string, std::string>& spl
 
 	LOG_INFO("End.");
 }
+
+void Utils::SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies, const std::set<int>& selected_bodies)
+{
+	LOG_INFO("Start.");
+
+	for (int i = 0; i < bodies.count(); i++) {
+		BODY* ibody = dynamic_cast<BODY*> (bodies[i]);
+
+		if (selected_bodies.count(MarkNum::GetId(ibody)) == 0) {
+			continue;
+		}
+
+		std::vector<SPAposition> out_mesh_points;
+		std::vector<SPAunit_vector> out_mesh_normals;
+		std::vector<ENTITY*> out_faces;
+
+		MyMeshManager::MyFacet(ibody, out_mesh_points, out_mesh_normals, out_faces);
+
+		std::string path = std::get<0>(split_path_tuple);
+		std::string file_name_first = std::get<1>(split_path_tuple);
+		std::string file_name_second = std::get<2>(split_path_tuple);
+		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_stl_" + std::to_string(static_cast<long long>(i)) + ".stl";
+
+		SaveSTL(file_path_string_to_be_saved, out_mesh_points, out_mesh_normals, out_faces);
+
+		LOG_INFO("Points count: %d", out_mesh_points.size());
+		LOG_INFO("Faces count: %d", out_faces.size());
+
+		LOG_INFO("Saved STL file for body[%d]: %s", i, file_path_string_to_be_saved.c_str());
+	}
+
+	LOG_INFO("End.");
+}

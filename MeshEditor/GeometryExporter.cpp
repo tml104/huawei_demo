@@ -32,7 +32,7 @@ Json::Value GeometryExporter::Exporter::ExportGeometryInfo(int ibody_marknum)
 		auto &type = mark_pair.first;
 		auto &mark_num = mark_pair.second;
 
-		// TODO: ...
+		// TODO: 更多信息
 		if (type == "vertex") {
 			VERTEX* ptr = dynamic_cast<VERTEX*>(it->first);
 			int body_marknum = MarkNum::GetBody(ptr);
@@ -66,6 +66,30 @@ Json::Value GeometryExporter::Exporter::ExportGeometryInfo(int ibody_marknum)
 	return root;
 }
 
+void GeometryExporter::Exporter::Start(const std::tuple<std::string, std::string, std::string>& split_path_tuple, const std::set<int>& selected_bodies)
+{
+	std::string path = std::get<0>(split_path_tuple);
+	std::string file_name_first = std::get<1>(split_path_tuple);
+	std::string file_name_second = std::get<2>(split_path_tuple);
+
+	Utils::SAT2STL(split_path_tuple, bodies, selected_bodies);
+
+	for (int i = 0; i < bodies.count(); i++)
+	{
+		BODY* ibody = dynamic_cast<BODY*>(bodies[i]);
+		int ibody_marknum = MarkNum::GetId(ibody);
+
+		if (selected_bodies.count(ibody_marknum) == 0) {
+			continue;
+		}
+
+		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_geometry_json_" + std::to_string(static_cast<long long>(i)) + ".json";
+
+		Json::Value geometry_json = ExportGeometryInfo(ibody_marknum);
+		SaveJson(file_path_string_to_be_saved, geometry_json);
+	}
+}
+
 void GeometryExporter::Exporter::Start(const std::tuple<std::string, std::string, std::string>& split_path_tuple)
 {
 	std::string path = std::get<0>(split_path_tuple);
@@ -76,10 +100,10 @@ void GeometryExporter::Exporter::Start(const std::tuple<std::string, std::string
 
 	for (int i = 0; i < bodies.count(); i++)
 	{
-		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_geometry_json_" + std::to_string(static_cast<long long>(i)) + ".json";
-
 		BODY* ibody = dynamic_cast<BODY*>(bodies[i]);
 		int ibody_marknum = MarkNum::GetId(ibody);
+
+		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_geometry_json_" + std::to_string(static_cast<long long>(i)) + ".json";
 
 		Json::Value geometry_json = ExportGeometryInfo(ibody_marknum);
 		SaveJson(file_path_string_to_be_saved, geometry_json);

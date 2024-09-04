@@ -42,9 +42,10 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	bool option_construct240710 = false;
 
 	bool option_save_bodies = true;
-	bool option_save_bodies_respectly = true;
-	bool option_save_stl_bodies_respectly = false;
-	bool option_export_geometry_json = true;
+	bool option_save_bodies_respectly = false;
+	//bool option_save_stl_bodies_respectly = false;
+	bool option_export_geometry_json_selected = true;
+	bool option_export_geometry_json = false;
 
 	/*
 		[选项开关] 结束
@@ -97,6 +98,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		MarkNum::ShowFaceMark(hoopsview);
 	}
 
+	std::set<int> selected_bodies;
+
 	// 选择一个要解决的问题
 	if (option_solve_stitch) {
 		//B_single.sat -> B_single_mod.sat
@@ -126,15 +129,20 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 			ENTITY* ibody = bodies[i];
 			ENTITY_LIST ibody_list;
 			ibody_list.add(ibody);
+			bool selected = false;
 
 			LOG_INFO("Stitching for body: [%d]", i);
 
 			Stitch::StitchGapFixer stitchGapFixer(ibody_list);
-			stitchGapFixer.Start(true, true);
+			selected |= stitchGapFixer.Start(true, true);
 			stitchGapFixer.Clear();
 
 			LOG_INFO("Stitching for body (second pass): [%d]", i);
-			stitchGapFixer.Start(true, false);
+			selected |= stitchGapFixer.Start(true, false);
+
+			if (selected) {
+				selected_bodies.insert(MarkNum::GetId(ibody));
+			}
 
 			// 保存请使用选项：option_save_bodies_respectly
 		}
@@ -159,10 +167,15 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 			ENTITY* ibody = bodies[i];
 			ENTITY_LIST ibody_list;
 			ibody_list.add(ibody);
+			bool selected = false;
 
 			LOG_INFO("Solving Nonmanifold for body: [%d]", i);
 			NonManifold::NonManifoldFixer2 nonManifoldFixer2(ibody_list);
-			nonManifoldFixer2.Start();
+			selected |= nonManifoldFixer2.Start();
+
+			if (selected) {
+				selected_bodies.insert(MarkNum::GetId(ibody));
+			}
 			// 保存请使用选项：option_save_bodies_respectly
 		}
 	}
@@ -245,8 +258,13 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		Utils::SaveModifiedBodiesRespectly(split_path_tuple, bodies);
 	}
 
-	if (option_save_stl_bodies_respectly) {
-		Utils::SAT2STL(split_path_tuple, bodies);
+	//if (option_save_stl_bodies_respectly) {
+	//	Utils::SAT2STL(split_path_tuple, bodies);
+	//}
+
+	if (option_export_geometry_json_selected) {
+		GeometryExporter::Exporter exporter(bodies);
+		exporter.Start(split_path_tuple, selected_bodies);
 	}
 
 	if (option_export_geometry_json) {

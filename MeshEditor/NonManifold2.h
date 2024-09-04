@@ -166,7 +166,7 @@ namespace NonManifold {
 
 		void Status();
 
-		void Start();
+		bool Start();
 
 		void Clear();
 

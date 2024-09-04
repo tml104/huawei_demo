@@ -1023,7 +1023,7 @@ Stitch::PoorCoedge::PoorCoedge() : coedge(nullptr)
 	入口
 	找破边并修复 （注意目前这个只接受bodies下只有一个body的情况，否则可能会出问题）
 */
-void Stitch::StitchGapFixer::Start(bool call_fix, bool dont_stitch_coincident)
+bool Stitch::StitchGapFixer::Start(bool call_fix, bool dont_stitch_coincident)
 {
 	this->dont_stitch_coincident = dont_stitch_coincident;
 
@@ -1049,6 +1049,8 @@ void Stitch::StitchGapFixer::Start(bool call_fix, bool dont_stitch_coincident)
 	Status();
 
 	match_tree.DeleteTree(); // 删除KDTree
+
+	return (poor_coedge_pair_vec.size() > 0);
 
 	//api_terminate_constructors();
 	//api_terminate_booleans();

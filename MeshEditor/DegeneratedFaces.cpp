@@ -22,6 +22,7 @@ void DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces()
 
 			if (area <= THRESHOLD_AREA && area >= -THRESHOLD_AREA) {
 				this->degenerated_faces.insert(dynamic_cast<FACE*>(ptr));
+				degenerated_face_count++;
 				LOG_DEBUG("area of face %d: %.5lf", MarkNum::GetId(ptr), area);
 				LOG_DEBUG("face %d: degenerated.", MarkNum::GetId(ptr));
 			}
@@ -38,7 +39,16 @@ void DegeneratedFaces::DegeneratedFacesFixer::RemoveDegeneratedFaces()
 	}
 }
 
-void DegeneratedFaces::DegeneratedFacesFixer::Start()
+void DegeneratedFaces::DegeneratedFacesFixer::Status()
+{
+	if (degenerated_face_count > 0) {
+		LOG_INFO("=== Status for DegeneratedFacesFixer ===");
+		LOG_INFO("xloop_count: %d", degenerated_face_count);
+		LOG_INFO("=== End ===");
+	}
+}
+
+bool DegeneratedFaces::DegeneratedFacesFixer::Start()
 {
 	LOG_INFO("Start.");
 
@@ -48,13 +58,18 @@ void DegeneratedFaces::DegeneratedFacesFixer::Start()
 	FindDegeneratedFaces();
 	RemoveDegeneratedFaces();
 
+	Status();
+
 	api_terminate_constructors();
 	api_terminate_booleans();
 
 	LOG_INFO("End.");
+
+	return (degenerated_face_count > 0);
 }
 
 void DegeneratedFaces::DegeneratedFacesFixer::Clear() 
 {
+	degenerated_face_count = 0;
 	this->degenerated_faces.clear();
 }

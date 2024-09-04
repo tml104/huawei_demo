@@ -173,7 +173,7 @@ namespace Stitch {
 
 		StitchGapFixer(ENTITY_LIST &bodies) : bodies(bodies) {};
 
-		void Start(bool call_fix, bool dont_stitch_coincident);
+		bool Start(bool call_fix, bool dont_stitch_coincident);
 
 		void Clear();
 	};
