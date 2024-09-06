@@ -238,6 +238,10 @@ void Utils::SaveSTL(const std::string & stl_file_path, std::vector<SPAposition>&
 	std::fstream f;
 	f.open(stl_file_path, std::ios::out | std::ios::trunc);
 
+	if (!f.is_open()) {
+		throw std::runtime_error("Open stl_file_path failed.");
+	}
+
 	f << "solid default:import_1\n";
 
 	for (int i = 2; i < out_mesh_points.size(); i+=3) {

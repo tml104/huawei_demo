@@ -644,11 +644,11 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 			}
 		}
 
-		// 3.3.1 检查v0 v11的相连情况，如果有相连就删除对应边（修改链表，相当于从loop中删除对应边）
+		// 3.3 检查v0 v11的相连情况，如果有相连就删除对应边（修改链表，相当于从loop中删除对应边）
 		// （这个删边看上去并没有考虑到被删除边的引用计数情况啊（也就是说没有判断是否是破边））
 		// 240813: ~~现在改成四种情况（也即多考虑两种交叉边连接的情况，这种情况也要删除）：(v0, v11) (v1, v01) (v0, v01) (v1, v11)~~ 不对，这个还是不能改！
 		auto f3_3 = [&](VERTEX* v1, VERTEX* v2) {
-			std::vector<EDGE*> edges = edges_data.FindEdgesBetweenVertices(v1, v2);
+			std::vector<EDGE*> edges = edges_data.FindEdgesBetweenVertices(v1, v2); // 注意这里3.1, 3.2其实并未更新edges_data，也就是说这一步其实还是从旧模型中原来v1、v2就相连的边集合中寻找edges的
 
 			for (int j = 0; j < edges.size(); j++) {
 				EDGE* e = edges[j];
@@ -689,7 +689,7 @@ void Stitch::StitchGapFixer::StitchPoorCoedge(ENTITY_LIST &bodies)
 			}
 		};
 
-		// 3.3.2 检查v1 v01的相连情况，如果有相连就删除对应边（修改链表，相当于从loop中删除对应边）
+		// 3.3 检查v1 v01的相连情况，如果有相连就删除对应边（修改链表，相当于从loop中删除对应边）
 		f3_3(v0, v11);
 		f3_3(v1, v01);
 		//f3_3(v0, v01);
