@@ -175,6 +175,7 @@
     <ClCompile Include="binarySearch.cpp" />
     <ClCompile Include="ConstructModel.cpp" />
     <ClCompile Include="DegeneratedFaces.cpp" />
+    <ClCompile Include="DoubleModel.cpp" />
     <ClCompile Include="Experiment240621.cpp" />
     <ClCompile Include="filecontrolwidget.cpp" />
     <ClCompile Include="FileManagement.cpp" />
@@ -314,6 +315,7 @@
     <ClInclude Include="Cell.h" />
     <ClInclude Include="ConstructModel.h" />
     <ClInclude Include="DegeneratedFaces.h" />
+    <ClInclude Include="DoubleModel.h" />
     <ClInclude Include="Endpoint.h" />
     <ClInclude Include="Experiment240621.h" />
     <ClInclude Include="FileManagement.h" />

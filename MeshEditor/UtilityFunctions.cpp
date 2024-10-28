@@ -333,3 +333,28 @@ void Utils::SAT2STL(const std::tuple<std::string, std::string, std::string>& spl
 
 	LOG_INFO("End.");
 }
+
+void Utils::EntityList2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST & bodies)
+{
+	LOG_INFO("Start.");
+
+	std::vector<SPAposition> out_mesh_points;
+	std::vector<SPAunit_vector> out_mesh_normals;
+	std::vector<ENTITY*> out_faces;
+
+	MyMeshManager::MyFacetEntityList(bodies[0]->owner(), bodies, out_mesh_points, out_mesh_normals, out_faces); // 这能行吗……好的并不可以
+
+	std::string path = std::get<0>(split_path_tuple);
+	std::string file_name_first = std::get<1>(split_path_tuple);
+	std::string file_name_second = std::get<2>(split_path_tuple);
+	std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_stl_entity_list.stl";
+
+	SaveSTL(file_path_string_to_be_saved, out_mesh_points, out_mesh_normals, out_faces);
+
+	LOG_INFO("Points count: %d", out_mesh_points.size());
+	LOG_INFO("Faces count: %d", out_faces.size());
+
+	LOG_INFO("Saved STL file for body entity list: %s", file_path_string_to_be_saved.c_str());
+
+	LOG_INFO("End.");
+}

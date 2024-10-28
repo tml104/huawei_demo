@@ -267,6 +267,9 @@
     <ClCompile Include="HQHEntrance.cpp">
       <Filter>topologyopt\HQHEntrance</Filter>
     </ClCompile>
+    <ClCompile Include="DoubleModel.cpp">
+      <Filter>topologyopt\FindProblem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -394,6 +397,9 @@
     </ClInclude>
     <ClInclude Include="HQHEntrance.h">
       <Filter>topologyopt\HQHEntrance</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleModel.h">
+      <Filter>topologyopt\FindProblem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

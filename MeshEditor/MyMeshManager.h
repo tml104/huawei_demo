@@ -172,4 +172,6 @@ namespace MyMeshManager {
 	};
 
 	void MyFacet(ENTITY* ent, std::vector<SPAposition> &out_mesh_points, std::vector<SPAunit_vector> &out_mesh_normals, std::vector<ENTITY*> & out_faces);
+
+	void MyFacetEntityList(ENTITY* owner, ENTITY_LIST& entity_list, std::vector<SPAposition> &out_mesh_points, std::vector<SPAunit_vector> &out_mesh_normals, std::vector<ENTITY*> & out_faces);
 } // namespace MyMeshManager 

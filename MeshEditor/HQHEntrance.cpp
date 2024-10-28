@@ -27,10 +27,12 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 	bool option_solve_remove_degenerated_faces = false;
 	bool option_solve_stitch = false;
-	bool option_solve_stitch_for_each_bodies = true;
+	bool option_solve_stitch_for_each_bodies = false;
 	bool option_solve_nonmanifold = false;
 	bool option_solve_nonmanifold_for_each_bodies = false;
-	bool option_solve_single_side_faces = false;
+	bool option_solve_single_side_faces = false; 
+
+	bool option_make_double_model = true;
 
 	bool option_exp1 = false;
 	bool option_exp2 = false;
@@ -44,8 +46,10 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	bool option_save_bodies = true;
 	bool option_save_bodies_respectly = false;
 	//bool option_save_stl_bodies_respectly = false;
-	bool option_export_geometry_json_selected = true;
-	bool option_export_geometry_json = false;
+	bool option_export_geometry_json_selected = false;
+	bool option_export_geometry_json = true;
+
+	bool option_export_entity_list_stl = true;
 
 	/*
 		[选项开关] 结束
@@ -187,6 +191,12 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		singleSideFacesFixer.Start();
 	}
 
+	// 当模型中仍存在单面边的时候，尝试复制一遍对应的body，组合成double model
+	if (option_make_double_model) {
+		DoubleModel::DoubleModelMaker doubleModelMaker(bodies);
+		doubleModelMaker.Start();
+	}
+
 	/* [实验] */
 	if (option_exp1) {
 		// EXp1...
@@ -270,6 +280,10 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	if (option_export_geometry_json) {
 		GeometryExporter::Exporter exporter(bodies);
 		exporter.Start(split_path_tuple);
+	}
+
+	if (option_export_entity_list_stl) {
+		Utils::EntityList2STL(split_path_tuple, bodies);
 	}
 
 	LOG_INFO("ALL DONE");

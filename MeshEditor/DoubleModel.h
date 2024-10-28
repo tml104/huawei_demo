@@ -42,52 +42,48 @@
 #include <geom_utl.hxx>
 #include <body.hxx>
 #include <point.hxx>
-#include <debug.hxx>
-#include <eulerapi.hxx>
-#include <geometry.hxx>
+#include <ckoutcom.hxx>
 
-// Project include
-#include "logger44/CoreOld.h"
-#include "MarkNum.h"
-#include "MyConstant.h"
-#include "GeometryExporter.h"
+// my include
 
-#ifndef IN_HUAWEI
-#include "ConstructModel.h"
-#include "Exp1.h"
-#include "Exp2.h"
-#include "Experiment240621.h"
-#include "SingleSideFaces.h"
+#ifdef IN_HUAWEI
+#	include "Core.h"
+#else
+#	include "logger44/CoreOld.h"
 #endif
+#include "MyConstant.h"
+#include "MarkNum.h"
+#include "UtilityFunctions.h"
 
-
-#include "DegeneratedFaces.h"
-#include "NonManifold2.h"
-#include "StitchGap.h"
-#include "DoubleModel.h"
-
-// STL
-#include <time.h>
-#include <fstream>
+// std include
 #include <set>
 #include <map>
 #include <vector>
+#include <array>
+#include <bitset>
 #include <algorithm>
 #include <functional>
 #include <string>
 #include <ctime>
 #include <cmath>
+#include <exception>
 
-#ifndef IN_HUAWEI
-#include "hoopsview.h"
-#endif
+namespace DoubleModel {
 
-namespace HQHEntrance {
+	struct DoubleModelMaker {
 
-#ifdef IN_HUAWEI
-	void Run(int model_id, int option1);
-#else
-	void Run(const std::string& file_path, HoopsView* hoopsview);
-#endif
+		ENTITY_LIST& bodies;
 
-}// namespace HQHEntrance
+		DoubleModelMaker(ENTITY_LIST& bodies) : bodies(bodies) {};
+
+		bool HasSingleSideEdge(BODY* body);
+
+		void CheckSingleSideEdgeAndDoubleModel();
+
+		void Start();
+
+		void Clear();
+
+	};
+
+} // namespace DoubleModel

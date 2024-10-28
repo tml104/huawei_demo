@@ -98,4 +98,6 @@ namespace Utils {
 	void SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
 
 	void SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies, const std::set<int>& selected_bodies);
+
+	void EntityList2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
 } // namespace Utils
