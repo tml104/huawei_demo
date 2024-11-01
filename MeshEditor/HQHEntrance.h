@@ -47,10 +47,15 @@
 #include <geometry.hxx>
 
 // Project include
+#ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#else
+#include "CoreOld.h"
+#endif
 #include "MarkNum.h"
 #include "MyConstant.h"
 #include "GeometryExporter.h"
+#include "Timer.h"
 
 #ifndef IN_HUAWEI
 #include "ConstructModel.h"
@@ -85,9 +90,21 @@
 namespace HQHEntrance {
 
 #ifdef IN_HUAWEI
+
+	// 这上面还有函数
+
+	static std::vector<std::string> path_vec2;
+
+	ENTITY_LIST LoadEntityListFromID(int model_id, int flag = 0);
+
+	ENTITY_LIST OpenBody(string file_path);
+
 	void Run(int model_id, int option1);
+
 #else
+
 	void Run(const std::string& file_path, HoopsView* hoopsview);
+
 #endif
 
 }// namespace HQHEntrance

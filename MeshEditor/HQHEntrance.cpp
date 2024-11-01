@@ -25,11 +25,11 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	bool option_marknum_showfacemark = false;
 	bool option_print_topo = false;
 
-	bool option_solve_remove_degenerated_faces = false;
 	bool option_solve_stitch = false;
-	bool option_solve_stitch_for_each_bodies = false;
+	bool option_solve_stitch_for_each_bodies = true;
+	bool option_solve_remove_degenerated_faces = true;
 	bool option_solve_nonmanifold = false;
-	bool option_solve_nonmanifold_for_each_bodies = false;
+	bool option_solve_nonmanifold_for_each_bodies = true;
 	bool option_solve_single_side_faces = false; 
 
 	bool option_make_double_model = true;
@@ -43,13 +43,13 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	bool option_construct = false;
 	bool option_construct240710 = false;
 
-	bool option_save_bodies = true;
-	bool option_save_bodies_respectly = false;
+	bool option_save_bodies = false;
+	bool option_save_bodies_respectly = true;
 	//bool option_save_stl_bodies_respectly = false;
 	bool option_export_geometry_json_selected = false;
-	bool option_export_geometry_json = true;
+	bool option_export_geometry_json = false;
 
-	bool option_export_entity_list_stl = true;
+	//bool option_export_entity_list_stl = true;
 
 	/*
 		[选项开关] 结束
@@ -57,6 +57,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 	api_start_modeller(0);
 
+	Timer::Timer load_body_timer;
 	FILE *f = fopen(file_path.c_str(), "r");
 
 	ENTITY_LIST bodies;
@@ -67,6 +68,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	}
 	api_restore_entity_list(f, TRUE, bodies);
 	fclose(f);
+	load_body_timer.Split("模型加载");
 
 	// 文件路径预处理
 	LOG_INFO("file_path: %s", file_path.c_str());
@@ -80,8 +82,12 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 			LOG_INFO("api_change_body_trans for: bodies[%d]", j);
 		}
 	}
+	load_body_timer.Split("变换物体");
+	load_body_timer.PrintTimes();
 
 	// 调用计数init 
+	Timer::Timer process_timer;
+
 	if (option_marknum_init) {
 		MarkNum::Init(bodies);
 
@@ -90,16 +96,19 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 			GeometryUtils::TopoChecker topochecker(bodies);
 			topochecker.PrintTopo();
 		}
+		process_timer.Split("MarkNum");
 	}
 
 	// （性能开销大）标记每个边的EDGE编号
 	// 注意：这个在load较大的模型的时候会非常慢，大模型慎用
 	if (option_marknum_showedgemark) {
 		MarkNum::ShowEdgeMark(hoopsview);
+		process_timer.Split("ShowEdgeMark");
 	}
 
 	if (option_marknum_showfacemark) {
 		MarkNum::ShowFaceMark(hoopsview);
+		process_timer.Split("ShowFaceMark");
 	}
 
 	std::set<int> selected_bodies;
@@ -124,6 +133,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 			show_edge_marknum_set.insert(491); // 这个491究竟是什么玩意居然能导致warn?? (好像是那个绿色的边，没事了)
 			MarkNum::ShowEdgeMark(hoopsview, show_edge_marknum_set);
 		}
+		process_timer.Split("option_solve_stitch");
 	}
 
 	if (option_solve_stitch_for_each_bodies)
@@ -150,11 +160,13 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 			// 保存请使用选项：option_save_bodies_respectly
 		}
+		process_timer.Split("option_solve_stitch_for_each_bodies");
 	}
 
 	if (option_solve_remove_degenerated_faces) {
 		DegeneratedFaces::DegeneratedFacesFixer degeneratedFaceFixer(bodies);
 		degeneratedFaceFixer.Start();
+		process_timer.Split("option_solve_remove_degenerated_faces");
 	}
 
 	if (option_solve_nonmanifold) {
@@ -164,6 +176,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 		NonManifold::NonManifoldFixer2 nonManifoldFixer2(bodies);
 		nonManifoldFixer2.Start();
+
+		process_timer.Split("option_solve_nonmanifold");
 	}
 
 	if (option_solve_nonmanifold_for_each_bodies) {
@@ -182,6 +196,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 			}
 			// 保存请使用选项：option_save_bodies_respectly
 		}
+
+		process_timer.Split("option_solve_nonmanifold_for_each_bodies");
 	}
 
 
@@ -189,12 +205,15 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		// 设定边的双边
 		SingleSideFaces::SingleSideFacesFixer singleSideFacesFixer(bodies);
 		singleSideFacesFixer.Start();
+		process_timer.Split("option_solve_single_side_faces");
 	}
 
 	// 当模型中仍存在单面边的时候，尝试复制一遍对应的body，组合成double model
 	if (option_make_double_model) {
 		DoubleModel::DoubleModelMaker doubleModelMaker(bodies);
 		doubleModelMaker.Start();
+
+		process_timer.Split("option_make_double_model");
 	}
 
 	/* [实验] */
@@ -228,6 +247,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 			GeometryUtils::TopoChecker topochecker(bodies);
 			topochecker.PrintTopo();
 		}
+
+		process_timer.Split("MarkNum");
 	}
 	/* [实验结束] */
 
@@ -260,12 +281,14 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	if (option_save_bodies)
 	{
 		Utils::SaveModifiedBodies(split_path_tuple, bodies);
+		process_timer.Split("option_save_bodies");
 	}
 
 	// （240408）保存bodies list中的各个body
 	if (option_save_bodies_respectly)
 	{
 		Utils::SaveModifiedBodiesRespectly(split_path_tuple, bodies);
+		process_timer.Split("option_save_bodies_respectly");
 	}
 
 	//if (option_save_stl_bodies_respectly) {
@@ -275,17 +298,20 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	if (option_export_geometry_json_selected) {
 		GeometryExporter::Exporter exporter(bodies);
 		exporter.Start(split_path_tuple, selected_bodies);
+		process_timer.Split("option_export_geometry_json_selected");
 	}
 
 	if (option_export_geometry_json) {
 		GeometryExporter::Exporter exporter(bodies);
 		exporter.Start(split_path_tuple);
+		process_timer.Split("option_export_geometry_json");
 	}
 
-	if (option_export_entity_list_stl) {
-		Utils::EntityList2STL(split_path_tuple, bodies);
-	}
-
+	// 这个没用，所以砍掉吧
+	//if (option_export_entity_list_stl) {
+	//	Utils::EntityList2STL(split_path_tuple, bodies);
+	//}
+	process_timer.PrintTimes();
 	LOG_INFO("ALL DONE");
 
 	// 不能在文件保存之前调用此api_stop_modeller

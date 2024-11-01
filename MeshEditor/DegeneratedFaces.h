@@ -45,10 +45,17 @@
 #include <ckoutcom.hxx>
 
 // my include
+
+#ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#else
+#include "CoreOld.h"
+#endif
+
 #include "MyConstant.h"
 #include "MarkNum.h"
 #include "UtilityFunctions.h"
+#include "GeometryUtils.h"
 
 // std include
 #include <set>
@@ -66,8 +73,10 @@
 namespace DegeneratedFaces {
 
 	const double REQ_REL_ACCY = 1e-6;
-	const double THRESHOLD_AREA = 1e-5;
+	const double THRESHOLD_AREA = 3e-6;
 
+
+	// TODO: 这里改成基于单个面的
 	struct DegeneratedFacesFixer {
 
 		int degenerated_face_count;

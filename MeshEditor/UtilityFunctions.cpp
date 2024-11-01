@@ -334,6 +334,9 @@ void Utils::SAT2STL(const std::tuple<std::string, std::string, std::string>& spl
 	LOG_INFO("End.");
 }
 
+/*
+	DEPRECATE: √ª”√
+*/
 void Utils::EntityList2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST & bodies)
 {
 	LOG_INFO("Start.");

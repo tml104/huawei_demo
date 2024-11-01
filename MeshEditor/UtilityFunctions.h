@@ -53,7 +53,11 @@
 #include <stchapi.hxx>
 #include <set>
 
+#ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#else
+#include "CoreOld.h"
+#endif
 #include "MarkNum.h"
 
 #include "MyMeshManager.h"
@@ -99,5 +103,8 @@ namespace Utils {
 
 	void SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies, const std::set<int>& selected_bodies);
 
+	/*
+		DEPRECATE£∫√ª”√
+	*/
 	void EntityList2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies);
 } // namespace Utils

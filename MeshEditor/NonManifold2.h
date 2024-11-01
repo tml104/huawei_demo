@@ -45,7 +45,11 @@
 #include <ckoutcom.hxx>
 
 // my include
+#ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#else
+#include "CoreOld.h"
+#endif
 #include "MyConstant.h"
 #include "MarkNum.h"
 #include "UtilityFunctions.h"

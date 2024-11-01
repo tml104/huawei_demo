@@ -44,7 +44,11 @@
 #include <point.hxx>
 
 // Project include
+#ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#else
+#include "CoreOld.h"
+#endif
 #include "MarkNum.h"
 #include "MyConstant.h"
 #include "UtilityFunctions.h"

@@ -344,6 +344,7 @@
     <ClInclude Include="ohm_struct.h" />
     <ClInclude Include="SingleSideFaces.h" />
     <ClInclude Include="StitchGap.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="UtilityFunctions.h" />
     <ClInclude Include="pixel.h" />
     <ClInclude Include="setAttr.h" />

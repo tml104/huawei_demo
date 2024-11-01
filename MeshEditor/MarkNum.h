@@ -44,9 +44,14 @@
 #include <point.hxx>
 #include <ckoutcom.hxx>
 
-#include "UtilityFunctions.h"
+#ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#else
+#include "CoreOld.h"
+#endif
 #include "MyConstant.h"
+#include "UtilityFunctions.h"
+
 
 #include <set>
 #include <map>

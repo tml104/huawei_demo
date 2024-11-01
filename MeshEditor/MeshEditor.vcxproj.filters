@@ -401,6 +401,9 @@
     <ClInclude Include="DoubleModel.h">
       <Filter>topologyopt\FindProblem</Filter>
     </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="mainwindow.ui">

@@ -353,6 +353,54 @@ bool GeometryUtils::GeometryCoincidentPoint(SPAposition p1, SPAposition p2, cons
 	return true;
 }
 
+
+bool GeometryUtils::CheckLoopHasNonmanifoldEdge(LOOP* loop) {
+	if (loop == nullptr || loop->start() == nullptr) {
+		return false;
+	}
+
+	COEDGE* icoedge = loop->start();
+	do {
+		if (icoedge == nullptr) {
+			LOG_ERROR("icoedge == nullptr");
+			return false;
+		}
+
+		int cnt = Utils::PartnerCount(icoedge);
+		if (cnt > 2) {
+			return true;
+		}
+
+		icoedge = icoedge->next();
+	} while (icoedge != nullptr && icoedge != loop->start());
+
+	return false;
+}
+
+bool GeometryUtils::CheckLoopHasSingleSideEdge(LOOP* loop) {
+	if (loop == nullptr || loop->start() == nullptr) {
+		return false;
+	}
+
+	COEDGE* icoedge = loop->start();
+	do {
+		if (icoedge == nullptr) {
+			LOG_ERROR("icoedge == nullptr");
+			return false;
+		}
+
+		int cnt = Utils::PartnerCount(icoedge);
+		if (cnt == 1) {
+			return true;
+		}
+
+		icoedge = icoedge->next();
+	} while (icoedge != nullptr && icoedge != loop->start());
+
+	return false;
+}
+
+
 bool GeometryUtils::GeometryCoincidentEdge(EDGE * e1, EDGE * e2)
 {
 	if (e1 == nullptr || e2 == nullptr) {

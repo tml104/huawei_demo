@@ -46,10 +46,10 @@
 
 // my include
 
-#ifdef IN_HUAWEI
-#	include "Core.h"
+#ifndef IN_HUAWEI
+#include "logger44/CoreOld.h"
 #else
-#	include "logger44/CoreOld.h"
+#include "CoreOld.h"
 #endif
 #include "MyConstant.h"
 #include "MarkNum.h"

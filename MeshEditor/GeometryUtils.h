@@ -47,7 +47,11 @@
 #include <geometry.hxx>
 
 // Project include
+#ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#else
+#include "CoreOld.h"
+#endif
 #include "MarkNum.h"
 #include "MyConstant.h"
 #include "UtilityFunctions.h"
@@ -81,6 +85,12 @@ namespace GeometryUtils {
 	bool GeometryCoincidentVertex(VERTEX* v1, VERTEX* v2, const double epslion = POINT_EPSLION);
 
 	bool GeometryCoincidentPoint(SPAposition p1, SPAposition p2, const double epslion = POINT_EPSLION);
+
+	/*
+		判断环上是不是有非流形边
+	*/
+	bool CheckLoopHasNonmanifoldEdge(LOOP* loop);
+	bool CheckLoopHasSingleSideEdge(LOOP* loop);
 
 	/*
 		判断两条边是否符合“几何上相同”的条件

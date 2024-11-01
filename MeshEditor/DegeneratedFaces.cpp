@@ -13,19 +13,28 @@ void DegeneratedFaces::DegeneratedFacesFixer::FindDegeneratedFaces()
 
 		// face
 		for (int j = 0; j < face_list.count(); j++) {
-			ENTITY* ptr = face_list[j];
+			FACE* face_ptr = dynamic_cast<FACE*>(face_list[j]);
 
-			// 计算面积
-			double area;
-			double est_rel_accy_achieved;
-			api_ent_area(ptr, REQ_REL_ACCY, area, est_rel_accy_achieved);
 
-			if (area <= THRESHOLD_AREA && area >= -THRESHOLD_AREA) {
-				this->degenerated_faces.insert(dynamic_cast<FACE*>(ptr));
-				degenerated_face_count++;
-				LOG_DEBUG("area of face %d: %.5lf", MarkNum::GetId(ptr), area);
-				LOG_DEBUG("face %d: degenerated.", MarkNum::GetId(ptr));
+			// 先判断一下这个面是否确实存在非流形，然后再计算面积
+			LOOP* loop = face_ptr->loop();
+			bool has_nonmanifold = GeometryUtils::CheckLoopHasNonmanifoldEdge(loop);
+			if (has_nonmanifold)
+			{
+				// 计算面积
+				double area;
+				double est_rel_accy_achieved;
+				api_ent_area(face_ptr, REQ_REL_ACCY, area, est_rel_accy_achieved);
+
+				if (area <= THRESHOLD_AREA && area >= -THRESHOLD_AREA) {
+					this->degenerated_faces.insert(face_ptr);
+					degenerated_face_count++;
+					LOG_DEBUG("area of face %d (body: %d): %.8lf", MarkNum::GetId(face_ptr), MarkNum::GetBody(face_ptr), area);
+					LOG_DEBUG("face %d (body: %d): degenerated.", MarkNum::GetId(face_ptr), MarkNum::GetBody(face_ptr));
+				}
+
 			}
+
 		}
 	}
 }

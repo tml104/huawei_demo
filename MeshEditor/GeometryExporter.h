@@ -47,10 +47,15 @@
 #include <geometry.hxx>
 
 // Project include
+#ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#include "json/json.h"
+#else
+#include "CoreOld.h"
+#include "json.h"
+#endif
 #include "MarkNum.h"
 #include "MyConstant.h"
-#include "json/json.h"
 #include "GeometryUtils.h"
 
 // STL
