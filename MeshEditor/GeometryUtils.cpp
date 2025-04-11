@@ -297,9 +297,22 @@ void GeometryUtils::PrintFaceGeometry(FACE * f)
 	LOG_INFO("end.");
 }
 
+SPAposition GeometryUtils::SamplePCurveIn3D(double par, pcurve & p, SURFACE * f)
+{
+	SPApar_pos uv = p.eval_position(par);
+	SPAposition point = f->equation().eval_position(uv);
+	return point;
+}
+
 // 对任意几何类型的几何点采样
 std::vector<SPAposition> GeometryUtils::SampleEdge(EDGE * edge, int sample_num)
 {
+	if (edge == nullptr)
+	{
+		LOG_ERROR("edge is nullptr.");
+		throw std::runtime_error("edge is nullptr");
+	}
+
 	std::vector<SPAposition> points_vec;
 
 	auto edge_range = edge->param_range();
@@ -312,8 +325,63 @@ std::vector<SPAposition> GeometryUtils::SampleEdge(EDGE * edge, int sample_num)
 	}
 
 	return points_vec;
-
 }
+
+std::vector<SPAposition> GeometryUtils::SampleCoedge(COEDGE * coedge, int sample_num, bool reverse_flag)
+{
+	if (coedge == nullptr)
+	{
+		LOG_ERROR("coedge is nullptr.");
+		throw std::runtime_error("coedge is nullptr");
+	}
+
+	if (coedge->geometry() == nullptr)
+	{
+		LOG_ERROR("coedge->geometry() is nullptr.");
+		throw std::runtime_error("coedge->geometry() is nullptr");
+	}
+
+	if (!coedge->loop() || !coedge->loop()->face()) {
+		LOG_ERROR("coedge->loop() or coedge->loop()->face() is nullptr.");
+		throw std::runtime_error("coedge->loop() or coedge->loop()->face() is nullptr");
+	}
+
+	if (!coedge->loop()->face()->geometry()) {
+		LOG_ERROR("coedge->loop()->face()->geometry() is nullptr.");
+		throw std::runtime_error("coedge->loop()->face()->geometry() is nullptr");
+	}
+
+	std::vector<SPAposition> points_vec;
+
+
+	pcurve coedge_pcurve = coedge->geometry()->equation();
+	SURFACE* f = coedge->loop()->face()->geometry();
+
+	SPAinterval prange = coedge_pcurve.param_range();
+
+	double start_param = prange.start_pt();
+	double end_param = prange.end_pt();
+
+	if (start_param > end_param) {
+		std::swap(start_param, end_param);
+	}
+
+	double delta_param = (end_param - start_param) / (sample_num - 1);
+
+	for (int k = 0; k < sample_num; k++) {
+		double sample_param = start_param + delta_param * k;
+
+		points_vec.emplace_back(SamplePCurveIn3D(sample_param, coedge_pcurve, f));
+	}
+
+	if (reverse_flag) {
+		std::reverse(points_vec.begin(), points_vec.end());
+	}
+
+	return points_vec;
+}
+
+
 
 /*
 	判断两条边是否符合“几何上相同”的条件

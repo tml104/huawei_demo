@@ -17,27 +17,32 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	/*
 		[选项开关]
 	*/
-	bool option_change_body_trans = true;
+	bool option_change_body_trans = false;
 
-	bool option_marknum_init = true;
-	bool option_marknum_showedgemark = false;
+	bool option_marknum_init = true; // 必开
+	bool option_marknum_showedgemark = true;
 	bool option_marknum_showedgemark_with_set = false;
 	bool option_marknum_showfacemark = false;
 	bool option_print_topo = false;
 
 	bool option_solve_stitch = false;
-	bool option_solve_stitch_for_each_bodies = true;
-	bool option_solve_remove_degenerated_faces = true;
+	bool option_solve_stitch_for_each_bodies = false;
+	bool option_solve_remove_degenerated_faces = false;
 	bool option_solve_nonmanifold = false;
-	bool option_solve_nonmanifold_for_each_bodies = true;
+	bool option_solve_nonmanifold_for_each_bodies =	false;
 	bool option_solve_single_side_faces = false; 
 
-	bool option_make_double_model = true;
+	bool option_make_double_model = false;
 
 	bool option_exp1 = false;
 	bool option_exp2 = false;
 	bool option_exp3 = false;
 	bool option_exp4 = false;
+	bool option_exp5 = true;
+
+	bool option_exp250305 = false;
+	bool option_marknum_init2 = false;
+
 	//bool option_exp4_2 = true;
 
 	bool option_construct = false;
@@ -47,16 +52,16 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	bool option_save_bodies_respectly = true;
 	//bool option_save_stl_bodies_respectly = false;
 	bool option_export_geometry_json_selected = false;
-	bool option_export_geometry_json = false;
+	bool option_export_geometry_json = true;
 
 	//bool option_export_entity_list_stl = true;
 
 	/*
-		[选项开关] 结束
+		[选项开关] 结束 
 	*/
 
 	api_start_modeller(0);
-
+	 
 	Timer::Timer load_body_timer;
 	FILE *f = fopen(file_path.c_str(), "r");
 
@@ -238,7 +243,19 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		exp4.StartExperiment();
 	}
 
-	if (option_marknum_init) {
+	if (option_exp5) {
+		Exp5::Exp5 exp5(bodies);
+		exp5.StartExperiment();
+	}
+
+
+	if (option_exp250305)
+	{
+		Exp250305::Exp250305 exp250305(bodies);
+		exp250305.Start();
+	}
+
+	if (option_marknum_init2) {
 		MarkNum::Clear();
 		MarkNum::Init(bodies);
 
@@ -316,7 +333,6 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 	// 不能在文件保存之前调用此api_stop_modeller
 	api_stop_modeller();
-
 }
 
 #endif

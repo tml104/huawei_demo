@@ -64,7 +64,7 @@ double Stitch::CalculatePoorCoedgeScore(const PoorCoedge & poor_coedge1, const P
 	for (int i = 0, j = Stitch::MIDPOINT_CNT - 1; i < Stitch::MIDPOINT_CNT; i++, j--) {
 		double distance = Stitch::Distance(poor_coedge1.midpoint_coords[i], poor_coedge2.midpoint_coords[j]);
 
-		//LOG_DEBUG("distance of (i,j = %d, %d) : %.5lf", i, j, distance);
+		LOG_DEBUG("distance of (i,j = %d, %d) : %.5lf", i, j, distance);
 
 		score1 += distance;
 		if (distance > Stitch::EPSLION1) {
@@ -80,7 +80,7 @@ double Stitch::CalculatePoorCoedgeScore(const PoorCoedge & poor_coedge1, const P
 	Stitch::MyVector vec2 = Stitch::Normalize(Stitch::GetMyVector(poor_coedge2.midpoint_coords[0], poor_coedge2.midpoint_coords[Stitch::MIDPOINT_CNT - 1]));
 	double dot_result = Stitch::Dot(vec1, vec2);
 
-	//LOG_DEBUG("dot result: %.5lf", dot_result);
+	LOG_DEBUG("dot result: %.5lf", dot_result);
 
 	if (dot_result > 0) {
 		vaild_flag = false;
@@ -94,11 +94,11 @@ double Stitch::CalculatePoorCoedgeScore(const PoorCoedge & poor_coedge1, const P
 	}
 
 	if (vaild_flag) {
-		//LOG_DEBUG("vaild score. score1: %.5lf ", score1);
+		LOG_DEBUG("vaild score. score1: %.5lf ", score1);
 		return score1;
 	}
 
-	//LOG_DEBUG("invaild score. score: -1.0");
+	LOG_DEBUG("invaild score. score: -1.0");
 	return -1.0;
 }
 
@@ -108,7 +108,7 @@ double Stitch::CalculatePoorCoedgeScore(const PoorCoedge & poor_coedge1, const P
 */
 void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 {
-	//LOG_INFO("start.");
+	LOG_INFO("start.");
 
 	for (int i = 0; i < bodies.count(); i++) {
 		ENTITY* ibody = (bodies[i]);
@@ -227,14 +227,14 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 
 				// [DEBUG] 打印中间插值采样点的坐标值
 
-				//for (int k = 0; k < MIDPOINT_CNT; k++) {
-				//	LOG_DEBUG("sample_point[%d]: %.5lf, %.5lf, %.5lf",
-				//		k,
-				//		temp_poor_coedge.midpoint_coords[k][0],
-				//		temp_poor_coedge.midpoint_coords[k][1],
-				//		temp_poor_coedge.midpoint_coords[k][2]
-				//	);
-				//}
+				for (int k = 0; k < MIDPOINT_CNT; k++) {
+					LOG_DEBUG("sample_point[%d]: %.5lf, %.5lf, %.5lf",
+						k,
+						temp_poor_coedge.midpoint_coords[k][0],
+						temp_poor_coedge.midpoint_coords[k][1],
+						temp_poor_coedge.midpoint_coords[k][2]
+					);
+				}
 
 
 				poor_coedge_vec.emplace_back(temp_poor_coedge);
@@ -244,7 +244,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 	}
 	LOG_DEBUG("poor coedge total num: %d", static_cast<int>(poor_coedge_vec.size()));
 
-	//LOG_INFO("end.");
+	LOG_INFO("end.");
 }
 
 /*
@@ -254,7 +254,7 @@ void Stitch::StitchGapFixer::FindPoorCoedge(ENTITY_LIST & bodies)
 */
 void Stitch::StitchGapFixer::MatchPoorCoedge()
 {
-	//LOG_INFO("start.");
+	LOG_INFO("start.");
 
 	// 建树（基于中点）
 	match_tree.ConstructTree(poor_coedge_vec);
@@ -263,7 +263,7 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 		auto &e = poor_coedge_vec[i];
 
 		if (found_coedge_set.count(e.coedge)) {
-			//LOG_DEBUG("Skip matching: %d (edge: %d)", MarkNum::GetId(e.coedge), MarkNum::GetId(e.coedge->edge()));
+			LOG_DEBUG("Skip matching: %d (edge: %d)", MarkNum::GetId(e.coedge), MarkNum::GetId(e.coedge->edge()));
 			continue;
 		}
 
@@ -274,13 +274,13 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 			auto first_match = match_poor_coedge_vec.front();
 
 			// [debug]打印分数
-			//LOG_DEBUG("Best match id: %d (edge: %d) %d (edge: %d), score: %.5lf",
-			//	MarkNum::GetId(e.coedge),
-			//	MarkNum::GetId(e.coedge->edge()),
-			//	MarkNum::GetId(first_match.first.coedge),
-			//	MarkNum::GetId(first_match.first.coedge->edge()),
-			//	first_match.second
-			//);
+			LOG_DEBUG("Best match id: %d (edge: %d) %d (edge: %d), score: %.5lf",
+				MarkNum::GetId(e.coedge),
+				MarkNum::GetId(e.coedge->edge()),
+				MarkNum::GetId(first_match.first.coedge),
+				MarkNum::GetId(first_match.first.coedge->edge()),
+				first_match.second
+			);
 
 			poor_coedge_pair_vec.emplace_back(std::make_pair(e, first_match.first));
 
@@ -304,7 +304,7 @@ void Stitch::StitchGapFixer::MatchPoorCoedge()
 		);
 	}
 
-	//LOG_INFO("end.");
+	LOG_INFO("end.");
 }
 
 
@@ -844,9 +844,9 @@ void Stitch::MatchTree::DeleteTree()
 */
 std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stitch::PoorCoedge poor_coedge1, const std::set<COEDGE*>& found_coedge_set, bool dont_stitch_coincident)
 {
-	//LOG_INFO("start.");
+	LOG_INFO("start.");
 
-	//LOG_DEBUG("Now Matching: %d (edge: %d)", MarkNum::GetId(poor_coedge1.coedge), MarkNum::GetId(poor_coedge1.coedge->edge()));
+	LOG_DEBUG("Now Matching: %d (edge: %d)", MarkNum::GetId(poor_coedge1.coedge), MarkNum::GetId(poor_coedge1.coedge->edge()));
 
 	std::vector<std::pair<Stitch::PoorCoedge, double>> match_res_vec;
 
@@ -933,22 +933,22 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 			}
 
 			// 确实检查匹配条件并获得匹配分数
-			//LOG_DEBUG("Score calculating: %d (edge: %d) %d (edge: %d)",
-			//	MarkNum::GetId(poor_coedge1.coedge),
-			//	MarkNum::GetId(poor_coedge1.coedge->edge()),
-			//	MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
-			//	MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge())
-			//);
+			LOG_DEBUG("Score calculating: %d (edge: %d) %d (edge: %d)",
+				MarkNum::GetId(poor_coedge1.coedge),
+				MarkNum::GetId(poor_coedge1.coedge->edge()),
+				MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
+				MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge())
+			);
 
 			double score = get_match_score(now_root);
 
-			//LOG_DEBUG("Score get: %d (edge: %d) %d (edge: %d), score:%.5lf\n",
-			//	MarkNum::GetId(poor_coedge1.coedge),
-			//	MarkNum::GetId(poor_coedge1.coedge->edge()),
-			//	MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
-			//	MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge()),
-			//	score
-			//);
+			LOG_DEBUG("Score get: %d (edge: %d) %d (edge: %d), score:%.5lf\n",
+				MarkNum::GetId(poor_coedge1.coedge),
+				MarkNum::GetId(poor_coedge1.coedge->edge()),
+				MarkNum::GetId(now_root->leaf_poor_coedge.coedge),
+				MarkNum::GetId(now_root->leaf_poor_coedge.coedge->edge()),
+				score
+			);
 
 			if (score > 0) { // 注意排除分数为负数（计算分数时点距离过大或者夹角过大导致不合法）的情况
 				match_res_vec.emplace_back(std::make_pair(now_root->leaf_poor_coedge, score));
@@ -978,9 +978,9 @@ std::vector<std::pair<Stitch::PoorCoedge, double>> Stitch::MatchTree::Match(Stit
 		});
 	return match_res_vec;
 
-	//LOG_DEBUG("Matching end: %d\n", MarkNum::GetId(poor_coedge1.coedge));
+	LOG_DEBUG("Matching end: %d\n", MarkNum::GetId(poor_coedge1.coedge));
 
-	//LOG_INFO("end.");
+	LOG_INFO("end.");
 }
 
 Stitch::MatchTree::MatchTreeNode::MatchTreeNode() :

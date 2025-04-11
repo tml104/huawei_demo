@@ -52,6 +52,16 @@ Json::Value GeometryExporter::Exporter::ExportGeometryInfo(int ibody_marknum)
 				root_edges.append(EdgeToJson(ptr, mark_num));
 			}
 		}
+		else if (type == "coedge")
+		{
+			COEDGE* ptr = dynamic_cast<COEDGE*>(it->first);
+			int body_marknum = MarkNum::GetBody(ptr);
+
+			if (body_marknum == ibody_marknum)
+			{
+				root_coedges.append(CoedgeToJson(ptr, mark_num));
+			}
+		}
 
 	}
 
@@ -121,6 +131,24 @@ Json::Value GeometryExporter::Exporter::SPApositionToJson(const SPAposition & po
 	return root;
 }
 
+Json::Value GeometryExporter::Exporter::SPAparposToJson(const SPApar_pos & pos)
+{
+	
+	Json::Value root;
+
+	SPAparameter u = pos.u;
+	double uu = u.operator double(); // static_cast<double>(u);
+
+	SPAparameter v = pos.v;
+	double vv = v.operator double();
+
+	root["u"] = uu;
+	root["v"] = vv;
+
+
+	return root;
+}
+
 Json::Value GeometryExporter::Exporter::VertexToJson(VERTEX * vertex, int marknum)
 {
 	Json::Value root;
@@ -176,8 +204,8 @@ Json::Value GeometryExporter::Exporter::EdgeToJson(EDGE * edge, int marknum)
 		if (strcmp(cur->type_name(), "intcurve") == 0) {
 			INTCURVE* intcur = dynamic_cast<INTCURVE*> (cur);
 			bs3_curve bc3 = intcur->def.cur(); // 空间曲线
-			//bs2_curve pc1 = intcur->def.pcur1(); // 面交线（参数曲线）
-			//bs2_curve pc2 = intcur->def.pcur2(); // 面交线（参数曲线）
+			bs2_curve pc1 = intcur->def.pcur1(); // 面交线（参数曲线）
+			bs2_curve pc2 = intcur->def.pcur2(); // 面交线（参数曲线）
 
 			int num_pts = 0;
 			int max_points = 9999;
@@ -197,6 +225,29 @@ Json::Value GeometryExporter::Exporter::EdgeToJson(EDGE * edge, int marknum)
 			root_property["ctrlpts"] = root_ctrlpts;
 
 			delete[] ctrlpts;
+
+			// pc1
+
+			if (pc1)
+			{
+				root_property["pc1"] = true;
+				LOG_DEBUG("pc1 exist");
+			}
+			else
+			{
+				LOG_DEBUG("pc1 noexist");
+			}
+
+			if (pc2)
+			{
+				root_property["pc2"] = true;
+				LOG_DEBUG("pc2 exist");
+			}
+			else
+			{
+				LOG_DEBUG("pc2 noexist");
+			}
+
 		}
 		else if (strcmp(cur->type_name(), "ellipse") == 0) {
 			ELLIPSE* edge_curve_ellipse = dynamic_cast<ELLIPSE*> (cur);
@@ -244,6 +295,104 @@ Json::Value GeometryExporter::Exporter::EdgeToJson(EDGE * edge, int marknum)
 
 		root["property"] = root_property;
 	}
+
+	return root;
+}
+
+Json::Value GeometryExporter::Exporter::CoedgeToJson(COEDGE * coedge, int marknum)
+{
+	Json::Value root;
+	root["marknum"] = marknum;
+	root["body"] = MarkNum::GetBody(coedge);
+
+	EDGE* edge = coedge->edge();
+	int edge_marknum = MarkNum::GetId(edge); // return 0 if edge == nullptr
+	root["edge_marknum"] = edge_marknum;
+
+	LOOP* loop = coedge->loop();
+	int loop_marknum = MarkNum::GetId(loop);
+	root["loop_marknum"] = loop_marknum;
+
+	if (loop)
+	{
+		FACE* face = loop->face();
+		int face_marknum = MarkNum::GetId(face);
+		root["face_marknum"] = face_marknum;
+	}
+	else
+	{
+		root["face_marknum"] = 0;
+	}
+
+	root["sense"] = coedge->sense(); // reverse is true, forward is false
+
+	Json::Value root_property;
+
+	// 注意这里得拿取小写类的，大写类用来判空吧
+	PCURVE* pc = coedge->geometry();
+
+	if (pc != nullptr)
+	{
+		root_property["curve_name"] = pc->type_name();// 似乎一定是pcurve
+		
+		bs2_curve bs2 = pc->equation().cur();
+
+		int bs2_deg = bs2_curve_degree(bs2);
+		root_property["curve_degree"] = bs2_deg;
+
+		// 控制点
+		int num_pts;
+		int max_points = 999;
+		SPApar_pos* ctrlpts = new SPApar_pos[max_points];
+
+		bs2_curve_control_points(bs2, num_pts, ctrlpts);
+		if (num_pts > max_points)
+		{
+			throw std::runtime_error("num_pts > max_points");
+		}
+
+
+		Json::Value root_ctrlpts;
+		for (int i = 0; i < num_pts; i++)
+		{
+			root_ctrlpts.append(SPAparposToJson(ctrlpts[i]));
+		}
+
+		delete[] ctrlpts;
+
+		root_property["ctrlpts"] = root_ctrlpts;
+		
+		// 控制点 end
+
+		// 节点knots
+		int num_kts;
+		int max_kts = 999;
+		double* knots = new double[max_kts];
+
+		bs2_curve_knots(bs2, num_kts, knots);
+
+		if (num_kts > max_kts)
+		{
+			throw std::runtime_error("num_kts > max_kts");
+		}
+
+		Json::Value root_knots;
+		for (int i=0;i<num_kts;i++)
+		{
+			root_knots.append(knots[i]);
+		}
+
+		delete[] knots;
+
+		root_property["knots"] = root_knots;
+		// 节点knots end
+	}
+	else
+	{
+		LOG_ERROR("coedge's geometry is null: coedge: %d", marknum);
+	}
+
+	root["property"] = root_property;
 
 	return root;
 }

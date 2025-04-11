@@ -27,7 +27,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -79,10 +79,13 @@
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\hqh_study\huawei_frame\huawei_demo\include\json;D:\ACIS\acisR23\include;D:\ACIS\HOOPS-1919\bin\nt_i386_vc10;D:\ACIS\acisR23\bin\NT_VC10_DLLD;D:\ACIS\acisR23\bin\NT_VC10_DLL;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\hqh_software\spdlog-1.x\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>D:\hqh_study\huawei_frame\huawei_demo\include\json;D:\ACIS\acisR23\include;D:\ACIS\HOOPS-1919\bin\nt_i386_vc10;D:\ACIS\acisR23\bin\NT_VC10_DLLD;D:\ACIS\acisR23\bin\NT_VC10_DLL;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\hqh_software\spdlog-1.x\include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>_USE_MATH_DEFINES;UNICODE;WIN32;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_SCRIPT_LIB;NOMINMAX;INCLUDE_TEMPLATES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);$(QTDIR)\include\QtCore;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtXml;$(QTDIR)\include\QtScript;$(A3DT)\include;$(OM_INSTALL_DIR)\include;$(OVM_INSTALL_DIR)\include;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\base_stream\source\stream_common;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\source;$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\source;D:\Program Files %28x86%29\Visual Leak Detector\include;$(GLPK_DIR)\src;$(DLIB_INSTALL_DIR);$(EIGEN_DIR);.\jsoncpp-src-0.5.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOST_INCLUDE_DIR);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\4.8.6\include\QtCore;D:\Qt\4.8.6\include\QtGui;D:\Qt\4.8.6\include\QtXml;D:\Qt\4.8.6\include\QtScript;D:\ACIS\3rd\OpenVolumeMesh\include;$(A3DT)\include;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source;D:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source;D:\ACIS\HOOPS-1919\Dev_Tools\utility\source;D:\Qt\4.8.6\include\QtScriptTools;$(VLD_INSTALL_DIR)\include;$(GLPK_DIR)\src;$(DLIB_INSTALL_DIR);$(EIGEN_DIR);D:\ACIS\3rd\OpenMesh 4.1\include;.\jsoncpp-src-0.5.0\include;D:\pthreads-w32-2-9-1-release\Pre-built.2\include;D:\hqh_software\spdlog-1.x\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -94,9 +97,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>$(QTDIR)\lib;$(A3DT)\lib\NT_VC10_DLLD;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_stream\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_3dgs\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\hoops_mvo\lib\nt_i386_vc10;$(HOOPS_INSTALL_DIR)\Dev_Tools\utility\lib\nt_i386_vc10;$(OM_INSTALL_DIR)\lib;$(OVM_INSTALL_DIR)\lib;D:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(GLPK_DIR)\w32;$(DLIB_INSTALL_DIR)\dlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\pthreads-w32-2-9-1-release\Pre-built.2\lib\x86;$(BOOST_INSTALL_DIR)\stage_lib;D:\Qt\4.8.6\lib;D:\ACIS\acisR23\lib\NT_VC10_DLL;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\lib\nt_i386_vc10;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\lib\nt_i386_vc10;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\lib\nt_i386_vc10;D:\ACIS\HOOPS-1919\Dev_Tools\utility\lib\nt_i386_vc10;D:\ACIS\3rd\OpenMesh 4.1\lib;D:\ACIS\3rd\OpenVolumeMesh\lib;D:\ACIS\3rd\VisualLeakDetector\lib\Win32;D:\ACIS\3rd\glpk-4.52\w32;D:\ACIS\3rd\dlib-18.18\dlib\build\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>qtmaind.lib;QtCored4.lib;QtGuid4.lib;QtXmld4.lib;QtScriptd4.lib;hoopsd.lib;hoops_mvo_mgkd.lib;hoops_utilsstatd_md.lib;hoops_streamd.lib;OpenMeshCored.lib;OpenVolumeMeshd.lib;glpk_4_52.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmain.lib;QtCore4.lib;QtGui4.lib;QtXml4.lib;QtScript4.lib;hoops.lib;hoops_mvo_mgk.lib;hoops_utilsstat_md.lib;hoops_stream.lib;OpenMeshCore.lib;OpenVolumeMesh.lib;glpk_4_52.lib;dlib.lib;pthreadVC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LargeAddressAware>true</LargeAddressAware>
       <HeapReserveSize>524288000</HeapReserveSize>
       <StackReserveSize>524288000</StackReserveSize>
@@ -128,7 +131,6 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PreprocessorDefinitions>UNICODE;WIN32;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_XML_LIB;QT_SCRIPT_LIB;NOMINMAX;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(BOOST_INCLUDE_DIR);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\4.8.6\include\QtCore;D:\Qt\4.8.6\include\QtGui;D:\Qt\4.8.6\include\QtXml;D:\Qt\4.8.6\include\QtScript;D:\ACIS\3rd\OpenVolumeMesh\include;$(A3DT)\include;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source;D:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source;D:\ACIS\HOOPS-1919\Dev_Tools\utility\source;D:\Qt\4.8.6\include\QtScriptTools;$(VLD_INSTALL_DIR)\include;$(GLPK_DIR)\src;$(DLIB_INSTALL_DIR);$(EIGEN_DIR);D:\ACIS\3rd\OpenMesh 4.1\include;.\jsoncpp-src-0.5.0\include;D:\pthreads-w32-2-9-1-release\Pre-built.2\include;D:\hqh_software\spdlog-1.x\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -136,6 +138,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AdditionalIncludeDirectories>$(BOOST_INCLUDE_DIR);.\GeneratedFiles;.;$(QTDIR)\include;.\GeneratedFiles\$(ConfigurationName);D:\Qt\4.8.6\include\QtCore;D:\Qt\4.8.6\include\QtGui;D:\Qt\4.8.6\include\QtXml;D:\Qt\4.8.6\include\QtScript;D:\ACIS\3rd\OpenVolumeMesh\include;$(A3DT)\include;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_stream\source;D:\ACIS\HOOPS-1919\Dev_Tools\base_stream\source\stream_common;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_3dgs\source;D:\ACIS\HOOPS-1919\Dev_Tools\utility\source;D:\Qt\4.8.6\include\QtScriptTools;$(VLD_INSTALL_DIR)\include;$(GLPK_DIR)\src;$(DLIB_INSTALL_DIR);$(EIGEN_DIR);D:\ACIS\3rd\OpenMesh 4.1\include;.\jsoncpp-src-0.5.0\include;D:\pthreads-w32-2-9-1-release\Pre-built.2\include;D:\hqh_software\spdlog-1.x\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -177,6 +180,7 @@
     <ClCompile Include="DegeneratedFaces.cpp" />
     <ClCompile Include="DoubleModel.cpp" />
     <ClCompile Include="Experiment240621.cpp" />
+    <ClCompile Include="Experiment250305.cpp" />
     <ClCompile Include="filecontrolwidget.cpp" />
     <ClCompile Include="FileManagement.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_topologyoptwidget.cpp">
@@ -312,12 +316,14 @@
     <ClCompile Include="ZSRACISNotify.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ACISincluded.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="ConstructModel.h" />
     <ClInclude Include="DegeneratedFaces.h" />
     <ClInclude Include="DoubleModel.h" />
     <ClInclude Include="Endpoint.h" />
     <ClInclude Include="Experiment240621.h" />
+    <ClInclude Include="Experiment250305.h" />
     <ClInclude Include="FileManagement.h" />
     <ClInclude Include="GeneratedFiles\ui_topologyoptwidget.h" />
     <ClInclude Include="GeometricFill.h" />

@@ -265,7 +265,7 @@ void MarkNum::ShowEdgeMark(HoopsView* hv)
 				mid_vertex_coords.z() += 0.01;
 			}
 
-			hv->render_text(mid_vertex_coords, &mark_num_str[0], "blue");
+			hv->render_text(mid_vertex_coords, &mark_num_str[0], "yellow");
 
 			avoid_text_collision_position_vec.emplace_back(mid_vertex_coords);
 		}

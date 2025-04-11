@@ -270,6 +270,9 @@
     <ClCompile Include="DoubleModel.cpp">
       <Filter>topologyopt\FindProblem</Filter>
     </ClCompile>
+    <ClCompile Include="Experiment250305.cpp">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -402,6 +405,12 @@
       <Filter>topologyopt\FindProblem</Filter>
     </ClInclude>
     <ClInclude Include="Timer.h">
+      <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Experiment250305.h">
+      <Filter>topologyopt\FindProblem\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="ACISincluded.h">
       <Filter>topologyopt\Utils</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,48 +1,7 @@
 #pragma once
 
 // ACIS include
-#include <boolapi.hxx>
-#include <curextnd.hxx>
-#include <cstrapi.hxx>
-#include <face.hxx>
-#include <lump.hxx>
-#include <shell.hxx>
-#include <split_api.hxx>
-#include <kernapi.hxx>
-#include <intrapi.hxx>
-#include <intcucu.hxx>
-#include <coedge.hxx>
-#include <curdef.hxx>
-#include <curve.hxx>
-#include <ellipse.hxx>
-#include <straight.hxx>
-#include <intcurve.hxx>
-#include <helix.hxx>
-#include <undefc.hxx>
-#include <elldef.hxx>
-#include <interval.hxx>
-#include <base.hxx>
-#include <vector_utils.hxx>
-#include <vertex.hxx>
-#include <sps3crtn.hxx>
-#include <sps2crtn.hxx>
-#include <intdef.hxx>
-#include <bool_api_options.hxx>
-#include <loop.hxx>
-#include <wire.hxx>
-#include <pladef.hxx>
-#include <plane.hxx>
-#include <condef.hxx>
-#include <cone.hxx>
-#include <torus.hxx>
-#include <tordef.hxx>
-#include <attrib.hxx>
-#include <af_api.hxx>
-#include <attrib.hxx>
-#include <geom_utl.hxx>
-#include <body.hxx>
-#include <point.hxx>
-#include <ckoutcom.hxx>
+#include "ACISincluded.h"
 
 // my include
 #ifndef IN_HUAWEI
@@ -70,7 +29,7 @@
 
 
 namespace Stitch {
-	const double EPSLION1 = 0.05; // EPSLION1: æ‡¿ÎŒÛ≤Ó£∫0.02
+	const double EPSLION1 = 5; // EPSLION1: æ‡¿ÎŒÛ≤Ó£∫0.02
 	const double EPSLION2 = cos(MYPI / 6); // EPSLION2: Ω«∂»ŒÛ≤Ó£∫30 degree
 	const double EPSLION2_SIN = sqrt(1.0 - EPSLION2 * EPSLION2);
 	const int MIDPOINT_CNT = 5;  //◊Ó∫√ «∆Ê ˝
