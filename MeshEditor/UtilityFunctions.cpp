@@ -233,10 +233,25 @@ SPAvector Utils::GetNormalFromPoints(SPAposition p1, SPAposition p2, SPAposition
 	return ans;
 }
 
+/*
+	现在支持导出额外一个.faceinfo文件，使得能够从外部读取三角形属于哪个face id
+*/
 void Utils::SaveSTL(const std::string & stl_file_path, std::vector<SPAposition>& out_mesh_points, std::vector<SPAunit_vector>& out_mesh_normals, std::vector<ENTITY*>& out_faces)
 {
-	std::fstream f;
+	std::fstream f, f2;
 	f.open(stl_file_path, std::ios::out | std::ios::trunc);
+
+	std::string stl_file_path_endwith_faceinfo = stl_file_path;
+	size_t stl_appendix_pos = stl_file_path_endwith_faceinfo.rfind(".stl");
+
+	if (stl_appendix_pos != std::string::npos){
+		stl_file_path_endwith_faceinfo.replace(stl_appendix_pos, 4, ".faceinfo");
+	}
+	else {
+		stl_file_path_endwith_faceinfo += ".faceinfo";
+	}
+
+	f2.open(stl_file_path_endwith_faceinfo, std::ios::out | std::ios::trunc);
 
 	if (!f.is_open()) {
 		throw std::runtime_error("Open stl_file_path failed.");
@@ -266,10 +281,23 @@ void Utils::SaveSTL(const std::string & stl_file_path, std::vector<SPAposition>&
 		f << "\t\t\tvertex " << p3.x() << " " << p3.y() << " " << p3.z() << "\n";
 		f << "\t\tendloop\n";
 		f << "\tendfacet\n";
+
+		// output owner face to f2
+		if (owner) {
+			int face_id = MarkNum::GetId(owner);
+			f2 << face_id << "\n";
+		}
+		else {
+			f2 << "-1\n";
+		}
+
 	}
 
 	f << "endsolid default:import_1\n";
 	f.close();
+
+	f2 << "end";
+	f2.close();
 }
 
 void Utils::SAT2STL(const std::tuple<std::string, std::string, std::string>& split_path_tuple, ENTITY_LIST& bodies) 

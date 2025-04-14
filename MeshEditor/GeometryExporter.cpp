@@ -106,6 +106,7 @@ void GeometryExporter::Exporter::Start(const std::tuple<std::string, std::string
 	std::string file_name_first = std::get<1>(split_path_tuple);
 	std::string file_name_second = std::get<2>(split_path_tuple);
 
+	// 在此处导出stl（可能需要修改）
 	Utils::SAT2STL(split_path_tuple, bodies);
 
 	for (int i = 0; i < bodies.count(); i++)
