@@ -19,14 +19,30 @@ Json::Value GeometryExporter::Exporter::ExportGeometryInfo(int ibody_marknum)
 {
 	Json::Value root;
 
+	Json::Value basic_statistics;
 	Json::Value root_vertices;
 	Json::Value root_edges;
 	Json::Value root_coedges;
 	Json::Value root_loops;
+	Json::Value root_faces;
 	Json::Value root_shells;
 	Json::Value root_lumps;
-	Json::Value root_bodies;
+	Json::Value root_bodies; // 这个body可能废弃（因为body其实只需要他有多少个的信息就足矣），但是先预留在这吧 
 
+
+	// 统计
+	basic_statistics["marknum_body"] = MarkNum::Singleton::marknum_body;
+	basic_statistics["marknum_lump"] = MarkNum::Singleton::marknum_lump;
+	basic_statistics["marknum_shell"] = MarkNum::Singleton::marknum_shell;
+	basic_statistics["marknum_wire"] = MarkNum::Singleton::marknum_wire;
+	basic_statistics["marknum_face"] = MarkNum::Singleton::marknum_face;
+	basic_statistics["marknum_loop"] = MarkNum::Singleton::marknum_loop;
+	basic_statistics["marknum_coedge"] = MarkNum::Singleton::marknum_coedge;
+	basic_statistics["marknum_edge"] = MarkNum::Singleton::marknum_edge;
+	basic_statistics["marknum_vertex"] = MarkNum::Singleton::marknum_vertex;
+
+
+	// 实体信息
 	for (auto it = MarkNum::Singleton::marknum_map.begin(); it != MarkNum::Singleton::marknum_map.end(); it++) {
 		auto &mark_pair = it->second;
 		auto &type = mark_pair.first;
@@ -62,13 +78,36 @@ Json::Value GeometryExporter::Exporter::ExportGeometryInfo(int ibody_marknum)
 				root_coedges.append(CoedgeToJson(ptr, mark_num));
 			}
 		}
+		else if (type == "face")
+		{
+			FACE* ptr = dynamic_cast<FACE*>(it->first);
+			int body_marknum = MarkNum::GetBody(ptr);
 
+			if (body_marknum == ibody_marknum)
+			{
+				root_faces.append(FaceToJson(ptr, mark_num));
+			}
+		}
+		else if (type == "loop")
+		{
+			LOOP* ptr = dynamic_cast<LOOP*>(it->first);
+			int body_marknum = MarkNum::GetBody(ptr);
+
+			if (body_marknum == ibody_marknum)
+			{
+				root_loops.append(LoopToJson(ptr, mark_num));
+			}
+		}
+
+		
 	}
 
+	root["basic_statistics"] = basic_statistics;
 	root["root_vertices"] = root_vertices;
 	root["root_edges"] = root_edges;
 	root["root_coedges"] = root_coedges;
 	root["root_loops"] = root_loops;
+	root["root_faces"] = root_faces;
 	root["root_shells"] = root_shells;
 	root["root_lumps"] = root_lumps;
 	root["root_bodies"] = root_bodies;
@@ -150,6 +189,28 @@ Json::Value GeometryExporter::Exporter::SPAparposToJson(const SPApar_pos & pos)
 	return root;
 }
 
+Json::Value GeometryExporter::Exporter::SPAunitvectorToJson(const SPAunit_vector & unit_vec)
+{
+	Json::Value root;
+	
+	root["x"] = unit_vec.x();
+	root["y"] = unit_vec.y();
+	root["z"] = unit_vec.z();
+
+	return root;
+}
+
+Json::Value GeometryExporter::Exporter::SPAvectorToJson(const SPAvector& vec)
+{
+	Json::Value root;
+
+	root["x"] = vec.x();
+	root["y"] = vec.y();
+	root["z"] = vec.z();
+
+	return root;
+}
+
 Json::Value GeometryExporter::Exporter::VertexToJson(VERTEX * vertex, int marknum)
 {
 	Json::Value root;
@@ -169,7 +230,6 @@ Json::Value GeometryExporter::Exporter::VertexToJson(VERTEX * vertex, int marknu
 
 Json::Value GeometryExporter::Exporter::EdgeToJson(EDGE * edge, int marknum)
 {
-
 	Json::Value root;
 	root["marknum"] = marknum;
 	root["body"] = MarkNum::GetBody(edge);
@@ -394,6 +454,189 @@ Json::Value GeometryExporter::Exporter::CoedgeToJson(COEDGE * coedge, int marknu
 	}
 
 	root["property"] = root_property;
+
+	return root;
+}
+
+Json::Value GeometryExporter::Exporter::LoopToJson(LOOP * loop, int marknum)
+{
+	Json::Value root;
+	root["marknum"] = marknum;
+	root["body"] = MarkNum::GetBody(loop);
+
+	//root["start_coedge_marknum"] = MarkNum::GetId(loop->start());
+	root["face_marknum"] = MarkNum::GetId(loop->start());
+
+	COEDGE* icoedge = loop->start();
+
+	Json::Value root_coedge_list;
+
+	// 将loop中的所有edge塞进来
+	do {
+
+		if (icoedge == nullptr) {
+			break;
+		}
+
+		EDGE* iedge = icoedge->edge();
+
+		int coedge_marknum = MarkNum::GetId(icoedge);
+		int edge_marknum = MarkNum::GetId(iedge);
+
+		Json::Value coedge_info;
+		coedge_info["coedge_marknum"] = coedge_marknum;
+		coedge_info["edge_marknum"] = edge_marknum;
+
+		root_coedge_list.append(coedge_info);
+
+		icoedge = icoedge->next();
+	} while (icoedge != nullptr && icoedge != loop->start());
+
+	root["coedge_list"] = root_coedge_list;
+
+	return root;
+}
+
+Json::Value GeometryExporter::Exporter::FaceToJson(FACE * face, int marknum)
+{
+	Json::Value root;
+	root["marknum"] = marknum;
+	root["body"] = MarkNum::GetBody(face);
+
+	root["loop_marknum"] = MarkNum::GetId(face->loop());
+	root["sense"] = face->sense();
+
+	SURFACE* face_geometry = face->geometry();
+	
+	Json::Value geo_root;
+	if (face_geometry) {
+		const char* face_type_name = face_geometry->type_name();
+		geo_root["face_type"] = face_type_name; // cone, meshsurf, plane, sphere, spline, and torus.
+
+		if (strcmp(face_type_name, "cone") == 0) {
+			CONE* cone_geometry = dynamic_cast<CONE*>(face_geometry);
+
+			SPAvector major_axis = cone_geometry->major_axis();
+			double ratio = cone_geometry->radius_ratio();
+			SPAposition root_point = cone_geometry->root_point();
+			SPAunit_vector direction = cone_geometry->direction();
+			double cos = cone_geometry->cosine_angle();
+			double sin = cone_geometry->sine_angle();
+
+			geo_root["root_point"] = SPApositionToJson(root_point);
+			geo_root["major_axis"] = SPAvectorToJson(major_axis);
+			geo_root["radius_ratio"] = ratio;
+			geo_root["direction"] = SPAunitvectorToJson(direction);
+
+			geo_root["cos"] = cos;
+			geo_root["sin"] = sin;
+			geo_root["angle"] = asin(sin) * 180 / M_PI;
+		}
+		else if (strcmp(face_type_name, "meshsurf") == 0) {
+			LOG_ERROR("meshsurf is not support face geometry type!");
+		}
+		else if (strcmp(face_type_name, "plane") == 0) {
+			PLANE* plane_geometry = dynamic_cast<PLANE*>(face_geometry);
+
+			SPAunit_vector normal = plane_geometry->normal();
+			SPAposition root_point = plane_geometry->root_point();
+
+			geo_root["root_point"] = SPApositionToJson(root_point);
+			geo_root["normal"] = SPAunitvectorToJson(normal);
+		}
+		else if (strcmp(face_type_name, "sphere") == 0) {
+			SPHERE* sphere_geometry = dynamic_cast<SPHERE*>(face_geometry);
+			
+			SPAposition centre = sphere_geometry->centre();
+			double radius = sphere_geometry->radius();
+
+			geo_root["centre"] = SPApositionToJson(centre);
+			geo_root["radius"] = radius;
+		}
+		else if (strcmp(face_type_name, "spline") == 0) {
+			SPLINE* spline_geometry = dynamic_cast<SPLINE*>(face_geometry);
+			bs3_surface bs3 = spline_geometry->def.sur();
+
+			// degree
+			geo_root["degree_u"] = bs3_surface_degree_u(bs3);
+			geo_root["degree_v"] = bs3_surface_degree_v(bs3);
+
+			// control points
+			Json::Value control_points;
+
+			int num_u = 0, num_v = 0;
+			const int MAX_POINTS_NUM = 999;
+
+			SPAposition* ctrlpts = new SPAposition[MAX_POINTS_NUM];
+			bs3_surface_control_points(bs3, num_u, num_v, ctrlpts);
+			geo_root["num_u"] = num_u;
+			geo_root["num_v"] = num_v;
+
+			Json::Value points;
+			for (int i = 0; i < num_u*num_v; i++) {
+				points.append(SPApositionToJson(ctrlpts[i]));
+			}
+			geo_root["control_points"] = points;
+
+			// knots
+			int num_knots_u = 0, num_knots_v = 0;
+			double* uknots = new double[MAX_POINTS_NUM];
+			double* vknots = new double[MAX_POINTS_NUM];
+			bs3_surface_knots_u(bs3, num_knots_u, uknots);
+			bs3_surface_knots_v(bs3, num_knots_v, vknots);
+
+			geo_root["num_knots_u"] = num_knots_u;
+			geo_root["num_knots_v"] = num_knots_v;
+
+			Json::Value knots_u, knots_v;
+			for (int i = 0; i < num_knots_u; ++i) {
+				knots_u.append(uknots[i]);
+			}
+			for (int i = 0; i < num_knots_v; ++i) {
+				knots_v.append(vknots[i]);
+			}
+			
+			geo_root["knots_u"] = knots_u;
+			geo_root["knots_v"] = knots_v;
+
+			// weight
+			int weight_num_u = 0, weight_num_v = 0;
+			double* weights = new double[MAX_POINTS_NUM];
+			bs3_surface_weights(bs3, weight_num_u, weight_num_v, weights);
+
+			geo_root["weight_num_u"] = weight_num_u;
+			geo_root["weight_num_v"] = weight_num_v;
+
+			Json::Value weights_json;
+			for (int i = 0; i < weight_num_u*weight_num_v; i++) {
+				weights_json.append(weights[i]);
+			}
+			geo_root["weights"] = weights_json;
+
+			delete[] ctrlpts;
+			delete[] uknots;
+			delete[] vknots;
+			delete[] weights;
+		}
+		else if (strcmp(face_type_name, "torus") == 0) {
+			TORUS* trs_geometry = dynamic_cast<TORUS*>(face_geometry);
+
+			SPAposition centre = trs_geometry->centre(); // 中心
+			double minor_radius = trs_geometry->minor_radius();
+			double major_radius = trs_geometry->major_radius();
+			SPAunit_vector normal = trs_geometry->normal();
+
+			geo_root["centre_point"] = SPApositionToJson(centre);
+			geo_root["normal"] = SPAunitvectorToJson(normal);
+			geo_root["minor_radius"] = minor_radius;
+			geo_root["major_radius"] = major_radius;
+		}
+		else {
+			LOG_ERROR("face_type is unknown!");
+		}
+
+	}
+	root["geometry_info"] = geo_root;
 
 	return root;
 }

@@ -49,6 +49,14 @@
 #include <eulerapi.hxx>
 #include <geometry.hxx>
 #include <bs2curve.hxx>
-#include <eulerapi.hxx>
-#include <fileinfo.hxx>
-#include <stchapi.hxx>
+#include <unitvec.hxx>
+#include <pcudef.hxx>
+#include <mshdef.hxx>
+#include <sphdef.hxx>
+#include <sphere.hxx>
+#include <intsfsf.hxx>
+#include <param.hxx>
+#include <bs3curve.hxx>
+#include <spldef.hxx>
+#include <spline.hxx>
+#include <pcurve.hxx>
