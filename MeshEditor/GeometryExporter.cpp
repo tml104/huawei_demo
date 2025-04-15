@@ -15,7 +15,7 @@ void GeometryExporter::SaveJson(const std::string & file_name, const Json::Value
 	LOG_INFO("Save Json: %s", file_name.c_str());
 }
 
-Json::Value GeometryExporter::Exporter::ExportGeometryInfo(int ibody_marknum)
+Json::Value GeometryExporter::Exporter::GetGeometryJson(int ibody_marknum)
 {
 	Json::Value root;
 
@@ -134,7 +134,7 @@ void GeometryExporter::Exporter::Start(const std::tuple<std::string, std::string
 
 		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_geometry_json_" + std::to_string(static_cast<long long>(i)) + ".json";
 
-		Json::Value geometry_json = ExportGeometryInfo(ibody_marknum);
+		Json::Value geometry_json = GetGeometryJson(ibody_marknum);
 		SaveJson(file_path_string_to_be_saved, geometry_json);
 	}
 }
@@ -155,9 +155,55 @@ void GeometryExporter::Exporter::Start(const std::tuple<std::string, std::string
 
 		std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_geometry_json_" + std::to_string(static_cast<long long>(i)) + ".json";
 
-		Json::Value geometry_json = ExportGeometryInfo(ibody_marknum);
+		Json::Value geometry_json = GetGeometryJson(ibody_marknum);
 		SaveJson(file_path_string_to_be_saved, geometry_json);
 	}
+}
+
+Json::Value GeometryExporter::Exporter::GetDebugShowPointJson()
+{
+	Json::Value root;
+
+	const auto& debug_points_map = DebugShow::Singleton::debug_points_map;
+
+	for (auto it = debug_points_map.begin(); it != debug_points_map.end(); it++) {
+
+		const std::string& name = it->first;
+		const SPAposition& pos = it->second;
+
+		Json::Value point_json;
+
+		point_json["name"] = name;
+		point_json["x"] = pos.x();
+		point_json["y"] = pos.y();
+		point_json["z"] = pos.z();
+
+		root.append(point_json);
+	}
+
+	return root;
+}
+
+Json::Value GeometryExporter::Exporter::GetDebugShowJson()
+{
+	Json::Value root;
+
+	root["debug_points"] = GetDebugShowPointJson();
+
+	return root;
+}
+
+void GeometryExporter::Exporter::ExportDebugPoints(const std::tuple<std::string, std::string, std::string>& split_path_tuple)
+{
+	std::string path = std::get<0>(split_path_tuple);
+	std::string file_name_first = std::get<1>(split_path_tuple);
+	std::string file_name_second = std::get<2>(split_path_tuple);
+
+	std::string file_path_string_to_be_saved = path + "/" + file_name_first + "_debugshow.json";
+
+	Json::Value debugshow_json = GetDebugShowJson();
+
+	SaveJson(file_path_string_to_be_saved, debugshow_json);
 }
 
 Json::Value GeometryExporter::Exporter::SPApositionToJson(const SPAposition & pos)
@@ -173,7 +219,6 @@ Json::Value GeometryExporter::Exporter::SPApositionToJson(const SPAposition & po
 
 Json::Value GeometryExporter::Exporter::SPAparposToJson(const SPApar_pos & pos)
 {
-	
 	Json::Value root;
 
 	SPAparameter u = pos.u;
@@ -184,7 +229,6 @@ Json::Value GeometryExporter::Exporter::SPAparposToJson(const SPApar_pos & pos)
 
 	root["u"] = uu;
 	root["v"] = vv;
-
 
 	return root;
 }

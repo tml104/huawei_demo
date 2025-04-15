@@ -12,6 +12,7 @@
 #include "json.h"
 #endif
 #include "MarkNum.h"
+#include "DebugShow.h"
 #include "MyConstant.h"
 #include "GeometryUtils.h"
 
@@ -53,13 +54,17 @@ namespace GeometryExporter {
 		//void ExportTriangles();
 
 		// 
-		Json::Value ExportGeometryInfo(int ibody_marknum);
+		Json::Value GetGeometryJson(int ibody_marknum);
 
 		void Start(const std::tuple<std::string, std::string, std::string>& split_path_tuple, const std::set<int>& selected_bodies);
 
 		void Start(const std::tuple<std::string, std::string, std::string>& split_path_tuple);
 
-		// TODO: 导出用于调试用的点集合（参数还要改）
+		// 导出用于调试用的点集合（基于全局变量做修改）
+
+		Json::Value GetDebugShowPointJson();
+		Json::Value GetDebugShowJson();
+
 		void ExportDebugPoints(const std::tuple<std::string, std::string, std::string>& split_path_tuple);
 
 		Exporter(ENTITY_LIST& bodies) : bodies(bodies) {}

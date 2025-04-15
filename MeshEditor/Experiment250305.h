@@ -14,6 +14,7 @@
 #include "json.h"
 #endif
 #include "MarkNum.h"
+#include "DebugShow.h"
 #include "MyConstant.h"
 #include "UtilityFunctions.h"
 #include "GeometryUtils.h"

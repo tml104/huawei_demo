@@ -177,6 +177,7 @@
   <ItemGroup>
     <ClCompile Include="binarySearch.cpp" />
     <ClCompile Include="ConstructModel.cpp" />
+    <ClCompile Include="DebugShow.cpp" />
     <ClCompile Include="DegeneratedFaces.cpp" />
     <ClCompile Include="DoubleModel.cpp" />
     <ClCompile Include="Experiment240621.cpp" />
@@ -319,6 +320,7 @@
     <ClInclude Include="ACISincluded.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="ConstructModel.h" />
+    <ClInclude Include="DebugShow.h" />
     <ClInclude Include="DegeneratedFaces.h" />
     <ClInclude Include="DoubleModel.h" />
     <ClInclude Include="Endpoint.h" />

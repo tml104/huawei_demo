@@ -10,6 +10,7 @@
 #include "CoreOld.h"
 #endif
 #include "MarkNum.h"
+#include "DebugShow.h"
 #include "MyConstant.h"
 #include "GeometryExporter.h"
 #include "Timer.h"

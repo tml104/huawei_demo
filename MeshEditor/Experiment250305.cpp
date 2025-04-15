@@ -161,20 +161,29 @@ void Exp5::Exp5::EdgeAndCoedgeGeometryCheck(EDGE* edge, COEDGE* coedge)
 
 	// 先输出看看
 
+	static int edges_points_num = 0;
+
 	for (int i = 0; i < edge_points_vec.size(); i++)
 	{
 		double x = edge_points_vec[i].x();
 		double y = edge_points_vec[i].y();
 		double z = edge_points_vec[i].z();
+
+		DebugShow::AddPoint(edges_points_num++, SPAposition(x, y, z));
 		LOG_INFO("edge_points_vec[%d]: (%.5lf, %.5lf, %.5lf)", i, x, y, z);
 	}
+
+	static int coedges_points_num = 1000;
 
 	for (int i = 0; i < coedge_points_vec.size(); i++)
 	{
 		double x = coedge_points_vec[i].x();
 		double y = coedge_points_vec[i].y();
 		double z = coedge_points_vec[i].z();
+
+		DebugShow::AddPoint(coedges_points_num++, SPAposition(x, y, z));
 		LOG_INFO("coedge_points_vec[%d]: (%.5lf, %.5lf, %.5lf)", i, x, y, z);
+
 	}
 }
 

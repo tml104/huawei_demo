@@ -53,6 +53,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	//bool option_save_stl_bodies_respectly = false;
 	bool option_export_geometry_json_selected = false;
 	bool option_export_geometry_json = true;
+	bool option_export_debugshow_json = true;
 
 	//bool option_export_entity_list_stl = true;
 
@@ -322,7 +323,12 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		GeometryExporter::Exporter exporter(bodies);
 		exporter.Start(split_path_tuple);
 		process_timer.Split("option_export_geometry_json");
+
+		if (option_export_debugshow_json) {
+			exporter.ExportDebugPoints(split_path_tuple);
+		}
 	}
+
 
 	// 这个没用，所以砍掉吧
 	//if (option_export_entity_list_stl) {

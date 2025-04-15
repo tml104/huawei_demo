@@ -1,143 +1,144 @@
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: HQHEntrance.cpp][HQHEntrance::Run:   79] file_path: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf.sat
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   40] ===== Timer =====
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] 模型加载: 	0.007
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] 变换物体: 	0.007
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   47] Total: 	0.008
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   49] ===== Timer End =====
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  138] body count:	1
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: HQHEntrance.cpp][HQHEntrance::Run:   80] file_path: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf.sat
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   40] ===== Timer =====
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] 模型加载: 	0.002
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] 变换物体: 	0.002
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   47] Total: 	0.003
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   49] ===== Timer End =====
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  138] body count:	1
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  139] lump count:	1
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  139] lump count:	1
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  140] shell count:	1
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  140] shell count:	1
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  141] wire count:	0
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  141] wire count:	0
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  142] face count:	1
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  142] face count:	1
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  143] edge count:	4
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  143] edge count:	4
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  144] coedge count:	4
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  144] coedge count:	4
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  145] vertex count:	4
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  145] vertex count:	4
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  146] loop count:	1
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  146] loop count:	1
 
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  259] edge: 1, st: (35.57685, -24.63745, 1.72301), ed: (35.57685, -63.59765, 1.72302), mid: (35.57685, -44.11755, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  259] edge: 2, st: (35.57685, -24.63745, 1.72301), ed: (35.37686, -24.78145, 1.53000), mid: (35.47686, -24.70945, 1.62651)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  259] edge: 4, st: (35.37686, -63.67542, 1.53000), ed: (35.57685, -63.59765, 1.72302), mid: (35.47686, -63.63654, 1.62651)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  259] edge: 3, st: (35.37686, -24.78145, 1.53000), ed: (35.37686, -63.67542, 1.53000), mid: (35.37686, -44.22844, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::StartExperiment:  234] start.
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::FacesCheck:  198] Checking faces: 1
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  157] Checking edge and coedge points: edge: 1, coedge:1, N: 11
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[0]: (35.57685, -24.63745, 1.72301)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[1]: (35.57685, -28.53347, 1.72301)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[2]: (35.57685, -32.42949, 1.72301)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[3]: (35.57685, -36.32551, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[4]: (35.57685, -40.22153, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[5]: (35.57685, -44.11755, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[6]: (35.57685, -48.01357, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[7]: (35.57685, -51.90959, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[8]: (35.57685, -55.80561, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[9]: (35.57685, -59.70163, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[10]: (35.57685, -63.59765, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[0]: (34.94502, -63.59765, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[1]: (34.94502, -59.70163, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[2]: (34.94502, -55.80561, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[3]: (34.94502, -51.90959, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[4]: (34.94502, -48.01357, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[5]: (34.94502, -44.11755, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[6]: (34.94502, -40.22153, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[7]: (34.94502, -36.32551, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[8]: (34.94502, -32.42949, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[9]: (34.94502, -28.53347, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[10]: (34.94502, -24.63745, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  157] Checking edge and coedge points: edge: 2, coedge:2, N: 11
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[0]: (35.57685, -24.63745, 1.72301)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[1]: (35.57403, -24.63993, 1.69648)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[2]: (35.56733, -24.64577, 1.66899)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[3]: (35.55661, -24.65493, 1.64230)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[4]: (35.54182, -24.66722, 1.61691)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[5]: (35.52262, -24.68263, 1.59305)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[6]: (35.49910, -24.70067, 1.57171)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[7]: (35.47207, -24.72035, 1.55411)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[8]: (35.44222, -24.74083, 1.54098)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[9]: (35.41006, -24.76152, 1.53277)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[10]: (35.37686, -24.78145, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[0]: (34.94502, -24.63755, 1.70491)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[1]: (34.94510, -24.63993, 1.69862)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[2]: (34.94496, -24.64577, 1.69202)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[3]: (34.94461, -24.65493, 1.68547)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[4]: (34.94405, -24.66722, 1.67900)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[5]: (34.94327, -24.68263, 1.67257)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[6]: (34.94232, -24.70067, 1.66636)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[7]: (34.94126, -24.72035, 1.66063)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[8]: (34.94017, -24.74083, 1.65557)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[9]: (34.93915, -24.76152, 1.65133)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[10]: (34.93833, -24.78145, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  157] Checking edge and coedge points: edge: 3, coedge:3, N: 11
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[0]: (35.37686, -24.78145, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[1]: (35.37686, -28.67085, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[2]: (35.37686, -32.56025, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[3]: (35.37686, -36.44965, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[4]: (35.37686, -40.33904, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[5]: (35.37686, -44.22844, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[6]: (35.37686, -48.11784, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[7]: (35.37686, -52.00723, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[8]: (35.37686, -55.89663, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[9]: (35.37686, -59.78603, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[10]: (35.37686, -63.67542, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[0]: (34.93833, -24.78145, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[1]: (34.93833, -28.67085, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[2]: (34.93833, -32.56025, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[3]: (34.93833, -36.44965, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[4]: (34.93833, -40.33904, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[5]: (34.93833, -44.22844, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[6]: (34.93833, -48.11784, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[7]: (34.93833, -52.00723, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[8]: (34.93833, -55.89663, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[9]: (34.93833, -59.78603, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[10]: (34.93833, -63.67542, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  157] Checking edge and coedge points: edge: 4, coedge:4, N: 11
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[0]: (35.37686, -63.67542, 1.53000)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[1]: (35.40527, -63.67450, 1.53202)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[2]: (35.43444, -63.67190, 1.53845)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[3]: (35.46335, -63.66738, 1.54965)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[4]: (35.49084, -63.66092, 1.56565)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[5]: (35.51575, -63.65267, 1.58609)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[6]: (35.53705, -63.64291, 1.61026)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[7]: (35.55401, -63.63204, 1.63717)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[8]: (35.56624, -63.62054, 1.66567)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[9]: (35.57371, -63.60886, 1.69460)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  169] edge_points_vec[10]: (35.57685, -63.59765, 1.72302)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[0]: (34.93833, -63.67531, 1.64817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[1]: (34.93902, -63.67450, 1.65079)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[2]: (34.93991, -63.67190, 1.65443)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[3]: (34.94093, -63.66738, 1.65903)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[4]: (34.94199, -63.66092, 1.66447)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[5]: (34.94299, -63.65267, 1.67061)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[6]: (34.94386, -63.64291, 1.67724)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[7]: (34.94452, -63.63204, 1.68418)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[8]: (34.94493, -63.62054, 1.69121)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[9]: (34.94509, -63.60886, 1.69817)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  177] coedge_points_vec[10]: (34.94502, -63.59742, 1.70489)
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::StartExperiment:  238] end.
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  135] file saved: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_mod_body_0.sat
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  218] file_path_string_to_be_saved: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_mod_body_0.sat
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  305] Start.
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  323] Points count: 48
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  324] Faces count: 48
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  326] Saved STL file for body[0]: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_stl_0.stl
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  329] End.
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][DEBUG][FILE: GeometryExporter.cpp][GeometryExporter::Exporter::EdgeToJson:  299] pc1 noexist
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][DEBUG][FILE: GeometryExporter.cpp][GeometryExporter::Exporter::EdgeToJson:  309] pc2 noexist
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][DEBUG][FILE: GeometryExporter.cpp][GeometryExporter::Exporter::EdgeToJson:  299] pc1 noexist
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][DEBUG][FILE: GeometryExporter.cpp][GeometryExporter::Exporter::EdgeToJson:  309] pc2 noexist
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: GeometryExporter.cpp][GeometryExporter::SaveJson:   15] Save Json: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_geometry_json_0.json
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   40] ===== Timer =====
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] MarkNum: 	0.004
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] ShowEdgeMark: 	0.158
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] option_save_bodies_respectly: 	0.294
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] option_export_geometry_json: 	0.303
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   47] Total: 	0.306
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   49] ===== Timer End =====
-[2025-4-15 21:45:38][PID: 89676][TID: 93724][INFO ][FILE: HQHEntrance.cpp][HQHEntrance::Run:  332] ALL DONE
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  259] edge: 1, st: (35.57685, -24.63745, 1.72301), ed: (35.57685, -63.59765, 1.72302), mid: (35.57685, -44.11755, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  259] edge: 2, st: (35.57685, -24.63745, 1.72301), ed: (35.37686, -24.78145, 1.53000), mid: (35.47686, -24.70945, 1.62651)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  259] edge: 4, st: (35.37686, -63.67542, 1.53000), ed: (35.57685, -63.59765, 1.72302), mid: (35.47686, -63.63654, 1.62651)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][DEBUG][FILE: MarkNum.cpp][MarkNum::ShowEdgeMark:  259] edge: 3, st: (35.37686, -24.78145, 1.53000), ed: (35.37686, -63.67542, 1.53000), mid: (35.37686, -44.22844, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::StartExperiment:  243] start.
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::FacesCheck:  207] Checking faces: 1
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  157] Checking edge and coedge points: edge: 1, coedge:1, N: 11
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[0]: (35.57685, -24.63745, 1.72301)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[1]: (35.57685, -28.53347, 1.72301)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[2]: (35.57685, -32.42949, 1.72301)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[3]: (35.57685, -36.32551, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[4]: (35.57685, -40.22153, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[5]: (35.57685, -44.11755, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[6]: (35.57685, -48.01357, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[7]: (35.57685, -51.90959, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[8]: (35.57685, -55.80561, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[9]: (35.57685, -59.70163, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[10]: (35.57685, -63.59765, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[0]: (34.94502, -63.59765, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[1]: (34.94502, -59.70163, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[2]: (34.94502, -55.80561, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[3]: (34.94502, -51.90959, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[4]: (34.94502, -48.01357, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[5]: (34.94502, -44.11755, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[6]: (34.94502, -40.22153, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[7]: (34.94502, -36.32551, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[8]: (34.94502, -32.42949, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[9]: (34.94502, -28.53347, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[10]: (34.94502, -24.63745, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  157] Checking edge and coedge points: edge: 2, coedge:2, N: 11
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[0]: (35.57685, -24.63745, 1.72301)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[1]: (35.57403, -24.63993, 1.69648)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[2]: (35.56733, -24.64577, 1.66899)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[3]: (35.55661, -24.65493, 1.64230)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[4]: (35.54182, -24.66722, 1.61691)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[5]: (35.52262, -24.68263, 1.59305)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[6]: (35.49910, -24.70067, 1.57171)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[7]: (35.47207, -24.72035, 1.55411)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[8]: (35.44222, -24.74083, 1.54098)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[9]: (35.41006, -24.76152, 1.53277)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[10]: (35.37686, -24.78145, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[0]: (34.94502, -24.63755, 1.70491)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[1]: (34.94510, -24.63993, 1.69862)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[2]: (34.94496, -24.64577, 1.69202)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[3]: (34.94461, -24.65493, 1.68547)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[4]: (34.94405, -24.66722, 1.67900)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[5]: (34.94327, -24.68263, 1.67257)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[6]: (34.94232, -24.70067, 1.66636)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[7]: (34.94126, -24.72035, 1.66063)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[8]: (34.94017, -24.74083, 1.65557)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[9]: (34.93915, -24.76152, 1.65133)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[10]: (34.93833, -24.78145, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  157] Checking edge and coedge points: edge: 3, coedge:3, N: 11
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[0]: (35.37686, -24.78145, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[1]: (35.37686, -28.67085, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[2]: (35.37686, -32.56025, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[3]: (35.37686, -36.44965, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[4]: (35.37686, -40.33904, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[5]: (35.37686, -44.22844, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[6]: (35.37686, -48.11784, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[7]: (35.37686, -52.00723, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[8]: (35.37686, -55.89663, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[9]: (35.37686, -59.78603, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[10]: (35.37686, -63.67542, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[0]: (34.93833, -24.78145, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[1]: (34.93833, -28.67085, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[2]: (34.93833, -32.56025, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[3]: (34.93833, -36.44965, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[4]: (34.93833, -40.33904, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[5]: (34.93833, -44.22844, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[6]: (34.93833, -48.11784, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[7]: (34.93833, -52.00723, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[8]: (34.93833, -55.89663, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[9]: (34.93833, -59.78603, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[10]: (34.93833, -63.67542, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  157] Checking edge and coedge points: edge: 4, coedge:4, N: 11
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[0]: (35.37686, -63.67542, 1.53000)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[1]: (35.40527, -63.67450, 1.53202)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[2]: (35.43444, -63.67190, 1.53845)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[3]: (35.46335, -63.66738, 1.54965)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[4]: (35.49084, -63.66092, 1.56565)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[5]: (35.51575, -63.65267, 1.58609)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[6]: (35.53705, -63.64291, 1.61026)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[7]: (35.55401, -63.63204, 1.63717)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[8]: (35.56624, -63.62054, 1.66567)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[9]: (35.57371, -63.60886, 1.69460)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  173] edge_points_vec[10]: (35.57685, -63.59765, 1.72302)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[0]: (34.93833, -63.67531, 1.64817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[1]: (34.93902, -63.67450, 1.65079)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[2]: (34.93991, -63.67190, 1.65443)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[3]: (34.94093, -63.66738, 1.65903)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[4]: (34.94199, -63.66092, 1.66447)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[5]: (34.94299, -63.65267, 1.67061)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[6]: (34.94386, -63.64291, 1.67724)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[7]: (34.94452, -63.63204, 1.68418)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[8]: (34.94493, -63.62054, 1.69121)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[9]: (34.94509, -63.60886, 1.69817)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::EdgeAndCoedgeGeometryCheck:  185] coedge_points_vec[10]: (34.94502, -63.59742, 1.70489)
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: Experiment250305.cpp][Exp5::Exp5::StartExperiment:  247] end.
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveToSAT:  135] file saved: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_mod_body_0.sat
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: UtilityFunctions.cpp][Utils::SaveModifiedBodiesRespectly:  218] file_path_string_to_be_saved: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_mod_body_0.sat
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  305] Start.
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  323] Points count: 48
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  324] Faces count: 48
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  326] Saved STL file for body[0]: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_stl_0.stl
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: UtilityFunctions.cpp][Utils::SAT2STL:  329] End.
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][DEBUG][FILE: GeometryExporter.cpp][GeometryExporter::Exporter::EdgeToJson:  343] pc1 noexist
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][DEBUG][FILE: GeometryExporter.cpp][GeometryExporter::Exporter::EdgeToJson:  353] pc2 noexist
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][DEBUG][FILE: GeometryExporter.cpp][GeometryExporter::Exporter::EdgeToJson:  343] pc1 noexist
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][DEBUG][FILE: GeometryExporter.cpp][GeometryExporter::Exporter::EdgeToJson:  353] pc2 noexist
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: GeometryExporter.cpp][GeometryExporter::SaveJson:   15] Save Json: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_geometry_json_0.json
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: GeometryExporter.cpp][GeometryExporter::SaveJson:   15] Save Json: D:/hqh_study/ModelForFix/ModelForFixChecked/GrosslyUndersize/A_ent1(1)_cf_debugshow.json
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   40] ===== Timer =====
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] MarkNum: 	0.005
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] ShowEdgeMark: 	0.141
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] option_save_bodies_respectly: 	0.262
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   44] option_export_geometry_json: 	0.271
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   47] Total: 	0.274
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: d:\hqh_study\huawei_frame\huawei_demo\mesheditor\Timer.h][Timer::Timer::PrintTimes:   49] ===== Timer End =====
+[2025-4-15 22:42:52][PID: 81036][TID: 92448][INFO ][FILE: HQHEntrance.cpp][HQHEntrance::Run:  338] ALL DONE

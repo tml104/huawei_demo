@@ -273,6 +273,9 @@
     <ClCompile Include="Experiment250305.cpp">
       <Filter>topologyopt\FindProblem\Test</Filter>
     </ClCompile>
+    <ClCompile Include="DebugShow.cpp">
+      <Filter>topologyopt\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -411,6 +414,9 @@
       <Filter>topologyopt\FindProblem\Test</Filter>
     </ClInclude>
     <ClInclude Include="ACISincluded.h">
+      <Filter>topologyopt\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugShow.h">
       <Filter>topologyopt\Utils</Filter>
     </ClInclude>
   </ItemGroup>
