@@ -157,9 +157,15 @@ void Exp5::Exp5::EdgeAndCoedgeGeometryCheck(EDGE* edge, COEDGE* coedge)
 	);
 
 	std::vector<SPAposition> edge_points_vec = GeometryUtils::SampleEdge(edge, N);
-	std::vector<SPAposition> coedge_points_vec = GeometryUtils::SampleCoedge(coedge, N);
+	std::vector<SPAposition> coedge_points_vec = GeometryUtils::SampleCoedge(coedge, N, coedge->sense());
 
 	// 先输出看看
+
+	LOG_INFO("edge start point: (%.5lf, %.5lf, %.5lf)", edge->start()->geometry()->coords().x(), edge->start()->geometry()->coords().y(), edge->start()->geometry()->coords().z());
+
+	LOG_INFO("edge end point: (%.5lf, %.5lf, %.5lf)", edge->end()->geometry()->coords().x(), edge->end()->geometry()->coords().y(), edge->end()->geometry()->coords().z());
+
+	LOG_INFO("coedge sense: %d", coedge->sense()); // 是否reverse看上去和这个有一定关系
 
 	static int edges_points_num = 0;
 

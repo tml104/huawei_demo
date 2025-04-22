@@ -440,57 +440,60 @@ Json::Value GeometryExporter::Exporter::CoedgeToJson(COEDGE * coedge, int marknu
 	{
 		root_property["curve_name"] = pc->type_name();// 似乎一定是pcurve
 		
-		bs2_curve bs2 = pc->equation().cur();
+		if (strcmp(pc->type_name(), "pcurve") == 0) {
+			bs2_curve bs2 = pc->equation().cur();
 
-		int bs2_deg = bs2_curve_degree(bs2);
-		root_property["curve_degree"] = bs2_deg;
+			int bs2_deg = bs2_curve_degree(bs2);
+			root_property["curve_degree"] = bs2_deg;
 
-		// 控制点
-		int num_pts;
-		int max_points = 999;
-		SPApar_pos* ctrlpts = new SPApar_pos[max_points];
+			// 控制点
+			int num_pts;
+			int max_points = 999;
+			SPApar_pos* ctrlpts = new SPApar_pos[max_points];
 
-		bs2_curve_control_points(bs2, num_pts, ctrlpts);
-		if (num_pts > max_points)
-		{
-			throw std::runtime_error("num_pts > max_points");
-		}
+			bs2_curve_control_points(bs2, num_pts, ctrlpts);
+			if (num_pts > max_points)
+			{
+				throw std::runtime_error("num_pts > max_points");
+			}
 
 
-		Json::Value root_ctrlpts;
-		for (int i = 0; i < num_pts; i++)
-		{
-			root_ctrlpts.append(SPAparposToJson(ctrlpts[i]));
-		}
+			Json::Value root_ctrlpts;
+			for (int i = 0; i < num_pts; i++)
+			{
+				root_ctrlpts.append(SPAparposToJson(ctrlpts[i]));
+			}
 
-		delete[] ctrlpts;
+			delete[] ctrlpts;
 
-		root_property["ctrlpts"] = root_ctrlpts;
+			root_property["ctrlpts"] = root_ctrlpts;
 		
-		// 控制点 end
+			// 控制点 end
 
-		// 节点knots
-		int num_kts;
-		int max_kts = 999;
-		double* knots = new double[max_kts];
+			// 节点knots
+			int num_kts;
+			int max_kts = 999;
+			double* knots = new double[max_kts];
 
-		bs2_curve_knots(bs2, num_kts, knots);
+			bs2_curve_knots(bs2, num_kts, knots);
 
-		if (num_kts > max_kts)
-		{
-			throw std::runtime_error("num_kts > max_kts");
+			if (num_kts > max_kts)
+			{
+				throw std::runtime_error("num_kts > max_kts");
+			}
+
+			Json::Value root_knots;
+			for (int i=0;i<num_kts;i++)
+			{
+				root_knots.append(knots[i]);
+			}
+
+			delete[] knots;
+
+			root_property["knots"] = root_knots;
+			// 节点knots end
 		}
 
-		Json::Value root_knots;
-		for (int i=0;i<num_kts;i++)
-		{
-			root_knots.append(knots[i]);
-		}
-
-		delete[] knots;
-
-		root_property["knots"] = root_knots;
-		// 节点knots end
 	}
 	else
 	{
@@ -670,7 +673,7 @@ Json::Value GeometryExporter::Exporter::FaceToJson(FACE * face, int marknum)
 			double major_radius = trs_geometry->major_radius();
 			SPAunit_vector normal = trs_geometry->normal();
 
-			geo_root["centre_point"] = SPApositionToJson(centre);
+			geo_root["centre"] = SPApositionToJson(centre);
 			geo_root["normal"] = SPAunitvectorToJson(normal);
 			geo_root["minor_radius"] = minor_radius;
 			geo_root["major_radius"] = major_radius;

@@ -359,17 +359,20 @@ std::vector<SPAposition> GeometryUtils::SampleCoedge(COEDGE * coedge, int sample
 
 	SPAinterval prange = coedge_pcurve.param_range();
 
-	double start_param = prange.start_pt();
-	double end_param = prange.end_pt();
+	//double start_param = prange.start_pt();
+	//double end_param = prange.end_pt();
 
-	if (start_param > end_param) {
-		std::swap(start_param, end_param);
-	}
+	//if (start_param > end_param) {
+	//	std::swap(start_param, end_param);
+	//}
 
-	double delta_param = (end_param - start_param) / (sample_num - 1);
+	//double delta_param = (end_param - start_param) / (sample_num - 1);
 
 	for (int k = 0; k < sample_num; k++) {
-		double sample_param = start_param + delta_param * k;
+		//double sample_param = start_param + delta_param * k;
+
+		double interpolate_param = k * 1.0 / (sample_num - 1);
+		double sample_param = prange.interpolate(interpolate_param);
 
 		points_vec.emplace_back(SamplePCurveIn3D(sample_param, coedge_pcurve, f));
 	}
