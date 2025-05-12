@@ -32,7 +32,7 @@
 #endif
 
 /*
-	实验3：针对Cent的特殊实验
+	实验3：针对Cent的切除
 */
 namespace Exp3 {
 	struct Exp3 {

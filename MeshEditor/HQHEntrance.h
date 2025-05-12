@@ -13,6 +13,7 @@
 #include "DebugShow.h"
 #include "MyConstant.h"
 #include "GeometryExporter.h"
+#include "GeometryImporter.h"
 #include "Timer.h"
 
 #ifndef IN_HUAWEI

@@ -196,6 +196,7 @@
     <ClCompile Include="Exp1.cpp" />
     <ClCompile Include="Exp2.cpp" />
     <ClCompile Include="GeometryExporter.cpp" />
+    <ClCompile Include="GeometryImporter.cpp" />
     <ClCompile Include="GeometryUtils.cpp" />
     <ClCompile Include="getInfo.cpp" />
     <ClCompile Include="GetPatchType.cpp" />
@@ -332,6 +333,7 @@
     <ClInclude Include="Exp1.h" />
     <ClInclude Include="Exp2.h" />
     <ClInclude Include="GeometryExporter.h" />
+    <ClInclude Include="GeometryImporter.h" />
     <ClInclude Include="GeometryUtils.h" />
     <ClInclude Include="GetPatchType.h" />
     <ClInclude Include="HQHEntrance.h" />

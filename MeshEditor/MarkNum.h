@@ -28,6 +28,7 @@
 namespace MarkNum {
 	struct Singleton {
 		static std::map<ENTITY*, std::pair<std::string, int>> marknum_map;
+		static std::map<std::pair<std::string, int>, ENTITY*> marknum_inverse_map;
 		static std::map<ENTITY*, int> body_map;
 
 		static int marknum_body;
@@ -46,6 +47,17 @@ namespace MarkNum {
 	int GetId( ENTITY*const & ptr);
 	std::string GetTypeName(ENTITY*const & ptr);
 	int GetBody(ENTITY*const & ptr);
+
+	template<typename PtrType>
+	PtrType GetPtr(const std::pair<std::string, int>& key) {
+
+		if (Singleton::marknum_inverse_map.count(key) != 0) {
+			ENTITY* ptr = Singleton::marknum_inverse_map[key];
+			return dynamic_cast<PtrType>(ptr);
+		}
+
+		return nullptr;
+	}
 
 #ifdef USE_HOOPSVIEW
 	void ShowEdgeMark(HoopsView* hv);

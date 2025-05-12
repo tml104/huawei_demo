@@ -60,3 +60,4 @@
 #include <spldef.hxx>
 #include <spline.hxx>
 #include <pcurve.hxx>
+#include <glue_opts.hxx>

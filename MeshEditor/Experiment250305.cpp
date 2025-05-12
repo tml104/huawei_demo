@@ -148,7 +148,7 @@ void Exp250305::Exp250305::Start()
 void Exp5::Exp5::EdgeAndCoedgeGeometryCheck(EDGE* edge, COEDGE* coedge)
 {
 	// 中间采样点个数（最好是奇数？其实这里没有要求，之前要求是奇数只是因为要取中点）
-	const int N = 11;
+	const int N = 151;
 
 	LOG_INFO("Checking edge and coedge points: edge: %d, coedge:%d, N: %d",
 		MarkNum::GetId(edge),
@@ -191,6 +191,12 @@ void Exp5::Exp5::EdgeAndCoedgeGeometryCheck(EDGE* edge, COEDGE* coedge)
 		LOG_INFO("coedge_points_vec[%d]: (%.5lf, %.5lf, %.5lf)", i, x, y, z);
 
 	}
+}
+
+void Exp5::Exp5::ModifyFaces(const std::string & json_path)
+{
+	
+
 }
 
 void Exp5::Exp5::FacesCheck()
@@ -249,6 +255,53 @@ void Exp5::Exp5::StartExperiment()
 	LOG_INFO("start.");
 
 	this->FacesCheck();
+
+	LOG_INFO("end.");
+}
+
+
+
+
+void Exp6::Exp6::MergeFace()
+{
+	BODY* ibody1 = nullptr;
+	BODY* ibody2 = nullptr;
+	BODY* ibody3 = nullptr;
+	glue_options gop;
+
+	for (int i = 0; i < bodies.count(); i++) {
+		BODY* ibody_ptr = dynamic_cast<BODY*>(bodies[i]);
+
+		if (i == 0) {
+			ibody1 = ibody_ptr;
+		}
+		else if (i == 1) {
+			ibody2 = ibody_ptr;
+		}
+	}
+
+	if (ibody1 && ibody2) {
+		//api_boolean_glue(ibody1, ibody2, UNION, &gop);
+		//LOG_INFO("api_boolean_glue DONE.");
+
+		//api_boolean(ibody2, ibody1, INTERSECTION, NDBOOL_KEEP_BOTH, ibody3);
+		//LOG_INFO("api_boolean DONE.");
+
+		api_boolean(ibody1, ibody2, UNION, NDBOOL_KEEP_BOTH, ibody3);
+		LOG_INFO("api_boolean DONE.");
+
+
+	}
+
+	bodies.clear();
+	bodies.add(ibody3);
+}
+
+void Exp6::Exp6::StartExperiment()
+{
+	LOG_INFO("start.");
+
+	this->MergeFace();
 
 	LOG_INFO("end.");
 }

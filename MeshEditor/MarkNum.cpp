@@ -2,6 +2,8 @@
 #include "MarkNum.h"
 
 std::map<ENTITY*, std::pair<std::string, int>> MarkNum::Singleton::marknum_map;
+std::map<std::pair<std::string, int>, ENTITY*> MarkNum::Singleton::marknum_inverse_map;
+
 std::map<ENTITY*, int> MarkNum::Singleton::body_map;
 int MarkNum::Singleton::marknum_body = 0;
 int MarkNum::Singleton::marknum_lump = 0;
@@ -28,7 +30,11 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		ENTITY* ibody_ptr = (bodies[i]);
 
 		if (MarkNum::Singleton::marknum_map.count(ibody_ptr) == 0) {
-			MarkNum::Singleton::marknum_map[ibody_ptr] = std::make_pair("body", ++MarkNum::Singleton::marknum_body );
+
+			auto temp_pair = std::make_pair("body", ++MarkNum::Singleton::marknum_body);
+
+			MarkNum::Singleton::marknum_map[ibody_ptr] = temp_pair;
+			MarkNum::Singleton::marknum_inverse_map[temp_pair] = ibody_ptr;
 		}
 
 		ENTITY_LIST lump_list;
@@ -53,7 +59,10 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		for (int j = 0; j < lump_list.count(); j++) {
 			ENTITY* ptr = lump_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
-				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "lump", ++MarkNum::Singleton::marknum_lump );
+				auto temp_pair = std::make_pair("lump", ++MarkNum::Singleton::marknum_lump);
+				MarkNum::Singleton::marknum_map[ptr] = temp_pair;
+				MarkNum::Singleton::marknum_inverse_map[temp_pair] = ptr;
+
 				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 			}
 		}
@@ -62,7 +71,10 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		for (int j = 0; j < shell_list.count(); j++) {
 			ENTITY* ptr = shell_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
-				MarkNum::Singleton::marknum_map[ptr] = std::make_pair ("shell", ++MarkNum::Singleton::marknum_shell );
+				auto temp_pair = std::make_pair("shell", ++MarkNum::Singleton::marknum_shell);
+				MarkNum::Singleton::marknum_map[ptr] = temp_pair;
+				MarkNum::Singleton::marknum_inverse_map[temp_pair] = ptr;
+
 				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 
 			}
@@ -72,7 +84,10 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		for (int j = 0; j < wire_list.count(); j++) {
 			ENTITY* ptr = wire_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
-				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "wire", ++MarkNum::Singleton::marknum_wire );
+				auto temp_pair = std::make_pair("wire", ++MarkNum::Singleton::marknum_wire);
+				MarkNum::Singleton::marknum_map[ptr] = temp_pair;
+				MarkNum::Singleton::marknum_inverse_map[temp_pair] = ptr;
+
 				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 
 			}
@@ -82,7 +97,10 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		for (int j = 0; j < face_list.count(); j++) {
 			ENTITY* ptr = face_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
-				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "face", ++MarkNum::Singleton::marknum_face );
+				auto temp_pair = std::make_pair("face", ++MarkNum::Singleton::marknum_face);
+				MarkNum::Singleton::marknum_map[ptr] = temp_pair;
+				MarkNum::Singleton::marknum_inverse_map[temp_pair] = ptr;
+
 				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 
 			}
@@ -92,7 +110,10 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		for (int j = 0; j < edge_list.count(); j++) {
 			ENTITY* ptr = edge_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
-				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "edge", ++MarkNum::Singleton::marknum_edge );
+				auto temp_pair = std::make_pair("edge", ++MarkNum::Singleton::marknum_edge);
+				MarkNum::Singleton::marknum_map[ptr] = temp_pair;
+				MarkNum::Singleton::marknum_inverse_map[temp_pair] = ptr;
+
 				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 
 			}
@@ -102,7 +123,10 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		for (int j = 0; j < coedge_list.count(); j++) {
 			ENTITY* ptr = coedge_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
-				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "coedge", ++MarkNum::Singleton::marknum_coedge );
+				auto temp_pair = std::make_pair("coedge", ++MarkNum::Singleton::marknum_coedge);
+				MarkNum::Singleton::marknum_map[ptr] = temp_pair;
+				MarkNum::Singleton::marknum_inverse_map[temp_pair] = ptr;
+
 				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 
 			}
@@ -112,7 +136,10 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		for (int j = 0; j < vertex_list.count(); j++) {
 			ENTITY* ptr = vertex_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
-				MarkNum::Singleton::marknum_map[ptr] = std::make_pair( "vertex", ++MarkNum::Singleton::marknum_vertex );
+				auto temp_pair = std::make_pair("vertex", ++MarkNum::Singleton::marknum_vertex);
+				MarkNum::Singleton::marknum_map[ptr] = temp_pair;
+				MarkNum::Singleton::marknum_inverse_map[temp_pair] = ptr;
+
 				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 
 			}
@@ -122,12 +149,13 @@ void MarkNum::Init(ENTITY_LIST & bodies){
 		for (int j = 0; j < loop_list.count(); j++) {
 			ENTITY* ptr = loop_list[j];
 			if (MarkNum::Singleton::marknum_map.count(ptr) == 0) {
-				MarkNum::Singleton::marknum_map[ptr] = std::make_pair("loop", ++MarkNum::Singleton::marknum_loop);
-				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
+				auto temp_pair = std::make_pair("loop", ++MarkNum::Singleton::marknum_loop);
+				MarkNum::Singleton::marknum_map[ptr] = temp_pair;
+				MarkNum::Singleton::marknum_inverse_map[temp_pair] = ptr;
 
+				MarkNum::Singleton::body_map[ptr] = MarkNum::Singleton::marknum_body;
 			}
 		}
-
 	}
 
 	// ¼ÆÊ±½áÊø
@@ -406,6 +434,7 @@ void MarkNum::Clear()
 	LOG_INFO("Start.");
 
 	MarkNum::Singleton::marknum_map.clear();
+	MarkNum::Singleton::marknum_inverse_map.clear();
 	MarkNum::Singleton::body_map.clear();
 	MarkNum::Singleton::marknum_body = 0;
 	MarkNum::Singleton::marknum_lump = 0;

@@ -68,6 +68,8 @@ namespace Exp5 {
 
 		void EdgeAndCoedgeGeometryCheck(EDGE* edge, COEDGE* coedge);
 
+		void ModifyFaces(const std::string& json_path);
+
 		void FacesCheck();
 
 		void StartExperiment();
@@ -78,4 +80,26 @@ namespace Exp5 {
 
 	};
 
+}
+
+/*
+	2025年5月6日 20:16:52
+	实验6： api_merge_faces
+*/
+
+namespace Exp6 {
+
+	class Exp6 {
+	public:
+		Exp6(ENTITY_LIST& bodies) : bodies(bodies) {}
+		~Exp6() {}
+
+		void MergeFace();
+
+		void StartExperiment();
+
+	private:
+		ENTITY_LIST& bodies;
+
+	};
 }
