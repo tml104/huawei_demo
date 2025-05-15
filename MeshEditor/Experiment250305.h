@@ -103,3 +103,30 @@ namespace Exp6 {
 
 	};
 }
+
+
+/*
+	2025年5月13日 22:59:54
+	实验7： Stitch测试
+*/
+namespace Exp7 {
+
+	class Exp7 {
+	public:
+
+		// bodies2: 被用户缝合的那个
+		Exp7(ENTITY_LIST& bodies, ENTITY_LIST& bodies2): bodies(bodies), bodies2(bodies2) {}
+		~Exp7() {}
+
+		void StitchModels();
+
+		void MergeModels();
+
+		void StartExperiment();
+
+	private:
+		ENTITY_LIST& bodies, bodies2;
+
+	};
+
+}

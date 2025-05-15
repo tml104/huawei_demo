@@ -1,5 +1,7 @@
 #pragma once
 
+#include <safe.hxx>
+#include <stchapi.hxx>
 #include <boolapi.hxx>
 #include <curextnd.hxx>
 #include <cstrapi.hxx>

@@ -21,6 +21,7 @@ struct LoadTaskArgs {
 
 void* LoadTask(void* args)
 {
+
 	LoadTaskArgs* args2 = (LoadTaskArgs*)args;
 	ENTITY_LIST* bodies = args2->bodies;
 	std::string* multi_file_path = args2->multi_file_path;
@@ -29,7 +30,10 @@ void* LoadTask(void* args)
 
 	pthread_mutex_lock(&mutex1);
 
-	api_restore_entity_list(f, TRUE, *bodies);
+	//LOG_INFO("111");
+	api_restore_entity_list(f, TRUE, *bodies); // 如果用thread_safe，那么这个操作根本跑不进去。但是其他的操作能否做还不确定
+	//LOG_INFO("222");
+
 	pthread_mutex_unlock(&mutex1);
 
 
@@ -50,7 +54,7 @@ void* StitchTask(void* args)
 
 	Stitch::StitchGapFixer stitch_gap_fixer(*args2);
 
-	stitch_gap_fixer.Start(false, false);
+	stitch_gap_fixer.Start(true, false);
 	return NULL;
 }
 
@@ -60,7 +64,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		[选项开关]
 	*/
 
-	bool option_multithread_load = true;
+	bool option_multithread_load = false;
+	bool option_stitch_body_load = true;
 
 	bool option_change_body_trans = false;
 
@@ -72,7 +77,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 	bool option_solve_stitch = false;
 	bool option_solve_stitch_for_each_bodies = false;
-	bool option_solve_stitch_for_each_bodies_multithread = true;
+	bool option_solve_stitch_for_each_bodies_multithread = false;
 	bool option_solve_remove_degenerated_faces = false;
 	bool option_solve_nonmanifold = false;
 	bool option_solve_nonmanifold_for_each_bodies =	false;
@@ -87,17 +92,18 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	bool option_exp5 = false;
 	bool option_exp5_import = false;
 	bool option_exp6 = false;
+	bool option_exp7 = true;
 
 	bool option_exp250305 = false;
-	bool option_marknum_init2 = false;
+	bool option_marknum_init2 = true;
 
 	//bool option_exp4_2 = true;
 
 	bool option_construct = false;
 	bool option_construct240710 = false;
 
-	bool option_save_bodies = true;
-	bool option_save_bodies_respectly = false;
+	bool option_save_bodies = false;
+	bool option_save_bodies_respectly = true;
 	//bool option_save_stl_bodies_respectly = false;
 	bool option_export_geometry_json_selected = false;
 	bool option_export_geometry_json = false;
@@ -113,6 +119,9 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	
 	pthread_mutex_init(&mutex1, NULL);
 
+	//thread_safe_region_begin();
+	//LOG_INFO("thread_safety_enabled: %d", thread_safety_enabled());
+
 	Timer::Timer load_body_timer;
 	FILE *f = fopen(file_path.c_str(), "r");
 
@@ -125,6 +134,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	api_restore_entity_list(f, TRUE, bodies);
 	fclose(f);
 	load_body_timer.Split("模型加载");
+
+
 
 	// multi thread load test
 	ENTITY_LIST bodies1, bodies2;
@@ -158,6 +169,23 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	}
 	// [END] multi thread load test
 
+	ENTITY_LIST stitch_bodies;
+	if (option_stitch_body_load)
+	{
+		std::string stitch_file_path = "D:\\hqh_study\\ModelForFix\\ModelForFixChecked\\ComplexOverlap\\bodytest5\\C_ent(1)_mod_body_0_case7_mod_body_0.sat";
+		FILE *f = fopen(stitch_file_path.c_str(), "r");
+		if (!f) {
+			LOG_ERROR("打开stitch模型文件失败！");
+			return;
+		}
+
+		api_restore_entity_list(f, TRUE, stitch_bodies);
+		fclose(f);
+
+		LOG_INFO("stitch model loaded: %d", stitch_bodies.count());
+	}
+
+
 
 	// 文件路径预处理
 	LOG_INFO("file_path: %s", file_path.c_str());
@@ -184,6 +212,11 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		{
 			MarkNum::Init(bodies1);
 			MarkNum::Init(bodies2);
+		}
+
+		if (option_stitch_body_load)
+		{
+			MarkNum::Init(stitch_bodies);
 		}
 
 		if (option_print_topo)
@@ -392,6 +425,12 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		exp6.StartExperiment();
 	}
 
+	if (option_exp7) {
+
+		Exp7::Exp7 exp7(bodies, stitch_bodies);
+
+		exp7.StartExperiment();
+	}
 
 	if (option_exp250305)
 	{
@@ -413,12 +452,14 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	}
 	/* [实验结束] */
 
-
+	LOG_INFO("1");
 	// 控制渲染内容
 	for (int i = 0; i < bodies.count(); i++) {
 		hoopsview->show_body_edges(bodies[i]);
 		hoopsview->show_body_faces(bodies[i]);
 	}
+	LOG_INFO("2");
+
 
 	// 原点标架（测一下渲染字体）
 	hoopsview->render_point_position(SPAposition(0.0, 0.0, 0.0));
@@ -444,6 +485,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		Utils::SaveModifiedBodies(split_path_tuple, bodies);
 		process_timer.Split("option_save_bodies");
 	}
+	LOG_INFO("3");
 
 	// （240408）保存bodies list中的各个body
 	if (option_save_bodies_respectly)
@@ -451,6 +493,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		Utils::SaveModifiedBodiesRespectly(split_path_tuple, bodies);
 		process_timer.Split("option_save_bodies_respectly");
 	}
+	LOG_INFO("4");
+
 
 	//if (option_save_stl_bodies_respectly) {
 	//	Utils::SAT2STL(split_path_tuple, bodies);
@@ -482,6 +526,9 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 	// 不能在文件保存之前调用此api_stop_modeller
 	pthread_mutex_destroy(&mutex1);
+
+	//thread_safe_region_end();
+
 
 	api_stop_modeller();
 }

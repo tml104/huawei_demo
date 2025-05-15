@@ -305,3 +305,82 @@ void Exp6::Exp6::StartExperiment()
 
 	LOG_INFO("end.");
 }
+
+void Exp7::Exp7::StitchModels()
+{
+	// 先整个临时的ENTITIY_LIST，把两个东西全放进去
+
+	ENTITY_LIST temp_bodies;
+	ENTITY_LIST output_bodies, new_bodies;
+
+	temp_bodies.add(bodies2);
+	temp_bodies.add(bodies);
+
+
+	tolerant_stitch_options tol_opt;
+
+	api_stitch(temp_bodies, output_bodies, new_bodies, &tol_opt);
+
+
+	LOG_INFO("output_bodies: %d, new_bodies: %d", output_bodies.count(), new_bodies.count());
+
+	bodies = output_bodies;
+}
+
+
+void Exp7::Exp7::MergeModels()
+{
+	std::vector<BODY*> ibodies;
+
+	for (int i = 0; i < bodies.count(); i++) {
+		BODY* ibody_ptr = dynamic_cast<BODY*>(bodies[i]);
+
+		ibodies.push_back(ibody_ptr);
+		//break;
+	}
+
+	LOG_INFO("phase 1: ibodies size: %d", ibodies.size());
+
+	for (int i = 0; i < bodies2.count(); i++) {
+		BODY* ibody_ptr = dynamic_cast<BODY*>(bodies2[i]);
+
+		ibodies.push_back(ibody_ptr);
+		//break;
+	}
+
+	LOG_INFO("phase 2: ibodies2 size: %d", ibodies.size());
+
+	std::vector<BODY*> res_bodies(std::max(ibodies.size()-1, 0u));
+
+	for (int i = 0; i < ibodies.size()-1; i++)	{
+
+		BODY* ibody1 = ibodies[i];
+		BODY* ibody2 = ibodies[i+1];
+
+		BODY* ibody3 = nullptr;
+
+		if (i != 0) {
+			ibody1 = res_bodies.back();
+		}
+		api_boolean(ibody1, ibody2, UNION, NDBOOL_KEEP_BOTH, ibody3);
+
+		res_bodies.push_back(ibody3);
+
+		LOG_INFO("api_boolean DONE: %d", i);
+	}
+
+	// 求并完成的结果放回去
+	bodies.clear();
+	bodies.add(res_bodies.back());
+}
+
+
+void Exp7::Exp7::StartExperiment()
+{
+	LOG_INFO("start.");
+
+	this->StitchModels();
+	//this->MergeModels();
+
+	LOG_INFO("end.");
+}
