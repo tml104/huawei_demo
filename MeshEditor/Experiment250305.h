@@ -122,6 +122,8 @@ namespace Exp7 {
 
 		void MergeModels();
 
+		void IntersectModels();
+
 		void StartExperiment();
 
 	private:

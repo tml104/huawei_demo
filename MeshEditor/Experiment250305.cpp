@@ -348,7 +348,7 @@ void Exp7::Exp7::MergeModels()
 		//break;
 	}
 
-	LOG_INFO("phase 2: ibodies2 size: %d", ibodies.size());
+	LOG_INFO("phase 2: ibodies size: %d", ibodies.size());
 
 	std::vector<BODY*> res_bodies(std::max(ibodies.size()-1, 0u));
 
@@ -366,7 +366,7 @@ void Exp7::Exp7::MergeModels()
 
 		res_bodies.push_back(ibody3);
 
-		LOG_INFO("api_boolean DONE: %d", i);
+		LOG_INFO("api_boolean DONE index: %d", i);
 	}
 
 	// 求并完成的结果放回去
@@ -374,13 +374,61 @@ void Exp7::Exp7::MergeModels()
 	bodies.add(res_bodies.back());
 }
 
+void Exp7::Exp7::IntersectModels()
+{
+	std::vector<BODY*> ibodies;
+
+	for (int i = 0; i < bodies.count(); i++) {
+		BODY* ibody_ptr = dynamic_cast<BODY*>(bodies[i]);
+
+		ibodies.push_back(ibody_ptr);
+		//break;
+	}
+
+	LOG_INFO("phase 1: ibodies size: %d", ibodies.size());
+
+	for (int i = 0; i < bodies2.count(); i++) {
+		BODY* ibody_ptr = dynamic_cast<BODY*>(bodies2[i]);
+
+		ibodies.push_back(ibody_ptr);
+		//break;
+	}
+
+	LOG_INFO("phase 2: ibodies size: %d", ibodies.size());
+
+	std::vector<BODY*> res_bodies(std::max(ibodies.size() - 1, 0u));
+
+	for (int i = 0; i < ibodies.size() - 1; i++) {
+
+		BODY* ibody1 = ibodies[i];
+		BODY* ibody2 = ibodies[i + 1];
+
+		BODY* ibody3 = nullptr;
+
+		if (i != 0) {
+			ibody1 = res_bodies.back();
+		}
+		api_boolean(ibody1, ibody2, INTERSECTION, NDBOOL_KEEP_BOTH, ibody3);
+
+		res_bodies.push_back(ibody3);
+
+		LOG_INFO("api_boolean DONE index: %d", i);
+	}
+
+	// 求并完成的结果放回去
+	bodies.clear();
+	bodies.add(res_bodies.back());
+
+}
+
 
 void Exp7::Exp7::StartExperiment()
 {
 	LOG_INFO("start.");
 
-	this->StitchModels();
-	//this->MergeModels();
+	//this->StitchModels();
+	this->MergeModels();
+	//this->IntersectModels();
 
 	LOG_INFO("end.");
 }

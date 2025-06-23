@@ -56,6 +56,7 @@ namespace ConstructModel {
 
 		BODY* Construct240708(const std::string& file_name);
 		BODY* Construct240710TotallyCoincident(const std::string& file_name);
+		BODY* Construct250522InterpenetrationCubes(const std::string& file_name);
 
 	private:
 		std::string rt_save_path;

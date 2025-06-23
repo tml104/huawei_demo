@@ -160,6 +160,21 @@ BODY * ConstructModel::MyModelConstructor::Construct240710TotallyCoincident(cons
 	return block2;
 }
 
+BODY * ConstructModel::MyModelConstructor::Construct250522InterpenetrationCubes(const std::string & file_name)
+{
+	BODY *block1, *block2;
+	api_make_cuboid(10.0, 10.0, 10.0, block1);
+	api_make_cuboid(10.0, 10.0, 10.0, block2);
+
+	// transform 
+	SPAtransf movee = translate_transf(SPAvector(5, 5, 5));
+	api_apply_transf(block2, movee);
+
+	api_combine_body(block1, block2);
+	this->save_constructed_body(file_name, block2);
+	return block2;
+}
+
 void ConstructModel::MyModelConstructor::save_constructed_body(const std::string & file_name, BODY* body)
 {
 	Utils::SaveToSATBody(this->rt_save_path + file_name, body);

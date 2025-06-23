@@ -70,6 +70,12 @@
     <Filter Include="topologyopt\Import">
       <UniqueIdentifier>{b3ec8361-0eaf-461f-a4e9-acd80a8a54c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="topologyopt\BPSystem">
+      <UniqueIdentifier>{e0fc735d-5eac-4104-890b-17335183a794}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="topologyopt\BPSystem\NodeLogic">
+      <UniqueIdentifier>{5416d0bd-0210-46d0-b0f1-a3dcf29b2d70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GeneratedFiles\Debug\moc_mainwindow.cpp">
@@ -282,6 +288,27 @@
     <ClCompile Include="GeometryImporter.cpp">
       <Filter>topologyopt\Import</Filter>
     </ClCompile>
+    <ClCompile Include="BPSystem.cpp">
+      <Filter>topologyopt\BPSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeACIS.cpp">
+      <Filter>topologyopt\BPSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="PinACIS.cpp">
+      <Filter>topologyopt\BPSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkACIS.cpp">
+      <Filter>topologyopt\BPSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="StringNodeExecute.cpp">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="StartLoadNodeExecute.cpp">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadEntityNodeExecute.cpp">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -427,6 +454,33 @@
     </ClInclude>
     <ClInclude Include="GeometryImporter.h">
       <Filter>topologyopt\Import</Filter>
+    </ClInclude>
+    <ClInclude Include="BPSystem.h">
+      <Filter>topologyopt\BPSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeACIS.h">
+      <Filter>topologyopt\BPSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="PinACIS.h">
+      <Filter>topologyopt\BPSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkACIS.h">
+      <Filter>topologyopt\BPSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeExecuteBase.h">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeParamsBase.h">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="StringNodeExecute.h">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="StartLoadNodeExecute.h">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadEntityNodeExecute.h">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

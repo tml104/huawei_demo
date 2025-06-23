@@ -1,0 +1,98 @@
+{
+    "Links": [
+        {
+            "Color": [
+                255,
+                255,
+                255
+            ],
+            "EndPinInstanceId": 14,
+            "LinkId": 22,
+            "StartPinInstanceId": 2
+        },
+        {
+            "Color": [
+                255,
+                255,
+                255
+            ],
+            "EndPinInstanceId": 15,
+            "LinkId": 21,
+            "StartPinInstanceId": 20
+        }
+    ],
+    "NodeInstances": [
+        {
+            "ClassId": 3,
+            "InputPinsInstanceId": [],
+            "InstanceId": 1,
+            "Location": [
+                1412,
+                -420
+            ],
+            "OutputPinsInstanceId": [
+                2
+            ]
+        },
+        {
+            "ClassId": 8,
+            "InputPinsInstanceId": [
+                14,
+                15
+            ],
+            "InstanceId": 13,
+            "Location": [
+                1765,
+                -452
+            ],
+            "OutputPinsInstanceId": [
+                16,
+                17
+            ]
+        },
+        {
+            "ClassId": 10002,
+            "InputPinsInstanceId": [],
+            "InstanceId": 19,
+            "Location": [
+                1367,
+                -228
+            ],
+            "OutputPinsInstanceId": [
+                20
+            ]
+        }
+    ],
+    "PinInstances": [
+        {
+            "ClassId": 2,
+            "InstanceId": 2,
+            "NodeInstanceId": 1
+        },
+        {
+            "ClassId": 1,
+            "InstanceId": 14,
+            "NodeInstanceId": 13
+        },
+        {
+            "ClassId": 3,
+            "InstanceId": 15,
+            "NodeInstanceId": 13
+        },
+        {
+            "ClassId": 2,
+            "InstanceId": 16,
+            "NodeInstanceId": 13
+        },
+        {
+            "ClassId": 6,
+            "InstanceId": 17,
+            "NodeInstanceId": 13
+        },
+        {
+            "ClassId": 10002,
+            "InstanceId": 20,
+            "NodeInstanceId": 19
+        }
+    ]
+}

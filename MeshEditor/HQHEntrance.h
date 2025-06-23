@@ -6,8 +6,10 @@
 // Project include
 #ifndef IN_HUAWEI
 #include "logger44/CoreOld.h"
+#include "json/json.h"
 #else
 #include "CoreOld.h"
+#include "json.h"
 #endif
 #include "MarkNum.h"
 #include "DebugShow.h"
@@ -47,6 +49,9 @@
 #include "hoopsview.h"
 #endif
 
+#include "BPSystem.h"
+
+
 namespace HQHEntrance {
 
 #ifdef IN_HUAWEI
@@ -62,6 +67,8 @@ namespace HQHEntrance {
 	void Run(int model_id, int option1);
 
 #else
+
+	void OriginalRun(const std::string& file_path, HoopsView* hoopsview);
 
 	void Run(const std::string& file_path, HoopsView* hoopsview);
 

@@ -58,18 +58,18 @@ void* StitchTask(void* args)
 	return NULL;
 }
 
-void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
-{ 
+void HQHEntrance::OriginalRun(const std::string & file_path, HoopsView * hoopsview)
+{
 	/*
 		[选项开关]
 	*/
 
 	bool option_multithread_load = false;
-	bool option_stitch_body_load = true;
+	bool option_stitch_body_load = false;
 
 	bool option_change_body_trans = false;
 
-	bool option_marknum_init = true; // 必开
+	bool option_marknum_init = true; // 必开（构造的时候可关）
 	bool option_marknum_showedgemark = false;
 	bool option_marknum_showedgemark_with_set = false;
 	bool option_marknum_showfacemark = false;
@@ -80,8 +80,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	bool option_solve_stitch_for_each_bodies_multithread = false;
 	bool option_solve_remove_degenerated_faces = false;
 	bool option_solve_nonmanifold = false;
-	bool option_solve_nonmanifold_for_each_bodies =	false;
-	bool option_solve_single_side_faces = false; 
+	bool option_solve_nonmanifold_for_each_bodies = false;
+	bool option_solve_single_side_faces = false;
 
 	bool option_make_double_model = false;
 
@@ -101,6 +101,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 	bool option_construct = false;
 	bool option_construct240710 = false;
+	bool option_construct250522 = false;
 
 	bool option_save_bodies = false;
 	bool option_save_bodies_respectly = true;
@@ -112,11 +113,11 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	//bool option_export_entity_list_stl = true;
 
 	/*
-		[选项开关] 结束 
+		[选项开关] 结束
 	*/
 
 	api_start_modeller(0);
-	
+
 	pthread_mutex_init(&mutex1, NULL);
 
 	//thread_safe_region_begin();
@@ -140,7 +141,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	// multi thread load test
 	ENTITY_LIST bodies1, bodies2;
 	auto multithread_load_test = [&]() {
-		
+
 		std::string file_path1 = "D:\\hqh_study\\ModelForFix\\ModelForFixChecked\\ComplexOverlap\\bodytest\\C_ent(1)_mod_body_0_case1.sat";
 		std::string file_path2 = "D:\\hqh_study\\ModelForFix\\ModelForFixChecked\\ComplexOverlap\\bodytest\\C_ent(1)_mod_body_0_case2.sat";
 
@@ -172,7 +173,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	ENTITY_LIST stitch_bodies;
 	if (option_stitch_body_load)
 	{
-		std::string stitch_file_path = "D:\\hqh_study\\ModelForFix\\ModelForFixChecked\\ComplexOverlap\\bodytest5\\C_ent(1)_mod_body_0_case7_mod_body_0.sat";
+		//std::string stitch_file_path = "D:\\hqh_study\\ModelForFix\\ModelForFixChecked\\ComplexOverlap\\bodytest5\\C_ent(1)_mod_body_0_case7_mod_body_0.sat";
+		std::string stitch_file_path = "D:\\hqh_study\\ModelForFix\\ModelForFixChecked\\ComplexOverlap\\bodytest_adjoining_face_intersection\\C_ent(1)_cut_two_adjoining_faces_cf2.sat";
 		FILE *f = fopen(stitch_file_path.c_str(), "r");
 		if (!f) {
 			LOG_ERROR("打开stitch模型文件失败！");
@@ -306,7 +308,7 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 			bool selected = false;
 
 			//Stitch::StitchGapFixer stitchGapFixer(ibody_list[ibody_list_id]);
-			
+
 			thread_list.emplace_back(pthread_t());
 			pthread_create(&thread_list.back(), NULL, (void* (*)(void *))StitchTask, (void*)&ibody_list[ibody_list_id]);
 
@@ -479,6 +481,11 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 		my_model_constructor.Construct240710TotallyCoincident("two_blocks_240710_totally_coincident.sat");
 	}
 
+	if (option_construct250522) {
+		ConstructModel::MyModelConstructor my_model_constructor("D:\\hqh_study\\ModelForFix\\ModelForFixChecked\\Other\\SelfBuildModel\\interpenetration_cubes\\");
+		my_model_constructor.Construct250522InterpenetrationCubes("interpenetration_cubes.sat");
+	}
+
 	// 保存整个bodies
 	if (option_save_bodies)
 	{
@@ -531,6 +538,25 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 
 	api_stop_modeller();
+}
+
+void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
+{ 
+	// TODO: Load Json Instance file
+	
+	//Json::Value j;
+
+	LOG_INFO("START");
+
+	std::string class_json_path("D:\\hqh_study\\huawei_frame\\huawei_demo\\JsonData\\MyGraphClasses.json");
+	std::string instance_json_path("D:\\hqh_study\\huawei_frame\\huawei_demo\\JsonData\\MyGraphInstances.json");
+
+	BPSystem::BPSystem bp_system(class_json_path, instance_json_path);
+
+	bp_system.InitPlay();
+	bp_system.PlayFrom(3);
+
+	LOG_INFO("END");
 }
 
 #endif

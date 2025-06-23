@@ -77,7 +77,7 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\hqh_study\huawei_frame\huawei_demo\include\json;D:\ACIS\acisR23\include;D:\ACIS\HOOPS-1919\bin\nt_i386_vc10;D:\ACIS\acisR23\bin\NT_VC10_DLLD;D:\ACIS\acisR23\bin\NT_VC10_DLL;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\hqh_software\spdlog-1.x\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\hqh_study\huawei_frame\huawei_demo\include\json;D:\ACIS\acisR23\include;D:\ACIS\HOOPS-1919\bin\nt_i386_vc10;D:\ACIS\acisR23\bin\NT_VC10_DLLD;D:\ACIS\acisR23\bin\NT_VC10_DLL;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>D:\hqh_study\huawei_frame\huawei_demo\include\json;D:\ACIS\acisR23\include;D:\ACIS\HOOPS-1919\bin\nt_i386_vc10;D:\ACIS\acisR23\bin\NT_VC10_DLLD;D:\ACIS\acisR23\bin\NT_VC10_DLL;D:\ACIS\HOOPS-1919\Dev_Tools\hoops_mvo\source;D:\hqh_software\spdlog-1.x\include;$(IncludePath)</IncludePath>
@@ -176,6 +176,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="binarySearch.cpp" />
+    <ClCompile Include="BPSystem.cpp" />
     <ClCompile Include="ConstructModel.cpp" />
     <ClCompile Include="DebugShow.cpp" />
     <ClCompile Include="DegeneratedFaces.cpp" />
@@ -287,6 +288,8 @@
     <ClCompile Include="json_reader.cpp" />
     <ClCompile Include="json_value.cpp" />
     <ClCompile Include="json_writer.cpp" />
+    <ClCompile Include="LinkACIS.cpp" />
+    <ClCompile Include="LoadEntityNodeExecute.cpp" />
     <ClCompile Include="lodepng.cpp" />
     <ClCompile Include="logger44\CoreOld.cpp" />
     <ClCompile Include="main.cpp" />
@@ -294,14 +297,17 @@
     <ClCompile Include="makeMeshList.cpp" />
     <ClCompile Include="MarkNum.cpp" />
     <ClCompile Include="MyMeshManager.cpp" />
+    <ClCompile Include="NodeACIS.cpp" />
     <ClCompile Include="NonManifold2.cpp" />
     <ClCompile Include="mousecontrolwidget.cpp" />
     <ClCompile Include="muilthreadHandle.cpp" />
     <ClCompile Include="nonuniformMesh.cpp" />
     <ClCompile Include="ohmConnection.cpp" />
     <ClCompile Include="ohmtest.cpp" />
+    <ClCompile Include="PinACIS.cpp" />
     <ClCompile Include="setAttr.cpp" />
     <ClCompile Include="SingleSideFaces.cpp" />
+    <ClCompile Include="StartLoadNodeExecute.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -309,6 +315,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="StitchGap.cpp" />
+    <ClCompile Include="StringNodeExecute.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="testModel.cpp" />
     <ClCompile Include="topologyoptwidge.cpp" />
@@ -319,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ACISincluded.h" />
+    <ClInclude Include="BPSystem.h" />
     <ClInclude Include="Cell.h" />
     <ClInclude Include="ConstructModel.h" />
     <ClInclude Include="DebugShow.h" />
@@ -342,6 +350,8 @@
     <ClInclude Include="jsoncpp-src-0.5.0\src\lib_json\json_batchallocator.h" />
     <ClInclude Include="JsonHandle.h" />
     <ClInclude Include="json_batchallocator.h" />
+    <ClInclude Include="LinkACIS.h" />
+    <ClInclude Include="LoadEntityNodeExecute.h" />
     <ClInclude Include="lodepng.h" />
     <ClInclude Include="logger44\CoreOld.h" />
     <ClInclude Include="MarkNum.h" />
@@ -349,11 +359,17 @@
     <ClInclude Include="muilthreadHandle.h" />
     <ClInclude Include="MyConstant.h" />
     <ClInclude Include="MyMeshManager.h" />
+    <ClInclude Include="NodeACIS.h" />
+    <ClInclude Include="NodeExecuteBase.h" />
+    <ClInclude Include="NodeParamsBase.h" />
     <ClInclude Include="NonManifold2.h" />
     <ClInclude Include="ohmConnection.h" />
     <ClInclude Include="ohm_struct.h" />
+    <ClInclude Include="PinACIS.h" />
     <ClInclude Include="SingleSideFaces.h" />
+    <ClInclude Include="StartLoadNodeExecute.h" />
     <ClInclude Include="StitchGap.h" />
+    <ClInclude Include="StringNodeExecute.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="UtilityFunctions.h" />
     <ClInclude Include="pixel.h" />
