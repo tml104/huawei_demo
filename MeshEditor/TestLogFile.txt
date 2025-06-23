@@ -1,99 +1,129 @@
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: HQHEntrance.cpp][HQHEntrance::Run:  549] START
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  279] START
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  314] nodeClassMap debug info start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 1 1
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 2 2
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 3 3
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 4 4
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 5 5
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 6 6
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 7 7
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 8 8
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 9 9
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 10 10
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 11 11
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 12 12
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 13 13
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 14 14
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 15 15
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 16 16
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 17 17
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 18 18
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 19 19
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 20 20
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 21 21
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 10000 10000
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 10001 10001
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 10002 10002
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  316] 10003 10003
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  318] nodeClassMap debug info end
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  321] pinClassMap debug info start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 1 1
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 2 2
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 3 3
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 4 4
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 5 5
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 6 6
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 7 7
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 8 8
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 9 9
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 10 10
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 11 11
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 12 12
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 13 13
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 14 14
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 15 15
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 16 16
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 17 17
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 10000 10000
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 10001 10001
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 10002 10002
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  323] 10003 10003
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  325] pinClassMap debug info end
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] nodeInstaceMap debug info start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  329] 1 3
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  329] 13 8
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  329] 19 10002
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  331] nodeInstaceMap debug info end
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  333] pinInstaceMap debug info start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  335] 2 2
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  335] 14 1
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  335] 15 3
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  335] 16 2
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  335] 17 6
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  335] 20 10002
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  337] pinInstaceMap debug info end
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] Link debug info start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  341] 20 15
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  341] 2 14
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  344] Link debug info end
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  348] END
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:    6] Start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   40] Init for class_id: 3
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   52] Init for class_id: 8
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: StringNodeExecute.cpp][BPSystem::StringNodeExecute::Run:   12] output_params->ptrs size: 1
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   62] Init for class_id: 10002
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   66] inputNodeParamsMap debug info start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   68] 1, ptrs_size: 0
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   68] 13, ptrs_size: 2
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   68] 19, ptrs_size: 0
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   70] inputNodeParamsMap debug info end
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   72] outputNodeParamsMap debug info start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   74] 1, ptrs_size: 1
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   74] 13, ptrs_size: 2
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   74] 19, ptrs_size: 1
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   76] outputNodeParamsMap debug info end
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   78] nodeExecuteMap debug info start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   80] 1
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   80] 13
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   80] 19
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   82] nodeExecuteMap debug info end
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   84] End
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  148] Start
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  160] q push: 1 3
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  184] q pop: 1 3
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  261] q push: 13 8
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  184] q pop: 13 8
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: LoadEntityNodeExecute.cpp][BPSystem::LoadEntityNodeExecute::Run:   20] string content: temp
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  274] End
-[2025-6-23 23:0:6][PID: 25624][TID: 37024][INFO ][FILE: HQHEntrance.cpp][HQHEntrance::Run:  559] END
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: HQHEntrance.cpp][HQHEntrance::Run:  545] START
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  283] START
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  318] nodeClassMap debug info start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 1 1
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 2 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 3 3
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 4 4
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 5 5
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 6 6
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 7 7
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 8 8
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 9 9
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 10 10
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 11 11
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 12 12
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 13 13
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 14 14
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 15 15
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 16 16
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 17 17
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 18 18
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 19 19
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 20 20
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 21 21
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 10000 10000
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 10001 10001
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 10002 10002
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  320] 10003 10003
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  322] nodeClassMap debug info end
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  325] pinClassMap debug info start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 1 1
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 2 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 3 3
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 4 4
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 5 5
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 6 6
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 7 7
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 8 8
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 9 9
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 10 10
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 11 11
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 12 12
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 13 13
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 14 14
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 15 15
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 16 16
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 17 17
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 10000 10000
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 10001 10001
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 10002 10002
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  327] 10003 10003
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  329] pinClassMap debug info end
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  331] nodeInstaceMap debug info start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  333] 1 3
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  333] 13 8
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  333] 19 10002
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  333] 26 9
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  335] nodeInstaceMap debug info end
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  337] pinInstaceMap debug info start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 2 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 14 1
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 15 3
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 16 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 17 6
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 20 10002
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 27 1
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 28 5
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 29 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  339] 30 6
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  341] pinInstaceMap debug info end
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  343] Link debug info start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  345] 20 15
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  345] 2 14
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  345] 16 27
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  345] 17 28
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  348] Link debug info end
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::BPSystem:  352] END
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:    6] Start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   37] Init for class_id: 3
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   43] Init for class_id: 8
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   60] Init for class_id: 10002
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   50] Init for class_id: 9
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   64] inputNodeParamsMap debug info start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   66] 1, ptrs_size: 0
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   66] 13, ptrs_size: 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   66] 19, ptrs_size: 0
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   66] 26, ptrs_size: 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   68] inputNodeParamsMap debug info end
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   70] outputNodeParamsMap debug info start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   72] 1, ptrs_size: 1
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   72] 13, ptrs_size: 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   72] 19, ptrs_size: 1
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   72] 26, ptrs_size: 2
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   74] outputNodeParamsMap debug info end
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   76] nodeExecuteMap debug info start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   78] 1
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   78] 13
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   78] 19
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   78] 26
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   80] nodeExecuteMap debug info end
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::InitPlay:   82] End
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  146] Start
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  158] q push: 1 3
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  182] q pop: 1 3
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  265] q push: 13 8
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  182] q pop: 13 8
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: LoadEntityNodeExecute.cpp][BPSystem::LoadEntityNodeExecute::Run:    9] input_file_path: D:\hqh_study\ModelForFix\ModelForFixChecked\Stitch\C_ent(1)_mod_body_2.sat
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  265] q push: 26 9
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  182] q pop: 26 9
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  166] body count:	1
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  167] lump count:	1
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  168] shell count:	1
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  169] wire count:	0
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  170] face count:	28
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  171] edge count:	81
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  172] coedge count:	150
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  173] vertex count:	52
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: MarkNum.cpp][MarkNum::Init:  174] loop count:	28
+
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: BPSystem.cpp][BPSystem::BPSystem::PlayFrom:  278] End
+[2025-6-23 23:40:22][PID: 32772][TID: 31840][INFO ][FILE: HQHEntrance.cpp][HQHEntrance::Run:  559] ALL DONE

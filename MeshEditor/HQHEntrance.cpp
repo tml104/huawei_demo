@@ -542,11 +542,9 @@ void HQHEntrance::OriginalRun(const std::string & file_path, HoopsView * hoopsvi
 
 void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 { 
-	// TODO: Load Json Instance file
-	
-	//Json::Value j;
-
 	LOG_INFO("START");
+
+	api_start_modeller(0);
 
 	std::string class_json_path("D:\\hqh_study\\huawei_frame\\huawei_demo\\JsonData\\MyGraphClasses.json");
 	std::string instance_json_path("D:\\hqh_study\\huawei_frame\\huawei_demo\\JsonData\\MyGraphInstances.json");
@@ -556,7 +554,9 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 	bp_system.InitPlay();
 	bp_system.PlayFrom(3);
 
-	LOG_INFO("END");
+	api_stop_modeller();
+
+	LOG_INFO("ALL DONE");
 }
 
 #endif

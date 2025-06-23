@@ -3,7 +3,6 @@
 #include "NodeExecuteBase.h"
 #include "NodeParamsBase.h"
 
-
 // ACIS include
 #include "ACISincluded.h"
 
@@ -34,20 +33,11 @@
 #include <ctime>
 #include <cmath>
 
+
 namespace BPSystem {
 
-	//struct StringNodeInputParams: public NodeParamsBase{
-	//	// None
-	//};
 
-	//struct StringNodeOutputParams : public NodeParamsBase {
-
-	//	std::string* s;
-
-	//};
-
-
-	struct StringNodeExecute: public NodeExecuteBase{
+	struct InitMarkNumNodeExecute : public NodeExecuteBase {
 		void Run(NodeParamsBase* input_params, NodeParamsBase* output_params) override;
 	};
 

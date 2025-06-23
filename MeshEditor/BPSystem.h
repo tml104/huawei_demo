@@ -28,6 +28,7 @@
 #include "LoadEntityNodeExecute.h"
 #include "StartLoadNodeExecute.h"
 #include "StringNodeExecute.h"
+#include "InitMarkNumNodeExecute.h"
 
 namespace BPSystem {
 

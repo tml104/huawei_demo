@@ -16,6 +16,26 @@
                 255,
                 255
             ],
+            "EndPinInstanceId": 27,
+            "LinkId": 31,
+            "StartPinInstanceId": 16
+        },
+        {
+            "Color": [
+                255,
+                255,
+                255
+            ],
+            "EndPinInstanceId": 28,
+            "LinkId": 32,
+            "StartPinInstanceId": 17
+        },
+        {
+            "Color": [
+                255,
+                255,
+                255
+            ],
             "EndPinInstanceId": 15,
             "LinkId": 21,
             "StartPinInstanceId": 20
@@ -42,8 +62,8 @@
             ],
             "InstanceId": 13,
             "Location": [
-                1765,
-                -452
+                1752,
+                -420
             ],
             "OutputPinsInstanceId": [
                 16,
@@ -60,6 +80,22 @@
             ],
             "OutputPinsInstanceId": [
                 20
+            ]
+        },
+        {
+            "ClassId": 9,
+            "InputPinsInstanceId": [
+                27,
+                28
+            ],
+            "InstanceId": 26,
+            "Location": [
+                2403,
+                -420
+            ],
+            "OutputPinsInstanceId": [
+                29,
+                30
             ]
         }
     ],
@@ -93,6 +129,26 @@
             "ClassId": 10002,
             "InstanceId": 20,
             "NodeInstanceId": 19
+        },
+        {
+            "ClassId": 1,
+            "InstanceId": 27,
+            "NodeInstanceId": 26
+        },
+        {
+            "ClassId": 5,
+            "InstanceId": 28,
+            "NodeInstanceId": 26
+        },
+        {
+            "ClassId": 2,
+            "InstanceId": 29,
+            "NodeInstanceId": 26
+        },
+        {
+            "ClassId": 6,
+            "InstanceId": 30,
+            "NodeInstanceId": 26
         }
     ]
 }

@@ -42,6 +42,13 @@ void BPSystem::BPSystem::InitPlay()
 
 			LOG_INFO("Init for class_id: %llu", class_id);
 		}
+		else if (class_id == 9) {
+
+			InitMarkNumNodeExecute* node_execute = new InitMarkNumNodeExecute();
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
 
 		else if (class_id == 10002) {
 			StringNodeExecute* node_execute = new StringNodeExecute();
@@ -224,7 +231,13 @@ void BPSystem::BPSystem::PlayFrom(ull start_class_id)
 		// （先留空，目前感觉没啥能做的）
 
 		// 执行
-		node_execute->Run(input_params, output_params);
+		if (node_execute) {
+			node_execute->Run(input_params, output_params);
+		}
+		else {
+			LOG_ERROR("node_execute is nullptr");
+		}
+
 		
 		// 将返回值放回出参map：用指针的话已经自动做了
 

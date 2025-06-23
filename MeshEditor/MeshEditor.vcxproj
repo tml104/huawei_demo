@@ -203,6 +203,7 @@
     <ClCompile Include="GetPatchType.cpp" />
     <ClCompile Include="getPoint.cpp" />
     <ClCompile Include="HQHEntrance.cpp" />
+    <ClCompile Include="InitMarkNumNodeExecute.cpp" />
     <ClCompile Include="intervalSort.cpp" />
     <ClCompile Include="jsoncpp-src-0.5.0\src\lib_json\json_reader.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -345,6 +346,7 @@
     <ClInclude Include="GeometryUtils.h" />
     <ClInclude Include="GetPatchType.h" />
     <ClInclude Include="HQHEntrance.h" />
+    <ClInclude Include="InitMarkNumNodeExecute.h" />
     <ClInclude Include="Interval.h" />
     <ClInclude Include="jsoncpp-src-0.5.0\include\json\json.h" />
     <ClInclude Include="jsoncpp-src-0.5.0\src\lib_json\json_batchallocator.h" />

@@ -309,6 +309,9 @@
     <ClCompile Include="LoadEntityNodeExecute.cpp">
       <Filter>topologyopt\BPSystem\NodeLogic</Filter>
     </ClCompile>
+    <ClCompile Include="InitMarkNumNodeExecute.cpp">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -480,6 +483,9 @@
       <Filter>topologyopt\BPSystem\NodeLogic</Filter>
     </ClInclude>
     <ClInclude Include="LoadEntityNodeExecute.h">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="InitMarkNumNodeExecute.h">
       <Filter>topologyopt\BPSystem\NodeLogic</Filter>
     </ClInclude>
   </ItemGroup>
