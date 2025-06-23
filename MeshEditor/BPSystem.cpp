@@ -5,6 +5,17 @@ void BPSystem::BPSystem::InitPlay()
 {
 	LOG_INFO("Start");
 
+	auto init_params = [](NodeParamsBase* params, int count) {
+		params->ptrs.clear();
+		params->ptrs.resize(count);
+	};
+
+	auto init_input_output_params = [&](ull node_instance_id, NodeParamsBase* input_params, NodeParamsBase* output_params) {
+		NodeInstance node_instance = nodeInstaceMap[node_instance_id];
+		init_params(input_params, node_instance.inputPinsInstaceId.size());
+		init_params(output_params, node_instance.outputPinsInstaceId.size());
+	};
+
 	for (auto it = nodeInstaceMap.begin(); it != nodeInstaceMap.end(); it++) {
 
 		ull instance_id = it->first;
@@ -17,25 +28,21 @@ void BPSystem::BPSystem::InitPlay()
 		NodeParamsBase* output_params = new NodeParamsBase();
 		outputNodeParamsMap[instance_id] = output_params;
 
+		init_input_output_params(instance_id, input_params, output_params);
+
 		if (class_id == 3) {
 			StartLoadNodeExecute* node_execute = new StartLoadNodeExecute();
 			nodeExecuteMap[instance_id] = node_execute;
-			// TEMP
-			output_params->ptrs.emplace_back(nullptr);
 
 			LOG_INFO("Init for class_id: %llu", class_id);
 		}
 		else if (class_id == 8) {
 			LoadEntityNodeExecute* node_execute = new LoadEntityNodeExecute();
 			nodeExecuteMap[instance_id] = node_execute;
-			// TEMP
-			input_params->ptrs.emplace_back(nullptr);
-			input_params->ptrs.emplace_back(nullptr);
-			output_params->ptrs.emplace_back(nullptr);
-			output_params->ptrs.emplace_back(nullptr);
 
 			LOG_INFO("Init for class_id: %llu", class_id);
 		}
+
 		else if (class_id == 10002) {
 			StringNodeExecute* node_execute = new StringNodeExecute();
 			nodeExecuteMap[instance_id] = node_execute;
