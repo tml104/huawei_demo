@@ -225,7 +225,7 @@
         {
             "ClassId": 12,
             "NodeType": 0,
-            "Name": "\u68c0\u6d4b\uff1a\u975e\u6d41\u5f62\u8fb9\u8ba1\u6570",
+            "Name": "\u68c0\u6d4b\uff1a\u975e\u53cc\u9762\u8fb9\u68c0\u6d4b",
             "InputPinsClassId": [
                 1,
                 5
@@ -243,7 +243,7 @@
         {
             "ClassId": 13,
             "NodeType": 0,
-            "Name": "\u68c0\u6d4b\uff1a\u975e\u6d41\u5f62\u5206\u7c7b\u4e0e\u8bc6\u522b",
+            "Name": "\u68c0\u6d4b\uff1a\u975e\u6d41\u5f62\u68c0\u6d4b",
             "InputPinsClassId": [
                 1,
                 14
@@ -261,7 +261,7 @@
         {
             "ClassId": 14,
             "NodeType": 0,
-            "Name": "\u68c0\u6d4b\uff1a\u7f1d\u9699\u8bc6\u522b\uff08\u5355\u9762\u8fb9\u914d\u5bf9\uff09",
+            "Name": "\u68c0\u6d4b\uff1a\u7f1d\u9699\u68c0\u6d4b\uff08\u5355\u9762\u8fb9\u914d\u5bf9\uff09",
             "InputPinsClassId": [
                 1,
                 14

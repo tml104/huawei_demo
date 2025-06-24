@@ -49,7 +49,12 @@ void BPSystem::BPSystem::InitPlay()
 
 			LOG_INFO("Init for class_id: %llu", class_id);
 		}
+		else if (class_id == 10) {
+			ExportEachBodyNodeExecute* node_execute = new ExportEachBodyNodeExecute();
+			nodeExecuteMap[instance_id] = node_execute;
 
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
 		else if (class_id == 10002) {
 			StringNodeExecute* node_execute = new StringNodeExecute();
 			nodeExecuteMap[instance_id] = node_execute;

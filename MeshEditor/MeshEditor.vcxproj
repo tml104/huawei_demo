@@ -183,8 +183,14 @@
     <ClCompile Include="DoubleModel.cpp" />
     <ClCompile Include="Experiment240621.cpp" />
     <ClCompile Include="Experiment250305.cpp" />
+    <ClCompile Include="ExportEachBodyNodeExecute.cpp" />
+    <ClCompile Include="ExportGeometryNodeExecute.cpp" />
+    <ClCompile Include="FaceOverlapFindNodeExecute.cpp" />
+    <ClCompile Include="FaceOverlapFixNodeExecute.cpp" />
     <ClCompile Include="filecontrolwidget.cpp" />
     <ClCompile Include="FileManagement.cpp" />
+    <ClCompile Include="GapFixNodeExecute.cpp" />
+    <ClCompile Include="GapMatchNodeExecute.cpp" />
     <ClCompile Include="GeneratedFiles\Debug\moc_topologyoptwidget.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
@@ -302,9 +308,13 @@
     <ClCompile Include="NonManifold2.cpp" />
     <ClCompile Include="mousecontrolwidget.cpp" />
     <ClCompile Include="muilthreadHandle.cpp" />
+    <ClCompile Include="NonManifoldEdgeClassifyNodeExecute.cpp" />
+    <ClCompile Include="NonManifoldEdgeCountNodeExecute.cpp" />
+    <ClCompile Include="NonManifoldFixNodeExecute.cpp" />
     <ClCompile Include="nonuniformMesh.cpp" />
     <ClCompile Include="ohmConnection.cpp" />
     <ClCompile Include="ohmtest.cpp" />
+    <ClCompile Include="ParallelNodeExecute.cpp" />
     <ClCompile Include="PinACIS.cpp" />
     <ClCompile Include="setAttr.cpp" />
     <ClCompile Include="SingleSideFaces.cpp" />
@@ -336,7 +346,13 @@
     <ClInclude Include="Endpoint.h" />
     <ClInclude Include="Experiment240621.h" />
     <ClInclude Include="Experiment250305.h" />
+    <ClInclude Include="ExportEachBodyNodeExecute.h" />
+    <ClInclude Include="ExportGeometryNodeExecute.h" />
+    <ClInclude Include="FaceOverlapFindNodeExecute.h" />
+    <ClInclude Include="FaceOverlapFixNodeExecute.h" />
     <ClInclude Include="FileManagement.h" />
+    <ClInclude Include="GapFixNodeExecute.h" />
+    <ClInclude Include="GapMatchNodeExecute.h" />
     <ClInclude Include="GeneratedFiles\ui_topologyoptwidget.h" />
     <ClInclude Include="GeometricFill.h" />
     <ClInclude Include="Exp1.h" />
@@ -365,8 +381,13 @@
     <ClInclude Include="NodeExecuteBase.h" />
     <ClInclude Include="NodeParamsBase.h" />
     <ClInclude Include="NonManifold2.h" />
+    <ClInclude Include="NonManifoldCountDataStruct.h" />
+    <ClInclude Include="NonManifoldEdgeClassifyNodeExecute.h" />
+    <ClInclude Include="NonManifoldEdgeCountNodeExecute.h" />
+    <ClInclude Include="NonManifoldFixNodeExecute.h" />
     <ClInclude Include="ohmConnection.h" />
     <ClInclude Include="ohm_struct.h" />
+    <ClInclude Include="ParallelNodeExecute.h" />
     <ClInclude Include="PinACIS.h" />
     <ClInclude Include="SingleSideFaces.h" />
     <ClInclude Include="StartLoadNodeExecute.h" />

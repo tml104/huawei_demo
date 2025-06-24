@@ -29,6 +29,7 @@
 #include "StartLoadNodeExecute.h"
 #include "StringNodeExecute.h"
 #include "InitMarkNumNodeExecute.h"
+#include "ExportEachBodyNodeExecute.h"
 
 namespace BPSystem {
 
