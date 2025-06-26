@@ -33,6 +33,9 @@
 #include <ctime>
 #include <cmath>
 
+#include "NonManifold2.h"
+#include "StitchGap.h"
+
 namespace BPSystem {
 
 	struct FaceOverlapFixNodeExecute : public NodeExecuteBase {

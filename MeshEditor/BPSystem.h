@@ -25,11 +25,31 @@
 #include "NodeExecuteBase.h"
 #include "NodeParamsBase.h"
 
-#include "LoadEntityNodeExecute.h"
+
 #include "StartLoadNodeExecute.h"
+#include "StartCheckNodeExecute.h"
+#include "StartFixNodeExecute.h"
+
 #include "StringNodeExecute.h"
+
+#include "LoadEntityNodeExecute.h"
 #include "InitMarkNumNodeExecute.h"
+
 #include "ExportEachBodyNodeExecute.h"
+#include "ExportGeometryNodeExecute.h"
+
+#include "ParallelNodeExecute.h"
+
+// FixCheck
+#include "NonManifoldEdgeCountNodeExecute.h"
+#include "NonManifoldEdgeClassifyNodeExecute.h"
+#include "GapMatchNodeExecute.h"
+#include "FaceOverlapFindNodeExecute.h"
+
+// FixExecute
+#include "NonManifoldFixNodeExecute.h"
+#include "GapFixNodeExecute.h"
+#include "FaceOverlapFixNodeExecute.h"
 
 namespace BPSystem {
 

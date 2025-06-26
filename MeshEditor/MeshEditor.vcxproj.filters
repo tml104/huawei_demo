@@ -357,6 +357,12 @@
     <ClCompile Include="FaceOverlapFixNodeExecute.cpp">
       <Filter>topologyopt\BPSystem\NodeLogic\FixExecute</Filter>
     </ClCompile>
+    <ClCompile Include="StartCheckNodeExecute.cpp">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="StartFixNodeExecute.cpp">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
@@ -565,6 +571,12 @@
     </ClInclude>
     <ClInclude Include="NonManifoldCountDataStruct.h">
       <Filter>topologyopt\BPSystem\NodeLogic\DataStruct</Filter>
+    </ClInclude>
+    <ClInclude Include="StartCheckNodeExecute.h">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="StartFixNodeExecute.h">
+      <Filter>topologyopt\BPSystem\NodeLogic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

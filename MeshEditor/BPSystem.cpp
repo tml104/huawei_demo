@@ -36,6 +36,27 @@ void BPSystem::BPSystem::InitPlay()
 
 			LOG_INFO("Init for class_id: %llu", class_id);
 		}
+		else if (class_id == 4) {
+			StartCheckNodeExecute* node_execute = new StartCheckNodeExecute();
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+		else if (class_id == 5){
+			StartFixNodeExecute* node_execute = new StartFixNodeExecute();
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+
+		else if (class_id == 6) {
+			ParallelNodeExecute* node_execute = new ParallelNodeExecute();
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+
+
 		else if (class_id == 8) {
 			LoadEntityNodeExecute* node_execute = new LoadEntityNodeExecute();
 			nodeExecuteMap[instance_id] = node_execute;
@@ -55,6 +76,62 @@ void BPSystem::BPSystem::InitPlay()
 
 			LOG_INFO("Init for class_id: %llu", class_id);
 		}
+		else if (class_id == 11) {
+			ExportGeometryNodeExecute* node_execute = new ExportGeometryNodeExecute();
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+		else if (class_id == 12) {
+			NonManifoldEdgeCountNodeExecute* node_execute = new NonManifoldEdgeCountNodeExecute();
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+		else if (class_id == 13) {
+			NonManifoldEdgeClassifyNodeExecute* node_execute = new NonManifoldEdgeClassifyNodeExecute();
+
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+		else if (class_id == 14) {
+			GapMatchNodeExecute* node_execute = new GapMatchNodeExecute();
+
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+		else if (class_id == 15) {
+			FaceOverlapFindNodeExecute* node_execute = new FaceOverlapFindNodeExecute();
+
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+
+		else if (class_id == 19) {
+			NonManifoldFixNodeExecute* node_execute = new NonManifoldFixNodeExecute();
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+		else if (class_id == 20) {
+			GapFixNodeExecute* node_execute = new GapFixNodeExecute();
+
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+		else if (class_id == 21) {
+			FaceOverlapFixNodeExecute* node_execute = new FaceOverlapFixNodeExecute();
+
+			nodeExecuteMap[instance_id] = node_execute;
+
+			LOG_INFO("Init for class_id: %llu", class_id);
+		}
+
+
 		else if (class_id == 10002) {
 			StringNodeExecute* node_execute = new StringNodeExecute();
 			nodeExecuteMap[instance_id] = node_execute;

@@ -1,12 +1,12 @@
  * Log file written by CADfix  9.0/19375 on 25 June 2025
  * Graphics device: Vgl - GL
  * Existing model: D:\hqh_study\huawei_frame\huawei_demo\JsonData\C_en
- * t(1)_mod_body_2_mod.fbm
- PROC PNAM Q97
- PROC LNAM U75
- PROC SNAM V29
- PROC BNAM W2
- PROC SHPN X29
+ * t(1)_cut.fbm
+ PROC PNAM Q738
+ PROC LNAM U613
+ PROC SNAM V202
+ PROC BNAM W1
+ PROC SHPN X202
  PROC SETN Y2
  PROC LAPN Z1
  PROC CSN R1
@@ -147,7 +147,7 @@
  SYMR O1 TOL MODDIAMORIG
  *** SRVR  1 ***
  DEL SB O1
- PROC GTOL  4.4945000E-05
+ PROC GTOL  4.9080002E-05
  PLOC PERF THRESHOLDS AUTOMATIC
  *** SRVR  1 ***
  SETA Y2 P ALL
@@ -204,16 +204,15 @@
  PROC SETN Y2
  *** SRVR  1 ***
  SETA Y2 ALL
- MOVE Y2 TRA  2.7780462E001 -4.4105000E001 -1.9668830E-01
+ MOVE Y2 TRA  2.8251250E001 -4.7702025E001 -1.8625000E-01
  DEL SE Y2
  PROC SETN Y2
  *** SRVR  1 ***
  COPY Q1 Y2 TRA  0.0000000E000  0.0000000E000  0.0000000E000
  DEL P Y2
- PROC PNAM Q97
+ PROC PNAM Q738
  *** SRVR  1 ***
- SYMS R--C UNQUOTE =
-     " -27.7804625 44.105000000000004 0.19668829999999998 "
+ SYMS R--C UNQUOTE " -28.25125 47.7020255 0.18624999999999997 "
  *** SRVR  1 ***
  TEXT HIST
 Model re-centred on import                                                      
@@ -251,7 +250,7 @@ Model re-centred on import
  COMP Y4 DOWN P TOPO
  PRUNE Y4 P
  *** SRVR  1 ***
- SETA Y2 ATTR S BBDI GT  1.4746327E000 Y3
+ SETA Y2 ATTR S BBDI GT  3.9873793E000 Y3
  *** SRVR  1 ***
  *** SRVR  1 ***
  PROC SIZEBOX OFF
@@ -259,7 +258,7 @@ Model re-centred on import
  SYMR O1 TOL MODDIAMORIG
  *** SRVR  1 ***
  DEL SB O1
- PROC GTOL  2.9400001E-06
+ PROC GTOL  6.3656249E-06
  *** SRVR  1 ***
  *** SRVR  1 ***
  SETA Y6 ALL
@@ -300,7 +299,7 @@ Model re-centred on import
  SETA NOSHOW XASGD NOSHOW EQ 1 ALL
  *** SRVR  1 ***
  TEXT HIST
-Model imported from ACIS     25 Jun 2025 02:36                                  
+Model imported from ACIS     25 Jun 2025 16:03                                  
                                                                                 
  *** SRVR  1 ***
  TEXT T-X- CLEAR
@@ -388,7 +387,7 @@ Model imported from ACIS     25 Jun 2025 02:36
  SYMR O1 TOL GOOD
  *** SRVR  1 ***
  DEL SB O1
- SYMR WPPT  1.4040000E-04
+ SYMR WPPT  3.7730000E-04
  *** SRVR  1 ***
  TEXT T-X- CLEAR
  PROC WRIT NOECHO
@@ -402,11 +401,5 @@ Model imported from ACIS     25 Jun 2025 02:36
  *** SRVR  1 ***
  CLEAR CMDCOUNT
  *** SRVR  1 ***
- *** SRVR  1 ***
- REP ALL MIN
- CLEAR CMDCOUNT
- *** SRVR  1 ***
- REP ALL MIN
- CLEAR CMDCOUNT
  *** SRVR  1 ***
  **  QUIT **

@@ -318,6 +318,8 @@
     <ClCompile Include="PinACIS.cpp" />
     <ClCompile Include="setAttr.cpp" />
     <ClCompile Include="SingleSideFaces.cpp" />
+    <ClCompile Include="StartCheckNodeExecute.cpp" />
+    <ClCompile Include="StartFixNodeExecute.cpp" />
     <ClCompile Include="StartLoadNodeExecute.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -390,6 +392,8 @@
     <ClInclude Include="ParallelNodeExecute.h" />
     <ClInclude Include="PinACIS.h" />
     <ClInclude Include="SingleSideFaces.h" />
+    <ClInclude Include="StartCheckNodeExecute.h" />
+    <ClInclude Include="StartFixNodeExecute.h" />
     <ClInclude Include="StartLoadNodeExecute.h" />
     <ClInclude Include="StitchGap.h" />
     <ClInclude Include="StringNodeExecute.h" />

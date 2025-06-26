@@ -76,36 +76,6 @@
                 255,
                 255
             ],
-            "EndPinInstanceId": 115,
-            "LinkId": 119,
-            "StartPinInstanceId": 20
-        },
-        {
-            "Color": [
-                255,
-                255,
-                255
-            ],
-            "EndPinInstanceId": 114,
-            "LinkId": 117,
-            "StartPinInstanceId": 29
-        },
-        {
-            "Color": [
-                255,
-                255,
-                255
-            ],
-            "EndPinInstanceId": 116,
-            "LinkId": 118,
-            "StartPinInstanceId": 30
-        },
-        {
-            "Color": [
-                255,
-                255,
-                255
-            ],
             "EndPinInstanceId": 38,
             "LinkId": 40,
             "StartPinInstanceId": 34
@@ -158,16 +128,6 @@
             ],
             "EndPinInstanceId": 98,
             "LinkId": 109,
-            "StartPinInstanceId": 52
-        },
-        {
-            "Color": [
-                255,
-                255,
-                255
-            ],
-            "EndPinInstanceId": 102,
-            "LinkId": 110,
             "StartPinInstanceId": 52
         },
         {
@@ -345,8 +305,8 @@
             "InputPinsInstanceId": [],
             "InstanceId": 19,
             "Location": [
-                1143,
-                -372
+                1015,
+                -596
             ],
             "OutputPinsInstanceId": [
                 20
@@ -560,20 +520,6 @@
             "OutputPinsInstanceId": [
                 106
             ]
-        },
-        {
-            "ClassId": 10,
-            "InputPinsInstanceId": [
-                114,
-                115,
-                116
-            ],
-            "InstanceId": 113,
-            "Location": [
-                2984,
-                -708
-            ],
-            "OutputPinsInstanceId": []
         }
     ],
     "PinInstances": [
@@ -836,21 +782,6 @@
             "ClassId": 10002,
             "InstanceId": 106,
             "NodeInstanceId": 105
-        },
-        {
-            "ClassId": 1,
-            "InstanceId": 114,
-            "NodeInstanceId": 113
-        },
-        {
-            "ClassId": 3,
-            "InstanceId": 115,
-            "NodeInstanceId": 113
-        },
-        {
-            "ClassId": 5,
-            "InstanceId": 116,
-            "NodeInstanceId": 113
         }
     ]
 }

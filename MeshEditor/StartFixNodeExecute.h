@@ -33,12 +33,10 @@
 #include <ctime>
 #include <cmath>
 
-#include "NonManifold2.h"
-#include "StitchGap.h"
 
 namespace BPSystem {
 
-	struct GapFixNodeExecute : public NodeExecuteBase {
+	struct StartFixNodeExecute : public NodeExecuteBase {
 		void Run(NodeParamsBase* input_params, NodeParamsBase* output_params) override;
 	};
 

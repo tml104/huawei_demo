@@ -553,6 +553,8 @@ void HQHEntrance::Run(const std::string & file_path, HoopsView* hoopsview)
 
 	bp_system.InitPlay();
 	bp_system.PlayFrom(3);
+	bp_system.PlayFrom(4);
+	bp_system.PlayFrom(5);
 
 	api_stop_modeller();
 
